@@ -20,3 +20,8 @@
 ## Acuerdos
 - Congelar el modelo de datos actual salvo cambios justificados.
 - Santiago comparte la lista de preguntas del cuestionario antes del miércoles.
+
+# Evidencia
+
+<img width="739" height="1600" alt="SEPT16" src="https://github.com/user-attachments/assets/4db94680-cab2-4087-a586-f2c018fb25d8" />
+
