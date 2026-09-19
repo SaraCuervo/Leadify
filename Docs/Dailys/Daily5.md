@@ -21,3 +21,7 @@
 - Estimar las historias restantes al inicio de la próxima semana.
 - Definir cómo se prueba la integración con Dapta.
 - Usar mensajes de commit descriptivos.
+
+# Evidencia
+
+<img width="704" height="1524" alt="18SEPT" src="https://github.com/user-attachments/assets/3eb23bbf-3a76-4e70-bfed-a21b9f83bdf7" />
