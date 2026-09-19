@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Sora", "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-coral: #ff6259;
+  --color-coral-light: #ff8a84;
+  --color-navy: #2d3b4e;
+  --color-beige: #fdf6f0;
+  --color-emerald: #2dd4a7;
+
+  --shadow-soft: 0 10px 40px -10px rgba(45, 59, 78, 0.1);
+  --shadow-coral: 0 14px 34px -12px rgba(255, 98, 89, 0.55);
+  --shadow-glow: 0 0 40px rgba(45, 212, 167, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-beige);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-coral);
+  color: white;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-coral-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient dot-field texture (parallax-drift layers) + occasional signal streak,
+   inspired by the twinkling-starfield/comet technique on Morada's hero —
+   reinterpreted here as drifting brand-colored "match" nodes. */
+@keyframes drift-a {
+  from { background-position: 0 0; }
+  to { background-position: 220px 280px; }
+}
+@keyframes drift-b {
+  from { background-position: 0 0; }
+  to { background-position: -240px -180px; }
+}
+@keyframes dot-twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
+}
+
+.dot-field-a {
+  background-image: radial-gradient(circle, rgba(255, 98, 89, 0.7) 1.6px, transparent 2.1px);
+  background-size: 30px 30px;
+  animation: drift-a 44s linear infinite, dot-twinkle 5s ease-in-out infinite;
+}
+
+/* Machea "dawn" — the same night-to-sunrise atmosphere Morada builds its hero on,
+   reinterpreted in our own navy/coral/beige so it reads as brand, not borrowed. */
+.dawn-sky {
+  background: linear-gradient(
+    180deg,
+    var(--color-navy) 0%,
+    #3d2f45 22%,
+    #7a3d4c 42%,
+    var(--color-coral) 62%,
+    #ffb199 82%,
+    var(--color-beige) 100%
+  );
+}
+
+.star-field {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  animation: dot-twinkle 4s ease-in-out infinite;
+  mask-image: linear-gradient(180deg, black 0%, black 30%, transparent 62%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, black 30%, transparent 62%);
+}
+.dot-field-b {
+  background-image: radial-gradient(circle, rgba(45, 212, 167, 0.6) 1.3px, transparent 1.8px);
+  background-size: 42px 42px;
+  animation: drift-b 58s linear infinite;
+}
+.dot-field-c {
+  background-image: radial-gradient(circle, rgba(45, 59, 78, 0.35) 1.1px, transparent 1.5px);
+  background-size: 20px 20px;
+  animation: drift-a 70s linear infinite reverse;
+}
+
+@keyframes signal-sweep {
+  0% { opacity: 0; transform: translate3d(-10%, -60%, 0) rotate(28deg) scaleX(0.2); }
+  4% { opacity: 1; }
+  16% { opacity: 1; transform: translate3d(120%, 160%, 0) rotate(28deg) scaleX(1); }
+  22% { opacity: 0; transform: translate3d(120%, 160%, 0) rotate(28deg) scaleX(1); }
+  100% { opacity: 0; }
+}
+
+.signal-streak {
+  position: absolute;
+  width: 220px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 98, 89, 0.9), transparent);
+  animation: signal-sweep 9s ease-in infinite;
+}
