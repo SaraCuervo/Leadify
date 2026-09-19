@@ -1,0 +1,5069 @@
+/* ============ TOKENS DE MARCA ============
+   La identidad visual, por ROL y no por color: `--marca` en vez de "el azul".
+   Es lo que permite que la misma app se vista de cualquier constructora.
+
+   LOS VALORES DE AQUI SON LOS DE COLSUBSIDIO, y eso es deliberado: si
+   js/tema.js no corre, o si un tenant no declara paleta, la app se ve
+   exactamente como antes del refactor multi-marca. tema.js los reescribe con
+   los de la marca activa (ver tenants/<slug>/marca.js).
+
+   TRES COSAS QUE NO SON TOKENS Y NO DEBEN SERLO:
+
+   1. LA ESCENA DEL PLANO. `.gdf-scene` y `.gdf-losa` conservan su gris neutro.
+      Las piezas van en `mix-blend-mode: multiply`, asi que el blanco del papel
+      deja pasar el fondo: teñir la escena teñiria el apartamento entero.
+   2. LA PORTADA CLONADA. Todo el bloque `.gdf-portada` / `.pt-*` se queda con
+      sus hex literales. Es un clon de colsubsidio.com y tiene que seguir
+      siendolo — si tomara los tokens, cambiar de marca lo deformaria.
+   3. EL NARANJA DEL ERROR (#b3541e) y el verde de exito (#128c7e). Un error
+      tiene que leerse como error, no como un momento de marca. */
+:root {
+  /* Los tres que define una marca. Todo lo demas se deriva de aqui. */
+  --marca: #ff7a18;
+  --acento: #ff9d3f;
+  --tinta: #e7ebf0;
+
+  /* Familia del primario, de mas oscuro a mas claro. */
+  --marca-fuerte: #b34e00;
+  --marca-viva: #ff8c39;
+  --marca-medio: #ffa25c;
+  --marca-suave: #ffbe8c;
+  --marca-borde: #57331a;
+  /* Los TINTES son la marca mezclada con el fondo, no con blanco: en oscuro
+     un tinte casi blanco convierte cada chip en un foco. Los recalcula
+     js/tema.js con la misma regla para la marca que toque. */
+  --marca-tinte: #2a1a0e;
+  --marca-tinte-2: #20140b;
+  --sobre-marca: #ffffff;
+
+  /* Familia del acento. `--sobre-acento` es el texto que va ENCIMA del
+     amarillo: el amarillo oscurecido a secas no contrasta lo suficiente. */
+  --acento-oscuro: #e6bd00;
+  --acento-tinte: #2f1c0a;
+  --acento-tinte-2: #231508;
+  --sobre-acento: #2a1400;
+
+  /* Familia de la tinta (textos). En oscuro va de mas claro a mas apagado. */
+  --tinta-media: #b3bcc7;
+  --tinta-suave: #8d97a5;
+  --tinta-tenue: #7c8695;
+
+  /* ---- SUPERFICIES ----
+     La app va en NEGRO, como la consola de la plataforma, y estos cuatro
+     tokens son lo unico que lo decide. Antes el blanco estaba escrito a mano
+     en 29 reglas y el fondo de pagina en una: cambiarlo era imposible sin
+     tocarlas todas, y por eso existen ahora.
+
+     Los valores son EXACTAMENTE los de plataforma/css/estilos.css, para que
+     pasar del buscador al quiz no se note como un cambio de producto. */
+  /* LA ESCENA VA APARTE Y VA CLARA. Ver `.gdf-scene`: las piezas del plano se
+     pintan con `mix-blend-mode: multiply` y sobre oscuro el apartamento sale
+     entintado. Son los unicos tokens claros que quedan, y estan aqui —y no
+     escritos a mano en la regla— para que se vea que es una decision. */
+  --losa-fondo: #eef1f4;
+  --losa: #f7f9fb;
+  --losa-hueco: #d9dee4;
+
+  --fondo: #0a0b0d;      /* el fondo de la pagina */
+  --papel: #131519;      /* la superficie de una tarjeta o un panel */
+  --papel-2: #191c21;    /* lo hundido: campos, celdas, chips */
+  --borde: #262a31;
+
+  /* VELOS: los tintes casi blancos que rellenan chips, avisos y degradados.
+     Van aparte de `--marca-tinte` porque son mas claros todavia. */
+  --marca-velo-fuerte: #3b2412;
+  --marca-velo: #2a1a0e;
+  --marca-velo-claro: #20140b;
+  --marca-borde-suave: #4a2d16;
+  --acento-velo: #241608;
+
+  /* TEXTO SOBRE EL ACENTO, en el CTA principal.
+     NO es `--sobre-acento`: aqui Colsubsidio usa un gris neutro y no su dorado.
+     Es un token propio porque la regla generica tiene que adaptarse — sobre un
+     acento OSCURO (el verde de otra marca) un gris no contrasta, y tema.js lo
+     cambia a blanco. Para Colsubsidio el calculo devuelve exactamente este
+     gris, asi que no mueve un pixel. */
+  /* Azul de TEXTO sobre fondo claro: mas claro que --marca para que no
+     pese, pero con contraste suficiente. */
+  --marca-texto: #ffa25c;
+
+  /* Verde de "esto te sirve" (el badge de subsidio). Este es el valor de la
+     consola negra; sobre la superficie clara de Leadify lo oscurece tema.js.
+     Ver .gdf-project-subsidio. */
+  --exito: #4fd6bf;
+
+  --texto-cta: #1b1c1f;
+
+  /* EL FONDO DEL CTA PRINCIPAL. Era `--acento` escrito en la regla, y eso
+     ataba el boton mas importante de la app al SEGUNDO color de la marca. Para
+     Colsubsidio y las otras tres esta bien —su acento es su color de accion—,
+     pero en Leadify el acento es el verde de "esto encaja" y el boton de
+     avanzar es coral, como en su landing. Es un token para poder decirlo. */
+  --cta-fondo: var(--acento);
+
+  /* ---- TIPOGRAFIA ----
+     Los titulares salen de un token porque cada marca trae la suya: Poppins
+     para las cuatro constructoras, Sora para Leadify (ver tema.js). Estaba
+     escrita a mano en 21 reglas, que es la version tipografica del problema
+     que los tokens de color vinieron a resolver. */
+  --fuente-titulos: 'Poppins', sans-serif;
+  --fuente-cuerpo: 'Manrope', sans-serif;
+
+  /* ---- GEOMETRIA ----
+     CUATRO RADIOS Y TRES SOMBRAS, POR ROL. No es cosmetica: es lo que separa
+     una consola —esquinas cortas, sombras duras, todo pegado— de la landing de
+     Leadify, que es redonda y flota. Los valores de aqui son los de la consola,
+     o sea los de siempre; tema.js los sube para Leadify.
+
+     LO QUE NO PASA POR AQUI: `.pt-*` y `.gdf-hero-*`. El primero es el clon de
+     colsubsidio.com y el segundo sigue design/landing-hero-handoff/ al pixel;
+     los dos tienen que quedarse exactamente como estan (ver las tres notas del
+     encabezado de este archivo). Tampoco las pastillas (999px) ni los circulos
+     (50%), que no son una decision de marca sino una forma. */
+  --radio-campo: 12px;     /* inputs, desplegables, celdas, botones chicos */
+  --radio-boton: 14px;     /* los botones de opcion del quiz */
+  --radio-cta: 13px;       /* el boton primario */
+  --radio-tarjeta: 16px;   /* tarjetas de proyecto y bloques de resultado */
+  --radio-panel: 22px;     /* el bloque mas grande del cierre */
+
+  --sombra-tarjeta: 0 4px 16px rgba(0, 0, 0, 0.07);
+  --sombra-flotante: 0 10px 28px rgba(30, 34, 40, 0.14);
+  --sombra-cta: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--fuente-cuerpo);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  /* dvh descuenta la barra de URL del navegador móvil, que 100vh ignora (y por
+     eso cortaba el panel por debajo del chrome). Va después como mejora
+     progresiva: los navegadores que no la entiendan se quedan con 100vh. */
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Los controles no heredan color ni fondo del documento: hay que decirselo.
+   `color-scheme: dark` ademas pinta en oscuro lo que dibuja el navegador —el
+   cursor, la seleccion, las barras de scroll y el calendario de un date. */
+:root { color-scheme: dark; }
+input,
+textarea,
+select {
+  background: var(--papel-2);
+  color: var(--tinta);
+}
+input::placeholder,
+textarea::placeholder { color: var(--tinta-tenue); }
+
+/* ============ SHELL / HEADER ============ */
+
+.gdf-shell {
+  width: 100%;
+  background: var(--papel);
+  min-height: 100vh;
+  min-height: 100dvh; /* ver nota en #root */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pantallas CON escena (quiz y result): en móvil hay que ACOTAR el alto, no
+   solo darle un mínimo. Con `min-height` el shell crece cuando el contenido
+   es alto (p. ej. el resultado con sus 3 tarjetas de proyecto), y entonces el
+   panel nunca se ve obligado a encogerse: vuelve a scrollear la página y la
+   casa se va de vista. Con el alto acotado, el panel (min-height:0 +
+   overflow-y:auto) scrollea por dentro y la escena queda fija arriba.
+   El media query de 900px ya acota .gdf-shell para escritorio. */
+.gdf-shell:has(.gdf-scene) {
+  height: 100vh;
+  height: 100dvh;
+}
+
+
+/* El nombre escrito, para las marcas que no tienen un logo utilizable. Ver
+   logoHtml() en templates.js: el extractor no siempre consigue uno del sitio
+   de la constructora, y una imagen rota en la cabecera es lo peor que puede
+   verse al enseñarle su version a un cliente. Toma --sobre-marca para leerse
+   sobre una cabecera de cualquier color. */
+.gdf-logo-texto {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--sobre-marca);
+  white-space: nowrap;
+}
+
+.gdf-screen {
+  animation: screenIn 0.35s ease-out both;
+}
+
+/* ============ HERO (pantalla de entrada) ============ */
+/* Sigue design/landing-hero-handoff/ al pixel: nav azul con logo Colsubsidio,
+   pastilla de campaña, casa ilustrada en CSS puro (no la grúa del resto de
+   la app), un solo badge "2 minutos". Ver splash() en templates.js. */
+
+.gdf-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Sin esto, este flex item no se encoge dentro del height:100vh fijo del
+     media query de escritorio (más abajo) — crece con su contenido y el
+     .gdf-shell padre lo recorta con overflow:hidden en vez de dejarlo
+     scrollear. min-height:0 permite que .gdf-hero-main (overflow-y:auto)
+     tome el control real del scroll interno. */
+  min-height: 0;
+}
+
+
+.gdf-hero-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 56px 24px 72px;
+  gap: 22px;
+  background: linear-gradient(180deg, var(--marca-velo-fuerte) 0%, var(--marca-velo) 42%, var(--papel) 85%);
+  overflow-y: auto;
+}
+
+.gdf-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--papel);
+  border: 1px solid rgba(0, 103, 177, 0.25);
+  color: var(--marca);
+  font: 700 12px/1 'Inter', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 103, 177, 0.08);
+  animation: heroFadeIn 0.6s ease-out both;
+}
+.gdf-hero-pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--acento);
+  flex: none;
+}
+
+.gdf-hero-illustration {
+  position: relative;
+  width: 320px;
+  height: 240px;
+  margin: 4px 0 -6px;
+  animation: heroPop 0.7s 0.1s ease-out both;
+  /* Flex items se encogen por defecto (flex-shrink:1) cuando el contenido no
+     cabe en .gdf-hero-main. Sus hijos van con position:absolute a
+     coordenadas fijas en px, así que si esta caja se encoge, los hijos NO se
+     encogen con ella y quedan flotando fuera de sus límites, tapando el
+     texto de abajo. flex-shrink:0 fuerza a que sea el scroll (overflow-y:auto
+     del padre) el que resuelva la falta de espacio, no un encogimiento. */
+  flex-shrink: 0;
+}
+.gdf-hero-illustration .glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 210px;
+  height: 210px;
+  margin: -105px 0 0 -105px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 103, 177, 0.22) 0%, rgba(0, 103, 177, 0) 70%);
+  animation: heroGlow 5s ease-in-out infinite;
+}
+.gdf-hero-illustration .gdf-casa {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+/* La sombra se queda en el suelo mientras la casa flota: es lo que hace que
+   se lea como que se despega, en vez de moverse todo el conjunto en bloque. */
+.gdf-hero-illustration .suelo {
+  fill: rgba(30, 20, 5, 0.16);
+}
+/* UN SOLO elemento animado para toda la casa. Antes la flotación (con su
+   `rotate(-3deg)`) iba repetida en cada pieza, y como cada una gira sobre su
+   propio centro, la casa se descuadraba sola: el tejado se salía de los muros
+   y la chimenea acababa flotando aparte. Con el grupo, las piezas comparten
+   origen y no pueden separarse.
+   El giro pivota en la base (160 176 = el centro de la línea del suelo), así
+   que se lee como un balanceo y no como una inclinación. */
+.gdf-hero-illustration .casa {
+  transform-box: view-box;
+  transform-origin: 160px 176px;
+  animation: casaFlota 6s ease-in-out infinite;
+}
+.gdf-hero-illustration .humo {
+  fill: rgba(255, 255, 255, 0.9);
+  animation: smokePuff 2.8s ease-out infinite;
+}
+.gdf-hero-illustration .humo.h2 {
+  animation-delay: 1.3s;
+}
+.gdf-hero-illustration .bandera {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: waveFlag 2.4s ease-in-out infinite;
+}
+
+.gdf-hero-illustration .accent-1 {
+  position: absolute;
+  left: 36px;
+  top: 38px;
+  width: 22px;
+  height: 22px;
+  background: var(--acento);
+  border-radius: 6px;
+  animation: heroOrbit1 4.2s ease-in-out infinite;
+}
+.gdf-hero-illustration .accent-2 {
+  position: absolute;
+  left: 258px;
+  top: 150px;
+  width: 18px;
+  height: 18px;
+  background: var(--marca);
+  border-radius: 50%;
+  animation: heroOrbit2 5.1s ease-in-out infinite;
+}
+.gdf-hero-illustration .accent-3 {
+  position: absolute;
+  left: 40px;
+  top: 168px;
+  width: 16px;
+  height: 16px;
+  background: var(--tinta-media);
+  border-radius: 4px;
+  opacity: 0.7;
+  animation: heroOrbit3 4.6s ease-in-out infinite;
+}
+.gdf-hero-illustration .accent-4 {
+  position: absolute;
+  left: 266px;
+  top: 44px;
+  width: 14px;
+  height: 14px;
+  background: var(--acento);
+  border-radius: 50%;
+  animation: acentoFlota 5.4s ease-in-out infinite;
+}
+
+.gdf-hero-main h1 {
+  margin: 0;
+  font: 800 56px/1.08 var(--fuente-titulos);
+  color: var(--marca);
+  letter-spacing: -0.01em;
+  animation: heroFadeIn 0.7s 0.25s ease-out both;
+}
+.gdf-hero-lead {
+  margin: 0;
+  font: 500 21px/1.5 'Inter', sans-serif;
+  color: var(--marca-texto);
+  max-width: 620px;
+  animation: heroFadeIn 0.7s 0.4s ease-out both;
+}
+.gdf-hero-lead strong {
+  color: var(--marca);
+  font-weight: 700;
+}
+.gdf-hero-quote {
+  margin: 0;
+  font: italic 500 16px/1.5 'Inter', sans-serif;
+  color: var(--tinta-media);
+  animation: heroFadeIn 0.7s 0.5s ease-out both;
+}
+
+.gdf-hero-cta {
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--acento);
+  color: var(--texto-cta);
+  font: 700 21px/1 var(--fuente-titulos);
+  padding: 22px 44px;
+  border-radius: 16px;
+  transition: transform 0.15s ease;
+  animation: heroFadeIn 0.7s 0.6s ease-out both, heroPulseShadow 2.6s 1.3s ease-in-out infinite;
+}
+.gdf-hero-cta:hover {
+  transform: translateY(-2px);
+}
+.gdf-hero-cta:active {
+  transform: scale(0.97);
+}
+
+.gdf-hero-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2px;
+  animation: heroFadeIn 0.7s 0.75s ease-out both;
+}
+.gdf-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--papel);
+  border: 1px solid rgba(87, 87, 86, 0.15);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font: 600 14px/1 'Inter', sans-serif;
+  color: var(--marca);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* ============ PORTADA (clon de colsubsidio.com/vivienda/proyectos) ========
+   Reproduce la página real de proyectos de vivienda de Colsubsidio. El
+   contenido lo pone js/portada.js (generado por tools/clonar_portada.py); esto
+   es solo el aspecto.
+
+   LOS NÚMEROS ESTÁN MEDIDOS, NO ESTIMADOS. Salen de los estilos computados de
+   la página real — `python tools/clonar_portada.py --medir` los vuelca a
+   tools/.estilos_portada.json. Si algo se ve distinto, esa es la referencia a
+   consultar antes de tocar un valor a ojo.
+
+   Su CSS NO se importa: sus bundles de Next suman >250 KB de reglas globales
+   que chocarían con las ~3.400 líneas de .gdf-* y romperían el quiz. Todo
+   cuelga de .gdf-portada para que no salga de aquí.
+
+   Los tres anchos de contenedor son distintos A PROPÓSITO: cada módulo del CMS
+   trae el suyo y en la página real se nota (el hero va más metido que el
+   banner de Maiporé, y "Proyectos propios" casi toca el borde). A 1440px dan
+   exactamente los x=205 / x=100 / x=37 medidos. */
+
+.gdf-portada {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Mismo motivo que .gdf-hero: sin esto el flex item no se encoge dentro del
+     height:100vh de escritorio y .gdf-shell lo recorta con overflow:hidden en
+     vez de dejar scrollear .gdf-portada-scroll. */
+  min-height: 0;
+  font-family: var(--fuente-titulos);
+  color: #333;
+}
+/* El scroll es INTERNO. En escritorio styles.css pone body{overflow:hidden} y
+   .gdf-shell{height:100vh}: una portada que scrollease la página no dejaría
+   ver nada por debajo del hero. */
+.gdf-portada-scroll {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--papel-2);
+}
+
+/* Los max-width llevan sumado el padding para que a 1440px el contenido
+   empiece EXACTAMENTE en los x medidos de la página real: 205 (hero), 100
+   (Maiporé y las barras) y 37 (las franjas de tarjetas). El padding sigue ahí
+   para que en pantallas estrechas quede margen. */
+.pt-ancho {
+  max-width: 1070px; /* -> x = 205 */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.pt-ancho-md {
+  max-width: 1280px; /* -> x = 100 */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.pt-ancho-xl {
+  max-width: 1402px; /* -> x = 37 */
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* Los enlaces del portal no se subrayan ni se pintan de azul. Va con :where()
+   para que la regla tenga especificidad CERO: escrito como `.gdf-portada a`
+   (0,1,1) le ganaba a `.pt-mega-item` (0,1,0) y forzaba `color: inherit`, con
+   lo que la barra grafito y el botón negro de Maiporé salían con texto #333
+   sobre fondo #333 — invisibles. */
+:where(.gdf-portada) :where(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- cabecera: barra de cliente ---------------------------------------- */
+.pt-utility {
+  background: var(--papel);
+  border-bottom: 1px solid var(--borde);
+}
+.pt-utility-in {
+  height: 36px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.pt-clientes {
+  display: flex;
+}
+.pt-cliente {
+  display: flex;
+  align-items: center;
+  padding: 5px 24px;
+  font-size: 14px;
+  line-height: 19.6px;
+  letter-spacing: 0.25px;
+  color: #333;
+}
+.pt-cliente.activo {
+  background: #ffd000;
+}
+.pt-util-der {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding-right: 20px;
+}
+.pt-util-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #333;
+  white-space: nowrap;
+}
+.pt-util-ico {
+  font-style: normal;
+  font-size: 15px;
+  color: #575756;
+}
+
+/* --- cabecera: barra blanca -------------------------------------------- */
+.pt-global {
+  background: var(--papel);
+}
+.pt-global-in {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.pt-logo {
+  height: 30px;
+  width: auto;
+  flex: none;
+}
+.pt-global-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.pt-glob {
+  padding: 8px;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #333;
+  white-space: nowrap;
+}
+.pt-glob:hover {
+  color: #0067b1;
+}
+.pt-cv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 32px;
+  background: #ffd000;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* --- cabecera: barra grafito ------------------------------------------- */
+.pt-mega {
+  background: #333;
+}
+.pt-mega-in {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pt-mega-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 4px;
+  padding: 8px 12px;
+  border-radius: 32px;
+  font-size: 12px;
+  line-height: 16.8px;
+  letter-spacing: 0.4px;
+  color: #fff;
+  white-space: nowrap;
+}
+.pt-mega-item:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.pt-chev {
+  flex: none;
+  opacity: 0.9;
+}
+
+/* --- hero: nuestro contenido dentro de su marco ------------------------ */
+.pt-hero {
+  padding: 0 16px 40px;
+  background-color: #f6f7fc;
+}
+.pt-migaja {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: #575756;
+}
+.pt-migaja a {
+  text-decoration: underline;
+}
+.pt-migaja b {
+  font-weight: 600;
+  color: #333;
+}
+.pt-migaja-mas {
+  letter-spacing: 1px;
+}
+.pt-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+  min-height: 330px;
+}
+.pt-hero-txt h1 {
+  font-size: 44px;
+  line-height: 52.8px;
+  font-weight: 700;
+  color: #333;
+  max-width: 627px;
+}
+.pt-hero-txt p {
+  margin-top: 14px;
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+.pt-hero-nota {
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: #575756;
+}
+.pt-hero-img {
+  width: 530px;
+  max-width: 45vw;
+  height: auto;
+  /* La casa 3D se sale del contenedor por la derecha: en la página real ocupa
+     de x=810 a x=1340 con el contenedor acabando en 1235. De ahí el margen
+     negativo (medido, no a ojo). */
+  margin: -10px -105px -30px 0;
+}
+
+/* --- botones (mismas formas que los suyos) ----------------------------- */
+.pt-btn-negro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 80px;
+  background: #333;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.pt-btn-negro:hover {
+  background: #575756;
+  transform: translateY(-1px);
+}
+.pt-btn-negro.grande {
+  height: 52px;
+  margin-top: 22px;
+  padding: 0 34px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+.pt-btn-blanco {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 80px;
+  background: var(--papel);
+  color: #333;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+}
+.pt-ico {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Ciudadela Maiporé -------------------------------------------------- */
+.pt-maipore {
+  background-color: #fffdf4;
+}
+.pt-maipore-in {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+.pt-maipore-txt {
+  max-width: 610px;
+}
+.pt-maipore-txt h2 {
+  font-size: 44px;
+  line-height: 52.8px;
+  font-weight: 700;
+  color: #333;
+}
+.pt-maipore-txt p {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 19.6px;
+  letter-spacing: 0.25px;
+  color: #333;
+}
+.pt-precios {
+  display: flex;
+  gap: 48px;
+  margin: 20px 0;
+  padding: 8px 24px;
+  border-radius: 20px;
+  background: #de1267;
+  color: #fff;
+  max-width: 492px;
+}
+.pt-valor {
+  padding: 12px 0 16px;
+}
+.pt-valor span {
+  display: block;
+  font-size: 12px;
+  line-height: 16.8px;
+  letter-spacing: 0.4px;
+}
+.pt-valor b {
+  display: block;
+  margin-top: 8px;
+  font-size: 36px;
+  line-height: 43.2px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.pt-maipore-img {
+  width: 610px;
+  max-width: 46vw;
+  height: auto;
+}
+
+/* --- carruseles (flechas + guiones, comunes a las cuatro franjas) ------ */
+.pt-visor {
+  overflow: hidden;
+  /* Sin esto el visor no acota nada: el `min-width:auto` que traen por defecto
+     los items de grid y de flex deja que la pista crezca con su contenido, y
+     entonces el `flex-basis` en % de las tarjetas se resuelve contra un ancho
+     indefinido — se veía UNA tarjeta gigante en vez de tres. */
+  min-width: 0;
+}
+/* `--i` es la página actual (la pone templates.js y la reescribe main.js).
+   `--paso` es cuánto avanza una página y `--sangria` el desplazamiento inicial:
+   por defecto una página ocupa el visor entero, pero Más opciones se sale de
+   esa norma —su tarjeta es más estrecha que el visor y las vecinas asoman a
+   los lados— y eso se resuelve aquí, no en el JS. */
+.pt-pista {
+  display: flex;
+  transform: translateX(calc(var(--sangria, 0%) - var(--i, 0) * var(--paso, 100%)));
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Cuántas tarjetas entran a la vez. Es la ÚNICA fuente de verdad del reparto:
+   los media queries de abajo solo cambian este número y el JS lo lee de aquí
+   (ver porPaginaDe en templates.js) para pintar los guiones que toquen. */
+.pt-pista > * {
+  flex: 0 0 var(--ancho, calc(100% / var(--por-pagina, 1)));
+  min-width: 0;
+}
+.pt-propios .pt-pista { --por-pagina: 3; }
+.pt-ciudades .pt-pista { --por-pagina: 5; }
+.pt-aliados .pt-pista { --por-pagina: 6; }
+.pt-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+.pt-redonda {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c9ccd6;
+  border-radius: 50%;
+  background: transparent;
+  color: #575756;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.pt-redonda:hover {
+  border-color: #333;
+  color: #333;
+}
+.pt-guiones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pt-guion {
+  width: 14px;
+  height: 2px;
+  border: 0;
+  padding: 0;
+  background: var(--papel-2);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+.pt-guion.activo {
+  width: 46px;
+  background: #333;
+}
+
+/* --- Proyectos propios -------------------------------------------------- */
+.pt-propios {
+  background: var(--papel);
+  padding: 56px 0;
+}
+.pt-propios-in {
+  display: grid;
+  grid-template-columns: 404px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.pt-propios-txt h2 {
+  font-size: 64px;
+  line-height: 76.8px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+}
+.pt-propios-txt p {
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+.pt-propios .pt-card {
+  padding-right: 20px;
+}
+.pt-card-foto {
+  position: relative;
+  aspect-ratio: 280 / 295;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--papel-2);
+}
+.pt-card-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pt-vis {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+  padding: 0 14px;
+  border-radius: 0 0 8px 0;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+.pt-vis i {
+  font-style: normal;
+  color: #ffd000;
+}
+.pt-card h3 {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+.pt-card-loc {
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #575756;
+}
+.pt-card-datos {
+  display: flex;
+  gap: 24px;
+  margin-top: 14px;
+}
+.pt-card-datos span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: #575756;
+}
+.pt-card-datos b {
+  display: block;
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* --- Ciudades ----------------------------------------------------------- */
+.pt-h2-xl {
+  font-size: 80px;
+  line-height: 96px;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 24px;
+}
+.pt-ciudades {
+  padding: 40px 0 56px;
+}
+.pt-ciudades .pt-ciudad {
+  padding-right: 20px;
+}
+.pt-ciudad-foto {
+  position: relative;
+  aspect-ratio: 253 / 215;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--papel-2);
+}
+.pt-ciudad-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pt-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  max-width: 220px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: #de1267;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16.8px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+.pt-ciudad h3 {
+  margin-top: 14px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* --- Nuestros aliados ---------------------------------------------------- */
+.pt-aliados {
+  padding: 40px 0 56px;
+  text-align: center;
+}
+.pt-aliados h2 {
+  font-size: 64px;
+  line-height: 76.8px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  color: #333;
+}
+.pt-aliados-p {
+  max-width: 820px;
+  margin: 8px auto 28px;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+.pt-aliados .pt-aliado {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pt-aliado img {
+  max-width: 100%;
+  max-height: 110px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* --- Más opciones para ti ------------------------------------------------ */
+.pt-opciones {
+  padding: 40px 0 56px;
+}
+.pt-opciones-cab {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  align-items: end;
+  gap: 20px;
+}
+.pt-opciones-cab h2 {
+  max-width: 742px;
+}
+.pt-opciones-cab p {
+  padding-bottom: 30px;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+/* Una por página, pero más estrecha que el visor: las tarjetas de al lado
+   asoman por los bordes, como en la página real. De ahí --ancho/--paso/
+   --sangria, que se desactivan en móvil (ahí el asomo solo roba sitio). */
+.pt-opciones .pt-pista {
+  --por-pagina: 1;
+  --ancho: 76%;
+  --paso: 76%;
+  --sangria: 12%;
+}
+.pt-opciones .pt-opcion {
+  margin: 0 1px;
+  position: relative;
+  height: 386px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--papel-2);
+}
+.pt-opcion img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pt-opcion-txt {
+  position: relative;
+  z-index: 1;
+  width: 320px;
+  height: 100%;
+  padding: 32px;
+  background: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.pt-opcion-txt h3 {
+  font-size: 24px;
+  line-height: 28.8px;
+  font-weight: 700;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+.pt-opcion-txt p {
+  margin: 16px 0 auto;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+  color: rgba(255, 255, 255, 0.92);
+}
+.pt-opcion-txt .pt-btn-blanco {
+  align-self: flex-start;
+}
+
+/* --- footer -------------------------------------------------------------- */
+.pt-footer {
+  background: var(--papel);
+}
+.pt-tabs {
+  border-bottom: 1px solid var(--borde);
+}
+.pt-tabs-in {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pt-tab {
+  height: 48px;
+  padding: 0 15px;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  color: #575756;
+  cursor: pointer;
+}
+.pt-tab.activo {
+  font-weight: 700;
+  color: #333;
+  border-bottom-color: #ffd000;
+}
+.pt-flinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 24px;
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+.pt-flink {
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+a.pt-flink:hover {
+  text-decoration: underline;
+}
+.pt-flabel {
+  font-weight: 700;
+  color: #575756;
+}
+.pt-dark {
+  background: #333;
+  color: #fff;
+}
+.pt-dark-in {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+.pt-redes-tit {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+}
+.pt-redes {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+.pt-red {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #fff;
+}
+.pt-red img {
+  width: 20px;
+  height: 20px;
+}
+.pt-vigilados {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+.pt-vigilado {
+  height: 42px;
+  width: auto;
+}
+.pt-copy {
+  border-top: 2px solid #ffd000;
+  background: #333;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #fff;
+}
+
+/* --- pestaña de encuesta ------------------------------------------------- */
+/* Fija contra el viewport, como la suya. Va fuera de .gdf-portada-scroll para
+   que no se mueva con el scroll. */
+.pt-opinion {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 40;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  padding: 22px 9px;
+  border-radius: 8px 0 0 8px;
+  background: #de1267;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+
+.pt-fallback {
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+
+/* --- responsive ---------------------------------------------------------- */
+/* La portada real es de escritorio; en pantallas menores sus módulos colapsan
+   a una columna y enseñan menos tarjetas por página. Aquí se hace lo mismo
+   cambiando SOLO `--por-pagina`: el JS lee esa variable y pinta los guiones
+   que correspondan, así que en el teléfono se puede llegar hasta la última
+   tarjeta. Antes se tocaba el `flex-basis` y el número de guiones se quedaba
+   en el del escritorio — las 6 últimas de "Proyectos propios" eran
+   inalcanzables. */
+
+@media (max-width: 1100px) {
+  .pt-h2-xl {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -1px;
+  }
+  /* minmax(0,…) y no `1fr` a secas: el `min-width:auto` por defecto de un
+     track de grid deja que la pista crezca con su contenido y entonces los
+     porcentajes de las tarjetas se resuelven contra un ancho indefinido. Es
+     el mismo fallo que dejaba UNA tarjeta gigante en escritorio. */
+  .pt-propios-in,
+  .pt-opciones-cab {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pt-propios-txt h2,
+  .pt-aliados h2 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+  .pt-opciones-cab p {
+    padding-bottom: 0;
+  }
+  .pt-propios .pt-pista { --por-pagina: 2; }
+  .pt-ciudades .pt-pista { --por-pagina: 3; }
+  .pt-aliados .pt-pista { --por-pagina: 4; }
+}
+
+@media (max-width: 820px) {
+  .pt-utility-in {
+    height: auto;
+  }
+  .pt-util-der,
+  .pt-migaja {
+    display: none;
+  }
+  .pt-cliente {
+    padding: 5px 18px;
+  }
+  .pt-global-in {
+    height: 58px;
+  }
+  .pt-logo {
+    height: 26px;
+  }
+  /* De la barra blanca solo sobrevive la pastilla amarilla, que es la acción;
+     los cinco enlaces de sección caben en la barra grafito de abajo. */
+  .pt-glob {
+    display: none;
+  }
+  .pt-cv {
+    height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+  /* La barra de categorías pasa a ser una tira que se desliza con el dedo.
+     Sin `flex: none` los items se comprimirían hasta ser ilegibles en vez de
+     desbordar, que es justo lo que tienen que hacer aquí. */
+  .pt-mega-in {
+    height: auto;
+    justify-content: flex-start;
+    padding: 6px 12px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .pt-mega-in::-webkit-scrollbar {
+    display: none;
+  }
+  .pt-mega-item {
+    flex: none;
+  }
+
+  .pt-hero-grid,
+  .pt-maipore-in {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .pt-hero {
+    padding-bottom: 28px;
+  }
+  .pt-hero-txt h1,
+  .pt-maipore-txt h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .pt-hero-txt p {
+    font-size: 15px;
+  }
+  .pt-btn-negro.grande {
+    width: 100%;
+    margin-top: 18px;
+  }
+  .pt-hero-img,
+  .pt-maipore-img {
+    width: 100%;
+    max-width: 340px;
+    margin: 4px auto 0;
+  }
+  .pt-h2-xl,
+  .pt-propios-txt h2,
+  .pt-aliados h2 {
+    font-size: 38px;
+    line-height: 46px;
+    letter-spacing: -0.5px;
+  }
+  /* Los dos valores se apilan: en una línea, '$149.182.800' a 36px no cabe en
+     un teléfono y la tarjeta rosada se salía de la pantalla. */
+  .pt-precios {
+    flex-direction: column;
+    gap: 0;
+    padding: 4px 20px 12px;
+    max-width: none;
+  }
+  .pt-valor {
+    padding: 12px 0 0;
+  }
+  .pt-valor b {
+    font-size: 28px;
+    line-height: 34px;
+    margin-top: 2px;
+  }
+  .pt-maipore-txt .pt-btn-negro {
+    width: 100%;
+  }
+
+  .pt-propios,
+  .pt-ciudades,
+  .pt-aliados,
+  .pt-opciones {
+    padding: 32px 0;
+  }
+  .pt-propios .pt-pista { --por-pagina: 1; }
+  .pt-ciudades .pt-pista { --por-pagina: 1; }
+  .pt-aliados .pt-pista { --por-pagina: 2; }
+  /* Con una tarjeta por página hay muchas más páginas (14 ciudades), y la
+     fila de guiones a tamaño de escritorio empujaba las flechas fuera de la
+     pantalla por los dos lados. Se encogen y se les deja envolver. */
+  .pt-nav {
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .pt-guiones {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 240px;
+    gap: 6px;
+  }
+  .pt-guion {
+    width: 10px;
+  }
+  .pt-guion.activo {
+    width: 26px;
+  }
+  .pt-propios .pt-card,
+  .pt-ciudades .pt-ciudad {
+    padding-right: 0;
+  }
+  /* En un teléfono el asomo de las tarjetas vecinas solo roba ancho, así que
+     la tarjeta de "Más opciones" pasa a ocupar la pantalla entera. */
+  .pt-opciones .pt-pista {
+    --ancho: 100%;
+    --paso: 100%;
+    --sangria: 0%;
+  }
+  .pt-opciones .pt-opcion {
+    height: auto;
+    min-height: 400px;
+    margin: 0;
+  }
+  .pt-opcion-txt {
+    width: 100%;
+    background: rgba(51, 51, 51, 0.94);
+  }
+  .pt-aliado img {
+    max-height: 84px;
+  }
+
+  .pt-tabs-in {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .pt-tabs-in::-webkit-scrollbar {
+    display: none;
+  }
+  .pt-tab {
+    flex: none;
+    font-size: 15px;
+  }
+  .pt-flinks {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+  .pt-dark-in {
+    gap: 18px;
+  }
+  .pt-redes {
+    gap: 14px 20px;
+  }
+  /* Los dos sellos son SVG anchos con el texto dentro: a 42px de alto el de
+     Supersubsidio se salía de la pantalla. Se reparten la fila a medias
+     (`flex: 1 1 0` + `min-width: 0`) y se limitan por alto, que es lo que los
+     deja del mismo tamaño y legibles sin desbordar. */
+  .pt-vigilados {
+    margin-left: 0;
+    gap: 14px;
+    width: 100%;
+  }
+  .pt-vigilado {
+    flex: 1 1 0;
+    min-width: 0;
+    height: auto;
+    max-height: 40px;
+    object-fit: contain;
+    object-position: left center;
+  }
+  .pt-copy {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  .pt-opinion {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .pt-h2-xl,
+  .pt-propios-txt h2,
+  .pt-aliados h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .pt-hero-txt h1,
+  .pt-maipore-txt h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .pt-card-datos {
+    gap: 16px;
+  }
+  .pt-card-datos b,
+  .pt-card h3,
+  .pt-ciudad h3 {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-pista {
+    transition: none;
+  }
+  .pt-btn-negro:hover {
+    transform: none;
+  }
+}
+
+
+/* ============ ESCARAPELA ============ */
+
+.gdf-escarapela {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 28px;
+  background: linear-gradient(180deg, var(--marca-tinte), var(--papel) 60%);
+  overflow-y: auto;
+}
+.gdf-escarapela .kicker {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.gdf-escarapela .kicker .eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--marca);
+}
+.gdf-escarapela .kicker h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--tinta);
+  margin-top: 4px;
+}
+
+.gdf-carnet {
+  align-self: center;
+  width: 230px;
+  /* No encoger nunca: como tiene overflow:hidden, el algoritmo flex reduce su
+     tamaño mínimo a 0 y, en ventanas bajas, lo aplastaba a una barra blanca.
+     flex:0 0 auto lo mantiene a su alto real y deja que la columna scrollee. */
+  flex: 0 0 auto;
+  background: var(--papel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-tarjeta);
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+  animation: swingCard 5s ease-in-out infinite;
+  transform-origin: top center;
+  margin-bottom: 22px;
+}
+.gdf-carnet .clip {
+  width: 4px;
+  height: 20px;
+  background: var(--tinta-suave);
+  margin: 0 auto;
+}
+.gdf-carnet .band {
+  background: var(--marca);
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.gdf-carnet .band img {
+  height: 16px;
+}
+.gdf-carnet .band span {
+  font-size: 9px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+.gdf-carnet .body {
+  padding: 14px 14px 16px;
+  text-align: center;
+}
+.gdf-carnet .avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  background: linear-gradient(135deg, var(--marca), var(--marca-suave));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.gdf-carnet .name {
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--tinta);
+  min-height: 19px;
+}
+.gdf-carnet .phone {
+  font-size: 11px;
+  color: var(--tinta-suave);
+  margin-top: 2px;
+  min-height: 15px;
+}
+.gdf-carnet .badge-wrap {
+  margin-top: 9px;
+  min-height: 20px;
+}
+.gdf-carnet .affiliate-badge {
+  font-size: 9px;
+  padding: 3px 9px;
+  border-radius: 7px;
+  background: var(--acento-tinte);
+  color: var(--sobre-acento);
+  border: 1px solid var(--acento);
+  font-weight: 800;
+  display: inline-block;
+  animation: popIn 0.35s ease-out;
+}
+
+.gdf-field-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tinta-media);
+  margin-bottom: 5px;
+  display: block;
+}
+.gdf-input {
+  /* SIN ESTO EL CAMPO SALE BLANCO. Un <input> no hereda el fondo: se lo pone
+     el navegador. Con la app en claro no se notaba —blanco sobre blanco— y al
+     pasar a negro quedaban cinco rectangulos blancos en mitad del formulario. */
+  background: var(--papel-2);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-campo);
+  padding: 13px 14px;
+  font-size: 15px;
+  color: var(--tinta);
+  outline: none;
+  margin-bottom: 14px;
+  width: 100%;
+  font-family: var(--fuente-cuerpo);
+  transition: border-color 0.15s;
+}
+.gdf-input:focus {
+  border-color: var(--marca);
+}
+
+.gdf-affiliate-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.gdf-affiliate-btn {
+  flex: 1;
+  cursor: pointer;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px;
+  border-radius: var(--radio-campo);
+  transition: all 0.12s;
+  border: 1.5px solid var(--borde);
+  background: var(--papel);
+  color: var(--tinta-media);
+}
+.gdf-affiliate-btn.selected {
+  background: var(--marca);
+  color: #fff;
+  border-color: var(--marca);
+}
+.gdf-affiliate-btn:active {
+  transform: scale(0.97);
+}
+
+.gdf-consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 12px;
+  background: var(--papel-2);
+  border-radius: var(--radio-campo);
+  border: 1px solid var(--borde);
+  margin-bottom: 20px;
+}
+.gdf-consent .box {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid #b8bcc0;
+  background: var(--papel);
+  color: #fff;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+.gdf-consent .box.checked {
+  border: none;
+  background: var(--marca);
+}
+.gdf-consent .text {
+  font-size: 12px;
+  color: var(--tinta-media);
+  line-height: 1.45;
+}
+
+.gdf-btn-primary {
+  width: 100%;
+  border: none;
+  cursor: not-allowed;
+  background: var(--papel-2);
+  color: var(--tinta-tenue);
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: var(--radio-cta);
+  transition: all 0.15s;
+}
+.gdf-btn-primary.enabled {
+  cursor: pointer;
+  background: var(--cta-fondo);
+  /* SOBRE EL ACENTO EL TEXTO VA OSCURO. `--tinta` es claro desde que la app es
+     negra, y encima del amarillo daba 1,22 de contraste: ilegible. */
+  color: var(--sobre-acento);
+  box-shadow: var(--sombra-cta);
+}
+.gdf-btn-primary.enabled:active {
+  transform: scale(0.97);
+}
+.gdf-hint {
+  font-size: 11px;
+  color: var(--tinta-tenue);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ============ SCENE (vista superior compartida entre quiz/result) ============ */
+
+.gdf-scene {
+  position: relative;
+  /* En móvil la escena se queda clavada arriba ocupando ~30% del alto real de
+     la pantalla, para que la casa NUNCA salga de vista mientras se responde
+     (con flex:0 0 auto no se encoge; el que scrollea es el panel de abajo).
+     En escritorio el media query de 900px la sobreescribe con height:100%
+     dentro del grid de dos columnas, así que este valor no aplica allá. */
+  height: clamp(180px, 30vh, 290px);
+  flex: 0 0 auto;
+  /* Necesario para que .gdf-losa pueda medirse contra el ALTO de la escena con
+     unidades cqh. Sin esto no hay forma en CSS de que un ancho dependa del alto
+     del padre, y la planta se salía por abajo. */
+  container-type: size;
+  /* LA ESCENA NO SE OSCURECE, y es la excepcion que la cabecera de este archivo
+     ya declaraba antes de que la app fuera negra. Las piezas del plano van en
+     `mix-blend-mode: multiply`: el blanco del papel deja pasar lo que hay
+     debajo, asi que sobre un fondo oscuro el apartamento entero sale entintado
+     y no se ve NADA. Se comprobo: con la losa en `--papel-2` la escena quedaba
+     en negro sobre negro.
+
+     Se mantiene su gris claro propio, con tokens aparte para que se lea que es
+     deliberado y no un olvido del tema oscuro. */
+  /* LA MESA VA OSCURA Y LA LAMINA VA CLARA. Poner clara la escena entera
+     dejaba media pantalla en blanco pegada a un panel negro, que se lee como
+     "esta mitad se me olvido". Asi el plano queda como lo que es: una lamina
+     iluminada sobre una mesa de trabajo. Y el `multiply` sigue funcionando,
+     porque lo que hay DEBAJO de las piezas es la losa clara, no la mesa. */
+  background: var(--fondo);
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.035) 0 1px,
+      transparent 1px 18px
+    ),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 18px);
+  overflow: hidden;
+}
+.gdf-lote {
+  position: absolute;
+  left: 18px;
+  top: 28px;
+  right: 18px;
+  bottom: 28px;
+  border: 2px dashed #b4bcc4;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gdf-lote span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #a6aeb6;
+  text-transform: uppercase;
+}
+/* La losa YA NO se estira a la caja: toma la forma real del apartamento vía
+   --ratio (lo calcula js/planta.js según el número de alcobas) y se centra.
+   Estirándola, la misma planta salía apaisada en móvil y casi cuadrada en
+   escritorio, y una planta con proporciones reales deformada deja de leerse
+   como un plano. */
+/* La losa es el marco del PLANO REAL: toma su relación de aspecto exacta
+   (--ratio, el del recuadro de contenido de la imagen) y no se estira. Sin
+   esto, el mismo plano se ve apaisado en móvil y cuadrado en escritorio y deja
+   de leerse como un plano. Sin borde ni fondo de madera: la imagen ya trae sus
+   propios muros, y un marco encima destruye la ilusión. */
+.gdf-losa {
+  position: absolute;
+  left: 50%;
+  /* Centrada: al quitar el rótulo ya no hay que reservarle una banda abajo, así
+     que el plano se queda con casi toda la escena. */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: var(--ratio, 1.4);
+  /* Cabe por ancho Y por alto conservando la proporción: manda la más
+     restrictiva de las dos. --wmax es el ancho real del plano en píxeles: no se
+     amplía nunca por encima de 1:1, que se vería borroso. */
+  width: min(calc(100cqw - 26px), calc((100cqh - 26px) * var(--ratio, 1.4)), var(--wmax, 700px));
+  box-sizing: border-box;
+  overflow: hidden;
+  animation: roomIn 0.5s ease-out;
+  /* EL FONDO DE LA LOSA ES EL DE LA ESCENA, heredado. Es lo que hace que el
+     papel blanco del plano desaparezca (ver `.gdf-room`): las piezas van en
+     `multiply`, y como la losa está centrada con `transform` —que crea
+     contexto de apilamiento— la mezcla NO puede llegar hasta la escena, se
+     evalúa contra la losa. Dándole el mismo color, blanco × fondo = fondo, y
+     las esquinas donde el apartamento no llega se funden con la escena en vez
+     de leerse como piezas que faltan. `inherit` además sigue solo los cambios
+     de color de la pregunta del piso.
+     La sombra va como `box-shadow` y NO como `filter`: un filtro aislaría la
+     mezcla y el papel volvería a taparlo todo. */
+  /* Explicito, no `inherit`: la escena de detras es ahora oscura y heredarla
+     dejaba la losa negra — y con ella el plano entero, por el `multiply`. */
+  background-color: var(--losa);
+  border-radius: 4px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  transition: box-shadow 0.5s ease;
+}
+
+/* La silueta: la forma real del apartamento, en gris, desde antes de la primera
+   respuesta. Los huecos teselan exacto y son todos del mismo gris, así que no
+   se ven líneas internas: se lee como una sola mancha con la forma del
+   apartamento (una L, una T, la que sea). */
+.gdf-silueta {
+  position: absolute;
+  inset: 0;
+}
+.gdf-hueco {
+  position: absolute;
+  /* El hueco gris de la silueta vive DENTRO de la escena clara, no sobre el
+     fondo de la app. */
+  background: var(--losa-hueco);
+}
+
+.gdf-room {
+  position: absolute;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  /* Solo entra en juego cuando el plano cambia (al contestar las alcobas): la
+     pieza se desplaza a su sitio en el plano nuevo en vez de saltar. Sin
+     box-shadow aquí — animarla obliga a repintar y en gama baja se nota. */
+  transition: left 0.5s cubic-bezier(0.25, 0.9, 0.3, 1),
+    top 0.5s cubic-bezier(0.25, 0.9, 0.3, 1),
+    width 0.5s cubic-bezier(0.25, 0.9, 0.3, 1),
+    height 0.5s cubic-bezier(0.25, 0.9, 0.3, 1);
+}
+/* La imagen de debajo cambia de golpe; el bajón de opacidad lo convierte en un
+   cruce y hace que el cambio se lea como "el plano se ajusta a lo que pediste"
+   en vez de como un parpadeo. */
+.gdf-room.reacomodo .lienzo {
+  animation: planoCambia 0.5s ease-out both;
+}
+.gdf-losa {
+  transition: width 0.5s cubic-bezier(0.25, 0.9, 0.3, 1);
+}
+/* El trozo de plano que le toca a esta pieza. El lienzo lleva la imagen
+   COMPLETA, dimensionada y desplazada para que por el recorte de la pieza asome
+   exactamente su celda (las fórmulas están en geometriaCeldas, js/planta.js).
+   Cuando están todas, el conjunto es la imagen entera y sin costuras. */
+.gdf-room .lienzo {
+  position: absolute;
+  pointer-events: none;
+}
+/* EL PAPEL BLANCO NO SE VE. El recuadro que se trocea es el rectángulo que
+   encierra al plano, pero casi ningún apartamento es un rectángulo: en las
+   esquinas donde no llega queda papel en blanco, y una vez armado el plano
+   esos blancos se leen como PIEZAS QUE FALTAN. Se probó reducirlos eligiendo
+   mejor los cortes y exigiendo plantas más llenas: se encogen pero nunca
+   desaparecen — pedir "3 alcobas" y "recuadro lleno" a la vez es imposible en
+   este catálogo, porque los de 3 alcobas son todos en L.
+   `multiply` lo resuelve de raíz: el blanco puro deja pasar el fondo tal cual,
+   así que el papel desaparece y queda la silueta real del apartamento; los
+   muebles y los suelos, más oscuros, no se alteran.
+   Va en `.gdf-room` y no en el `.lienzo` para que la mezcla se evalúe contra
+   la escena y no contra la pieza. */
+.gdf-room {
+  mix-blend-mode: multiply;
+}
+/* El hueco gris de debajo se apaga en cuanto su pieza está puesta (lo hace
+   apagarHueco en main.js): si no, la pieza se multiplicaría contra él y el
+   plano entero saldría entintado. */
+.gdf-hueco {
+  transition: opacity 0.25s ease;
+}
+/* La pieza que ya no toca mostrar se la lleva la grúa y deja su hueco a la
+   vista. Borrarla en seco se ve como un parpadeo. */
+.gdf-room.saliendo {
+  animation: roomLift 0.3s ease-in both;
+  pointer-events: none;
+}
+.gdf-room.animated {
+  animation: roomDrop 0.68s cubic-bezier(0.18, 0.89, 0.32, 1.16) both;
+}
+.gdf-room.animated::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 208, 0, 0.55), transparent 68%);
+  animation: roomBurst 0.65s ease-out both;
+  pointer-events: none;
+  z-index: 2;
+}
+.gdf-room.animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 208, 0, 0.95);
+  border-radius: 2px;
+  animation: roomShock 0.55s cubic-bezier(0.15, 0.8, 0.35, 1) both;
+  animation-delay: 0.05s;
+  pointer-events: none;
+  z-index: 3;
+}
+/* ---- AQUI VIVIA LA BOLA -------------------------------------------------
+   Colgaba de una grua fuera de cuadro (pivote en left:45%, top:-14cqh; cable
+   min(70cqh,560px)), entraba desde la izquierda a +78 grados, reventaba el
+   plano a -8 y el impulso la sacaba por arriba a -72. La losa acusaba el golpe
+   con `losaSacude`, cada celda se partia en esquirlas (`roomDemole`) y salia
+   una nube de polvo. Se quito entero a peticion.
+
+   Lo que se QUEDA de aquella maquinaria es el armado: `.gdf-room.esquirla` y
+   `roomEnsambla` siguen aqui porque el plano nuevo llega en pedazos que
+   convergen. Romper y armar compartian el troceado; solo se fue la mitad que
+   rompia. */
+
+/* Los pedazos con los que llega una pieza: viven dentro de `.gdf-cascotes`,
+   que lleva `isolation:isolate` + `multiply`. La mezcla NO puede ir en cada
+   pedazo: donde dos se solapan la banda se multiplicaria dos veces y quedaria
+   una costura oscura dibujando cada corte. */
+.gdf-cascotes {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 6;
+}
+.gdf-room.esquirla {
+  /* La mezcla la pone la bolsa; aquí sobra y además causaría la costura. */
+  mix-blend-mode: normal;
+  /* Nada de transición: es un nodo efímero. */
+  transition: none;
+  will-change: transform, opacity;
+}
+
+/* Los pedazos con los que LLEGA una pieza del plano nuevo: aparecen dispersos
+   y convergen a su sitio. Es el gesto inverso del derribo y usa las mismas
+   variables, pero aqui --dx/--dy/--rot son de PARTIDA, no de llegada. */
+.gdf-room.ensamblando {
+  animation: roomEnsambla 0.7s cubic-bezier(0.2, 0.85, 0.3, 1.05) both;
+}
+
+@keyframes roomEnsambla {
+  0% {
+    opacity: 0;
+    transform: translate(var(--dx, 60px), var(--dy, -60px)) rotate(var(--rot, 20deg)) scale(0.6);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+/* La pregunta del piso cambia lo que se ve alrededor de la losa: a ras de
+   árboles, sobre los techos o entre nubes. No añade piezas al apartamento —
+   inventar arquitectura por una preferencia de piso sería mentir— pero sí hace
+   que contestarla tenga consecuencia visible. */
+.gdf-scene[data-piso] .gdf-losa {
+  transition: box-shadow 0.5s ease;
+}
+/* Los tres fondos de piso eran claros (verde de arboles, gris de techos, azul
+   de nubes). Con la mesa oscura tienen que ser TINTES del fondo, o al elegir
+   piso la escena se volvia blanca otra vez. El quiz ya no pregunta el piso
+   —se manda 4, "sin preferencia"— asi que hoy no se aplican; se dejan
+   coherentes por si vuelve. */
+.gdf-scene[data-piso='bajo'] {
+  background-color: #0b100c;
+}
+.gdf-scene[data-piso='bajo'] .gdf-losa {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+}
+.gdf-scene[data-piso='medio'] {
+  background-color: #0b0d10;
+}
+.gdf-scene[data-piso='medio'] .gdf-losa {
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+.gdf-scene[data-piso='alto'] {
+  background-color: #090d12;
+}
+.gdf-scene[data-piso='alto'] .gdf-losa {
+  box-shadow: 0 28px 46px rgba(0, 0, 0, 0.26);
+}
+
+/* Zonas comunes REALES del proyecto, alrededor de la losa. Las que el usuario
+   pidió salen en amarillo de marca. */
+.gdf-halo {
+  position: absolute;
+  right: 10px;
+  top: 44px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.gdf-halo-chip {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid #cfd6dc;
+  border-radius: 7px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  animation: popIn 0.4s ease-out both;
+}
+.gdf-halo-chip img {
+  width: 13px;
+  height: 13px;
+  opacity: 0.62;
+}
+.gdf-halo-chip.coincide {
+  background: var(--acento);
+  border-color: var(--tinta);
+}
+.gdf-halo-chip.coincide img {
+  opacity: 1;
+}
+.gdf-halo-chip:nth-child(2) { animation-delay: 0.06s; }
+.gdf-halo-chip:nth-child(3) { animation-delay: 0.12s; }
+.gdf-halo-chip:nth-child(4) { animation-delay: 0.18s; }
+.gdf-halo-chip:nth-child(5) { animation-delay: 0.24s; }
+.gdf-halo-chip:nth-child(6) { animation-delay: 0.3s; }
+
+/* ============ QUIZ ============ */
+
+.gdf-quiz {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px 24px;
+  background: var(--papel);
+  overflow-y: auto;
+  /* Mismo motivo que .gdf-hero y .gdf-portada: sin esto el min-height:auto por
+     defecto de un flex item impide que se encoja por debajo de su contenido,
+     así que el overflow-y:auto de arriba NUNCA se activa — el panel crece,
+     empuja el .gdf-shell más allá del viewport y termina scrolleando la PÁGINA
+     entera, arrastrando la escena fuera de vista. Con min-height:0 el scroll
+     ocurre aquí dentro y la casa se queda fija arriba. */
+  min-height: 0;
+}
+
+/* La zona que respira. En móvil no hace de nada —el panel fluye y scrollea
+   como siempre—; en escritorio es la banda central de las tres zonas (ver el
+   media query de 900px). Aquí abajo es, además, lo que agrupa a los hijos que
+   entran escalonados. */
+.gdf-quiz-cuerpo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LA ENTRADA ESCALONADA SUSTITUYE A `screenIn`, NO SE SUMA A ELLA.
+   `.gdf-quiz` lleva también `.gdf-screen`, que anima el panel ENTERO; y como
+   `updateQuizDOM()` lo reemplaza por `outerHTML` en cada respuesta, esa
+   animación volvía a correr con cada pregunta arrastrando consigo la barra de
+   progreso y el "Atrás". Es justo lo que las tres zonas evitan: esos dos son
+   los puntos fijos del panel. Encadenar las dos daba además un movimiento
+   doble —el bloque entrando mientras sus hijos entran— que se leía como un
+   salto. */
+.gdf-quiz.gdf-screen {
+  animation: none;
+}
+@keyframes quizEntra {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.gdf-quiz-cuerpo > .gdf-step-count,
+.gdf-quiz-cuerpo > .gdf-question {
+  animation: quizEntra 0.34s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.gdf-quiz-cuerpo > .gdf-question {
+  animation-delay: 0.04s;
+}
+/* Las opciones caen detrás del enunciado, una tras otra. El escalonado se
+   CORTA en la octava: con las 20 localidades de `zona`, seguir sumando 40 ms
+   dejaría la última entrando casi un segundo después de pulsar, y lo que se
+   siente entonces no es ritmo sino lentitud. */
+/* EL BLOQUE LIBRE ENTRA ENTERO, NO HIJO A HIJO, y no es por estética.
+   Una animación con `fill: both` crea CONTEXTO DE APILAMIENTO en cada elemento
+   que anima. Escalonando los hijos de `.gdf-quiz-freeform`, el desplegable de
+   `entorno_deseado` (`.gdf-multi-opt-list`, `position:absolute; z-index:20`)
+   dejaba de competir con el botón "Continuar" y pasaba a hacerlo solo dentro
+   de su propia caja: el botón, que va después en el DOM, le tapaba la primera
+   fila. Medido con `elementFromPoint` sobre el solape — con la animación
+   ganaba `gdf-btn-primary`, sin ella `gdf-multi-opt`.
+   Animando el contenedor, la lista queda DENTRO de su contexto en vez de al
+   lado, y su z-index vuelve a valer. Además son un input y un botón: no había
+   ritmo que ganar escalonándolos. */
+.gdf-options > *,
+.gdf-quiz-freeform {
+  animation: quizEntra 0.34s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: 0.1s;
+}
+.gdf-options > :nth-child(2) { animation-delay: 0.14s; }
+.gdf-options > :nth-child(3) { animation-delay: 0.18s; }
+.gdf-options > :nth-child(4) { animation-delay: 0.22s; }
+.gdf-options > :nth-child(5) { animation-delay: 0.26s; }
+.gdf-options > :nth-child(6) { animation-delay: 0.3s; }
+.gdf-options > :nth-child(7) { animation-delay: 0.34s; }
+.gdf-options > :nth-child(n + 8) { animation-delay: 0.38s; }
+
+/* Quien pide menos movimiento se queda con la maqueta y sin la animación. */
+@media (prefers-reduced-motion: reduce) {
+  .gdf-quiz-cuerpo > .gdf-step-count,
+  .gdf-quiz-cuerpo > .gdf-question,
+  .gdf-options > *,
+  .gdf-quiz-freeform {
+    animation: none;
+  }
+}
+
+.gdf-compat {
+  margin-bottom: 14px;
+}
+/* La barra no se pinta hasta la 2.a respuesta (ver quizPanel en templates.js),
+   pero su hueco se reserva igual: es uno de los dos puntos fijos del panel, y
+   dejarlo colapsar haria saltar la pregunta entera hacia arriba justo al pasar
+   de la primera a la segunda.
+   11px de texto + 5 de margen + 9 de barra = 25. */
+.gdf-compat-vacia {
+  height: 25px;
+}
+.gdf-compat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--marca);
+  margin-bottom: 5px;
+}
+.gdf-progress-track {
+  height: 9px;
+  background: var(--papel-2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.gdf-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--marca), var(--marca-medio));
+  transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.gdf-progress-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.55) 45%, transparent 60%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+.gdf-step-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+  margin-bottom: 10px;
+}
+.gdf-question h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--tinta);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.gdf-question p {
+  font-size: 13px;
+  color: var(--tinta-suave);
+  margin-top: 6px;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+.gdf-options {
+  display: grid;
+  gap: 8px;
+}
+.gdf-options.cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.gdf-options.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.gdf-options.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.gdf-options.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.gdf-options.cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.gdf-opt-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 2px;
+  cursor: pointer;
+  background: var(--papel-2);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-boton);
+  /* Compactos a propósito: en móvil el alto es el recurso escaso (ver
+     .gdf-scene). 44px es el mínimo táctil recomendado, así que no bajamos de
+     ahí. El ancho se deja completo — angostarlos empeoraría el área táctil, y
+     en escritorio ya está topado por .gdf-quiz > * { max-width: 560px }. */
+  padding: 13px 10px;
+  min-height: 44px;
+  transition: all 0.12s;
+  width: 100%;
+}
+.gdf-opt-btn.has-hint {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px 14px;
+}
+.gdf-opt-btn:hover {
+  border-color: var(--marca);
+  background: var(--marca-tinte);
+}
+.gdf-opt-btn:active {
+  transform: scale(0.97);
+}
+.gdf-opt-btn .label {
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--tinta);
+}
+.gdf-opt-btn .hint {
+  font-size: 11px;
+  color: var(--tinta-suave);
+  font-weight: 600;
+  margin-top: 3px;
+  line-height: 1.35;
+}
+.gdf-back-btn {
+  margin-top: 20px;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--tinta-suave);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Preguntas 'number'/'text'/'multiselect' del quiz (edad exacta, entorno
+   deseado): mismo input/botón que escarapela, sin grilla de opciones. */
+.gdf-quiz-freeform {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Buscador de 'entorno_deseado': el panel de opciones flota pegado al input
+   (position:absolute sobre '.gdf-entorno-combo', que por eso necesita
+   position:relative) y solo se muestra mientras hay texto con coincidencias
+   — no hay "explorar todo" al enfocar vacío, y se cierra al tocar fuera (ver
+   main.js). Debajo, en su propio lugar: chips de lo elegido y Continuar al
+   final. Selección no controlada por DOM directo, ver `entornoSeleccion` en
+   main.js. */
+.gdf-entorno-combo {
+  position: relative;
+}
+.gdf-multi-opt-list {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 6px;
+  background: var(--papel);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-campo);
+  box-shadow: var(--sombra-flotante);
+}
+.gdf-multi-opt-list.abierto {
+  display: flex;
+}
+.gdf-multi-opt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tinta);
+  text-align: left;
+  width: 100%;
+}
+.gdf-multi-opt:hover {
+  background: var(--papel-2);
+}
+.gdf-multi-opt.selected {
+  background: var(--marca-tinte);
+  color: var(--marca);
+  font-weight: 800;
+}
+.gdf-multi-opt.selected::after {
+  content: '✓';
+}
+.gdf-multi-opt.oculto {
+  display: none;
+}
+
+/* ============ PREGUNTA 'zona': BUSCADOR DE BARRIOS + MAPA ============ */
+/* Reutiliza '.gdf-entorno-combo' y '.gdf-multi-opt-list' de arriba; lo de
+   aquí es solo lo propio del mapa y de la sugerencia a dos líneas.
+
+   `.gdf-zona-input-wrap` es la caja que se ve como el buscador —fondo, borde,
+   radio— y adentro va el <input>, que pierde su propio borde y fondo para que
+   los dos lean como una sola pieza.
+
+   UN SOLO BUSCADOR PARA BARRIOS Y LUGARES. Hubo dos pestañas y se quitaron
+   (ver `renderZonaSugerencias` en main.js): las dos clases de resultado bajan
+   ahora de la misma lista, separadas por `.gdf-opt-grupo`.
+
+   LOS CHIPS NO VIVEN DENTRO DEL CAMPO. Al principio las etiquetas iban dentro
+   del propio buscador (el patrón "para:" de un cliente de correo) y
+   `#zonaChips` usaba `display: contents` para que sus `.gdf-entorno-chip`
+   fueran hijos flex directos del envoltorio. En una fila propia ARRIBA dicen
+   mejor lo que son: la respuesta completa, venga de donde venga.
+
+   OJO con el contexto de apilamiento: la animación de entrada va sobre
+   '.gdf-quiz-freeform' y NUNCA sobre sus hijos. Un `animation-fill:both` en
+   un hijo crea contexto y el desplegable (position:absolute, z-index:20)
+   queda por debajo del mapa. Es el mismo error ya documentado arriba. */
+
+/* Sugerencia del buscador: el barrio grande y, debajo, la localidad a la que
+   resuelve. Esa segunda línea es la que evita prometer un filtro por barrio
+   que el modelo no hace — solo indexa por localidad. */
+.gdf-zona-opt {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1px;
+}
+.gdf-zona-opt .b {
+  font-size: 14px;
+  font-weight: 700;
+}
+.gdf-zona-opt .l {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+
+/* La confirmación de lo elegido. Ocupa sitio aunque esté vacía para que el
+   mapa no salte hacia arriba al elegir la primera zona. */
+.gdf-zona-eco {
+  min-height: 34px;
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--tinta-media);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+.gdf-zona-eco .vacio {
+  color: var(--tinta-tenue);
+}
+.gdf-zona-eco strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--marca);
+}
+.gdf-zona-eco .en {
+  color: var(--tinta-tenue);
+}
+.gdf-zona-eco .aviso {
+  flex-basis: 100%;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+/* ---------- EL MAPA REAL, en el lienzo grande ---------- */
+/* Tapa `.gdf-scene` durante la pregunta de ubicación en vez de sustituirla:
+   reconstruir la escena por innerHTML destruiría los `.gdf-room` y entonces
+   cada respuesta rehace el plano entero (ver updateQuizDOM en main.js). Y no
+   hay nada que tapar de todos modos — con cero respuestas no existe ni una
+   pieza pintada. */
+.gdf-mapa-real {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  /* El color de tierra de OpenStreetMap, literal y NO un token: es lo que se
+     ve en los huecos mientras cargan las teselas y en las costuras de subpíxel
+     que deja el zoom fraccionario entre una tesela y la siguiente. Con
+     `var(--fondo)` esas costuras se pintaban negras y cada tesela salía con un
+     recuadro alrededor. Leaflet se monta SOBRE este mismo nodo (ver
+     `montar` en js/mapa.js), así que el fondo del mapa se declara aquí y no en
+     un descendiente `.leaflet-container`, que no existe. */
+  background: #f2efe9;
+}
+
+/* AQUI NO HAY FILTRO SOBRE LAS TESELAS, y es el cambio que hace que el mapa se
+   vea como un mapa. Antes había un `brightness(0.72) saturate(0.75)` para
+   apagar el blanco de OpenStreetMap contra el panel oscuro, y el efecto era
+   justo el que se quería evitar: un mapa gris y sin vida. Se prefiere que las
+   calles, los parques y el agua salgan en sus colores —que además es lo que
+   hace legibles los rótulos de barrios, que es lo que hay que leer para
+   elegir— aunque el recuadro contraste con el resto del panel. */
+
+.gdf-mapa-real.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font: inherit;
+}
+
+/* LAS TESELAS SE SOLAPAN UN PIXEL, como guarda contra las costuras del zoom
+   fraccionario. (El recuadro negro que se veía al arrastrar NO era esto: era
+   el anillo de foco del <path> de la localidad, ver `.leaflet-interactive:focus`
+   más abajo.)
+
+   Con zoom fraccionario (`zoomSnap: 0.25` en js/mapa.js) Leaflet escala la
+   cuadrícula de teselas con un `transform`, y el compositor del navegador
+   —según GPU y escala de pantalla— puede dejar el borde de cada imagen a
+   medio cubrir: una costura de subpíxel entre vecinas. Leaflet 1.9 la
+   "arregla" con `mix-blend-mode: plus-lighter` sobre fondo transparente, que
+   sobre una costura la pinta más oscura en vez de taparla.
+
+   Aquí se resuelve por construcción: cada tesela crece un 0,4 % desde su
+   esquina superior izquierda (~1 px) y pisa a la de la derecha y a la de
+   abajo. Como la imagen continúa exactamente igual en la vecina, el solape es
+   invisible; y ya no hay hueco por el que asomar nada. Va con la propiedad
+   `scale` y NO con `width`: el ancho fraccionario en el <img> obliga a
+   relayout y en Chromium deja un filo claro en cada unión, peor que antes.
+   Con el solape, el blend aditivo sobra —doblaría el brillo de la franja
+   solapada— así que vuelve a `normal`. */
+.gdf-mapa-real img.leaflet-tile {
+  mix-blend-mode: normal;
+  scale: 1.004;
+  transform-origin: 0 0;
+}
+
+/* Los controles y la atribución de Leaflet vienen con su propio blanco. */
+.gdf-mapa-real .leaflet-control-zoom a {
+  background: var(--papel);
+  color: var(--tinta);
+  border-color: var(--borde);
+}
+.gdf-mapa-real .leaflet-control-zoom a:hover {
+  background: var(--papel-2);
+  color: var(--marca);
+}
+.gdf-mapa-real .leaflet-control-attribution {
+  background: rgba(10, 11, 13, 0.72);
+  color: var(--tinta-tenue);
+  font-size: 10px;
+}
+.gdf-mapa-real .leaflet-control-attribution a {
+  color: var(--tinta-suave);
+}
+
+/* Las zonas. El aspecto vive aquí y no en js/mapa.js a propósito: así la
+   paleta sigue saliendo de los tokens que tema.js reescribe por constructora,
+   en vez de quedar congelada en colores dentro del JS.
+
+   EL MAPA EN REPOSO NO LLEVA COLOR DE MARCA. Antes las 20 localidades iban con
+   un lavado coral al 18 %, y el resultado era una ciudad entera teñida de rojo
+   donde lo elegido apenas se distinguía del resto. Ahora el reposo es un gris
+   de la propia paleta y el coral queda reservado para una sola cosa: el barrio
+   que la persona acaba de elegir. */
+/* SIN ANILLO DE FOCO SOBRE LOS POLÍGONOS. Es lo que dibujaba el RECUADRO
+   NEGRO al arrastrar el mapa: el <path> de la localidad que recibe el
+   mousedown queda enfocado, y el navegador pinta su `outline: auto` como el
+   rectángulo envolvente del path —una caja recta del tamaño de Fontibón o
+   Engativá, encima del mapa—. No se pierde nada: los polígonos se manejan con
+   el ratón o el dedo, y lo elegido ya se marca con su propio contorno
+   (`.gdf-zona-poly.sel`). */
+.gdf-mapa-real .leaflet-interactive:focus,
+.gdf-mapa-real .leaflet-interactive:focus-visible {
+  outline: none;
+}
+.gdf-zona-poly {
+  /* El relleno no puede ser `none` ni ir a opacidad 0: Leaflet detecta el clic
+     con `pointer-events: visiblePainted`, que exige que el relleno esté
+     pintado. Un 5 % se ve casi transparente y sigue recibiendo el clic. */
+  fill: var(--tinta);
+  fill-opacity: 0.05;
+  stroke: var(--borde);
+  stroke-opacity: 0.55;
+  cursor: pointer;
+  transition: fill-opacity 0.15s ease;
+}
+/* LA LOCALIDAD NO SE RESALTA AL PASAR EL RATON, y aquí eso significa no
+   escribir la regla. Tenía un `:hover` que la teñía de marca al 18 %, y el
+   problema es el tamaño: Suba son 100 km², así que "señalar dónde está el
+   cursor" encendía media pantalla. Lo que se resalta ahora es el sector que
+   hay debajo —`.gdf-barrio-hover`, unas cuadras— que además es exactamente lo
+   que el clic va a elegir. */
+/* Las seis sin un solo proyecto. Se pueden elegir igual —el modelo expande a
+   las vecinas por su grafo— pero se ven apagadas para que la elección sea
+   informada. El trazo va punteado porque, sobre un mapa a color con mucho
+   detalle propio, la opacidad sola no alcanza para distinguirlas del resto. */
+.gdf-zona-poly.sin-oferta {
+  fill-opacity: 0.02;
+  stroke-opacity: 0.35;
+  stroke-dasharray: 4 4;
+}
+/* La localidad elegida se marca SOLO con el contorno. Ni siquiera un relleno
+   coral al 10 %: una localidad ocupa la pantalla entera en cuanto el mapa se
+   acerca al barrio elegido, y ese 10 % se convierte ahí en la misma pantalla
+   roja que se quiso quitar. El relleno de color es del barrio, que es una
+   mancha pequeña, y de nada más. */
+.gdf-zona-poly.sel {
+  fill-opacity: 0.05;
+  stroke: var(--marca);
+  stroke-opacity: 0.95;
+  stroke-width: 2;
+}
+
+/* EL BARRIO BAJO EL CURSOR. Es el resaltado de hover del mapa, y va sobre el
+   sector, no sobre la localidad (ver arriba). Se distingue del barrio ELEGIDO
+   —`.gdf-barrio-poly`, que va relleno de coral— por ser solo contorno con un
+   velo mínimo: así, cuando el cursor pasa por encima de uno ya elegido, el
+   relleno de la selección se sigue viendo debajo y no parece que se hubiera
+   apagado. Un solo `<path>` reutilizado, ver `mostrarHover` en js/mapa.js. */
+.gdf-barrio-hover {
+  fill: var(--marca);
+  fill-opacity: 0.16;
+  stroke: var(--marca);
+  stroke-opacity: 0.95;
+  pointer-events: none;
+}
+
+/* EL BARRIO ELEGIDO: el único coral del mapa. Lo dibuja js/mapa.js como un
+   L.polygon aparte —uno solo, el elegido— en vez de tener los 1.230 barrios
+   como capa. */
+.gdf-barrio-poly {
+  fill: var(--marca);
+  fill-opacity: 0.55;
+  stroke: var(--sobre-marca);
+  stroke-opacity: 1;
+  /* Leaflet ya apaga los punteros de los paths que no son interactivos; queda
+     explícito porque de esto depende que el siguiente clic dentro del mismo
+     barrio atraviese el resaltado y llegue a la localidad de abajo. */
+  pointer-events: none;
+}
+
+.gdf-zona-tip {
+  background: var(--papel);
+  color: var(--tinta);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+.gdf-zona-tip::before {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gdf-zona-poly {
+    transition: none;
+  }
+}
+.gdf-entorno-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 0;
+}
+.gdf-entorno-chips:empty {
+  display: none;
+}
+.gdf-entorno-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 6px 5px 11px;
+  border-radius: 999px;
+  background: var(--marca-tinte);
+  color: var(--marca);
+  border: 1px solid var(--marca-borde-suave);
+  /* Un nombre de barrio se parte por sus espacios si se le deja: "Suba
+     Rincon" en dos lineas dentro de la misma pastilla se lee como dos chips
+     pegados. La fila de arriba envuelve por chips enteros, no por palabras. */
+  white-space: nowrap;
+}
+.gdf-entorno-chip-x {
+  background: none;
+  border: none;
+  color: var(--marca);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+/* El envoltorio: lleva el aspecto que antes tenía el <input> suelto (mismos
+   valores que `.gdf-input`, para que ningún otro buscador del quiz se vea
+   distinto a este). `flex-wrap` es lo que hace que, al no caber más chips en
+   la fila, se empiece una nueva en vez de desbordar. */
+.gdf-zona-input-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  background: var(--papel-2);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-campo);
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  transition: border-color 0.15s;
+}
+.gdf-zona-input-wrap:focus-within {
+  border-color: var(--marca);
+}
+/* EL ENCABEZADO DE CADA GRUPO del desplegable: "Barrios y localidades" y
+   "Lugares". Es lo que permitió quitar las dos pestañas que había aquí
+   —elegir el modo ANTES de escribir— y dejar un solo campo: las dos clases de
+   resultado bajan juntas y cada una dice lo que es.
+
+   Va como <p> y no como un <button> deshabilitado a propósito: no se pulsa, no
+   recibe foco al tabular y los lectores de pantalla no lo anuncian como una
+   opción más de la lista. */
+.gdf-opt-grupo {
+  margin: 6px 4px 3px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
+}
+/* El primer encabezado no necesita separarse de nada: el borde del panel ya
+   está justo encima. */
+.gdf-opt-grupo:first-child {
+  margin-top: 0;
+}
+/* Los chips, fuera del buscador (ver `zonaPanel` en templates.js).
+   `.gdf-entorno-chips` ya los pinta como fila flex por sí sola — igual que en
+   'entorno_deseado', donde también viven sueltos—, así que aquí solo hace
+   falta separarlos del buscador de abajo. */
+.gdf-zona-chips:not(:empty) {
+  margin-bottom: 12px;
+}
+/* El <input> de adentro pierde el aspecto de `.gdf-input` —fondo, borde,
+   radio, el margen inferior de 14px que dejaba un hueco vacío bajo el
+   envoltorio— porque ese aspecto ya lo lleva `.gdf-zona-input-wrap`. Solo
+   conserva la tipografía. `flex: 1 1 140px` es lo que lo deja crecer para
+   llenar el resto de la fila y encogerse a una línea propia cuando los chips
+   ya ocupan casi todo el ancho. */
+.gdf-zona-input-wrap .gdf-zona-input {
+  flex: 1 1 140px;
+  min-width: 90px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 4px 2px;
+  margin-bottom: 0;
+}
+.gdf-zona-input-wrap .gdf-zona-input:focus {
+  /* El foco lo señala el envoltorio entero (`:focus-within` arriba), no un
+     segundo borde propio del input adentro. */
+  border-color: transparent;
+}
+
+/* ============ RESULT ============ */
+
+.gdf-result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 20px 30px;
+  background: linear-gradient(180deg, var(--acento-tinte-2), var(--papel) 24%);
+  overflow-y: auto;
+  /* Mismo fix que .gdf-quiz: sin min-height:0 el overflow-y de arriba no se
+     activa y scrollea la página en vez del panel, sacando de vista la casa
+     terminada. */
+  min-height: 0;
+}
+.gdf-result-head {
+  text-align: center;
+  animation: floatUp 0.5s ease-out;
+}
+.gdf-result-head .eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--marca);
+}
+.gdf-result-head h2 {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--tinta);
+  margin-top: 4px;
+  line-height: 1.1;
+}
+
+.gdf-lead-badge {
+  margin: 16px 0;
+  border-radius: var(--radio-tarjeta);
+  padding: 16px 18px;
+  text-align: center;
+  animation: popIn 0.5s ease-out;
+}
+.gdf-lead-badge.ready {
+  background: linear-gradient(165deg, var(--marca-tinte), var(--marca-velo));
+  border: 1.5px solid var(--marca-borde);
+}
+.gdf-lead-badge.ready .icon {
+  animation: glowPulse 1.4s ease-in-out infinite;
+}
+.gdf-lead-badge.nurture {
+  background: linear-gradient(165deg, var(--acento-velo), var(--acento-tinte));
+  border: 1.5px solid #ffe36b;
+}
+.gdf-lead-badge.nurture .icon {
+  animation: glowPulse 2.6s ease-in-out infinite;
+}
+.gdf-lead-badge .icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 6px;
+}
+.gdf-lead-badge .title {
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--marca-fuerte);
+}
+.gdf-lead-badge.nurture .title {
+  color: #7a5b00;
+}
+.gdf-lead-badge .subcopy {
+  font-size: 12.5px;
+  color: #4a6b82;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.gdf-lead-badge.nurture .subcopy {
+  color: var(--sobre-acento);
+}
+.gdf-lead-notes {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.gdf-lead-note {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--marca);
+}
+.gdf-lead-badge.nurture .gdf-lead-note {
+  color: var(--sobre-acento);
+}
+
+/* Estado del POST real al backend de leads (fire-and-forget, ver
+   js/leads.js) — una línea discreta, no un bloqueo de la UI. */
+.gdf-lead-submit {
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.gdf-lead-submit.sending {
+  color: var(--tinta-suave);
+}
+.gdf-lead-submit.sent {
+  color: #128c7e;
+}
+.gdf-lead-submit.error {
+  color: #b3541e;
+}
+
+.gdf-chips {
+  margin: 16px 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+}
+.gdf-chip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--marca-tinte);
+  color: var(--marca);
+  border: 1px solid var(--marca-borde-suave);
+}
+.gdf-chip.hi {
+  background: var(--acento-tinte);
+  /* `--sobre-acento` es un naranja OSCURO: existe para ir encima del acento a
+     plena tinta, no encima de su tinte, que en la app negra tambien es oscuro.
+     Aqui daba 2,50 de contraste. */
+  color: var(--acento);
+  border: 1px solid var(--acento);
+}
+.gdf-match-count {
+  text-align: center;
+  font-size: 13px;
+  color: var(--tinta-suave);
+  margin: 6px 0 16px;
+}
+
+/* Al quitarse la casa de esta pantalla sobra ancho: las tarjetas pasan a
+   grid responsivo (1 col en móvil, 2 desde 640px, 3 desde 1100px) en vez de
+   la columna única de antes. auto-fill + minmax evita media queries a mano. */
+.gdf-projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .gdf-projects {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    /* Sin esto, abrir el desplegable de planos de UNA tarjeta estira a la
+       altura de esa fila a las tarjetas vecinas, que quedan con un hueco
+       blanco enorme debajo de su contenido. */
+    align-items: start;
+  }
+}
+.gdf-project-card {
+  background: var(--papel);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-tarjeta);
+  overflow: hidden;
+  box-shadow: var(--sombra-tarjeta);
+  animation: floatUp 0.5s ease-out both;
+  /* La tarjeta no se elige: sus botones de llamar y WhatsApp son lo que se
+     toca. Sin `cursor: pointer` en el contenedor, para no prometer un clic
+     que no hace nada. */
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.gdf-project-card:hover {
+  border-color: var(--marca);
+  transform: translateY(-2px);
+}
+/* MIENTRAS SE SCROLLEA, LA LISTA NO REACCIONA AL RATON. Es el arreglo del
+   "salta todo" al bajar por los resultados: el cursor se queda quieto y las
+   tarjetas pasan por debajo, así que cada una se enciende y se levanta 2px al
+   cruzarlo — seis saltitos por pantalla, cada uno con su transición de 0,15s
+   arrancando a mitad de camino. No es que el scroll vaya lento: es que la
+   lista se mueve sola mientras se mueve.
+
+   `pointer-events: none` sobre las tarjetas mata el `:hover` de raíz (no hay
+   forma en CSS de decir "hover solo si el ratón se movió"). La clase la pone y
+   la quita js/main.js con el propio evento de scroll, así que en cuanto la
+   lista se detiene el hover vuelve. De paso evita el toque accidental a mitad
+   de un scroll con inercia, que en móvil disparaba un botón sin querer. */
+.gdf-result.scrolleando .gdf-project-card {
+  pointer-events: none;
+}
+.gdf-project-card:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.gdf-project-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.gdf-project-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.gdf-project-card:nth-child(4) {
+  animation-delay: 0.28s;
+}
+.gdf-project-card:nth-child(5) {
+  animation-delay: 0.36s;
+}
+.gdf-project-card:nth-child(6) {
+  animation-delay: 0.44s;
+}
+.gdf-project-header {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.gdf-project-header .emoji {
+  font-size: 44px;
+}
+.gdf-project-badge {
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  font-size: 12px;
+  font-weight: 800;
+  background: var(--acento);
+  /* SOBRE EL ACENTO EL TEXTO VA OSCURO. `--tinta` es claro desde que la app es
+     negra, y encima del amarillo daba 1,22 de contraste: el porcentaje —que es
+     el dato que la persona busca primero— era ilegible. */
+  color: var(--sobre-acento);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+.gdf-project-body {
+  padding: 14px 16px 16px;
+}
+.gdf-project-name {
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--tinta);
+}
+/* EL PRECIO ES LO PRINCIPAL DE LA TARJETA, así que va antes que la ubicación
+   y con el peso visual más alto de todo el cuerpo — más grande que el nombre
+   del proyecto. "Desde" se queda chico y gris para no competir con el
+   número, que es lo que la persona busca primero. */
+.gdf-project-precio {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+  margin-top: 8px;
+}
+.gdf-project-precio strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  /* 26px y no 27: el precio dejó de abreviarse a "$240,8M" y ahora se pinta
+     entero ("$240.800.000", ver `pesos()` en js/simulador.js). Son cinco
+     glifos más en una tarjeta cuya columna mide 260px, y los dígitos de un
+     ExtraBold geométrico —Poppins, o Sora en Leadify— son anchos. Con esto el
+     precio más largo del catálogo
+     cabe con aire de sobra y sigue siendo, de lejos, lo más grande del
+     cuerpo — el nombre del proyecto va en 17px. */
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--marca);
+  line-height: 1.15;
+  margin-top: 1px;
+}
+/* El badge de subsidio, aparte del precio y de las etiquetas de abajo: es
+   dinero que el usuario NO tiene que poner, así que tiene que saltar tanto
+   como el precio mismo, no ir mezclado entre habitaciones y baños. Va en
+   verde y con su propio fondo tenue —no el gris de las etiquetas— para que
+   se lea como una señal buena, no como un dato más. */
+.gdf-project-subsidio {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 12px;
+  /* PASTILLA DE ESQUINAS SUAVES, NO REDONDA DEL TODO, y `flex-wrap` con tope
+     de ancho: el monto del subsidio también se pinta entero ("hasta
+     $52.527.150"), así que en la columna estrecha la etiqueta pasa a dos
+     líneas. Con `border-radius: 999px` una pastilla de dos líneas queda con
+     los lados en forma de óvalo y se lee como un globo; con 12px se lee igual
+     de bien con una línea o con dos. */
+  flex-wrap: wrap;
+  max-width: 100%;
+  border-radius: var(--radio-campo);
+  background: rgba(79, 214, 191, 0.14);
+  border: 1px solid rgba(79, 214, 191, 0.4);
+  /* EL VERDE DEPENDE DE LA SUPERFICIE, por eso es un token y no un hex. Sobre
+     la consola negra de las cuatro constructoras tiene que ACLARARSE, y
+     #4fd6bf es ese valor; sobre la superficie clara de Leadify el mismo verde
+     da 2,5 de contraste y hay que oscurecerlo. Lo elige js/tema.js con el
+     resto de la superficie (`--exito`). */
+  color: var(--exito);
+  font-size: 12.5px;
+  font-weight: 800;
+}
+.gdf-project-subsidio .monto {
+  color: var(--tinta-suave);
+  font-weight: 700;
+}
+.gdf-project-loc {
+  font-size: 12px;
+  color: var(--tinta-suave);
+  font-weight: 600;
+  margin-top: 6px;
+}
+/* La direccion exacta, debajo de "localidad · barrio". Va un punto mas tenue
+   y sin negrita: acompana a la linea de arriba, no compite con ella. La
+   sangria la alinea con el texto del pin, no con el emoji. */
+.gdf-project-dir {
+  font-size: 11.5px;
+  color: var(--tinta-tenue);
+  font-weight: 500;
+  margin-top: 2px;
+  padding-left: 18px;
+}
+/* Habitaciones, baños y área: especificaciones, no lo primero que se lee. El
+   precio y el subsidio —lo que decide si el proyecto entra en el presupuesto—
+   ya se dijeron arriba. */
+.gdf-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+}
+.gdf-project-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--papel-2);
+  color: var(--tinta);
+}
+/* Zonas comunes del proyecto, con los íconos reales de la ficha. Las que
+   coinciden con lo que el usuario pidió en la pregunta de entorno viven aquí
+   (siempre visibles en la tarjeta, sin abrir nada); el resto del catálogo va
+   al pliego (`.gdf-detalle-amenidades`, dentro de `.gdf-project-detalle`). */
+.gdf-project-entorno {
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid #eef0f2;
+}
+/* Callout de confirmación, mismo lenguaje visual que .gdf-project-razon: se
+   tiene que leer como "esto sí coincide", no como una lista más. */
+.gdf-project-entorno.destacado {
+  border-top: none;
+  margin-top: 10px;
+  padding: 10px 10px 8px;
+  background: var(--marca-tinte-2);
+  border-left: 3px solid var(--marca);
+  border-radius: 0 8px 8px 0;
+}
+.gdf-entorno-titulo {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--tinta);
+  margin-bottom: 8px;
+}
+.gdf-project-entorno.destacado .gdf-entorno-titulo {
+  color: var(--marca);
+}
+/* El resto del catálogo (sin match), dentro del pliego. */
+.gdf-detalle-amenidades {
+  margin-bottom: 16px;
+}
+.gdf-detalle-amenidades-titulo {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--tinta);
+  margin-bottom: 8px;
+}
+
+.gdf-project-amenities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 6px;
+}
+.gdf-amenity {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 4px 7px;
+  text-align: center;
+  border: 1px solid #eef0f2;
+  border-radius: 9px;
+  background: var(--papel-2);
+}
+/* Coincide con lo que el usuario pidió: se destaca en el azul de marca, con
+   una entrada escalonada (delay por índice, ver amenidadItem() en
+   templates.js) para que se note como una confirmación y no como un grid más. */
+.gdf-amenity.coincide {
+  border-color: var(--marca);
+  background: var(--marca-velo-claro);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gdf-amenity.coincide {
+    animation: gdfAmenityIn 0.35s ease-out backwards;
+  }
+}
+@keyframes gdfAmenityIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Dentro de los límites de la caja a propósito: con desbordamiento negativo la
+   insignia se salía del grid y en la última columna quedaba recortada por el
+   overflow:hidden de la tarjeta. */
+.gdf-amenity-check {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--marca);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gdf-amenity img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  /* LOS ICONOS PROPIOS VIENEN DIBUJADOS PARA FONDO CLARO. Los de Bolivar son
+     gris #4f4640 y los de Colsubsidio linea oscura: sobre la tarjeta negra
+     apenas se veian. `brightness(0) invert(1)` los pasa a silueta clara —
+     conserva el DIBUJO, que es lo que identifica la zona, y es lo unico que
+     funciona igual para los dos juegos sin repintar 45 archivos.
+
+     Los dibujados (js/iconos.js) no pasan por aqui: son SVG en linea y toman
+     el color de la marca con `currentColor`. */
+  filter: brightness(0) invert(1);
+  opacity: 0.78;
+}
+.gdf-amenity.coincide img {
+  opacity: 1;
+}
+.gdf-amenity svg {
+  width: 20px;
+  height: 20px;
+  color: var(--marca);
+  flex: none;
+}
+/* Clase propia y no un `span` a secas: la insignia del check también es un
+   span, y con el selector genérico heredaba el display y el color de la
+   etiqueta — quedaba azul sobre azul, invisible. */
+.gdf-amenity-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--tinta-media);
+  line-height: 1.25;
+  /* Etiquetas como "Parqueadero para visitantes" se desbordaban. */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.gdf-amenity.coincide .gdf-amenity-label {
+  color: var(--marca);
+  font-weight: 700;
+}
+.gdf-amenity-punto {
+  font-size: 18px;
+  color: var(--marca);
+  line-height: 1;
+}
+
+/* Los iconos de zona comun van DIBUJADOS (js/iconos.js), no vienen del
+   catalogo. Son SVG en linea y no <img> a proposito: asi `currentColor` toma
+   el color de la marca que lleve puesta la app, y no hay 26 peticiones de red
+   —ni 26 archivos que mantener— para una reticula que cabe en una tarjeta. */
+.gdf-icono {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: var(--marca);
+  opacity: 0.9;
+}
+.gdf-espacio .gdf-icono { width: 24px; height: 24px; }
+/* La que coincide con lo que la persona pidio se ve a plena tinta: es la
+   diferencia que la tarjeta esta senalando con el check. */
+/* Cuando la marca trae sus propios iconos —siluetas claras— los pocos
+   dibujados que la completan se alinean con ellos: un verde suelto entre
+   seis blancos se lee como un icono roto, no como un acento. */
+.gdf-project-amenities.con-propios .gdf-icono { color: var(--tinta); opacity: 0.78; }
+.gdf-amenity.coincide .gdf-icono { opacity: 1; }
+.gdf-amenity.coincide img { opacity: 1; }
+/* Por qué el proyecto quedó en esa posición: explica el % del badge. */
+.gdf-project-razon {
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--tinta-media);
+  background: var(--marca-tinte-2);
+  border-left: 3px solid var(--marca);
+  border-radius: 0 8px 8px 0;
+  padding: 8px 10px;
+}
+/* Las dos salidas de cada tarjeta: llamar y WhatsApp, lado a lado justo
+   debajo de las especificaciones y desde el primer momento, sin marcar nada
+   antes. Sustituyen al paso de "elegir" la tarjeta y al "Continuar" de la
+   parrilla. Comparten alto y radio para leerse como un par; el de llamar
+   lleva la marca (es el camino principal, dispara a Manuela) y el de WhatsApp
+   el verde propio de WhatsApp, que es como la gente lo reconoce. */
+.gdf-project-acciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.gdf-project-acciones .gdf-project-llamar,
+.gdf-project-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border-radius: var(--radio-campo);
+  font-family: var(--fuente-titulos);
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+.gdf-project-whatsapp {
+  background: #25d366;
+  color: #fff;
+  border: 1.5px solid #25d366;
+  transition: filter 0.15s;
+}
+.gdf-project-whatsapp:hover {
+  filter: brightness(0.94);
+}
+.gdf-project-ficha {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--marca);
+  text-decoration: none;
+}
+.gdf-project-ficha:hover {
+  text-decoration: underline;
+}
+
+/* Recorrido virtual 360°: link real de la ficha (Matterport, Bolívar360...),
+   no algo montado por la app. Va en azul de marca. */
+.gdf-tour360 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1.5px solid #bcd9ee;
+  border-radius: var(--radio-campo);
+  background: var(--marca-tinte-2);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.14s;
+  box-sizing: border-box;
+}
+.gdf-tour360:hover {
+  background: var(--papel-2);
+  border-color: var(--marca);
+}
+.gdf-tour360-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.gdf-tour360-texto {
+  flex: 1;
+  font-family: var(--fuente-titulos);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--marca);
+  line-height: 1.3;
+}
+.gdf-tour360-flecha {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--marca);
+  flex-shrink: 0;
+}
+
+/* ============ ESTADOS DE LA PANTALLA DE SELECCIÓN ============
+   La lista solo se pinta cuando el paso 1 (POST /recomendaciones) terminó
+   bien. Los demás estados —cargando, sin resultados, error— tienen su propio
+   bloque para que nunca se confunda "no hay nada en tu zona" con "el servidor
+   se cayó": el primero no se arregla reintentando. */
+
+.gdf-reco-lento {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--tinta-tenue);
+  margin-bottom: 12px;
+  /* El plan gratuito de Render duerme y la primera llamada tarda ~25s. Este
+     aviso aparece solo si la espera se alarga, para no alarmar de entrada. */
+  opacity: 0;
+  animation: gdfAvisoLento 0.4s ease-out 8s forwards;
+}
+@keyframes gdfAvisoLento {
+  to {
+    opacity: 1;
+  }
+}
+
+.gdf-skeleton-card {
+  background: var(--papel);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-tarjeta);
+  overflow: hidden;
+}
+.gdf-skeleton-header {
+  height: 96px;
+}
+.gdf-skeleton-body {
+  padding: 14px 16px 16px;
+}
+.gdf-skeleton-linea {
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 9px;
+}
+.gdf-skeleton-linea.ancha {
+  width: 72%;
+}
+.gdf-skeleton-linea.media {
+  width: 45%;
+}
+.gdf-skeleton-tags {
+  display: flex;
+  gap: 6px;
+}
+.gdf-skeleton-tags span {
+  height: 20px;
+  width: 52px;
+  border-radius: 999px;
+}
+.gdf-skeleton-header,
+.gdf-skeleton-linea,
+.gdf-skeleton-tags span {
+  background: linear-gradient(90deg, #eef0f2 25%, #e2e5e8 37%, #eef0f2 63%);
+  background-size: 400% 100%;
+  animation: gdfShimmer 1.4s ease-in-out infinite;
+}
+@keyframes gdfShimmer {
+  from {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0 50%;
+  }
+}
+
+.gdf-reco-aviso {
+  text-align: center;
+  background: var(--papel);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-tarjeta);
+  padding: 26px 20px;
+  margin-bottom: 16px;
+  animation: floatUp 0.4s ease-out;
+}
+.gdf-reco-aviso .icono {
+  font-size: 34px;
+  line-height: 1;
+}
+.gdf-reco-aviso h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--tinta);
+  margin: 10px 0 6px;
+}
+.gdf-reco-aviso p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--tinta-media);
+  max-width: 380px;
+  margin: 0 auto;
+}
+.gdf-reco-aviso.error {
+  border-color: var(--acento);
+  background: var(--acento-velo);
+}
+.gdf-reco-aviso .acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.gdf-reco-aviso .acciones button {
+  width: auto;
+  min-width: 190px;
+}
+
+.gdf-btn-secundario {
+  border: 1.5px solid var(--borde);
+  background: var(--papel);
+  color: var(--tinta-media);
+  border-radius: var(--radio-campo);
+  padding: 12px 18px;
+  font-family: var(--fuente-titulos);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.gdf-btn-secundario:hover {
+  border-color: var(--marca);
+  color: var(--marca);
+}
+
+/* Aviso permanente cuando las tarjetas NO vienen del modelo. Que el backend
+   esté caído no puede parecer un resultado del recomendador. */
+.gdf-reco-banner {
+  background: var(--acento-tinte);
+  border: 1px solid var(--acento);
+  color: var(--sobre-acento);
+  border-radius: var(--radio-campo);
+  padding: 10px 13px;
+  font-size: 12px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+
+/* ============ DESPLEGABLE DE PLANOS Y TIPOLOGÍAS ============
+   Vive dentro de la tarjeta de proyecto, que a su vez ES el control de
+   selección. Por eso el <details> lleva data-action="noop" en el HTML: sin
+   eso, abrir los planos marcaría el proyecto sin querer. */
+
+.gdf-project-detalle {
+  margin-top: 12px;
+  border-top: 1px solid #edeff1;
+  /* La tarjeta entera es clickeable (cursor:pointer); acá adentro solo los
+     controles reales deben verse clickeables. */
+  cursor: default;
+}
+.gdf-project-detalle > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 11px 0 2px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--marca);
+  font-size: 12.5px;
+  font-weight: 800;
+}
+.gdf-project-detalle > summary::-webkit-details-marker {
+  display: none;
+}
+.gdf-detalle-chevron {
+  transition: transform 0.18s;
+  font-size: 11px;
+}
+.gdf-project-detalle[open] > summary .gdf-detalle-chevron {
+  transform: rotate(180deg);
+}
+.gdf-detalle-body {
+  padding-top: 10px;
+  animation: floatUp 0.28s ease-out;
+}
+.gdf-detalle-vacio {
+  font-size: 12px;
+  color: var(--tinta-suave);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+/* Pestañas Tipo A / Tipo B. Con hasta 11 tipologías en un proyecto (Nuva Park,
+   que las agrupa por torre), la fila scrollea en horizontal en vez de
+   envolverse y crecer sin control. El envoltorio le pone un degradado al borde
+   derecho para que se vea que hay más pestañas. */
+.gdf-tipo-tabs-wrap {
+  position: relative;
+  margin-bottom: 10px;
+}
+.gdf-tipo-tabs-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 8px;
+  width: 26px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(19, 21, 25, 0), var(--papel) 78%);
+}
+.gdf-tipo-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+.gdf-tipo-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cuando el proyecto tiene una sola tipología no hay nada que elegir: en vez
+   de una pestaña suelta que invita a un clic inútil, se rotula y ya. */
+.gdf-tipo-unica {
+  font-size: 11.5px;
+  font-weight: 800;
+  /* El primario a plena tinta sobre su propio velo se queda en 2,61: se sube
+     un paso de la familia. */
+  color: var(--marca-medio);
+  background: var(--marca-velo-claro);
+  border-radius: 999px;
+  padding: 5px 12px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.gdf-tipo-tab {
+  flex: 0 0 auto;
+  border: 1.5px solid var(--borde);
+  background: var(--papel);
+  color: var(--tinta-media);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-family: var(--fuente-titulos);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.12s;
+}
+.gdf-tipo-tab:hover {
+  border-color: var(--marca);
+  color: var(--marca);
+}
+.gdf-tipo-tab.active {
+  background: var(--marca);
+  border-color: var(--marca);
+  /* Blanco sobre el naranja da 2,5. `--sobre-marca` lo decide tema.js midiendo
+     el contraste de verdad: blanco si la marca es oscura, oscuro si es viva. */
+  color: var(--sobre-marca);
+}
+
+.gdf-tipo-panel {
+  display: none;
+}
+.gdf-tipo-panel.active {
+  display: block;
+}
+
+/* Carrusel de planos: scroll horizontal con snap. Sin JS — en móvil se
+   desliza con el dedo y en escritorio con la barra/trackpad. */
+.gdf-planos {
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-boton);
+  overflow: hidden;
+  background: var(--papel);
+}
+/* La caja existe para colgar las flechas: van `position:absolute` sobre la
+   tira, y la tira no puede ser su contenedor porque se desplaza con ella. */
+.gdf-planos-caja { position: relative; }
+.gdf-planos-strip {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.gdf-plano-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--borde);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--tinta, #33322f);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.gdf-plano-flecha:hover { border-color: var(--marca); color: var(--marca); }
+.gdf-plano-flecha.ant { left: 8px; }
+.gdf-plano-flecha.sig { right: 8px; }
+.gdf-planos-strip::-webkit-scrollbar {
+  display: none;
+}
+.gdf-plano {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: block;
+  text-decoration: none;
+}
+/* Los planos son dibujos de línea sobre blanco: el lienzo va blanco (no gris)
+   para que no se vea un marco sucio alrededor del dibujo. */
+.gdf-plano-lienzo {
+  position: relative;
+  display: block;
+  background: var(--papel);
+  padding: 10px;
+}
+.gdf-plano img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Vienen en proporciones distintas; se acotan para que una lámina muy alta
+     no estire la tarjeta, pero con más aire que antes. */
+  max-height: 300px;
+  object-fit: contain;
+}
+.gdf-plano-num,
+.gdf-plano-zoom {
+  position: absolute;
+  top: 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.gdf-plano-num {
+  left: 10px;
+  /* Va encima de la lamina, que es CLARA. Aqui el texto tiene que ser oscuro
+     aunque la app sea negra: `--tinta-media` es claro y se perdia. */
+  background: rgba(255, 255, 255, 0.94);
+  color: #33322f;
+  border: 1px solid var(--borde);
+}
+.gdf-plano-zoom {
+  right: 10px;
+  background: rgba(51, 50, 47, 0.85);
+  color: #fff;
+}
+.gdf-plano-desc {
+  display: block;
+  padding: 9px 12px 11px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--tinta-media);
+  background: var(--papel-2);
+  border-top: 1px solid #edeff1;
+}
+.gdf-planos-pista {
+  text-align: center;
+  font-size: 10px;
+  color: var(--tinta-tenue);
+  font-weight: 600;
+  padding: 7px 0 8px;
+  background: var(--papel-2);
+  border-top: 1px solid #edeff1;
+}
+
+/* Una sola métrica (el área privada): el área construida ya la dice la
+   pestaña de la tipología y el precio la cabecera de la tarjeta. */
+.gdf-tipo-metricas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+.gdf-tipo-metrica {
+  background: var(--papel-2);
+  border-radius: 10px;
+  padding: 9px 11px;
+}
+.gdf-tipo-metrica span {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+.gdf-tipo-metrica strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--tinta);
+  margin-top: 2px;
+}
+
+.gdf-tipo-subtitulo {
+  margin-top: 15px;
+  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--tinta);
+}
+.gdf-espacios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 7px;
+}
+.gdf-espacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 5px;
+  padding: 10px 5px 9px;
+  border: 1px solid #edeff1;
+  border-radius: 10px;
+  background: var(--papel-2);
+}
+.gdf-espacio img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  /* Mismo caso que `.gdf-amenity img`: vienen para fondo claro. */
+  filter: brightness(0) invert(1);
+  opacity: 0.78;
+}
+.gdf-espacio span {
+  font-size: 9.5px;
+  line-height: 1.3;
+  color: var(--tinta-media);
+  font-weight: 600;
+  /* Etiquetas como "Zona de ropas independiente" se desbordaban; se acotan a
+     3 líneas y el resto queda con puntos suspensivos. */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.gdf-espacio-punto {
+  font-size: 22px;
+  color: var(--marca);
+  line-height: 1;
+}
+
+/* ============ PAGINACION DE LA SELECCION ============
+   El modelo devuelve 18 proyectos y la pantalla los reparte en tres paginas de
+   seis. Va DEBAJO de la parrilla: miras las seis, cambias de pagina si no te
+   convence ninguna, y la tarjeta que elijas trae sus propios botones de
+   contacto. */
+.gdf-paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+.gdf-pag-btn {
+  background: var(--papel-2);
+  border: 1.5px solid var(--borde);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font: 700 13px/1 var(--fuente-cuerpo);
+  color: var(--tinta);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.gdf-pag-btn:hover:not(:disabled) {
+  border-color: var(--marca);
+  background: var(--marca-tinte);
+}
+/* Deshabilitado y NO oculto: si el boton desaparece en los extremos, los otros
+   dos se recolocan y el usuario persigue un blanco movil entre paginas. */
+.gdf-pag-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.gdf-pag-puntos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gdf-pag-punto {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--papel-2);
+  box-shadow: inset 0 0 0 1.5px var(--borde);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+/* El activo se ALARGA, como los guiones del carrusel de la portada: se
+   distingue por forma y no solo por color, que es lo que lo hace legible sin
+   depender de la vista para el matiz. */
+.gdf-pag-punto.activo {
+  width: 26px;
+  background: var(--marca);
+  box-shadow: none;
+}
+
+/* ============ CONFIRMACIÓN (cierre del flujo) ============ */
+
+/* Mismo degradado de marca que el hero de landing() (ver
+   design/landing-hero-handoff/README.md → Design Tokens): azul Colsubsidio
+   diluyéndose a blanco. Antes esta pantalla usaba un verde que no es de
+   marca; ahora la última pantalla se ve como el resto de la app. */
+.gdf-confirmacion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 20px 34px;
+  background: linear-gradient(180deg, var(--marca-velo-fuerte) 0%, var(--marca-velo) 42%, #fff 85%);
+  overflow-y: auto;
+  min-height: 0;
+}
+.gdf-confirm-hero {
+  text-align: center;
+  padding: 30px 22px 26px;
+  border-radius: var(--radio-panel);
+  animation: floatUp 0.5s ease-out;
+}
+/* Azul Colsubsidio (var(--marca)), no verde: mismo tono que .gdf-lead-badge.ready
+   más abajo en esta misma pantalla, para que ambos bloques de éxito hablen
+   el mismo idioma de color. */
+.gdf-confirm-hero--ok {
+  background: linear-gradient(165deg, var(--marca-tinte), var(--marca-velo));
+  border: 1.5px solid var(--marca-borde);
+}
+.gdf-confirm-hero--cargando {
+  background: linear-gradient(165deg, #f3f5f7, #e9edf1);
+  border: 1.5px solid #dde2e7;
+}
+/* El único bloque que se sale de la paleta de marca a propósito: un error de
+   envío necesita leerse como error (naranja), no como un momento de marca. */
+.gdf-confirm-hero--error {
+  background: linear-gradient(165deg, #fff2ea, #ffe2d0);
+  border: 1.5px solid #ffc7a3;
+}
+.gdf-confirm-icon {
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Círculo con anillo pulsante detrás del check: el detalle que hace que la
+   pantalla se sienta "terminada" y no un simple mensaje de texto. */
+.gdf-confirm-check {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--marca-viva), var(--marca));
+  color: #fff;
+  font-size: 34px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 103, 177, 0.35);
+  animation: popIn 0.5s ease-out;
+}
+.gdf-confirm-check::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 2px solid #5aa8db;
+  animation: confirmRing 1.8s ease-out infinite;
+}
+.gdf-confirm-check.err {
+  background: linear-gradient(145deg, #ff9a52, #e8722a);
+  box-shadow: 0 10px 24px rgba(232, 114, 42, 0.35);
+}
+.gdf-confirm-check.err::before {
+  display: none;
+}
+.gdf-confirm-spinner {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 4px solid #d7dde2;
+  border-top-color: var(--marca);
+  animation: jibSpin 0.8s linear infinite;
+}
+.gdf-confirm-hero h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--marca-fuerte);
+  line-height: 1.2;
+}
+.gdf-confirm-hero--cargando h2 {
+  color: #4a5560;
+}
+.gdf-confirm-hero--error h2 {
+  color: #9a4a1e;
+}
+.gdf-confirm-hero p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #3d6a82;
+}
+.gdf-confirm-hero--cargando p {
+  color: #6a7580;
+}
+.gdf-confirm-hero--error p {
+  color: #8a5230;
+}
+.gdf-confirm-hero p strong {
+  color: inherit;
+}
+.gdf-confirm-retry {
+  margin-top: 16px;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tarjeta del proyecto elegido: foto real si el catálogo local la tiene
+   (mismo criterio que projectCard en la pantalla anterior). */
+.gdf-confirm-proyecto {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--papel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-tarjeta);
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+.gdf-confirm-foto {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  border-radius: var(--radio-campo);
+  background-size: cover;
+  background-position: center;
+}
+.gdf-confirm-proyecto-nombre {
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--tinta);
+}
+.gdf-confirm-proyecto-loc {
+  font-size: 12px;
+  color: var(--tinta-suave);
+  margin-top: 2px;
+}
+.gdf-confirm-proyecto-precio {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--marca);
+  margin-top: 4px;
+}
+
+/* Tarjeta de contacto: nombra el canal real (una llamada) y el número
+   exacto, para que la promesa de "te contactamos" no quede en abstracto. */
+.gdf-confirm-contacto {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: var(--papel);
+  border: 1px solid var(--marca-borde-suave);
+  border-radius: var(--radio-tarjeta);
+  padding: 13px 15px;
+}
+.gdf-confirm-contacto-avatar {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--marca-tinte);
+  border: 1px solid var(--marca-borde-suave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.gdf-confirm-contacto-titulo {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--tinta-media);
+  line-height: 1.4;
+}
+.gdf-confirm-contacto-tel {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--marca);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+/* Estado del POST /api/llamar (ver js/llamada.js): mismos tres estados que
+   la carga de recomendaciones, aplicados a que a Manuela le llegó el lead. */
+.gdf-confirm-llamada {
+  margin-top: 14px;
+  border-radius: var(--radio-boton);
+  padding: 13px 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+}
+.gdf-confirm-llamada small {
+  display: block;
+  font-weight: 500;
+  font-size: 11.5px;
+  color: var(--tinta-suave);
+  margin-top: 3px;
+}
+.gdf-confirm-llamada--cargando {
+  background: var(--papel);
+  border: 1.5px solid var(--borde);
+  color: var(--tinta-media);
+  animation: glowPulse 1.6s ease-in-out infinite;
+}
+.gdf-confirm-llamada--ok {
+  background: var(--marca-tinte);
+  border: 1.5px solid var(--marca-borde);
+  color: var(--marca-fuerte);
+  animation: popIn 0.4s ease-out;
+}
+.gdf-confirm-llamada--error {
+  background: var(--acento-velo);
+  border: 1.5px solid var(--acento);
+  color: var(--sobre-acento);
+}
+.gdf-llamada-reintentar {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.gdf-llamada-reintentar:hover {
+  background: rgba(127, 127, 127, 0.15);
+}
+
+/* Paso 3: resumen post-llamada. Ver resumenLlamadaHtml() en templates.js —
+   el veredicto de DESPUÉS de la llamada real, distinto del gdf-lead-badge
+   (calculado en vivo por qualification.js sobre el quiz, antes de llamar). */
+.gdf-confirm-resumen {
+  margin-top: 14px;
+  border-radius: var(--radio-boton);
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.gdf-confirm-resumen--esperando {
+  background: var(--papel);
+  border: 1.5px dashed var(--borde);
+  color: var(--tinta-media);
+  text-align: center;
+  font-weight: 600;
+  animation: glowPulse 1.8s ease-in-out infinite;
+}
+.gdf-confirm-resumen--agotado {
+  background: var(--papel);
+  border: 1.5px solid var(--borde);
+  color: var(--tinta-media);
+  text-align: center;
+  font-weight: 600;
+}
+.gdf-confirm-resumen--listo {
+  background: var(--papel);
+  border: 1.5px solid var(--marca-borde-suave);
+  animation: popIn 0.4s ease-out;
+}
+.gdf-confirm-resumen-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.gdf-confirm-resumen-cabecera h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--tinta);
+}
+.gdf-confirm-resumen-texto {
+  color: var(--tinta-media);
+}
+.gdf-confirm-resumen-reco {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--marca-tinte);
+  color: var(--tinta);
+}
+.gdf-confirm-resumen-reco strong {
+  color: var(--marca-fuerte);
+}
+.gdf-confirm-resumen-chips {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.gdf-confirm-resumen-chips .gdf-chip {
+  font-size: 11px;
+}
+
+/* Temperatura del lead: colores fijos y universales (semáforo), no de
+   marca — igual que el naranja de error y el verde de éxito de arriba,
+   "caliente" tiene que leerse caliente para cualquier constructora. */
+.gdf-temp-badge {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.gdf-temp--caliente {
+  background: #ffe4dc;
+  color: #b3391f;
+  border: 1.5px solid #ffb8a3;
+}
+.gdf-temp--tibio {
+  background: #fff2d9;
+  color: #8a5a00;
+  border: 1.5px solid #ffd889;
+}
+.gdf-temp--frio {
+  background: #e3edf9;
+  color: #2f5a7a;
+  border: 1.5px solid #b9d3ea;
+}
+
+/* Línea de tiempo "Qué sigue": lo que convierte el mensaje de gracias en un
+   proceso real y verificable, no solo una promesa suelta. */
+.gdf-confirm-pasos {
+  margin-top: 22px;
+}
+.gdf-confirm-pasos h3 {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-bottom: 12px;
+}
+.gdf-paso {
+  position: relative;
+  display: flex;
+  gap: 13px;
+  padding-bottom: 18px;
+}
+.gdf-paso:last-child {
+  padding-bottom: 0;
+}
+/* La línea conecta el CENTRO de un número con el centro del siguiente. */
+.gdf-paso:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 26px;
+  bottom: -2px;
+  width: 2px;
+  background: var(--papel-2);
+}
+.gdf-paso-num {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--marca);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gdf-paso-texto {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2px;
+}
+.gdf-paso-texto b {
+  font-size: 13.5px;
+  color: var(--tinta);
+}
+.gdf-paso-texto span {
+  font-size: 12px;
+  color: var(--tinta-suave);
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
+.gdf-confirm-bloque {
+  margin-top: 22px;
+}
+.gdf-confirm-bloque h3 {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-bottom: 10px;
+}
+
+/* ============ PANEL DE DEPURACIÓN (#debug) ============ */
+/* Solo aparece con #debug en la URL — ver debugPanel() en templates.js. */
+
+.gdf-debug {
+  margin: 14px 0;
+  border: 1.5px dashed #b8bcc0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--papel-2);
+  font-size: 11.5px;
+}
+.gdf-debug-title {
+  font-weight: 800;
+  color: var(--tinta);
+  margin-bottom: 4px;
+}
+.gdf-debug-meta {
+  color: var(--tinta-suave);
+  margin-bottom: 10px;
+}
+.gdf-debug-row {
+  border-top: 1px solid #eef0f2;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+.gdf-debug-head {
+  font-weight: 800;
+  color: var(--marca);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.gdf-debug-head span {
+  color: var(--tinta-suave);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.gdf-debug-row ul {
+  list-style: none;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.gdf-debug-row li {
+  padding: 3px 8px;
+  border-radius: 6px;
+  line-height: 1.35;
+}
+.gdf-debug-row li.pos {
+  background: var(--papel-2);
+  color: #2b5c42;
+}
+.gdf-debug-row li.neg {
+  background: var(--papel-2);
+  color: #8a3025;
+}
+
+.gdf-restart-btn {
+  margin-top: 20px;
+  align-self: center;
+  background: none;
+  border: none;
+  color: var(--marca);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.gdf-disclaimer {
+  font-size: 10.5px;
+  color: #b3b6b9;
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* ============ KEYFRAMES ============ */
+
+/* .gdf-losa se centra con `left:50%; top:50%; transform:translate(-50%,-50%)`.
+   Una animación REEMPLAZA el transform estático mientras corre -no lo
+   compone-, así que sin repetir el translate() en cada paso el escalado
+   perdía el centrado: el primer medio segundo el cuadro del plano se veía
+   pegado hacia una esquina y solo se recentraba al terminar la animación. */
+@keyframes roomIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.78);
+    box-shadow: 0 0 0 7px rgba(255, 208, 0, 0.55);
+  }
+  62% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 208, 0, 0);
+  }
+}
+/* Como si la grúa soltara la pieza desde arriba: cae con un rebote elástico
+   y un leve giro antes de asentarse — más "impacto de construcción" que el
+   simple fundido con escala de antes. */
+@keyframes roomDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-46px) scale(0.72) rotate(-4deg);
+    box-shadow: 0 0 0 9px rgba(255, 208, 0, 0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(4px) scale(1.05) rotate(1.5deg);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+  }
+  72% {
+    transform: translateY(-4px) scale(0.99) rotate(-0.6deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+    box-shadow: 0 0 0 0 rgba(255, 208, 0, 0);
+  }
+}
+/* La planta se arma con bastante movimiento (piezas cayendo, muebles saltando,
+   la losa recomponiéndose al cambiar de proyecto). Para quien pidió menos
+   animación, se queda todo quieto: la planta sigue apareciendo entera y
+   legible, solo que sin el espectáculo. */
+@media (prefers-reduced-motion: reduce) {
+  .gdf-room,
+  .gdf-room.animated,
+  .gdf-room.saliendo,
+  .gdf-room .lienzo,
+  .gdf-room.reacomodo .lienzo,
+  .gdf-losa {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .gdf-room.animated::before,
+  .gdf-room.animated::after {
+    display: none;
+  }
+  /* Las piezas del plano nuevo aparecen puestas, sin armarse desde sus
+     pedazos. El cambio de plano ocurre igual — el armado es solo el gesto. */
+  .gdf-room.ensamblando {
+    animation: none !important;
+  }
+  .gdf-room.esquirla {
+    display: none;
+  }
+}
+
+/* El cruce a la imagen del plano nuevo, cuando el apartamento se ajusta a las
+   alcobas que pidió el usuario. */
+@keyframes planoCambia {
+  0% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Lo contrario de roomDrop: la grúa se lleva la pieza que el apartamento nuevo
+   ya no tiene (pasar de un 3 alcobas a un 2, por ejemplo). */
+@keyframes roomLift {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.92);
+  }
+}
+/* El rótulo cuando cambia el proyecto líder: el texto viejo sale hacia arriba y
+   entra el nuevo. */
+/* El líder no cambió, pero la respuesta sí se registró: un latido del borde
+   para que contestar nunca se sienta como que no pasó nada. */
+/* Onda de choque amarilla que se expande desde el borde del cuarto al
+   aterrizar, como una pequeña explosión de obra. */
+@keyframes roomShock {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+}
+@keyframes jibSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes confirmRing {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes swingCard {
+  0%,
+  100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+@keyframes roomBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heroPop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes heroGlow {
+  0%,
+  100% {
+    transform: scale(0.94);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+/* La casa ENTERA, no pieza a pieza (ver .gdf-hero-illustration .casa). El
+   giro es de 1 grado y pivota en la base: lo justo para que respire. */
+/* Solo para las formas sueltas del fondo (accent-4). */
+@keyframes acentoFlota {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+@keyframes casaFlota {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-1deg);
+  }
+}
+@keyframes heroOrbit1 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(8px, -14px) rotate(20deg);
+  }
+}
+@keyframes heroOrbit2 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10px, -8px) rotate(-16deg);
+  }
+}
+@keyframes heroOrbit3 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(6px, 10px);
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes smokePuff {
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(4px, -26px) scale(1.15);
+    opacity: 0;
+  }
+}
+@keyframes waveFlag {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes heroPulseShadow {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px rgba(255, 208, 0, 0.35);
+  }
+  50% {
+    box-shadow: 0 16px 34px rgba(255, 208, 0, 0.52);
+  }
+}
+
+/* ============ LAYOUT DE PÁGINA COMPLETA (escritorio) ============ */
+/* En móvil el shell sigue apilándose vertical (igual que siempre). En
+   pantallas anchas dejamos de mostrarlo como tarjeta y ocupamos todo el
+   viewport. Las pantallas con escena (quiz/result) pasan a dos columnas:
+   la vista superior de la casa grande a la izquierda y el panel de contenido
+   desplazable a la derecha. Las pantallas sin escena (splash/character/
+   escarapela) centran una columna de ancho cómodo dentro del alto completo.
+   Todo el diseño, colores, componentes y animaciones son los mismos. */
+@media (min-width: 900px) {
+  body {
+    overflow: hidden;
+  }
+  #root {
+    height: 100vh;
+  }
+  .gdf-shell {
+    height: 100vh;
+  }
+
+  /* --- pantallas con escena: dos columnas --- */
+  .gdf-shell:has(.gdf-scene) {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    /* Una sola fila: la cabecera se quito y ocupaba la de arriba. */
+    grid-template-rows: 1fr;
+  }
+  .gdf-shell:has(.gdf-scene) > .gdf-scene {
+    grid-column: 1;
+    grid-row: 1;
+    height: 100%;
+  }
+  .gdf-shell:has(.gdf-scene) > .gdf-quiz,
+  .gdf-shell:has(.gdf-scene) > .gdf-result {
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+    border-left: 1px solid var(--borde);
+  }
+
+  /* --- EMBEBIDA (`?embed=1`): la casa se va a la DERECHA --- */
+  /* Es la maqueta que pide el modal de la landing —se responde a la izquierda
+     y el apartamento se levanta a la derecha—, y va SOLO bajo [data-embed]:
+     las cuatro demos de constructora se abren sueltas y conservan la suya.
+
+     Se invierte también el `grid-template-columns` y no solo las posiciones:
+     la escena necesita la columna ANCHA (la losa se escala contra el ancho de
+     su contenedor, ver el `min()` de .gdf-losa de abajo), así que moverla a la
+     columna estrecha sin cambiar los tamaños encogería el plano. */
+  .gdf-shell[data-embed]:has(.gdf-scene) {
+    grid-template-columns: 1fr 1.3fr;
+  }
+  .gdf-shell[data-embed]:has(.gdf-scene) > .gdf-scene {
+    grid-column: 2;
+  }
+  .gdf-shell[data-embed]:has(.gdf-scene) > .gdf-quiz,
+  .gdf-shell[data-embed]:has(.gdf-scene) > .gdf-result {
+    grid-column: 1;
+    /* El filo cambia de lado con la columna: si no, la línea queda suelta en
+       mitad del panel en vez de separar las dos mitades. */
+    border-left: 0;
+    border-right: 1px solid var(--borde);
+  }
+
+  /* la escena crece con el lote más grande; damos algo más de margen para
+     que el plano no toque los bordes de la columna */
+  .gdf-shell:has(.gdf-scene) > .gdf-scene .gdf-lote {
+    left: 6%;
+    right: 6%;
+    top: 8%;
+    bottom: 8%;
+  }
+  /* La losa NO lleva insets: conserva su --ratio y solo se le da más margen.
+     Ponerle los cuatro lados la volvería a estirar y la planta se vería con
+     otras proporciones que en móvil. */
+  /* Aquí la columna es alta y sobra sitio: el plano se centra. Sigue sin pasar
+     de --wmax (su tamaño real en píxeles) para no verse borroso. */
+  .gdf-shell:has(.gdf-scene) > .gdf-scene .gdf-losa {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(calc(100cqw - 96px), calc((100cqh - 130px) * var(--ratio, 1.4)), var(--wmax, 700px));
+  }
+
+
+  /* aire para el contenido en columnas anchas, sin estirar los controles */
+  .gdf-quiz,
+  .gdf-result,
+  .gdf-confirmacion {
+    padding-left: clamp(24px, 3vw, 56px);
+    padding-right: clamp(24px, 3vw, 56px);
+  }
+  .gdf-quiz > * {
+    width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ============ LAS TRES ZONAS ============
+     Solo en escritorio, y a propósito: el vacío que esto resuelve es el de una
+     COLUMNA alta. La pregunta de habitaciones son tres botones en una fila y
+     dejaba medio panel en negro; la de zona son 20 localidades y no cabe. En
+     móvil el panel es bajo y comparte pantalla con la escena, así que allí
+     centrar sería empeorarlo: sigue fluyendo y scrolleando como siempre.
+
+     Arriba la barra, abajo el "Atrás", y entre las dos lo único que se mueve. */
+  .gdf-quiz {
+    /* Ya no scrollea el panel entero: scrollea el cuerpo. Si esto se queda en
+       `auto`, los dos puntos fijos se van con el scroll. */
+    overflow: hidden;
+    position: relative;
+  }
+  .gdf-quiz > .gdf-compat,
+  .gdf-quiz > .gdf-back-btn {
+    flex: 0 0 auto;
+  }
+  .gdf-quiz-cuerpo {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 18px 0 8px;
+  }
+  /* CENTRADO CON MARGENES AUTO, NO CON `justify-content: center`. En un
+     contenedor flex que scrollea, centrar recorta el PRINCIPIO del contenido
+     y lo deja inalcanzable: con las 20 localidades desaparecerían el
+     enunciado y las primeras filas, sin barra que permita volver a subir. Los
+     `auto` centran cuando sobra sitio y se resuelven a 0 en cuanto falta. */
+  .gdf-quiz-cuerpo > :first-child {
+    margin-top: auto;
+  }
+  .gdf-quiz-cuerpo > :last-child {
+    margin-bottom: auto;
+  }
+  /* El pie se difumina para que con 20 localidades se vea que hay más abajo.
+     Va sobre `.gdf-quiz` y no dentro del cuerpo porque el cuerpo scrollea:
+     puesto dentro, el degradado viajaría con el contenido en vez de quedarse
+     en el filo. Cuando no hay desbordamiento no se ve nada — es `--papel`
+     desvaneciéndose sobre `--papel`. */
+  .gdf-quiz::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 42px;
+    height: 52px;
+    background: linear-gradient(180deg, transparent, var(--papel));
+    pointer-events: none;
+  }
+
+  /* La selección ya NO comparte pantalla con la casa, así que se le da más
+     ancho para que quepan 2–3 tarjetas por fila. El texto se mantiene en una
+     medida legible; solo la grilla y su botón aprovechan el ancho completo. */
+  .gdf-result > * {
+    width: 100%;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gdf-result > .gdf-projects,
+  .gdf-result > .gdf-debug {
+    max-width: 1080px;
+  }
+  .gdf-confirmacion > * {
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- pantallas sin escena: centrar columna cómoda --- */
+  .gdf-escarapela {
+    align-items: center;
+  }
+  .gdf-escarapela > *:not(.gdf-carnet) {
+    width: 100%;
+    max-width: 460px;
+  }
+}
+
+/* ---------- avisos de la tarjeta de proyecto ---------- */
+/* Lo que el modelo señala explícitamente y no se puede pintar como si fuera un
+   dato normal. `datos_no_publicados` dice qué campos NO publica la
+   constructora: un "0 m²" se leería como un dato, y es la ausencia de uno. */
+.gdf-project-tag.no-informado {
+  background: transparent;
+  border: 1px dashed var(--linea, rgba(0, 0, 0, 0.18));
+  color: var(--tinta-suave, #7a7a78);
+  font-style: italic;
+}
+
+.gdf-project-aviso {
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--tinta-suave, #7a7a78);
+  padding-left: 16px;
+  position: relative;
+}
+.gdf-project-aviso::before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--marca, #0067b1);
+}
+
+
+/* ============================================================
+   Leadify MOTION SYSTEM
+   .claude/skills/leadify-motion-system
+   Solo se activa con la marca Leadify: la clase `gdf-con-senal` la pone
+   senal.js al montar, y no monta para las cuatro constructoras revendidas,
+   que conservan su identidad en negro y naranja.
+   ============================================================ */
+
+/* --- Capa 1: Atmosphere (§6) ------------------------------------------
+   Dos gradientes radiales muy suaves sobre el navy. Estáticos: pintarlos en
+   el canvas sería gastar un frame por algo que no se mueve. Los porcentajes
+   y las opacidades son los de la skill. */
+.gdf-senal-atmosfera {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 95, 90, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 70%, rgba(255, 95, 90, 0.07), transparent 30%),
+    var(--fondo);
+}
+
+/* --- Capa 2 y 3: Network + Signal (§6) --- */
+.gdf-senal {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* El contenido va POR ENCIMA de las dos capas. Sin este z-index el shell,
+   que no está posicionado, quedaría por debajo del canvas. */
+.gdf-con-senal #root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Los paneles se vuelven translúcidos para que la red se vea DETRAS del
+   formulario, que es lo que pide §6. No transparentes del todo: el texto
+   necesita un suelo o pierde contraste contra las líneas. */
+.gdf-con-senal .gdf-shell,
+.gdf-con-senal .gdf-escarapela,
+.gdf-con-senal .gdf-quiz,
+.gdf-con-senal .gdf-result,
+.gdf-con-senal .gdf-confirmacion {
+  background: transparent;
+}
+/* SIN VELO SOBRE TODA LA PANTALLA. El primer intento puso un `color-mix` al
+   72 % con blur sobre `.gdf-escarapela` y `.gdf-quiz`, y como esos elementos
+   ocupan la columna entera, la red quedaba tapada: se veía el navy y poco
+   más. La skill quiere lo contrario — el formulario flota SOBRE la señal
+   (§6, §19: "motion surrounds the form"). El contraste lo da el texto, que
+   sobre navy va en `--tinta` casi blanco, no un velo. */
+
+/* LA ESCENA NO SE TOCA, y aquí eso significa literalmente no escribir nada.
+   `.gdf-scene` ya trae `background: var(--fondo)` opaco con su cuadrícula, así
+   que la red no se cuela por detrás y no hace falta ninguna regla.
+   Un primer intento le puso `--losa-fondo` "para taparla" y el resultado fue
+   la MESA entera clara: CLAUDE.md lo dice al revés —"la mesa va oscura y la
+   lámina va clara"— porque las piezas se pintan con `mix-blend-mode: multiply`
+   y necesitan la losa clara, no el fondo. */
+
+/* --- Estado B: Focus (§5) --------------------------------------------
+   El borde toma coral y aparece un glow MUY pequeño. Lo que no puede pasar
+   —y es la regla explícita de la skill— es que el input "salte": por eso el
+   realce va en `box-shadow` y en el color del borde, nunca en `border-width`
+   ni en `padding`, que moverían el layout. */
+.gdf-con-senal .gdf-input {
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+.gdf-con-senal .gdf-input:focus {
+  border-color: var(--marca);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--marca) 18%, transparent);
+}
+
+/* Un campo ya relleno se marca en tenue: es el "check minimalista" de §5-D
+   sin añadir un icono que empuje el texto. `:not(:placeholder-shown)` lo
+   resuelve en CSS puro, sin tocar el JS del formulario. */
+.gdf-con-senal .gdf-input:not(:placeholder-shown):not(:focus) {
+  border-color: color-mix(in srgb, var(--marca) 42%, var(--borde));
+}
+
+/* --- Estado E: Submit — el sweep del CTA (§11) ------------------------
+   Una luz coral cruza el botón al pasar por encima. Va con `transform` sobre
+   un pseudo-elemento, no animando `background-position`, que obliga a
+   repintar el fondo entero en cada frame (§16). */
+.gdf-con-senal .gdf-btn-primary.enabled {
+  position: relative;
+  overflow: hidden;
+}
+.gdf-con-senal .gdf-btn-primary.enabled::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+  transform: translateX(0);
+  pointer-events: none;
+}
+.gdf-con-senal .gdf-btn-primary.enabled:hover::after {
+  animation: ctaSweep 0.75s ease-out;
+}
+@keyframes ctaSweep {
+  from { transform: translateX(0); }
+  to { transform: translateX(360%); }
+}
+
+/* --- Los nodos del progreso (§8) --------------------------------------
+   "El progreso debe representar estado, no simplemente una barra". La barra
+   se queda —es el dato real de encaje con el catálogo— y encima se le pone
+   un pulso coral que la recorre mientras avanza, para que se lea como una
+   señal viajando y no como un relleno. */
+.gdf-con-senal .gdf-progress-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75));
+  border-radius: inherit;
+}
+
+/* --- §15: Reduced motion ---------------------------------------------
+   El movimiento se va; la composición se queda. La red sigue pintada (quieta,
+   ver senal.js) y los colores de foco siguen funcionando, que es feedback y
+   no decoración. */
+@media (prefers-reduced-motion: reduce) {
+  .gdf-con-senal .gdf-btn-primary.enabled:hover::after {
+    animation: none;
+  }
+  .gdf-con-senal .gdf-progress-fill::before {
+    display: none;
+  }
+}
+
+
+/* ============ Leadify: LO QUE NO CABE EN UN TOKEN ============ */
+/* Casi todo el sistema de la landing viaja en variables —fuente, radios,
+   sombras, colores— y lo fija js/tema.js (ver SISTEMA_Leadify). Aquí quedan las
+   decisiones que no son un valor sino una forma de componer, y que por eso no
+   se pueden guardar en un token.
+
+   EL GANCHO ES `data-marca`, QUE PONE tema.js EN EL <html>, y no la clase
+   `.gdf-con-senal` que usa la sección de arriba. Esa clase la pone senal.js al
+   montar el fondo animado: significa "hay señal detrás", no "esta es Leadify".
+   Son lo mismo hoy porque el fondo solo se monta para Leadify, pero apagarlo
+   —o que falle su canvas— se llevaría por delante la tipografía, que no tiene
+   nada que ver. tema.js corre antes que nada y es quien sabe de qué marca se
+   trata; este es su atributo. */
+
+/* EL ANTETÍTULO. Cada sección de la landing abre con una versalita coral
+   interletrada: "Leadify · Demo en vivo", "Pruébalo tú mismo". Aquí el
+   equivalente exacto es el contador de preguntas — lo primero que se lee del
+   panel, y hasta ahora un gris de 11px que no lo parecía. Mismos valores que
+   el `tracking-[0.15em]` de la landing. */
+[data-marca='leadify'] .gdf-step-count {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--marca);
+}
+
+/* SORA ES MÁS ANCHA QUE POPPINS al mismo cuerpo, y en ExtraBold la diferencia
+   se nota. Sin apretar el interletrado, un enunciado que cabía en dos líneas
+   pasa a tres y empuja las opciones fuera de la primera pantalla, que es el
+   recurso escaso del panel (ver .gdf-opt-btn). -0.02em es lo que usa la
+   landing en sus titulares. */
+[data-marca='leadify'] .gdf-question h2,
+[data-marca='leadify'] .gdf-carnet h2 {
+  letter-spacing: -0.02em;
+}
+
+/* EL CTA EN PASTILLA PIDE MÁS ALTO. Con --radio-cta en 999px, los 15px de
+   padding dejaban un botón que se leía como una cápsula apretada; 17px es el
+   `py-4` con el que la landing compone el suyo. */
+[data-marca='leadify'] .gdf-btn-primary {
+  padding: 17px 28px;
+}

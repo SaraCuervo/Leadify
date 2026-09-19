@@ -1,0 +1,23 @@
+{
+  "nombres": "Santiago",
+  "apellidos": "Ramírez Gómez",
+  "correo": "santiago.ejemplo@correo.com",
+  "telefono": 3001234567,
+  "afiliado": 1,
+  "tipo_vivienda": 1,
+  "salario": 2,
+  "personas_a_cargo": 3,
+  "edad": 34,
+  "Localidad": 9,
+  "barrio": "Modelia",
+  "numero_habitaciones": 3,
+  "piso": 4,
+  "zonas_comunes": [
+    "Lobby",
+    "Piscina",
+    "Zona BBQ",
+    "Zona kids",
+    "Gimnasio",
+    "Coworking"
+  ]
+}
