@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: leadify-api
+    runtime: python
+    plan: free
+    branch: version_0.2
+    # El backend vive en backend/. `rootDir` hace que el build y el arranque
+    # ocurran ahí dentro, que es donde `Model` es importable.
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DAPTA_FLOW_WEBHOOK_URL
+        sync: false
+      - key: DAPTA_API_KEY
+        sync: false

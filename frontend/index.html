@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Leadify: responde siete preguntas, mira cómo se arma el plano de tu apartamento y recibe los proyectos de Bogotá que mejor te encajan."
+    />
+    <title>Leadify | Encuentra tu próximo hogar</title>
+    <style>
+      /* AQUI HABIA UNA LANDING Y AHORA SOLO ESTA EL FORMULARIO.
+         Esta copia del repo existe para mostrar la experiencia y nada mas: se
+         fueron `src/` entero (Navbar, Hero, Marquee, Benefits, LiveDemo,
+         Credibility, FlowDiagram, FAQ, Offer, Footer), React, Tailwind y
+         framer-motion. Lo que queda es este cascaron y el bundle de
+         `public/experiencia/`, que NO se toco: es el mismo que servia el modal
+         de la landing, y se sigue sirviendo tal cual.
+
+         Sin la landing, la paleta ya no vive en ningun `@theme` de Tailwind.
+         Los valores quedan anotados aqui porque `js/tema.js` del bundle los
+         duplica a mano (SUPERFICIE_LEADIFY / SISTEMA_LEADIFY) y conviene tener
+         contra que compararlos:
+           coral #ff6259 · navy #2d3b4e · beige #fdf6f0 · emerald #2dd4a7
+           titulares Sora · cuerpo Manrope                                  */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #fdf6f0;
+      }
+      /* El iframe ES la pagina: ocupa el viewport completo y scrollea por
+         dentro. `display: block` le quita la linea base de elemento en linea,
+         que si no deja una franja blanca de unos pixeles abajo. */
+      iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      POR QUE UN IFRAME Y NO EL BUNDLE SERVIDO EN LA RAIZ. La experiencia vive
+      en `public/`, que Vite sirve tal cual, sin pasarlo por el build: es JS
+      vanilla que inyecta los archivos del tenant con `document.write` EN EL
+      PUNTO DEL PARSER, y meterla en el pipeline de Vite —o ponerle `defer`—
+      borra el documento entero. El iframe la deja intacta y de paso mantiene
+      la URL de la demo en `/`.
+
+      `?marca=leadify` NO ES OPCIONAL. El bundle es multi-tenant y sin ese
+      parametro cae en `constructora-bolivar`, que filtra el catalogo a una
+      sola constructora. `leadify` es el tenant neutro: puntua sobre los 96
+      proyectos y salen las cuatro marcas juntas.
+
+      SE NOMBRA `index.html`, no el directorio: `/experiencia/` funciona
+      publicado, pero en `npm run dev` Vite trata una ruta sin extension como
+      navegacion y devuelve ESTE archivo — el iframe cargaria entonces esta
+      misma pagina dentro de si misma, con 200 y sin un solo error.
+
+      Ya no va `embed=1`. Ese parametro hacia dos cosas: saltarse el splash de
+      bienvenida y mover la escena de la casa a la derecha, que era lo que le
+      convenia al modal. Lo primero ya no hace falta —el splash se borro del
+      bundle, la experiencia abre directamente en el formulario (ver `screen`
+      en js/state.js)— y lo segundo nunca se quiso aqui.
+    -->
+    <iframe
+      src="/experiencia/index.html?marca=leadify"
+      title="Leadify · encuentra tu próximo hogar"
+      allow="geolocation"
+    ></iframe>
+  </body>
+</html>

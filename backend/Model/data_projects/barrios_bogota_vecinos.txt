@@ -1,0 +1,4814 @@
+BARRIOS VECINOS (COLINDANTES) - BOGOTA D.C.
+==========================================================================
+
+Calculado con la geometria oficial de la capa de barrios (sector catastral)
+del Distrito Capital - Planeacion / UAECD - IDECA, captura 2018.
+
+METODO:
+- Dos barrios son vecinos si sus poligonos comparten frontera.
+- Tolerancia de 2e-6 grados (~0,2 m) para absorber errores de digitalizacion
+  entre poligonos que deberian tocarse pero quedan con microseparaciones.
+- Solo contacto de linea/area: tocarse en un unico vertice no cuenta.
+
+LECTURA:
+- (L#) despues de un vecino indica que ese barrio esta en OTRA localidad.
+- Los limites de localidad se ven donde aparecen esas marcas.
+
+Total de barrios: 1164  |  Promedio de vecinos: 5.9
+
+
+==========================================================================
+LOCALIDAD 1 - USAQUÉN
+==========================================================================
+
+008510  Acacias Usaquen
+    Vecinos (5): Bosque De Pinos I; Caobos Salazar; Cedro Narvaez; Los
+      Cedros; Los Cedros Oriental
+
+008507  Barrancas
+    Vecinos (5): Barrancas Norte; Bosque De Pinos Iii; Caobos Salazar;
+      Cedro Salazar; La Liberia
+
+008506  Barrancas Norte
+    Vecinos (6): Barrancas; Bosque De Pinos; Bosque De Pinos Iii; La
+      Liberia; La Pradera Norte; San Cristobal Norte
+
+208103  Barrancas Oriental
+    Vecinos (2): Barrancas Oriental Rural; La Cita
+
+108103  Barrancas Oriental Rural
+    Vecinos (13): Barrancas Oriental; Bosque De Pinos; Bosque De Pinos
+      I; Bosque De Pinos Iii; Bosque De Pinos Iii Rural; El Redil; La
+      Cita; La Granja Norte; Paramo; San Cristobal Norte; Santa Cecilia
+      Puente Norte; Santa Teresa; Tibabita Rural I
+
+008404  Bella Suiza
+    Vecinos (8): Ginebra; Ginebra Ii; La Carolina; Lisboa; Paramo; San
+      Gabriel Norte; Santa Barbara Central; Santa Barbara Oriental
+
+008520  Bosque De Pinos
+    Vecinos (6): Barrancas Norte; Barrancas Oriental Rural; Bosque De
+      Pinos Iii; Bosque De Pinos Iii Rural; San Cristobal Norte; Santa
+      Cecilia Puente Norte
+
+008536  Bosque De Pinos I
+    Vecinos (10): Acacias Usaquen; Barrancas Oriental Rural; Bosque De
+      Pinos Iii; Cedritos; Cedro Narvaez; Cedro Salazar; Lisboa; Los
+      Cedros Oriental; Paramo; Segundo Contador
+
+008538  Bosque De Pinos Iii
+    Vecinos (7): Barrancas; Barrancas Norte; Barrancas Oriental Rural;
+      Bosque De Pinos; Bosque De Pinos I; Bosque De Pinos Iii Rural;
+      Cedro Salazar
+
+108113  Bosque De Pinos Iii Rural
+    Vecinos (3): Barrancas Oriental Rural; Bosque De Pinos; Bosque De
+      Pinos Iii
+
+008535  Buenavista
+    Vecinos (4): Horizontes Norte; La Estrellita I; Tibabita; Tibabita
+      Rural
+
+008518  Caobos Salazar
+    Vecinos (8): Acacias Usaquen; Barrancas; Cedro Salazar; Estrella Del
+      Norte; La Liberia; Las Margaritas; Los Cedros; Los Cedros Oriental
+
+008512  Cedritos
+    Vecinos (5): Bosque De Pinos I; Cedro Narvaez; El Contador; Lisboa;
+      Los Cedros
+
+008511  Cedro Narvaez
+    Vecinos (4): Acacias Usaquen; Bosque De Pinos I; Cedritos; Los
+      Cedros
+
+008508  Cedro Salazar
+    Vecinos (5): Barrancas; Bosque De Pinos I; Bosque De Pinos Iii;
+      Caobos Salazar; Los Cedros Oriental
+
+008301  Chico Norte Ii Sector
+    Vecinos (6): Chico Norte Iii Sector; Escuela De Infanteria; Rincon
+      Del Chico; Santa Bibiana; Seminario; Chico Norte (L2)
+
+008315  Chico Norte Iii Sector
+    Vecinos (8): Chico Norte Ii Sector; Rincon Del Chico; Santa Bibiana;
+      Chico Norte (L2); El Chico (L2); Estoril (L12); La Castellana
+      (L12); Polo Club (L12)
+
+008402  Country Club
+    Vecinos (5): El Contador; La Calleja; La Carolina; Lisboa; Los
+      Cedros
+
+008514  El Contador
+    Vecinos (5): Cedritos; Country Club; La Calleja; Lisboa; Los Cedros
+
+008532  El Redil
+    Vecinos (5): Barrancas Oriental Rural; Horizontes Norte; La Granja
+      Norte; San Jose De Usaquen; Tibabita Rural I
+
+008522  El Rocio Norte
+    Vecinos (5): Horizontes Norte; San Antonio Norte; San Jose De
+      Usaquen; Tibabita; Verbenal San Antonio
+
+008526  El Vervenal
+    Vecinos (6): San Antonio Noroccidental; Verbenal San Antonio;
+      Canaima (L11); El Cerezo (L11); Mirandela (L11); Nueva Zelandia
+      (L11)
+
+008409  Escuela De Caballeria I
+    Vecinos (3): Paramo Iii Rural; Santa Ana; Santa Ana Occidental
+
+008419  Escuela De Caballeria Ii
+    Vecinos (3): Escuela De Infanteria; Paramo Iii Rural; Seminario
+
+008410  Escuela De Infanteria
+    Vecinos (7): Chico Norte Ii Sector; Escuela De Caballeria Ii;
+      Molinos Norte; Paramo Iii Rural; Rincon Del Chico; Santa Ana
+      Occidental; Seminario
+
+008519  Estrella Del Norte
+    Vecinos (7): Caobos Salazar; La Liberia; La Pradera Norte; Las
+      Margaritas; Cantagallo (L11); Las Orquideas (L11); Mazuren (L11)
+
+008405  Ginebra
+    Vecinos (4): Bella Suiza; Lisboa; Paramo; Segundo Contador
+
+008425  Ginebra Ii
+    Vecinos (3): Bella Suiza; Paramo; San Gabriel Norte
+
+008533  Horizontes Norte
+    Vecinos (9): Buenavista; El Redil; El Rocio Norte; La Estrellita I;
+      La Estrellita Iii; San Antonio Norte; San Jose De Usaquen;
+      Tibabita; Tibabita Rural I
+
+008401  La Calleja
+    Vecinos (9): Country Club; El Contador; La Carolina; Los Cedros;
+      Santa Barbara Central; Santa Barbara Occidental; Batan (L11);
+      Canodromo (L11); Prado Veraniego (L11)
+
+008403  La Carolina
+    Vecinos (6): Bella Suiza; Country Club; La Calleja; Lisboa; Santa
+      Barbara Central; Santa Barbara Oriental
+
+008504  La Cita
+    Vecinos (4): Barrancas Oriental; Barrancas Oriental Rural; San
+      Cristobal Norte; Santa Teresa
+
+208203  La Estrellita
+    Vecinos (3): La Estrellita I; Mirador Del Norte; Tibabita Rural I
+
+008540  La Estrellita I
+    Vecinos (8): Buenavista; Horizontes Norte; La Estrellita; La
+      Estrellita Iii; Mirador Del Norte; Tibabita I; Tibabita Rural;
+      Tibabita Rural I
+
+008547  La Estrellita Iii
+    Vecinos (2): Horizontes Norte; La Estrellita I
+
+008524  La Granja Norte
+    Vecinos (5): Barrancas Oriental Rural; El Redil; La Pradera Norte;
+      San Jose De Usaquen; Santa Teresa
+
+008517  La Liberia
+    Vecinos (5): Barrancas; Barrancas Norte; Caobos Salazar; Estrella
+      Del Norte; La Pradera Norte
+
+008502  La Pradera Norte
+    Vecinos (10): Barrancas Norte; Estrella Del Norte; La Granja Norte;
+      La Liberia; La Uribe; San Cristobal Norte; San Jose De Usaquen;
+      Santa Teresa; El Toberin (L11); Las Orquideas (L11)
+
+008525  La Uribe
+    Vecinos (6): La Pradera Norte; San Antonio Noroccidental; San Jose
+      De Usaquen; El Toberin (L11); Granada Norte (L11); Villa Del Prado
+      (L11)
+
+008530  Las Margaritas
+    Vecinos (6): Caobos Salazar; Estrella Del Norte; Los Cedros;
+      Cantagallo (L11); Mazuren (L11); Victoria Norte (L11)
+
+008513  Lisboa
+    Vecinos (8): Bella Suiza; Bosque De Pinos I; Cedritos; Country Club;
+      El Contador; Ginebra; La Carolina; Segundo Contador
+
+008515  Los Cedros
+    Vecinos (12): Acacias Usaquen; Caobos Salazar; Cedritos; Cedro
+      Narvaez; Country Club; El Contador; La Calleja; Las Margaritas;
+      Prado Pinzon (L11); Prado Veraniego (L11); San Jose Del Prado
+      (L11); Victoria Norte (L11)
+
+008509  Los Cedros Oriental
+    Vecinos (4): Acacias Usaquen; Bosque De Pinos I; Caobos Salazar;
+      Cedro Salazar
+
+008545  Mirador Del Norte
+    Vecinos (4): La Estrellita; La Estrellita I; Tibabita Rural;
+      Tibabita Rural I
+
+008416  Molinos Norte
+    Vecinos (7): Escuela De Infanteria; Rincon Del Chico; San Patricio;
+      Santa Ana Occidental; Santa Barbara Central; Santa Barbara
+      Occidental; Santa Barbara Oriental
+
+108104  Paramo
+    Vecinos (23): Barrancas Oriental Rural; Bella Suiza; Bosque De Pinos
+      I; Ginebra; Ginebra Ii; Paramo Ii Rural; Paramo Iii Rural; Paramo
+      Rural V; Paramo Urbano I; San Gabriel Norte; San Gabriel Norte Ii;
+      San Isidro Rural Ii; Santa Ana; Segundo Contador; Seminario;
+      Usaquen; Paramo I (L2); Paramo Ii (L2); Paramo Iv (L2); Paramo
+      Urbano (L2); San Isidro Rural (L2); San Luis Altos Del Cabo Rural
+      (L2); San Luis Altos Del Cabo Rural Ii (L2)
+
+108112  Paramo Ii Rural
+    Vecinos (3): Paramo; San Gabriel Norte; Usaquen
+
+108114  Paramo Iii Rural
+    Vecinos (7): Escuela De Caballeria I; Escuela De Caballeria Ii;
+      Escuela De Infanteria; Paramo; Santa Ana; Santa Ana Occidental;
+      Seminario
+
+208127  Paramo Rural V
+    Vecinos (2): Paramo; San Isidro Rural Ii
+
+008420  Paramo Urbano I
+    Vecinos (2): Paramo; San Gabriel Norte
+
+008411  Rincon Del Chico
+    Vecinos (7): Chico Norte Ii Sector; Chico Norte Iii Sector; Escuela
+      De Infanteria; Molinos Norte; San Patricio; Santa Ana Occidental;
+      Santa Bibiana
+
+008528  San Antonio Noroccidental
+    Vecinos (6): El Vervenal; La Uribe; San Jose De Usaquen; Verbenal
+      San Antonio; Nueva Zelandia (L11); Villa Del Prado (L11)
+
+008523  San Antonio Norte
+    Vecinos (3): El Rocio Norte; Horizontes Norte; San Jose De Usaquen
+
+008505  San Cristobal Norte
+    Vecinos (6): Barrancas Norte; Barrancas Oriental Rural; Bosque De
+      Pinos; La Cita; La Pradera Norte; Santa Teresa
+
+008406  San Gabriel Norte
+    Vecinos (8): Bella Suiza; Ginebra Ii; Paramo; Paramo Ii Rural;
+      Paramo Urbano I; San Gabriel Norte Ii; Santa Barbara Oriental;
+      Usaquen
+
+008426  San Gabriel Norte Ii
+    Vecinos (2): Paramo; San Gabriel Norte
+
+208126  San Isidro Rural Ii
+    Vecinos (7): Paramo; Paramo Rural V; La Esperanza (L2); Paramo Ii
+      (L2); San Isidro Rural (L2); San Isidro Rural (L2); San Luis Altos
+      Del Cabo Rural Ii (L2)
+
+008529  San Jose De Usaquen
+    Vecinos (10): El Redil; El Rocio Norte; Horizontes Norte; La Granja
+      Norte; La Pradera Norte; La Uribe; San Antonio Noroccidental; San
+      Antonio Norte; Tibabita; Verbenal San Antonio
+
+008418  San Patricio
+    Vecinos (7): Molinos Norte; Rincon Del Chico; Santa Barbara Central;
+      Santa Barbara Occidental; Santa Bibiana; Estoril (L12); Monaco
+      (L11)
+
+008408  Santa Ana
+    Vecinos (5): Escuela De Caballeria I; Paramo; Paramo Iii Rural;
+      Santa Ana Occidental; Usaquen
+
+008414  Santa Ana Occidental
+    Vecinos (9): Escuela De Caballeria I; Escuela De Infanteria; Molinos
+      Norte; Paramo Iii Rural; Rincon Del Chico; Santa Ana; Santa
+      Barbara Central; Santa Barbara Oriental; Usaquen
+
+008415  Santa Barbara Central
+    Vecinos (8): Bella Suiza; La Calleja; La Carolina; Molinos Norte;
+      San Patricio; Santa Ana Occidental; Santa Barbara Occidental;
+      Santa Barbara Oriental
+
+008417  Santa Barbara Occidental
+    Vecinos (6): La Calleja; Molinos Norte; San Patricio; Santa Barbara
+      Central; Batan (L11); Monaco (L11)
+
+008413  Santa Barbara Oriental
+    Vecinos (7): Bella Suiza; La Carolina; Molinos Norte; San Gabriel
+      Norte; Santa Ana Occidental; Santa Barbara Central; Usaquen
+
+008412  Santa Bibiana
+    Vecinos (5): Chico Norte Ii Sector; Chico Norte Iii Sector; Rincon
+      Del Chico; San Patricio; Estoril (L12)
+
+008543  Santa Cecilia Puente Norte
+    Vecinos (2): Barrancas Oriental Rural; Bosque De Pinos
+
+008503  Santa Teresa
+    Vecinos (5): Barrancas Oriental Rural; La Cita; La Granja Norte; La
+      Pradera Norte; San Cristobal Norte
+
+008424  Segundo Contador
+    Vecinos (4): Bosque De Pinos I; Ginebra; Lisboa; Paramo
+
+008302  Seminario
+    Vecinos (10): Chico Norte Ii Sector; Escuela De Caballeria Ii;
+      Escuela De Infanteria; Paramo; Paramo Iii Rural; Chico Norte (L2);
+      El Bagazal (L2); El Refugio (L2); Paramo I (L2); Paramo I Rural
+      (L2)
+
+008521  Tibabita
+    Vecinos (7): Buenavista; El Rocio Norte; Horizontes Norte; San Jose
+      De Usaquen; Tibabita Rural; Verbenal San Antonio; Canaima (L11)
+
+008542  Tibabita I
+    Vecinos (2): La Estrellita I; Tibabita Rural
+
+108102  Tibabita Rural
+    Vecinos (9): Buenavista; La Estrellita I; Mirador Del Norte;
+      Tibabita; Tibabita I; Torca I; Torca Rural Ii; Canaima (L11);
+      Casablanca Suba Urbano (L11)
+
+108111  Tibabita Rural I
+    Vecinos (6): Barrancas Oriental Rural; El Redil; Horizontes Norte;
+      La Estrellita; La Estrellita I; Mirador Del Norte
+
+008539  Torca I
+    Vecinos (4): Tibabita Rural; Torca Rural I; Torca Rural Ii;
+      Casablanca Suba Urbano (L11)
+
+208128  Torca Ii
+    Vecinos (2): Torca Rural I; Torca Rural Ii
+
+108101  Torca Rural I
+    Vecinos (3): Torca I; Torca Ii; Torca Rural Ii
+
+108110  Torca Rural Ii
+    Vecinos (4): Tibabita Rural; Torca I; Torca Ii; Torca Rural I
+
+008407  Usaquen
+    Vecinos (6): Paramo; Paramo Ii Rural; San Gabriel Norte; Santa Ana;
+      Santa Ana Occidental; Santa Barbara Oriental
+
+008537  Verbenal San Antonio
+    Vecinos (6): El Rocio Norte; El Vervenal; San Antonio Noroccidental;
+      San Jose De Usaquen; Tibabita; Canaima (L11)
+
+==========================================================================
+LOCALIDAD 2 - CHAPINERO
+==========================================================================
+
+008314  Antiguo Country
+    Vecinos (5): El Chico; El Retiro; La Cabrera; Lago Gaitan (L12);
+      Polo Club (L12)
+
+008305  Bellavista
+    Vecinos (8): El Bagazal; El Bagazal; El Nogal; Emaus; Ingemar
+      Oriental I; Las Acacias; Los Rosales; Porciuncula
+
+008207  Bosque Calderon
+    Vecinos (5): Ingemar; La Salle; Marly; Pardo Rubio; Chapinero
+      Central (L13)
+
+008111  Cataluna
+    Vecinos (5): El Paraiso; Marly; Pardo Rubio; Parque Nacional (L3);
+      Sucre (L3)
+
+008307  Chico Norte
+    Vecinos (7): El Chico; El Refugio; Chico Norte Ii Sector (L1); Chico
+      Norte Iii Sector (L1); La Castellana (L12); Polo Club (L12);
+      Seminario (L1)
+
+008319  El Bagazal
+    Vecinos (3): Bellavista; El Bagazal; Los Rosales
+
+101101  El Bagazal
+    Vecinos (13): Bellavista; El Bagazal; El Refugio; El Refugio I; El
+      Refugio Ii; Ingemar Oriental I; Ingemar Oriental Rural; Los
+      Rosales; Paramo I; Paramo I Rural; Paramo Ii; Hoya Teusaca (L3);
+      Seminario (L1)
+
+008308  El Chico
+    Vecinos (7): Antiguo Country; Chico Norte; El Refugio; La Cabrera;
+      Chico Norte Iii Sector (L1); La Castellana (L12); Polo Club (L12)
+
+008311  El Nogal
+    Vecinos (5): Bellavista; El Retiro; Espartillal; Los Rosales;
+      Porciuncula
+
+008110  El Paraiso
+    Vecinos (6): Cataluna; Pardo Rubio; Siberia; Siberia Central; Parque
+      Nacional (L3); Parque Nacional Oriental (L3)
+
+008303  El Refugio
+    Vecinos (9): Chico Norte; El Bagazal; El Chico; El Refugio I; El
+      Refugio Ii; El Retiro; La Cabrera; Los Rosales; Seminario (L1)
+
+201105  El Refugio I
+    Vecinos (2): El Bagazal; El Refugio
+
+201108  El Refugio Ii
+    Vecinos (3): El Bagazal; El Refugio; Los Rosales
+
+008310  El Retiro
+    Vecinos (7): Antiguo Country; El Nogal; El Refugio; Espartillal; La
+      Cabrera; Los Rosales; Lago Gaitan (L12)
+
+008202  Emaus
+    Vecinos (5): Bellavista; Granada; Las Acacias; Porciuncula; Quinta
+      Camacho (L12)
+
+008312  Espartillal
+    Vecinos (4): El Nogal; El Retiro; Porciuncula; Lago Gaitan (L12)
+
+008204  Granada
+    Vecinos (6): Emaus; Juan Xxiii; Las Acacias; Maria Cristina;
+      Chapinero Norte (L12); Quinta Camacho (L12)
+
+008215  Ingemar
+    Vecinos (6): Bosque Calderon; Ingemar I; La Salle; Maria Cristina;
+      Pardo Rubio; Siberia
+
+201109  Ingemar I
+    Vecinos (4): Ingemar; Ingemar Oriental I; Maria Cristina; Siberia
+
+201110  Ingemar Oriental I
+    Vecinos (7): Bellavista; El Bagazal; Ingemar I; Ingemar Oriental
+      Rural; Las Acacias; Maria Cristina; Siberia
+
+101103  Ingemar Oriental Rural
+    Vecinos (4): El Bagazal; Ingemar Oriental I; Siberia; Hoya Teusaca
+      (L3)
+
+008211  Juan Xxiii
+    Vecinos (2): Granada; Maria Cristina
+
+008309  La Cabrera
+    Vecinos (4): Antiguo Country; El Chico; El Refugio; El Retiro
+
+208107  La Esperanza
+    Vecinos (4): Paramo I; Paramo Ii; San Luis Altos Del Cabo Rural Ii;
+      San Isidro Rural Ii (L1)
+
+008206  La Salle
+    Vecinos (5): Bosque Calderon; Ingemar; Maria Cristina; Chapinero
+      Central (L13); Chapinero Norte (L12)
+
+008203  Las Acacias
+    Vecinos (5): Bellavista; Emaus; Granada; Ingemar Oriental I; Maria
+      Cristina
+
+008304  Los Rosales
+    Vecinos (7): Bellavista; El Bagazal; El Bagazal; El Nogal; El
+      Refugio; El Refugio Ii; El Retiro
+
+008205  Maria Cristina
+    Vecinos (9): Granada; Ingemar; Ingemar I; Ingemar Oriental I; Juan
+      Xxiii; La Salle; Las Acacias; Chapinero Central (L13); Chapinero
+      Norte (L12)
+
+008212  Marly
+    Vecinos (8): Bosque Calderon; Cataluna; Pardo Rubio; Chapinero
+      Central (L13); Palermo (L13); Quesada (L13); Santa Teresita (L13);
+      Sucre (L3)
+
+108109  Paramo I
+    Vecinos (7): El Bagazal; La Esperanza; Paramo I Rural; Paramo Ii;
+      San Luis Altos Del Cabo Rural Ii; Paramo (L1); Seminario (L1)
+
+101110  Paramo I Rural
+    Vecinos (3): El Bagazal; Paramo I; Seminario (L1)
+
+108108  Paramo Ii
+    Vecinos (6): El Bagazal; La Esperanza; Paramo I; San Isidro Rural;
+      Paramo (L1); San Isidro Rural Ii (L1)
+
+208101  Paramo Iv
+    Vecinos (2): San Luis Altos Del Cabo Rural Ii; Paramo (L1)
+
+208104  Paramo Urbano
+    Vecinos (1): Paramo (L1)
+
+008208  Pardo Rubio
+    Vecinos (9): Bosque Calderon; Cataluna; El Paraiso; Ingemar; Marly;
+      Siberia; Siberia Central; Chapinero Central (L13); Sucre (L3)
+
+201508  Pardo Rubio I
+    Vecinos (2): Siberia; Siberia Central
+
+008306  Porciuncula
+    Vecinos (8): Bellavista; El Nogal; Emaus; Espartillal; Concepcion
+      Norte (L12); Lago Gaitan (L12); Quinta Camacho (L12); San Felipe
+      (L12)
+
+208108  San Isidro Rural
+    Vecinos (2): Paramo Ii; San Isidro Rural Ii (L1)
+
+208111  San Isidro Rural
+    Vecinos (3): San Luis Altos Del Cabo Rural Ii; Paramo (L1); San
+      Isidro Rural Ii (L1)
+
+208110  San Luis Altos Del Cabo Rural
+    Vecinos (2): San Luis Altos Del Cabo Rural Ii; Paramo (L1)
+
+208125  San Luis Altos Del Cabo Rural Ii
+    Vecinos (7): La Esperanza; Paramo I; Paramo Iv; San Isidro Rural;
+      San Luis Altos Del Cabo Rural; Paramo (L1); San Isidro Rural Ii
+      (L1)
+
+101502  Siberia
+    Vecinos (13): El Paraiso; Ingemar; Ingemar I; Ingemar Oriental I;
+      Ingemar Oriental Rural; Pardo Rubio; Pardo Rubio I; Siberia
+      Central; Siberia Ii; Siberia Rural; Siberia Urbano; Hoya Teusaca
+      (L3); Parque Nacional Oriental (L3)
+
+008220  Siberia Central
+    Vecinos (6): El Paraiso; Pardo Rubio; Pardo Rubio I; Siberia;
+      Siberia Ii; Siberia Rural
+
+201503  Siberia Ii
+    Vecinos (4): Siberia; Siberia Central; Siberia Rural; Siberia Urbano
+
+201502  Siberia Rural
+    Vecinos (4): Siberia; Siberia Central; Siberia Ii; Siberia Urbano
+
+008221  Siberia Urbano
+    Vecinos (3): Siberia; Siberia Ii; Siberia Rural
+
+==========================================================================
+LOCALIDAD 3 - SANTA FE
+==========================================================================
+
+007105  Armenia
+    Vecinos (6): La Alameda; Samper; San Diego; Santa Fe; Teusaquillo;
+      Estrella (L13)
+
+003204  Belen
+    Vecinos (5): Egipto; El Guavio; Lourdes; San Francisco Rural; Santa
+      Barbara
+
+008106  Bosque Izquierdo
+    Vecinos (4): La Macarena; Las Aguas; Parque Nacional Oriental; San
+      Diego
+
+001102  Buenos Aires
+    Vecinos (6): Las Cruces; Ramirez; Vitelma; La Maria (L4); Las Brisas
+      (L4); San Javier (L4)
+
+003106  Centro Administrativo
+    Vecinos (5): Egipto; La Catedral; San Bernardino; Santa Barbara;
+      Santa Ines
+
+004105  Eduardo Santos
+    Vecinos (7): La Estanzuela; La Hortua; San Antonio; San Bernardino;
+      Santa Ines; El Progreso (L14); El Vergel (L15)
+
+003105  Egipto
+    Vecinos (8): Belen; Centro Administrativo; La Catedral; Las Aguas;
+      Parque Nacional Oriental; San Francisco Rural; Santa Barbara; La
+      Concordia (L17)
+
+003209  El Dorado
+    Vecinos (5): El Rocio; Hoya San Cristobal; Parque Nacional Oriental;
+      Ramirez; Vitelma
+
+003205  El Guavio
+    Vecinos (7): Belen; El Rocio; Girardot; La Pena; Los Laches;
+      Lourdes; San Francisco Rural
+
+003208  El Rocio
+    Vecinos (6): El Dorado; El Guavio; Girardot; Los Laches; Parque
+      Nacional Oriental; Ramirez
+
+003211  Girardot
+    Vecinos (5): El Guavio; El Rocio; Las Cruces; Lourdes; Ramirez
+
+101301  Hoya San Cristobal
+    Vecinos (11): El Dorado; Hoya Teusaca; Parque Nacional Oriental;
+      Vitelma; Aguas Claras I (L4); La Maria (L4); Los Laureles Sur
+      Oriental I (L4); Molino Rural (L4); Monte Carlo (L4); San
+      Cristobal Sur (L4); Tibaque (L5)
+
+101201  Hoya Teusaca
+    Vecinos (5): Hoya San Cristobal; Parque Nacional Oriental; El
+      Bagazal (L2); Ingemar Oriental Rural (L2); Siberia (L2)
+
+003101  La Alameda
+    Vecinos (7): Armenia; La Capuchina; La Favorita; Las Nieves; San
+      Diego; Santa Fe; Veracruz
+
+003108  La Capuchina
+    Vecinos (8): La Alameda; La Catedral; La Favorita; Las Nieves; San
+      Victorino; Santa Ines; Veracruz; Voto Nacional
+
+003110  La Catedral
+    Vecinos (7): Centro Administrativo; Egipto; La Capuchina; Las Aguas;
+      Santa Ines; Veracruz; La Concordia (L17)
+
+004104  La Estanzuela
+    Vecinos (6): Eduardo Santos; San Bernardino; Santa Ines; Voto
+      Nacional; El Progreso (L14); La Pepita (L14)
+
+006104  La Favorita
+    Vecinos (5): La Alameda; La Capuchina; San Victorino; Santa Fe; El
+      Liston (L14)
+
+001208  La Hortua
+    Vecinos (6): Eduardo Santos; Modelo Sur; San Antonio; San
+      Bernardino; Policarpa (L15); Sevilla (L15)
+
+008105  La Macarena
+    Vecinos (6): Bosque Izquierdo; La Perseverancia; La Perseverancia I;
+      Parque Nacional Oriental; San Diego; San Martin
+
+007103  La Magdalena
+    Vecinos (5): Sagrado Corazon; Sucre; Teusaquillo; La Soledad (L13);
+      Santa Teresita (L13)
+
+008103  La Merced
+    Vecinos (5): La Perseverancia; Parque Nacional; Sagrado Corazon;
+      Samper; San Martin
+
+003206  La Pena
+    Vecinos (5): El Guavio; La Peña Rural; Los Laches; Parque Nacional
+      Oriental; San Francisco Rural
+
+008104  La Perseverancia
+    Vecinos (5): La Macarena; La Merced; La Perseverancia I; Parque
+      Nacional; San Martin
+
+201408  La Perseverancia I
+    Vecinos (4): La Macarena; La Perseverancia; Parque Nacional; Parque
+      Nacional Oriental
+
+201404  La Peña Rural
+    Vecinos (2): La Pena; Parque Nacional Oriental
+
+003103  Las Aguas
+    Vecinos (9): Bosque Izquierdo; Egipto; La Catedral; Las Nieves;
+      Parque Nacional Oriental; San Diego; Veracruz; La Concordia (L17);
+      Parque Nacional Urbano (L17)
+
+003202  Las Cruces
+    Vecinos (9): Buenos Aires; Girardot; Lourdes; Modelo Sur; Ramirez;
+      San Bernardino; Santa Barbara; Calvo Sur (L4); Las Brisas (L4)
+
+003102  Las Nieves
+    Vecinos (5): La Alameda; La Capuchina; Las Aguas; San Diego;
+      Veracruz
+
+003207  Los Laches
+    Vecinos (4): El Guavio; El Rocio; La Pena; Parque Nacional Oriental
+
+003212  Lourdes
+    Vecinos (5): Belen; El Guavio; Girardot; Las Cruces; Santa Barbara
+
+001209  Modelo Sur
+    Vecinos (7): La Hortua; Las Cruces; San Bernardino; Calvo Sur (L4);
+      Ciudad Berna (L15); Narino Sur (L15); Policarpa (L15)
+
+008102  Parque Nacional
+    Vecinos (8): La Merced; La Perseverancia; La Perseverancia I; Parque
+      Nacional Oriental; Sagrado Corazon; Sucre; Cataluna (L2); El
+      Paraiso (L2)
+
+101405  Parque Nacional Oriental
+    Vecinos (17): Bosque Izquierdo; Egipto; El Dorado; El Rocio; Hoya
+      San Cristobal; Hoya Teusaca; La Macarena; La Pena; La
+      Perseverancia I; La Peña Rural; Las Aguas; Los Laches; Parque
+      Nacional; San Francisco Rural; El Paraiso (L2); Parque Nacional
+      Urbano (L17); Siberia (L2)
+
+003210  Ramirez
+    Vecinos (7): Buenos Aires; El Dorado; El Rocio; Girardot; Las
+      Cruces; Vitelma; Las Brisas (L4)
+
+008101  Sagrado Corazon
+    Vecinos (6): La Magdalena; La Merced; Parque Nacional; Samper;
+      Sucre; Teusaquillo
+
+008108  Samper
+    Vecinos (6): Armenia; La Merced; Sagrado Corazon; San Diego; San
+      Martin; Teusaquillo
+
+002102  San Antonio
+    Vecinos (10): Eduardo Santos; La Hortua; San Bernardino; Caracas
+      (L15); Ciudad Berna (L15); Ciudad Jardin Sur (L18); El Vergel
+      (L15); La Fraguita (L15); Restrepo (L18); Sevilla (L15)
+
+003201  San Bernardino
+    Vecinos (9): Centro Administrativo; Eduardo Santos; La Estanzuela;
+      La Hortua; Las Cruces; Modelo Sur; San Antonio; Santa Barbara;
+      Santa Ines
+
+008107  San Diego
+    Vecinos (9): Armenia; Bosque Izquierdo; La Alameda; La Macarena; Las
+      Aguas; Las Nieves; Samper; San Martin; Santa Fe
+
+003215  San Francisco Rural
+    Vecinos (5): Belen; Egipto; El Guavio; La Pena; Parque Nacional
+      Oriental
+
+008109  San Martin
+    Vecinos (5): La Macarena; La Merced; La Perseverancia; Samper; San
+      Diego
+
+006105  San Victorino
+    Vecinos (4): La Capuchina; La Favorita; Voto Nacional; El Liston
+      (L14)
+
+003203  Santa Barbara
+    Vecinos (6): Belen; Centro Administrativo; Egipto; Las Cruces;
+      Lourdes; San Bernardino
+
+006103  Santa Fe
+    Vecinos (9): Armenia; La Alameda; La Favorita; San Diego; El Liston
+      (L14); Estrella (L13); Florida (L13); Paloquemao (L16); Samper
+      Mendoza (L14)
+
+003107  Santa Ines
+    Vecinos (7): Centro Administrativo; Eduardo Santos; La Capuchina; La
+      Catedral; La Estanzuela; San Bernardino; Voto Nacional
+
+008112  Sucre
+    Vecinos (8): La Magdalena; Parque Nacional; Sagrado Corazon;
+      Cataluna (L2); Marly (L2); Palermo (L13); Pardo Rubio (L2); Santa
+      Teresita (L13)
+
+007104  Teusaquillo
+    Vecinos (7): Armenia; La Magdalena; Sagrado Corazon; Samper;
+      Estrella (L13); La Soledad (L13); Las Americas (L13)
+
+003109  Veracruz
+    Vecinos (5): La Alameda; La Capuchina; La Catedral; Las Aguas; Las
+      Nieves
+
+001103  Vitelma
+    Vecinos (5): Buenos Aires; El Dorado; Hoya San Cristobal; Ramirez;
+      La Maria (L4)
+
+004103  Voto Nacional
+    Vecinos (7): La Capuchina; La Estanzuela; San Victorino; Santa Ines;
+      El Liston (L14); La Pepita (L14); La Sabana (L14)
+
+==========================================================================
+LOCALIDAD 4 - SAN CRISTÓBAL
+==========================================================================
+
+201304  Aguas Claras
+    Vecinos (2): Aguas Claras I; Tibaque (L5)
+
+001119  Aguas Claras I
+    Vecinos (4): Aguas Claras; Los Laureles Sur Oriental I; Hoya San
+      Cristobal (L3); Tibaque (L5)
+
+001315  Altamira
+    Vecinos (9): Altos Del Zuque; Chiguaza Urbano; El Pinar; La Gloria
+      Oriental; Moralba; Nueva Gloria; Puente Colorado; Quindio; San
+      Jose Sur Oriental
+
+001333  Altos Del Poblado
+    Vecinos (3): Bellavista Sur; Bosque De Los Alpes; San Jose Sur
+      Oriental
+
+001342  Altos Del Zipa
+    Vecinos (5): Bosque De Los Alpes; Los Alpes; Moralba; San Jose Sur
+      Oriental; Tibaque (L5)
+
+001331  Altos Del Zuque
+    Vecinos (5): Altamira; Moralba; Puente Colorado; Quindio; Tibaque
+      (L5)
+
+001362  Arboleda Santa Teresita
+    Vecinos (5): Chiguaza Rural; Juan Rey (La Paz); Nueva Delhi; San
+      Rafael Usme; Tibaque (L5)
+
+001305  Atenas
+    Vecinos (7): Bello Horizonte; La Victoria; Las Guacamayas I; San
+      Vicente; Santa Ines Sur; Santa Ines Sur Ii; Villa De Los Alpes
+
+001313  Bellavista Sur
+    Vecinos (6): Altos Del Poblado; Bosque De Los Alpes; La Victoria;
+      Los Alpes; San Jose Sur Oriental; San Vicente
+
+001304  Bello Horizonte
+    Vecinos (6): Atenas; Cordoba; Santa Ines Sur Ii; Suramerica; Villa
+      De Los Alpes; Villa De Los Alpes I
+
+001339  Bosque De Los Alpes
+    Vecinos (5): Altos Del Poblado; Altos Del Zipa; Bellavista Sur; Los
+      Alpes; San Jose Sur Oriental
+
+001210  Calvo Sur
+    Vecinos (5): Las Brisas; San Javier; Las Cruces (L3); Modelo Sur
+      (L3); Narino Sur (L15)
+
+101308  Chiguaza Rural
+    Vecinos (3): Arboleda Santa Teresita; San Rafael Usme; Tibaque (L5)
+
+001358  Chiguaza Urbano
+    Vecinos (6): Altamira; El Pinar; La Arboleda Rural; Las Gaviotas;
+      Quindio; Tibaque (L5)
+
+001346  Ciudad Londres I
+    Vecinos (3): Juan Rey (La Paz); Ciudad Londres Rural (L5); Tibaque
+      (L5)
+
+001303  Cordoba
+    Vecinos (4): Bello Horizonte; Montebello; Santa Ines Sur Ii;
+      Suramerica
+
+001329  El Paraiso
+    Vecinos (4): El Pinar; Nueva Gloria; Santa Rita Sur Oriental; Villa
+      Del Cerro
+
+001324  El Pinar
+    Vecinos (7): Altamira; Chiguaza Urbano; El Paraiso; Las Gaviotas;
+      Los Libertadores; Nueva Gloria; Santa Rita Sur Oriental
+
+201302  El Triangulo
+    Vecinos (7): Las Mercedes; San Blas Ii; San Cristobal Sur; Tibaque
+      I; Tibaque Iii; Tibaque Urbano; Tibaque (L5)
+
+001301  Granada Sur
+    Vecinos (9): Montebello; Primero De Mayo; San Blas; San Cristobal
+      Sur; San Pedro; Suramerica; Velodromo; Sociego (L18); Veinte De
+      Julio (L18)
+
+001325  Juan Rey (La Paz)
+    Vecinos (8): Arboleda Santa Teresita; Ciudad Londres I; Los
+      Libertadores; Nueva Delhi; Ciudad Londres Rural (L5); La Belleza
+      (L5); Tibaque (L5); Yomasa (L5)
+
+101309  La Arboleda Rural
+    Vecinos (3): Chiguaza Urbano; Quindio; Tibaque (L5)
+
+001311  La Gloria Occidental
+    Vecinos (6): La Gloria Oriental; La Victoria; San Jose Sur Oriental;
+      Villa Del Cerro; Canada O Guira (L5); San Martin Sur (L18)
+
+001319  La Gloria Oriental
+    Vecinos (5): Altamira; La Gloria Occidental; Nueva Gloria; San Jose
+      Sur Oriental; Villa Del Cerro
+
+001109  La Maria
+    Vecinos (6): San Cristobal Sur; San Javier; Santa Ana Sur; Buenos
+      Aires (L3); Hoya San Cristobal (L3); Vitelma (L3)
+
+001310  La Victoria
+    Vecinos (7): Atenas; Bellavista Sur; La Gloria Occidental; Las
+      Guacamayas I; San Jose Sur Oriental; San Vicente; San Martin Sur
+      (L18)
+
+001101  Las Brisas
+    Vecinos (6): Calvo Sur; San Javier; Buenos Aires (L3); Las Cruces
+      (L3); Narino Sur (L15); Ramirez (L3)
+
+001334  Las Gaviotas
+    Vecinos (5): Chiguaza Urbano; El Pinar; Los Libertadores; San Rafael
+      Usme; Tibaque (L5)
+
+001355  Las Guacamayas I
+    Vecinos (6): Atenas; La Victoria; Las Guacamayas Ii; Villa De Los
+      Alpes; Las Guacamayas Iii (L18); San Martin Sur (L18)
+
+001352  Las Guacamayas Ii
+    Vecinos (4): Las Guacamayas I; Las Guacamayas Iv; Las Guacamayas Iii
+      (L18); San Martin Sur (L18)
+
+001353  Las Guacamayas Iv
+    Vecinos (3): Las Guacamayas Ii; Las Guacamayas Iii (L18); San Martin
+      Sur (L18)
+
+001107  Las Mercedes
+    Vecinos (4): El Triangulo; San Blas; San Blas Ii; San Cristobal Sur
+
+001312  Los Alpes
+    Vecinos (8): Altos Del Zipa; Bellavista Sur; Bosque De Los Alpes;
+      Ramajal; San Blas Ii; San Vicente; Santa Ines Sur; Tibaque (L5)
+
+001118  Los Laureles Sur Oriental I
+    Vecinos (6): Aguas Claras I; Molino Rural; Molinos De Oriente;
+      Tibaque Iii; Hoya San Cristobal (L3); Tibaque (L5)
+
+001327  Los Libertadores
+    Vecinos (7): El Pinar; Juan Rey (La Paz); Las Gaviotas; Nueva Delhi;
+      San Rafael Usme; Santa Rita Sur Oriental; La Belleza (L5)
+
+101302  Molino Rural
+    Vecinos (4): Los Laureles Sur Oriental I; Molinos De Oriente; Monte
+      Carlo; Hoya San Cristobal (L3)
+
+001104  Molinos De Oriente
+    Vecinos (5): Los Laureles Sur Oriental I; Molino Rural; Monte Carlo;
+      San Cristobal Sur; Tibaque Iii
+
+001115  Monte Carlo
+    Vecinos (4): Molino Rural; Molinos De Oriente; San Cristobal Sur;
+      Hoya San Cristobal (L3)
+
+001302  Montebello
+    Vecinos (5): Cordoba; Granada Sur; San Pedro; Santa Ines Sur Ii;
+      Suramerica
+
+001316  Moralba
+    Vecinos (6): Altamira; Altos Del Zipa; Altos Del Zuque; Puente
+      Colorado; San Jose Sur Oriental; Tibaque (L5)
+
+001323  Nueva Delhi
+    Vecinos (4): Arboleda Santa Teresita; Juan Rey (La Paz); Los
+      Libertadores; San Rafael Usme
+
+001320  Nueva Gloria
+    Vecinos (5): Altamira; El Paraiso; El Pinar; La Gloria Oriental;
+      Villa Del Cerro
+
+001112  Primero De Mayo
+    Vecinos (4): Granada Sur; Velodromo; Sociego (L18); Veinte De Julio
+      (L18)
+
+001317  Puente Colorado
+    Vecinos (3): Altamira; Altos Del Zuque; Moralba
+
+001318  Quindio
+    Vecinos (5): Altamira; Altos Del Zuque; Chiguaza Urbano; La Arboleda
+      Rural; Tibaque (L5)
+
+001206  Quinta Ramos
+    Vecinos (4): Santa Ana Sur; Velodromo; Narino Sur (L15); Sociego
+      (L18)
+
+001307  Ramajal
+    Vecinos (4): Los Alpes; San Blas Ii; San Pedro; Santa Ines Sur
+
+001106  San Blas
+    Vecinos (6): Granada Sur; Las Mercedes; San Blas Ii; San Cristobal
+      Sur; San Pedro; Velodromo
+
+001113  San Blas Ii
+    Vecinos (8): El Triangulo; Las Mercedes; Los Alpes; Ramajal; San
+      Blas; San Pedro; Tibaque I; Tibaque (L5)
+
+001108  San Cristobal Sur
+    Vecinos (12): El Triangulo; Granada Sur; La Maria; Las Mercedes;
+      Molinos De Oriente; Monte Carlo; San Blas; Santa Ana Sur; Tibaque
+      Iii; Tibaque Urbano; Velodromo; Hoya San Cristobal (L3)
+
+001110  San Javier
+    Vecinos (6): Calvo Sur; La Maria; Las Brisas; Santa Ana Sur; Buenos
+      Aires (L3); Narino Sur (L15)
+
+001314  San Jose Sur Oriental
+    Vecinos (9): Altamira; Altos Del Poblado; Altos Del Zipa; Bellavista
+      Sur; Bosque De Los Alpes; La Gloria Occidental; La Gloria
+      Oriental; La Victoria; Moralba
+
+001306  San Pedro
+    Vecinos (7): Granada Sur; Montebello; Ramajal; San Blas; San Blas
+      Ii; Santa Ines Sur; Santa Ines Sur Ii
+
+001322  San Rafael Usme
+    Vecinos (6): Arboleda Santa Teresita; Chiguaza Rural; Las Gaviotas;
+      Los Libertadores; Nueva Delhi; Tibaque (L5)
+
+001309  San Vicente
+    Vecinos (5): Atenas; Bellavista Sur; La Victoria; Los Alpes; Santa
+      Ines Sur
+
+001111  Santa Ana Sur
+    Vecinos (7): La Maria; Quinta Ramos; San Cristobal Sur; San Javier;
+      Velodromo; Narino Sur (L15); Sociego (L18)
+
+001308  Santa Ines Sur
+    Vecinos (6): Atenas; Los Alpes; Ramajal; San Pedro; San Vicente;
+      Santa Ines Sur Ii
+
+001357  Santa Ines Sur Ii
+    Vecinos (6): Atenas; Bello Horizonte; Cordoba; Montebello; San
+      Pedro; Santa Ines Sur
+
+001328  Santa Rita Sur Oriental
+    Vecinos (6): El Paraiso; El Pinar; Los Libertadores; Villa Del
+      Cerro; La Belleza (L5); Villabel (L5)
+
+001407  Suramerica
+    Vecinos (7): Bello Horizonte; Cordoba; Granada Sur; Montebello;
+      Villa De Los Alpes I; San Isidro (L18); Veinte De Julio (L18)
+
+201306  Tibaque I
+    Vecinos (3): El Triangulo; San Blas Ii; Tibaque (L5)
+
+201317  Tibaque Iii
+    Vecinos (6): El Triangulo; Los Laureles Sur Oriental I; Molinos De
+      Oriente; San Cristobal Sur; Tibaque Urbano; Tibaque (L5)
+
+001116  Tibaque Urbano
+    Vecinos (3): El Triangulo; San Cristobal Sur; Tibaque Iii
+
+001114  Velodromo
+    Vecinos (7): Granada Sur; Primero De Mayo; Quinta Ramos; San Blas;
+      San Cristobal Sur; Santa Ana Sur; Sociego (L18)
+
+001408  Villa De Los Alpes
+    Vecinos (5): Atenas; Bello Horizonte; Las Guacamayas I; Villa De Los
+      Alpes I; Las Guacamayas Iii (L18)
+
+001430  Villa De Los Alpes I
+    Vecinos (6): Bello Horizonte; Suramerica; Villa De Los Alpes; Las
+      Guacamayas Iii (L18); Las Lomas (L18); San Isidro (L18)
+
+001356  Villa Del Cerro
+    Vecinos (7): El Paraiso; La Gloria Occidental; La Gloria Oriental;
+      Nueva Gloria; Santa Rita Sur Oriental; Canada O Guira (L5);
+      Villabel (L5)
+
+==========================================================================
+LOCALIDAD 5 - USME
+==========================================================================
+
+002551  Alaska
+    Vecinos (3): El Nevado; Fiscala Alta; La Fiscala
+
+002571  Antonio Jose De Sucre
+    Vecinos (3): La Esperanza De Usme; Usminia; Villa Israel
+
+002512  Area Artilleria
+    Vecinos (8): El Mochuelo Oriental; La Picota; Abraham Lincoln (L6);
+      Central De Mezclas (L19); Meissen (L6); Mexico (L19); Molinos Del
+      Sur (L6); Tunjuelito (L6)
+
+102910  Arrayan
+    Vecinos (4): Curubital; Los Arrayanes; San Benito; El Tabaco (L20)
+
+002601  Arrayanes I
+    Vecinos (5): Arrayanes V; Arrayanes Vi; Canada O Guira; Diana Turbay
+      Arrayanes; Diana Turbay Cultivos (L18)
+
+002625  Arrayanes V
+    Vecinos (11): Arrayanes I; Arrayanes Vi; Canada O Guira; Fiscala
+      Alta; La Belleza; La Fiscala; La Fiscala Norte; Palermo Sur;
+      Villabel; Diana Turbay Cultivos (L18); Los Arrayanes Ii (L18)
+
+002637  Arrayanes Vi
+    Vecinos (3): Arrayanes I; Arrayanes V; Diana Turbay Cultivos (L18)
+
+002525  Barranquillita
+    Vecinos (8): Duitama; El Nevado; El Pedregal; La Aurora; Nuevo San
+      Andres; Porvenir; Santa Librada; Santa Librada Norte
+
+002605  Bolonia
+    Vecinos (6): Bolonia I; Bolonia I; El Curubo; Gran Yomasa; La
+      Esperanza Sur; La Esperanza Sur I
+
+002626  Bolonia I
+    Vecinos (10): Bolonia; Bolonia I; Dona Liliana; El Curubo; El Nevado
+      Ii; Fiscala Alta; Juan Rey Sur; La Cabana; Los Olivares; Yomasa
+
+202203  Bolonia I
+    Vecinos (5): Bolonia; Bolonia I; Dona Liliana; La Esperanza Sur I;
+      Liliana
+
+002591  Brazuelos Occidental
+    Vecinos (4): Brazuelos Occidental Rural; Desarrollo Brazuelos;
+      Desarrollo Brazuelos I; Yomasa Norte
+
+104130  Brazuelos Occidental Rural
+    Vecinos (5): Brazuelos Occidental; Desarrollo Brazuelos; El Mochuelo
+      Alto; Mochuelo Alto Rural; Yomasa Norte
+
+002635  Brisas Del Llano
+    Vecinos (2): El Uval Rural; Puerta Al Llano De Usme
+
+001330  Canada O Guira
+    Vecinos (7): Arrayanes I; Arrayanes V; Diana Turbay Arrayanes;
+      Villabel; La Gloria Occidental (L4); San Martin Sur (L18); Villa
+      Del Cerro (L4)
+
+202601  Centro Usme
+    Vecinos (3): Centro Usme Rural; Centro Usme Urbano; Olarte
+
+102601  Centro Usme Rural
+    Vecinos (4): Centro Usme; Centro Usme Urbano; Mochuelo Alto Rural;
+      Olarte
+
+102602  Centro Usme Rural I
+    Vecinos (2): Centro Usme Urbano; La Requilina
+
+102603  Centro Usme Rural Ii
+    Vecinos (2): Centro Usme Urbano; Olarte
+
+002599  Centro Usme Urbano
+    Vecinos (9): Centro Usme; Centro Usme Rural; Centro Usme Rural I;
+      Centro Usme Rural Ii; La Requilina; La Requilina Rural; La
+      Requilina Rural Ii; Mochuelo Alto Rural; Olarte
+
+002610  Chapinerito
+    Vecinos (7): Charala; Chuniza; El Bosque; La Comuna; La Esperanza
+      Sur; La Reforma; San Felipe De Usme
+
+002611  Charala
+    Vecinos (8): Chapinerito; Chuniza; Comuneros; El Progreso Usme; El
+      Virrey; La Esperanza Sur; La Orquidea De Usme; La Reforma
+
+102116  Chisaca
+    Vecinos (4): La Union; Las Margaritas; El Tabaco (L20); Santa Rosa
+      Alta (L20)
+
+002537  Chuniza
+    Vecinos (6): Chapinerito; Charala; El Virrey; Gran Yomasa; La
+      Esperanza Sur; Monteblanco
+
+102312  Ciudad Londres Rural
+    Vecinos (5): Juan Rey Sur; Tibaque; Yomasa; Ciudad Londres I (L4);
+      Juan Rey (La Paz) (L4)
+
+002543  Comuneros
+    Vecinos (5): Charala; El Virrey; La Esperanza De Usme; La Orquidea
+      De Usme; Serranias I
+
+102911  Curubital
+    Vecinos (2): Arrayan; Los Arrayanes
+
+002519  Danubio
+    Vecinos (5): Danubio Ii; La Fiscala Norte; La Paz; La Picota;
+      Porvenir
+
+002577  Danubio Ii
+    Vecinos (3): Danubio; La Fiscala Norte; La Paz
+
+002592  Desarrollo Brazuelos
+    Vecinos (6): Brazuelos Occidental; Brazuelos Occidental Rural;
+      Desarrollo Brazuelos I; Mochuelo Alto Rural; Usminia; Villa Anita
+
+002556  Desarrollo Brazuelos I
+    Vecinos (8): Brazuelos Occidental; Desarrollo Brazuelos; El Virrey;
+      Monteblanco; Serranias; Serranias I; Usminia; Yomasa Norte
+
+001422  Diana Turbay Arrayanes
+    Vecinos (9): Arrayanes I; Canada O Guira; Cerros De Oriente (L18);
+      Diana Turbay (L18); Diana Turbay Cultivos (L18); La Picota
+      Oriental (L18); Los Arrayanes Ii (L18); San Agustin (L18); San
+      Martin Sur (L18)
+
+001345  Dona Liliana
+    Vecinos (4): Bolonia I; Bolonia I; La Cabana; Liliana
+
+002550  Duitama
+    Vecinos (3): Barranquillita; El Nevado; Porvenir
+
+002609  El Bosque
+    Vecinos (4): Chapinerito; El Bosque Central I; La Esperanza Sur; San
+      Felipe De Usme
+
+102406  El Bosque Central
+    Vecinos (7): El Bosque Central I; La Esperanza Sur I; Liliana; San
+      Felipe De Usme; Tibaque Sur; Tocaimita Oriental; Tocaimita
+      Oriental I
+
+002608  El Bosque Central I
+    Vecinos (5): El Bosque; El Bosque Central; La Esperanza Sur; La
+      Esperanza Sur I; San Felipe De Usme
+
+102310  El Bosque Sur Oriental Rural I
+    Vecinos (5): El Bosque Sur Oriental Rural Ii; El Bosque Sur Oriental
+      Rural Iii; El Porvenir De Los Soches; El Uval Rural; Las Violetas
+      Rural
+
+102309  El Bosque Sur Oriental Rural Ii
+    Vecinos (3): El Bosque Sur Oriental Rural I; El Bosque Sur Oriental
+      Rural Iii; Las Violetas Rural
+
+202309  El Bosque Sur Oriental Rural Iii
+    Vecinos (2): El Bosque Sur Oriental Rural I; El Bosque Sur Oriental
+      Rural Ii
+
+002606  El Curubo
+    Vecinos (5): Bolonia; Bolonia I; Gran Yomasa; La Cabana; Los
+      Olivares
+
+102112  El Hato
+    Vecinos (6): La Union; Las Margaritas; Los Andes; Los Arrayanes; Las
+      Mercedes (L19); Santa Rosa (L19)
+
+002596  El Mochuelo Alto
+    Vecinos (7): Brazuelos Occidental Rural; El Mochuelo Ii Urbano;
+      Mochuelo Alto Rural; Tunjuelito; Yomasa Norte; El Mochuelo Ii
+      (L19); El Mochuelo Iii Urbano (L19)
+
+002598  El Mochuelo Ii Urbano
+    Vecinos (5): El Mochuelo Alto; El Mochuelo Oriental; Tunjuelito; El
+      Mochuelo (L19); El Mochuelo Ii (L19)
+
+002522  El Mochuelo Oriental
+    Vecinos (11): Area Artilleria; El Mochuelo Ii Urbano; Granada Sur;
+      La Aurora; La Picota; Porvenir; Santa Librada; Tunjuelito; Casa De
+      Teja (L19); Central De Mezclas (L19); El Mochuelo (L19)
+
+002631  El Nevado
+    Vecinos (9): Alaska; Barranquillita; Duitama; El Nevado Ii; El
+      Pedregal; El Pedregal Ii; Fiscala Alta; La Fiscala; Porvenir
+
+002629  El Nevado Ii
+    Vecinos (5): Bolonia I; El Nevado; El Pedregal Ii; Fiscala Alta; Los
+      Olivares
+
+002616  El Nuevo Portal
+    Vecinos (6): El Nuevo Portal Ii; El Portal Urbano; El Progreso Usme;
+      Portal Rural Ii; Puerta Al Llano De Usme; Puerta Al Llano Rural
+
+002620  El Nuevo Portal Ii
+    Vecinos (5): El Nuevo Portal; El Portal Urbano; El Refugio I; Portal
+      Rural Ii; Puerta Al Llano De Usme
+
+202506  El Nuevo Portal Ii Rural
+    Vecinos (4): El Portal Del Divino; El Porvenir De Los Soches; El
+      Refugio I; Portal Rural Ii
+
+002563  El Pedregal
+    Vecinos (5): Barranquillita; El Nevado; El Pedregal Ii; Salazar
+      Usme; Santa Librada Norte
+
+002640  El Pedregal Ii
+    Vecinos (6): El Nevado; El Nevado Ii; El Pedregal; Los Olivares;
+      Salazar Usme; Santa Librada Norte
+
+002630  El Portal Del Divino
+    Vecinos (5): El Nuevo Portal Ii Rural; El Porvenir De Los Soches; El
+      Refugio I; El Uval Rural; Puerta Al Llano De Usme
+
+002642  El Portal Urbano
+    Vecinos (3): El Nuevo Portal; El Nuevo Portal Ii; Portal Rural Ii
+
+102110  El Porvenir De Los Soches
+    Vecinos (8): El Bosque Sur Oriental Rural I; El Nuevo Portal Ii
+      Rural; El Portal Del Divino; El Uval Rural; Las Violetas Rural;
+      Los Arrayanes; Portal Rural Ii; Tocaimita Sur
+
+002613  El Progreso Usme
+    Vecinos (7): Charala; El Nuevo Portal; La Comuna; La Orquidea De
+      Usme; La Reforma; Portal Rural Ii; Puerta Al Llano Rural
+
+002617  El Refugio I
+    Vecinos (5): El Nuevo Portal Ii; El Nuevo Portal Ii Rural; El Portal
+      Del Divino; Portal Rural Ii; Puerta Al Llano De Usme
+
+002634  El Tuno
+    Vecinos (2): El Uval Rural; Puerta Al Llano Rural
+
+202502  El Uval
+    Vecinos (3): El Uval Rural; La Huerta; Puerta Al Llano De Usme
+
+102502  El Uval Rural
+    Vecinos (15): Brisas Del Llano; El Bosque Sur Oriental Rural I; El
+      Portal Del Divino; El Porvenir De Los Soches; El Tuno; El Uval; La
+      Huerta; La Requilina; La Requilina Rural; Mochuelo Alto Rural;
+      Olarte; Puerta Al Llano De Usme; Puerta Al Llano Rural; Villa
+      Anita; Villa Israel
+
+002548  El Virrey
+    Vecinos (7): Charala; Chuniza; Comuneros; Desarrollo Brazuelos I;
+      Monteblanco; Serranias; Serranias I
+
+002602  Fiscala Alta
+    Vecinos (8): Alaska; Arrayanes V; Bolonia I; El Nevado; El Nevado
+      Ii; La Belleza; La Fiscala; Yomasa
+
+002506  Gran Yomasa
+    Vecinos (8): Bolonia; Chuniza; El Curubo; La Andrea; La Cabana; La
+      Esperanza Sur; La Marichuela; Monteblanco
+
+002541  Granada Sur
+    Vecinos (5): El Mochuelo Oriental; La Aurora; San Juan Bautista;
+      Santa Librada; Tunjuelito
+
+001336  Juan Jose Rondon I
+    Vecinos (6): Las Violetas Rural; Los Arrayanes; Los Soches;
+      Tihuaque; Tihuaque Rural; Tocaimita Sur
+
+001347  Juan Rey Sur
+    Vecinos (5): Bolonia I; Ciudad Londres Rural; La Cabana; Tibaque;
+      Yomasa
+
+002524  La Andrea
+    Vecinos (5): Gran Yomasa; La Cabana; La Marichuela; Santa Librada;
+      Santa Librada Norte
+
+002503  La Aurora
+    Vecinos (6): Barranquillita; El Mochuelo Oriental; Granada Sur;
+      Nuevo San Andres; Porvenir; Santa Librada
+
+001338  La Belleza
+    Vecinos (7): Arrayanes V; Fiscala Alta; Villabel; Yomasa; Juan Rey
+      (La Paz) (L4); Los Libertadores (L4); Santa Rita Sur Oriental (L4)
+
+002527  La Cabana
+    Vecinos (5): El Curubo; Gran Yomasa; La Andrea; Los Olivares; Santa
+      Librada Norte
+
+001348  La Cabana
+    Vecinos (5): Bolonia I; Dona Liliana; Juan Rey Sur; Liliana; Tibaque
+
+002612  La Comuna
+    Vecinos (6): Chapinerito; El Progreso Usme; La Reforma; Pepinitos;
+      Portal Rural Ii; San Felipe De Usme
+
+002615  La Esperanza De Usme
+    Vecinos (7): Antonio Jose De Sucre; Comuneros; La Orquidea De Usme;
+      Puerta Al Llano Rural; Serranias I; Usminia; Villa Israel
+
+002607  La Esperanza Sur
+    Vecinos (8): Bolonia; Chapinerito; Charala; Chuniza; El Bosque; El
+      Bosque Central I; Gran Yomasa; La Esperanza Sur I
+
+202204  La Esperanza Sur I
+    Vecinos (6): Bolonia; Bolonia I; El Bosque Central; El Bosque
+      Central I; La Esperanza Sur; Liliana
+
+002590  La Fiscala
+    Vecinos (6): Alaska; Arrayanes V; El Nevado; Fiscala Alta; La
+      Fiscala Norte; Porvenir
+
+002597  La Fiscala Norte
+    Vecinos (7): Arrayanes V; Danubio; Danubio Ii; La Fiscala; La Paz;
+      Palermo Sur; Porvenir
+
+002636  La Huerta
+    Vecinos (2): El Uval; El Uval Rural
+
+002529  La Marichuela
+    Vecinos (6): Gran Yomasa; La Andrea; Monteblanco; San Juan Bautista;
+      Santa Librada; Tunjuelito
+
+002614  La Orquidea De Usme
+    Vecinos (5): Charala; Comuneros; El Progreso Usme; La Esperanza De
+      Usme; Puerta Al Llano Rural
+
+002566  La Paz
+    Vecinos (6): Danubio; Danubio Ii; La Fiscala Norte; La Picota;
+      Palermo Sur; La Picota Oriental (L18)
+
+002511  La Picota
+    Vecinos (9): Area Artilleria; Danubio; El Mochuelo Oriental; La Paz;
+      Porvenir; La Picota Oriental (L18); Marruecos (L18); Molinos Del
+      Sur (L6); San Agustin (L18)
+
+002627  La Reforma
+    Vecinos (4): Chapinerito; Charala; El Progreso Usme; La Comuna
+
+102808  La Regadera
+    Vecinos (5): Los Arrayanes; Olarte; San Benito; Pasquillita (L19);
+      Santa Barbara (L19)
+
+002632  La Requilina
+    Vecinos (6): Centro Usme Rural I; Centro Usme Urbano; El Uval Rural;
+      La Requilina Rural; La Requilina Rural Ii; Mochuelo Alto Rural
+
+102122  La Requilina Rural
+    Vecinos (4): Centro Usme Urbano; El Uval Rural; La Requilina; Olarte
+
+102604  La Requilina Rural Ii
+    Vecinos (3): Centro Usme Urbano; La Requilina; Mochuelo Alto Rural
+
+102115  La Union
+    Vecinos (6): Chisaca; El Hato; Las Margaritas; Los Andes; Los
+      Arrayanes; El Tabaco (L20)
+
+102113  Las Margaritas
+    Vecinos (4): Chisaca; El Hato; La Union; Las Mercedes (L19)
+
+002633  Las Violetas
+    Vecinos (2): Las Violetas Rural; Tihuaque Rural
+
+102118  Las Violetas Rural
+    Vecinos (8): El Bosque Sur Oriental Rural I; El Bosque Sur Oriental
+      Rural Ii; El Porvenir De Los Soches; Juan Jose Rondon I; Las
+      Violetas; Los Arrayanes; Tibaque; Tihuaque Rural
+
+102211  Liliana
+    Vecinos (8): Bolonia I; Dona Liliana; El Bosque Central; La Cabana;
+      La Esperanza Sur I; San Pedro Sur; Tibaque; Tibaque Sur
+
+102114  Los Andes
+    Vecinos (3): El Hato; La Union; Los Arrayanes
+
+102401  Los Arrayanes
+    Vecinos (4): El Porvenir De Los Soches; Juan Jose Rondon I; Las
+      Violetas Rural; Tocaimita Sur
+
+102111  Los Arrayanes
+    Vecinos (10): Arrayan; Curubital; El Hato; La Regadera; La Union;
+      Los Andes; San Benito; El Tabaco (L20); Santa Barbara (L19); Santa
+      Rosa (L19)
+
+002604  Los Olivares
+    Vecinos (6): Bolonia I; El Curubo; El Nevado Ii; El Pedregal Ii; La
+      Cabana; Santa Librada Norte
+
+001344  Los Soches
+    Vecinos (6): Juan Jose Rondon I; Pepinitos; Tibaque; Tihuaque;
+      Tocaimita Sur; Villa Diana
+
+104131  Mochuelo Alto Rural
+    Vecinos (15): Brazuelos Occidental Rural; Centro Usme Rural; Centro
+      Usme Urbano; Desarrollo Brazuelos; El Mochuelo Alto; El Uval
+      Rural; La Requilina; La Requilina Rural Ii; Olarte; Villa Anita;
+      El Mochuelo Ii (L19); El Mochuelo Iii (L19); Mochuelo Alto Urbano
+      (L19); Pasquilla (L19); Quiba Alto (L19)
+
+002536  Monteblanco
+    Vecinos (7): Chuniza; Desarrollo Brazuelos I; El Virrey; Gran
+      Yomasa; La Marichuela; Tunjuelito; Yomasa Norte
+
+002505  Nuevo San Andres
+    Vecinos (3): Barranquillita; La Aurora; Porvenir
+
+102707  Olarte
+    Vecinos (10): Centro Usme; Centro Usme Rural; Centro Usme Rural Ii;
+      Centro Usme Urbano; El Uval Rural; La Regadera; La Requilina
+      Rural; Mochuelo Alto Rural; Pasquilla (L19); Pasquillita (L19)
+
+002535  Palermo Sur
+    Vecinos (5): Arrayanes V; La Fiscala Norte; La Paz; La Picota
+      Oriental (L18); Los Arrayanes Ii (L18)
+
+102405  Pepinitos
+    Vecinos (7): La Comuna; Los Soches; Portal Rural Ii; San Felipe De
+      Usme; Tocaimita Oriental; Tocaimita Sur; Villa Diana
+
+102506  Portal Rural Ii
+    Vecinos (10): El Nuevo Portal; El Nuevo Portal Ii; El Nuevo Portal
+      Ii Rural; El Portal Urbano; El Porvenir De Los Soches; El Progreso
+      Usme; El Refugio I; La Comuna; Pepinitos; Tocaimita Sur
+
+002589  Porvenir
+    Vecinos (10): Barranquillita; Danubio; Duitama; El Mochuelo
+      Oriental; El Nevado; La Aurora; La Fiscala; La Fiscala Norte; La
+      Picota; Nuevo San Andres
+
+002618  Puerta Al Llano De Usme
+    Vecinos (8): Brisas Del Llano; El Nuevo Portal; El Nuevo Portal Ii;
+      El Portal Del Divino; El Refugio I; El Uval; El Uval Rural; Puerta
+      Al Llano Rural
+
+202511  Puerta Al Llano Rural
+    Vecinos (8): El Nuevo Portal; El Progreso Usme; El Tuno; El Uval
+      Rural; La Esperanza De Usme; La Orquidea De Usme; Puerta Al Llano
+      De Usme; Villa Israel
+
+002572  Salazar Usme
+    Vecinos (3): El Pedregal; El Pedregal Ii; Santa Librada Norte
+
+102909  San Benito
+    Vecinos (3): Arrayan; La Regadera; Los Arrayanes
+
+002621  San Felipe De Usme
+    Vecinos (9): Chapinerito; El Bosque; El Bosque Central; El Bosque
+      Central I; La Comuna; Pepinitos; San Felipe De Usme Rural;
+      Tocaimita Oriental; Tocaimita Oriental I
+
+202404  San Felipe De Usme Rural
+    Vecinos (2): San Felipe De Usme; Tocaimita Oriental
+
+002555  San Juan Bautista
+    Vecinos (4): Granada Sur; La Marichuela; Santa Librada; Tunjuelito
+
+001337  San Pedro Sur
+    Vecinos (4): Liliana; Tibaque; Tibaque Ii; Tibaque Sur
+
+002526  Santa Librada
+    Vecinos (8): Barranquillita; El Mochuelo Oriental; Granada Sur; La
+      Andrea; La Aurora; La Marichuela; San Juan Bautista; Santa Librada
+      Norte
+
+002528  Santa Librada Norte
+    Vecinos (8): Barranquillita; El Pedregal; El Pedregal Ii; La Andrea;
+      La Cabana; Los Olivares; Salazar Usme; Santa Librada
+
+002542  Serranias
+    Vecinos (3): Desarrollo Brazuelos I; El Virrey; Serranias I
+
+002576  Serranias I
+    Vecinos (6): Comuneros; Desarrollo Brazuelos I; El Virrey; La
+      Esperanza De Usme; Serranias; Usminia
+
+101306  Tibaque
+    Vecinos (33): Ciudad Londres Rural; Juan Rey Sur; La Cabana; Las
+      Violetas Rural; Liliana; Los Soches; San Pedro Sur; Tibaque Ii;
+      Tibaque Sur; Tihuaque; Tihuaque Rural; Villa Diana; Aguas Claras
+      (L4); Aguas Claras I (L4); Altos Del Zipa (L4); Altos Del Zuque
+      (L4); Arboleda Santa Teresita (L4); Chiguaza Rural (L4); Chiguaza
+      Urbano (L4); Ciudad Londres I (L4); El Triangulo (L4); Hoya San
+      Cristobal (L3); Juan Rey (La Paz) (L4); La Arboleda Rural (L4);
+      Las Gaviotas (L4); Los Alpes (L4); Los Laureles Sur Oriental I
+      (L4); Moralba (L4); Quindio (L4); San Blas Ii (L4); San Rafael
+      Usme (L4); Tibaque I (L4); Tibaque Iii (L4)
+
+201309  Tibaque Ii
+    Vecinos (2): San Pedro Sur; Tibaque
+
+102407  Tibaque Sur
+    Vecinos (6): El Bosque Central; Liliana; San Pedro Sur; Tibaque;
+      Tocaimita Oriental; Villa Diana
+
+001340  Tihuaque
+    Vecinos (4): Juan Jose Rondon I; Los Soches; Tibaque; Tihuaque Rural
+
+101307  Tihuaque Rural
+    Vecinos (5): Juan Jose Rondon I; Las Violetas; Las Violetas Rural;
+      Tibaque; Tihuaque
+
+202410  Tocaimita Oriental
+    Vecinos (7): El Bosque Central; Pepinitos; San Felipe De Usme; San
+      Felipe De Usme Rural; Tibaque Sur; Tocaimita Oriental I; Villa
+      Diana
+
+002622  Tocaimita Oriental I
+    Vecinos (3): El Bosque Central; San Felipe De Usme; Tocaimita
+      Oriental
+
+102412  Tocaimita Sur
+    Vecinos (6): El Porvenir De Los Soches; Juan Jose Rondon I; Los
+      Arrayanes; Los Soches; Pepinitos; Portal Rural Ii
+
+002593  Tunjuelito
+    Vecinos (8): El Mochuelo Alto; El Mochuelo Ii Urbano; El Mochuelo
+      Oriental; Granada Sur; La Marichuela; Monteblanco; San Juan
+      Bautista; Yomasa Norte
+
+002538  Usminia
+    Vecinos (7): Antonio Jose De Sucre; Desarrollo Brazuelos; Desarrollo
+      Brazuelos I; La Esperanza De Usme; Serranias I; Villa Anita; Villa
+      Israel
+
+002619  Villa Anita
+    Vecinos (5): Desarrollo Brazuelos; El Uval Rural; Mochuelo Alto
+      Rural; Usminia; Villa Israel
+
+001335  Villa Diana
+    Vecinos (5): Los Soches; Pepinitos; Tibaque; Tibaque Sur; Tocaimita
+      Oriental
+
+002594  Villa Israel
+    Vecinos (6): Antonio Jose De Sucre; El Uval Rural; La Esperanza De
+      Usme; Puerta Al Llano Rural; Usminia; Villa Anita
+
+001332  Villabel
+    Vecinos (5): Arrayanes V; Canada O Guira; La Belleza; Santa Rita Sur
+      Oriental (L4); Villa Del Cerro (L4)
+
+001350  Yomasa
+    Vecinos (6): Bolonia I; Ciudad Londres Rural; Fiscala Alta; Juan Rey
+      Sur; La Belleza; Juan Rey (La Paz) (L4)
+
+002586  Yomasa Norte
+    Vecinos (6): Brazuelos Occidental; Brazuelos Occidental Rural;
+      Desarrollo Brazuelos I; El Mochuelo Alto; Monteblanco; Tunjuelito
+
+==========================================================================
+LOCALIDAD 6 - TUNJUELITO
+==========================================================================
+
+002507  Abraham Lincoln
+    Vecinos (5): Arboleda Sur; El Playon; Molinos Del Sur; Tunjuelito;
+      Area Artilleria (L5)
+
+001423  Arboleda Sur
+    Vecinos (8): Abraham Lincoln; El Playon; Marco Fidel Suarez I;
+      Molinos Del Sur; Tunjuelito; Callejon Santa Barbara (L18); Carmen
+      Del Sol (L18); Guiparma (L18)
+
+002432  Arborizadora Baja
+    Vecinos (7): El Chircal Sur; La Coruna; Muzu; Parque El Tunal; El
+      Satelite (L19); Los Laureles Ii (L19); Verona (L19)
+
+002422  Atlanta
+    Vecinos (6): La Coruna; Madelena; Muzu; Nuevo Muzu; El Ensueno
+      (L19); Isla Del Sol (L8)
+
+002308  Claret
+    Vecinos (6): Samore; Santa Lucia; Tunal Oriental; Escuela General
+      Santander (L16); Ingles (L18); Villa Mayor (L18)
+
+002407  El Carmen
+    Vecinos (4): Fatima; Samore; San Vicente Ferrer; Tunal Oriental
+
+002435  El Chircal Sur
+    Vecinos (4): Arborizadora Baja; Parque El Tunal; Ronda; El Satelite
+      (L19)
+
+001420  El Playon
+    Vecinos (4): Abraham Lincoln; Arboleda Sur; Molinos Del Sur;
+      Guiparma (L18)
+
+002408  Fatima
+    Vecinos (7): El Carmen; Muzu; Samore; San Vicente Ferrer; Escuela
+      General Santander (L16); Venecia (L8); Venecia Occidental (L8)
+
+002420  La Coruna
+    Vecinos (5): Arborizadora Baja; Atlanta; Muzu; El Ensueno (L19);
+      Verona (L19)
+
+002415  Madelena
+    Vecinos (7): Atlanta; El Ensueno (L19); Guadalupe (L8); Isla Del Sol
+      (L8); Perdomo Alto (L19); Rafael Escamilla (L19); Rincon De La
+      Valvanera (L19)
+
+001410  Marco Fidel Suarez
+    Vecinos (3): Marco Fidel Suarez I; Santa Lucia; San Jorge Sur (L18)
+
+001415  Marco Fidel Suarez I
+    Vecinos (7): Arboleda Sur; Marco Fidel Suarez; San Carlos; Santa
+      Lucia; Tunjuelito; Carmen Del Sol (L18); San Jorge Sur (L18)
+
+002514  Meissen
+    Vecinos (6): Ronda; San Benito; Tunjuelito; Area Artilleria (L5);
+      Lucero Alto (L19); Mexico (L19)
+
+001414  Molinos Del Sur
+    Vecinos (8): Abraham Lincoln; Arboleda Sur; El Playon; Area
+      Artilleria (L5); Callejon Santa Barbara (L18); Guiparma (L18); La
+      Picota (L5); Marruecos (L18)
+
+002413  Muzu
+    Vecinos (9): Arborizadora Baja; Atlanta; Fatima; La Coruna; Nuevo
+      Muzu; Parque El Tunal; San Vicente Ferrer; Tunal Oriental; Venecia
+      Occidental (L8)
+
+002409  Nuevo Muzu
+    Vecinos (4): Atlanta; Muzu; Isla Del Sol (L8); Venecia Occidental
+      (L8)
+
+002410  Parque El Tunal
+    Vecinos (8): Arborizadora Baja; El Chircal Sur; Muzu; Ronda; San
+      Benito; San Carlos; Santa Lucia; Tunal Oriental
+
+002518  Ronda
+    Vecinos (7): El Chircal Sur; Meissen; Parque El Tunal; San Benito;
+      El Satelite (L19); Las Acacias (L19); Lucero Alto (L19)
+
+002406  Samore
+    Vecinos (5): Claret; El Carmen; Fatima; Tunal Oriental; Escuela
+      General Santander (L16)
+
+002509  San Benito
+    Vecinos (5): Meissen; Parque El Tunal; Ronda; San Carlos; Tunjuelito
+
+002501  San Carlos
+    Vecinos (5): Marco Fidel Suarez I; Parque El Tunal; San Benito;
+      Santa Lucia; Tunjuelito
+
+002402  San Vicente Ferrer
+    Vecinos (4): El Carmen; Fatima; Muzu; Tunal Oriental
+
+002205  Santa Lucia
+    Vecinos (9): Claret; Marco Fidel Suarez; Marco Fidel Suarez I;
+      Parque El Tunal; San Carlos; Tunal Oriental; Ingles (L18); Quiroga
+      Sur (L18); San Jorge Sur (L18)
+
+002401  Tunal Oriental
+    Vecinos (7): Claret; El Carmen; Muzu; Parque El Tunal; Samore; San
+      Vicente Ferrer; Santa Lucia
+
+002508  Tunjuelito
+    Vecinos (7): Abraham Lincoln; Arboleda Sur; Marco Fidel Suarez I;
+      Meissen; San Benito; San Carlos; Area Artilleria (L5)
+
+==========================================================================
+LOCALIDAD 7 - BOSA
+==========================================================================
+
+004553  Andalucia Ii
+    Vecinos (6): Bosa; Cementerio Jardines Apogeo; Corredor Ferreo Del
+      Sur; Gualoche; Jose Antonio Galan; La Cecilia
+
+004570  Antonia Santos
+    Vecinos (6): Argelia Ii; Bosa; Islandia; Jimenez De Quesada Ii
+      Sector; La Paz Bosa; Paso Ancho
+
+004583  Argelia Ii
+    Vecinos (5): Antonia Santos; Bosa; Class; Gran Britalia; La Paz Bosa
+
+002417  Barlovento
+    Vecinos (5): Corredor Ferreo Del Sur; Galicia (L19); La Valvanera
+      (L19); Perdomo Alto (L19); Rincon De La Valvanera (L19)
+
+004628  Betania
+    Vecinos (4): Brasilia; Chicala; Jorge Uribe Botero; Las Margaritas
+
+004516  Boita
+    Vecinos (5): Jacqueline; Tundama; Villa Del Rio; Santa Catalina
+      (L8); Timiza B (L8)
+
+004522  Bosa
+    Vecinos (9): Andalucia Ii; Antonia Santos; Argelia Ii; Class; El
+      Rubi; Gualoche; Jimenez De Quesada; Jimenez De Quesada Ii Sector;
+      Jose Antonio Galan
+
+004526  Bosa Nova
+    Vecinos (5): Bosa Nova El Porvenir; Escocia; La Paz Bosa; Los
+      Sauces; San Pedro
+
+004580  Bosa Nova El Porvenir
+    Vecinos (5): Bosa Nova; Chico Sur; Escocia; Escocia; San Pedro
+
+004622  Brasil
+    Vecinos (6): Brasilia; El Corzo; El Portal Del Brasil; Las
+      Margaritas; Osorio X Urbano; Parcela El Porvenir
+
+004604  Brasilia
+    Vecinos (6): Betania; Brasil; Chicala; El Portal Del Brasil;
+      Escocia; Las Margaritas
+
+205322  Campo Verde
+    Vecinos (7): San Bernardino Potreritos; San Bernardino Xix; San
+      Bernardino Xviii; San Bernardino Xxii Urbano; San Bernardino Xxv;
+      San Bernardino Xxv Urbano; San Diego-Bosa
+
+004634  Canaveralejo
+    Vecinos (8): Canaveralejo Rural; Ciudadela El Recreo; Ciudadela El
+      Recreo Ii; El Corzo; El Corzo I; El Corzo Rural; San Bernardino
+      Ii; Santa Fe Bosa
+
+205308  Canaveralejo Rural
+    Vecinos (2): Canaveralejo; El Corzo Rural
+
+004545  Catalina
+    Vecinos (7): Catalina Ii; Cementerio Jardines Apogeo; Jacqueline;
+      Casablanca (L8); Pastrana (L8); Roma (L8); Tocarema (L8)
+
+004540  Catalina Ii
+    Vecinos (4): Catalina; Cementerio Jardines Apogeo; La Cecilia; Roma
+      (L8)
+
+004529  Cementerio Jardines Apogeo
+    Vecinos (7): Andalucia Ii; Catalina; Catalina Ii; Corredor Ferreo
+      Del Sur; Jacqueline; La Cecilia; Olarte
+
+004574  Charles De Gaulle
+    Vecinos (4): El Retazo; Gran Colombiano; San Bernardino I; Villa
+      Anny I
+
+004605  Chicala
+    Vecinos (5): Betania; Brasilia; El Danubio Azul; Escocia; Jorge
+      Uribe Botero
+
+004595  Chico Sur
+    Vecinos (6): Bosa Nova El Porvenir; Escocia; La Independencia; Las
+      Margaritas; San Antonio; San Pedro
+
+004573  Ciudadela El Recreo
+    Vecinos (7): Canaveralejo; Ciudadela El Recreo Ii; Las Margaritas;
+      San Antonio; San Bernardino Xix; San Bernardino Xxv; Villas Del
+      Progreso
+
+004638  Ciudadela El Recreo Ii
+    Vecinos (4): Canaveralejo; Ciudadela El Recreo; Las Margaritas; San
+      Bernardino Ii
+
+004535  Class
+    Vecinos (7): Argelia Ii; Bosa; El Rubi; Gran Britalia; Casa Blanca
+      Sur (L8); Casablanca (L8); Roma (L8)
+
+004572  Corredor Ferreo Del Sur
+    Vecinos (37): Andalucia Ii; Barlovento; Cementerio Jardines Apogeo;
+      Gualoche; La Estancia; Olarte; Primavera Ii; Tundama; Villa Del
+      Rio; Alqueria La Fragua (L8); Alqueria La Fragua Ii (L8); Alqueria
+      La Fragua Norte (L8); Barcelona (L16); Camelia Ii (L16);
+      Cundinamarca (L16); Galan (L16); Galicia (L19); Gorgonzola (L16);
+      Guadalupe (L8); Industrial Centenario (L16); La Camelia (L16); La
+      Campina (L8); La Florida Occidental (L16); Las Delicias (L8); Los
+      Ejidos (L16); Montes (L16); Nueva York (L8); Primavera Occidental
+      (L16); Provivienda (L8); Provivienda Norte (L8); Provivienda
+      Oriental (L8); Rafael Escamilla (L19); Renania Urapanes (L8);
+      Rincon De La Valvanera (L19); San Eusebio (L16); San Francisco
+      (L16); Tejar (L8)
+
+004559  El Carmelo
+    Vecinos (3): El Danubio Azul; Gran Britalia; Jorge Uribe Botero
+
+004631  El Corzo
+    Vecinos (8): Brasil; Canaveralejo; El Corzo I; El Portal Del Brasil;
+      La Cabana; La Libertad; Parcela El Porvenir; Santa Fe Bosa
+
+004643  El Corzo I
+    Vecinos (5): Canaveralejo; El Corzo; El Corzo Rural; Osorio Xxiii;
+      Parcela El Porvenir
+
+105314  El Corzo Rural
+    Vecinos (4): Canaveralejo; Canaveralejo Rural; El Corzo I; Osorio
+      Xxiii
+
+004588  El Danubio Azul
+    Vecinos (7): Chicala; El Carmelo; Escocia; Escocia; Gran Britalia;
+      Jorge Uribe Botero; La Paz Bosa
+
+004561  El Jardin
+    Vecinos (5): Los Laureles; Remanso Urbano; San Bernardino Xviii; San
+      Bernardino Xviii; San Diego-Bosa
+
+004591  El Portal Del Brasil
+    Vecinos (6): Brasil; Brasilia; El Corzo; Escocia; La Libertad; San
+      Martin
+
+205320  El Remanso
+    Vecinos (2): Remanso Urbano; San Bernardino Xviii
+
+004625  El Remanso I
+    Vecinos (8): Gran Colombiano; Islandia; La Independencia; Los
+      Laureles; Remanso Urbano; San Antonio; San Bernardino Potreritos;
+      Villas Del Progreso
+
+004533  El Retazo
+    Vecinos (7): Charles De Gaulle; Gran Colombiano; Jose Maria
+      Carbonel; Nueva Granada Bosa; Paso Ancho; San Pablo Bosa; Villa
+      Anny I
+
+004536  El Rubi
+    Vecinos (5): Bosa; Class; Jose Antonio Galan; La Cecilia; Roma (L8)
+
+004519  Escocia
+    Vecinos (5): Bosa Nova; Bosa Nova El Porvenir; El Danubio Azul;
+      Escocia; La Paz Bosa
+
+004579  Escocia
+    Vecinos (10): Bosa Nova El Porvenir; Brasilia; Chicala; Chico Sur;
+      El Danubio Azul; El Portal Del Brasil; Escocia; La Libertad; Las
+      Margaritas; San Martin
+
+004557  Gran Britalia
+    Vecinos (8): Argelia Ii; Class; El Carmelo; El Danubio Azul; Jorge
+      Uribe Botero; La Paz Bosa; Casa Blanca Sur (L8); Gran Britalia I
+      (L8)
+
+004539  Gran Colombiano
+    Vecinos (8): Charles De Gaulle; El Remanso I; El Retazo; Islandia;
+      Los Laureles; Paso Ancho; San Bernardino I; San Diego-Bosa
+
+004552  Gualoche
+    Vecinos (5): Andalucia Ii; Bosa; Corredor Ferreo Del Sur; Jimenez De
+      Quesada; La Estacion Bosa
+
+004642  Islandia
+    Vecinos (8): Antonia Santos; El Remanso I; Gran Colombiano; La
+      Independencia; La Paz Bosa; Los Sauces; Paso Ancho; San Pedro
+
+004517  Jacqueline
+    Vecinos (7): Boita; Catalina; Cementerio Jardines Apogeo; Olarte;
+      Villa Del Rio; Timiza B (L8); Tocarema (L8)
+
+004523  Jimenez De Quesada
+    Vecinos (5): Bosa; Gualoche; Jimenez De Quesada Ii Sector; La
+      Estacion Bosa; San Pablo Bosa
+
+004586  Jimenez De Quesada Ii Sector
+    Vecinos (5): Antonia Santos; Bosa; Jimenez De Quesada; Paso Ancho;
+      San Pablo Bosa
+
+004568  Jorge Uribe Botero
+    Vecinos (7): Betania; Chicala; El Carmelo; El Danubio Azul; Gran
+      Britalia; Las Margaritas; Gran Britalia I (L8)
+
+004569  Jose Antonio Galan
+    Vecinos (4): Andalucia Ii; Bosa; El Rubi; La Cecilia
+
+004550  Jose Maria Carbonel
+    Vecinos (4): El Retazo; Nueva Granada Bosa; Villa Anny I; Villa Anny
+      Ii
+
+004632  La Cabana
+    Vecinos (4): El Corzo; La Libertad; Las Margaritas; Santa Fe Bosa
+
+004532  La Cecilia
+    Vecinos (6): Andalucia Ii; Catalina Ii; Cementerio Jardines Apogeo;
+      El Rubi; Jose Antonio Galan; Roma (L8)
+
+004521  La Estacion Bosa
+    Vecinos (4): Gualoche; Jimenez De Quesada; Nueva Granada Bosa; San
+      Pablo Bosa
+
+002418  La Estancia
+    Vecinos (5): Corredor Ferreo Del Sur; Primavera Ii; Galicia (L19);
+      La Primavera I (L19); Maria Cano (L19)
+
+004641  La Independencia
+    Vecinos (5): Chico Sur; El Remanso I; Islandia; San Antonio; San
+      Pedro
+
+004593  La Libertad
+    Vecinos (6): El Corzo; El Portal Del Brasil; Escocia; La Cabana; Las
+      Margaritas; San Martin
+
+004520  La Paz Bosa
+    Vecinos (8): Antonia Santos; Argelia Ii; Bosa Nova; El Danubio Azul;
+      Escocia; Gran Britalia; Islandia; Los Sauces
+
+004624  La Vega San Bernardino
+    Vecinos (1): San Bernardino Xviii
+
+004316  Las Margaritas
+    Vecinos (10): Betania; Brasil; Brasilia; Jorge Uribe Botero; Osorio
+      X Urbano; Osorio Xii; Dindalito (L8); Dindalito (L8); Gran
+      Britalia I (L8); Tintalito (L8)
+
+004637  Las Margaritas
+    Vecinos (9): Chico Sur; Ciudadela El Recreo; Ciudadela El Recreo Ii;
+      Escocia; La Cabana; La Libertad; San Antonio; San Bernardino Ii;
+      Santa Fe Bosa
+
+004575  Los Laureles
+    Vecinos (5): El Jardin; El Remanso I; Gran Colombiano; Remanso
+      Urbano; San Diego-Bosa
+
+004587  Los Sauces
+    Vecinos (4): Bosa Nova; Islandia; La Paz Bosa; San Pedro
+
+004527  Nueva Granada Bosa
+    Vecinos (4): El Retazo; Jose Maria Carbonel; La Estacion Bosa; San
+      Pablo Bosa
+
+004538  Olarte
+    Vecinos (4): Cementerio Jardines Apogeo; Corredor Ferreo Del Sur;
+      Jacqueline; Villa Del Rio
+
+105210  Osorio X
+    Vecinos (3): Osorio X Urbano; Osorio Xii; Osorio Xxiii
+
+004616  Osorio X Urbano
+    Vecinos (6): Brasil; Las Margaritas; Osorio X; Osorio Xii; Osorio
+      Xxiii; Parcela El Porvenir
+
+004615  Osorio Xii
+    Vecinos (6): Las Margaritas; Osorio X; Osorio X Urbano; Dindalito
+      (L8); El Jazmin (L8); El Jazmin (L8)
+
+105223  Osorio Xxiii
+    Vecinos (5): El Corzo I; El Corzo Rural; Osorio X; Osorio X Urbano;
+      Parcela El Porvenir
+
+004630  Parcela El Porvenir
+    Vecinos (5): Brasil; El Corzo; El Corzo I; Osorio X Urbano; Osorio
+      Xxiii
+
+004528  Paso Ancho
+    Vecinos (6): Antonia Santos; El Retazo; Gran Colombiano; Islandia;
+      Jimenez De Quesada Ii Sector; San Pablo Bosa
+
+002428  Primavera Ii
+    Vecinos (4): Corredor Ferreo Del Sur; La Estancia; Los Tres Reyes
+      (L19); Maria Cano (L19)
+
+004602  Remanso Urbano
+    Vecinos (6): El Jardin; El Remanso; El Remanso I; Los Laureles; San
+      Bernardino Potreritos; San Bernardino Xviii
+
+004594  San Antonio
+    Vecinos (6): Chico Sur; Ciudadela El Recreo; El Remanso I; La
+      Independencia; Las Margaritas; Villas Del Progreso
+
+004597  San Bernardino I
+    Vecinos (4): Charles De Gaulle; Gran Colombiano; San Diego-Bosa;
+      Villa Anny I
+
+004635  San Bernardino Ii
+    Vecinos (4): Canaveralejo; Ciudadela El Recreo Ii; Las Margaritas;
+      Santa Fe Bosa
+
+004623  San Bernardino Potreritos
+    Vecinos (7): Campo Verde; El Remanso I; Remanso Urbano; San
+      Bernardino Xix; San Bernardino Xviii; Villa Emma; Villas Del
+      Progreso
+
+205319  San Bernardino Xix
+    Vecinos (5): Campo Verde; Ciudadela El Recreo; San Bernardino
+      Potreritos; San Bernardino Xxv; Villas Del Progreso
+
+205318  San Bernardino Xviii
+    Vecinos (3): El Jardin; San Bernardino Xviii; San Diego-Bosa
+
+105318  San Bernardino Xviii
+    Vecinos (9): Campo Verde; El Jardin; El Remanso; La Vega San
+      Bernardino; Remanso Urbano; San Bernardino Potreritos; San
+      Bernardino Xviii; San Diego-Bosa; Villa Emma
+
+004577  San Bernardino Xxii Urbano
+    Vecinos (3): Campo Verde; San Bernardino Xxv; San Bernardino Xxv
+      Urbano
+
+105325  San Bernardino Xxv
+    Vecinos (5): Campo Verde; Ciudadela El Recreo; San Bernardino Xix;
+      San Bernardino Xxii Urbano; San Bernardino Xxv Urbano
+
+004590  San Bernardino Xxv Urbano
+    Vecinos (4): Campo Verde; San Bernardino Xxii Urbano; San Bernardino
+      Xxv; San Diego-Bosa
+
+004513  San Diego-Bosa
+    Vecinos (8): Campo Verde; El Jardin; Gran Colombiano; Los Laureles;
+      San Bernardino I; San Bernardino Xviii; San Bernardino Xviii; San
+      Bernardino Xxv Urbano
+
+004592  San Martin
+    Vecinos (3): El Portal Del Brasil; Escocia; La Libertad
+
+004524  San Pablo Bosa
+    Vecinos (6): El Retazo; Jimenez De Quesada; Jimenez De Quesada Ii
+      Sector; La Estacion Bosa; Nueva Granada Bosa; Paso Ancho
+
+004589  San Pedro
+    Vecinos (6): Bosa Nova; Bosa Nova El Porvenir; Chico Sur; Islandia;
+      La Independencia; Los Sauces
+
+004633  Santa Fe Bosa
+    Vecinos (5): Canaveralejo; El Corzo; La Cabana; Las Margaritas; San
+      Bernardino Ii
+
+004515  Tundama
+    Vecinos (5): Boita; Corredor Ferreo Del Sur; Villa Del Rio; Renania
+      Urapanes (L8); Santa Catalina (L8)
+
+004598  Villa Anny I
+    Vecinos (5): Charles De Gaulle; El Retazo; Jose Maria Carbonel; San
+      Bernardino I; Villa Anny Ii
+
+004599  Villa Anny Ii
+    Vecinos (2): Jose Maria Carbonel; Villa Anny I
+
+004546  Villa Del Rio
+    Vecinos (5): Boita; Corredor Ferreo Del Sur; Jacqueline; Olarte;
+      Tundama
+
+205316  Villa Emma
+    Vecinos (2): San Bernardino Potreritos; San Bernardino Xviii
+
+004567  Villas Del Progreso
+    Vecinos (5): Ciudadela El Recreo; El Remanso I; San Antonio; San
+      Bernardino Potreritos; San Bernardino Xix
+
+==========================================================================
+LOCALIDAD 8 - KENNEDY
+==========================================================================
+
+004409  Alqueria
+    Vecinos (8): Alqueria La Fragua; Alqueria La Fragua Ii; Alqueria La
+      Fragua Norte; Tejar; Venecia; Alcala (L16); Ospina Perez (L16);
+      Ospina Perez Sur (L16)
+
+004543  Alqueria La Fragua
+    Vecinos (4): Alqueria; Alqueria La Fragua Ii; Alqueria La Fragua
+      Norte; Corredor Ferreo Del Sur (L7)
+
+004596  Alqueria La Fragua Ii
+    Vecinos (5): Alqueria; Alqueria La Fragua; Las Delicias; Venecia;
+      Corredor Ferreo Del Sur (L7)
+
+004542  Alqueria La Fragua Norte
+    Vecinos (5): Alqueria; Alqueria La Fragua; Tejar; Corredor Ferreo
+      Del Sur (L7); San Eusebio (L16)
+
+006504  Bavaria
+    Vecinos (4): Castilla; Cooperativa De Sub-Oficiales; Las Dos
+      Avenidas; Villa Alsacia Ii
+
+004601  Calandaima
+    Vecinos (6): Campo Hermoso; El Paraiso; El Paraiso Bosa; Galan;
+      Osorio Iii; Patio Bonito Iii
+
+004558  Campo Hermoso
+    Vecinos (6): Calandaima; El Paraiso Bosa; Osorio Iii; Patio Bonito;
+      Patio Bonito Ii; Patio Bonito Iii
+
+004576  Casa Blanca Sur
+    Vecinos (7): Casablanca; Chucua De La Vaca I; Gran Britalia I;
+      Pastrana; Roma; Class (L7); Gran Britalia (L7)
+
+004537  Casablanca
+    Vecinos (5): Casa Blanca Sur; Pastrana; Roma; Catalina (L7); Class
+      (L7)
+
+006506  Castilla
+    Vecinos (7): Bavaria; Ciudad Techo Ii; Las Dos Avenidas; Nuevo
+      Techo; Pio Xii; Valladolid; Villa Alsacia Ii
+
+004621  Chucua De La Vaca I
+    Vecinos (6): Casa Blanca Sur; Chucua De La Vaca Ii; Gran Britalia I;
+      Pastrana; Tintalito; Villa Nelly Iii Sector
+
+004620  Chucua De La Vaca Ii
+    Vecinos (5): Chucua De La Vaca I; Chucua De La Vaca Iii; Dintalito;
+      Tintalito; Villa Nelly Iii Sector
+
+004619  Chucua De La Vaca Iii
+    Vecinos (6): Chucua De La Vaca Ii; Corabastos; Dintalito; Llano
+      Grande; Provivienda Occidental; Villa Nelly Iii Sector
+
+004607  Ciudad De Cali
+    Vecinos (7): Dindalito; Dindalito; Dintalito; El Paraiso; Galan; Los
+      Almendros; Provivienda Occidental
+
+004509  Ciudad Kennedy
+    Vecinos (7): Ciudad Kennedy Oriental; Hipotecho; Hipotecho
+      Occidental; Mandalay; Provivienda; Provivienda Occidental; Techo
+
+004511  Ciudad Kennedy Central
+    Vecinos (6): Ciudad Kennedy Norte; Ciudad Kennedy Oriental; Ciudad
+      Kennedy Sur; Techo; Timiza; Timiza C
+
+004514  Ciudad Kennedy Norte
+    Vecinos (10): Ciudad Kennedy Central; Ciudad Kennedy Occidental;
+      Ciudad Kennedy Sur; Ciudad Techo Ii; Corabastos; Las Dos Avenidas;
+      Mandalay; Pio Xii; Techo; Villa Nelly Iii Sector
+
+004508  Ciudad Kennedy Occidental
+    Vecinos (4): Ciudad Kennedy Norte; Ciudad Kennedy Sur; Pastrana;
+      Villa Nelly Iii Sector
+
+004510  Ciudad Kennedy Oriental
+    Vecinos (5): Ciudad Kennedy; Ciudad Kennedy Central; Provivienda
+      Occidental; Techo; Timiza
+
+004507  Ciudad Kennedy Sur
+    Vecinos (5): Ciudad Kennedy Central; Ciudad Kennedy Norte; Ciudad
+      Kennedy Occidental; Pastrana; Timiza C
+
+006531  Ciudad Techo Ii
+    Vecinos (8): Castilla; Ciudad Kennedy Norte; Corabastos; Maria Paz;
+      Pio Xii; Tairona; Tintala; Valladolid
+
+006501  Cooperativa De Sub-Oficiales
+    Vecinos (6): Bavaria; Las Dos Avenidas; Marsella; Nuevo Techo; Villa
+      Alsacia; Villa Alsacia Ii
+
+004547  Corabastos
+    Vecinos (7): Chucua De La Vaca Iii; Ciudad Kennedy Norte; Ciudad
+      Techo Ii; Llano Grande; Maria Paz; Saucedal; Villa Nelly Iii
+      Sector
+
+004614  Dindalito
+    Vecinos (5): Ciudad De Cali; Dindalito; Dintalito; Tintalito; Las
+      Margaritas (L7)
+
+004612  Dindalito
+    Vecinos (6): Ciudad De Cali; Dindalito; El Jazmin; Los Almendros;
+      Las Margaritas (L7); Osorio Xii (L7)
+
+004618  Dintalito
+    Vecinos (6): Chucua De La Vaca Ii; Chucua De La Vaca Iii; Ciudad De
+      Cali; Dindalito; Provivienda Occidental; Tintalito
+
+205209  El Jazmin
+    Vecinos (4): El Jazmin; Las Acacias; Las Acacias Rural; Osorio Xii
+      (L7)
+
+004611  El Jazmin
+    Vecinos (5): Dindalito; El Jazmin; Las Acacias; Los Almendros;
+      Osorio Xii (L7)
+
+004603  El Paraiso
+    Vecinos (5): Calandaima; Ciudad De Cali; El Paraiso Bosa; Galan;
+      Provivienda Occidental
+
+004541  El Paraiso Bosa
+    Vecinos (5): Calandaima; Campo Hermoso; El Paraiso; Patio Bonito Ii;
+      Provivienda Occidental
+
+006522  El Tintal Ii
+    Vecinos (6): La Magdalena; Sabana Grande; Vereda El Tintal; Vereda
+      El Tintal Rural; El Tintal Central (L9); Guadual Fontibon (L9)
+
+006533  El Tintal Iii
+    Vecinos (1): Vereda El Tintal Urbano
+
+006534  El Tintal Iv
+    Vecinos (4): El Vergel; Vereda El Tintal Rural; Vereda El Tintal
+      Urbano; Vergel Occidental
+
+006528  El Vergel
+    Vecinos (6): El Tintal Iv; Interindustrial; Vereda El Tintal; Vereda
+      El Tintal Rural; Vergel Occidental; Ciudad Hayuelos (L9)
+
+006529  El Vergel Oriental
+    Vecinos (5): Nuevo Techo; Tintala; Valladolid; Vereda El Tintal
+      Urbano; Vergel Occidental
+
+004627  Galan
+    Vecinos (7): Calandaima; Ciudad De Cali; El Paraiso; Galan Rural;
+      Las Acacias; Los Almendros; Osorio Iii
+
+205221  Galan Rural
+    Vecinos (3): Galan; Las Acacias; Las Acacias Rural
+
+004556  Gran Britalia I
+    Vecinos (6): Casa Blanca Sur; Chucua De La Vaca I; Tintalito; Gran
+      Britalia (L7); Jorge Uribe Botero (L7); Las Margaritas (L7)
+
+006306  Granjas De Techo
+    Vecinos (4): Lusitania; Montevideo; Centro Industrial (L16); Salazar
+      Gomez (L16)
+
+004563  Guadalupe
+    Vecinos (5): Isla Del Sol; Las Delicias; Corredor Ferreo Del Sur
+      (L7); Madelena (L6); Rafael Escamilla (L19)
+
+004501  Hipotecho
+    Vecinos (7): Ciudad Kennedy; Hipotecho Occidental; Hipotecho Sur;
+      Las Dos Avenidas; Lusitania; Mandalay; Marsella
+
+004502  Hipotecho Occidental
+    Vecinos (6): Ciudad Kennedy; Hipotecho; Hipotecho Sur; Provivienda;
+      Provivienda Occidental; Provivienda Oriental
+
+004551  Hipotecho Sur
+    Vecinos (8): Hipotecho; Hipotecho Occidental; Lusitania; Provivienda
+      Norte; Provivienda Oriental; Galan (L16); La Pradera (L16);
+      Salazar Gomez (L16)
+
+006527  Interindustrial
+    Vecinos (7): El Vergel; Nuevo Techo; Vergel Occidental; Villa
+      Alsacia; Vision De Oriente; Ciudad Hayuelos (L9); Franco (L9)
+
+002411  Isla Del Sol
+    Vecinos (6): Guadalupe; Las Delicias; Venecia Occidental; Atlanta
+      (L6); Madelena (L6); Nuevo Muzu (L6)
+
+004506  La Campina
+    Vecinos (6): Nueva York; Provivienda; Provivienda Occidental;
+      Renania Urapanes; Timiza A; Corredor Ferreo Del Sur (L7)
+
+006524  La Magdalena
+    Vecinos (6): El Tintal Ii; Osorio Ii; Sabana Grande; Tintala; Vereda
+      El Tintal Rural; Vereda El Tintal Urbano
+
+006511  La Pampa
+    Vecinos (2): Vergel Occidental; Vision De Oriente
+
+004626  Las Acacias
+    Vecinos (6): El Jazmin; El Jazmin; Galan; Galan Rural; Las Acacias
+      Rural; Los Almendros
+
+205225  Las Acacias Rural
+    Vecinos (3): El Jazmin; Galan Rural; Las Acacias
+
+004544  Las Delicias
+    Vecinos (6): Alqueria La Fragua Ii; Guadalupe; Isla Del Sol;
+      Venecia; Venecia Occidental; Corredor Ferreo Del Sur (L7)
+
+006508  Las Dos Avenidas
+    Vecinos (8): Bavaria; Castilla; Ciudad Kennedy Norte; Cooperativa De
+      Sub-Oficiales; Hipotecho; Mandalay; Marsella; Pio Xii
+
+004562  Llano Grande
+    Vecinos (5): Chucua De La Vaca Iii; Corabastos; Patio Bonito Ii;
+      Provivienda Occidental; Saucedal
+
+004609  Los Almendros
+    Vecinos (5): Ciudad De Cali; Dindalito; El Jazmin; Galan; Las
+      Acacias
+
+006509  Lusitania
+    Vecinos (9): Granjas De Techo; Hipotecho; Hipotecho Sur; Marsella;
+      Montevideo; Villa Alsacia; Centro Industrial (L16); La Pradera
+      (L16); Salazar Gomez (L16)
+
+004531  Mandalay
+    Vecinos (6): Ciudad Kennedy; Ciudad Kennedy Norte; Hipotecho; Las
+      Dos Avenidas; Marsella; Techo
+
+006517  Maria Paz
+    Vecinos (5): Ciudad Techo Ii; Corabastos; Patio Bonito; Saucedal;
+      Tairona
+
+006502  Marsella
+    Vecinos (6): Cooperativa De Sub-Oficiales; Hipotecho; Las Dos
+      Avenidas; Lusitania; Mandalay; Villa Alsacia
+
+006307  Montevideo
+    Vecinos (7): Granjas De Techo; Lusitania; Villa Alsacia; Centro
+      Industrial (L16); Ciudad Salitre Sur-Oriental (L9); Franco (L9);
+      Salitre Occidental (L9)
+
+004549  Nueva York
+    Vecinos (3): La Campina; Provivienda; Corredor Ferreo Del Sur (L7)
+
+006507  Nuevo Techo
+    Vecinos (9): Castilla; Cooperativa De Sub-Oficiales; El Vergel
+      Oriental; Interindustrial; Valladolid; Vergel Occidental; Villa
+      Alsacia; Villa Alsacia Ii; Vision De Oriente
+
+105203  Osorio Ii
+    Vecinos (3): La Magdalena; Osorio Iii; Tintala
+
+006518  Osorio Iii
+    Vecinos (6): Calandaima; Campo Hermoso; Galan; Osorio Ii; Patio
+      Bonito Iii; Tintala
+
+004525  Pastrana
+    Vecinos (9): Casa Blanca Sur; Casablanca; Chucua De La Vaca I;
+      Ciudad Kennedy Occidental; Ciudad Kennedy Sur; Timiza C; Tocarema;
+      Villa Nelly Iii Sector; Catalina (L7)
+
+004554  Patio Bonito
+    Vecinos (7): Campo Hermoso; Maria Paz; Patio Bonito Ii; Patio Bonito
+      Iii; Saucedal; Tairona; Tintala
+
+004555  Patio Bonito Ii
+    Vecinos (6): Campo Hermoso; El Paraiso Bosa; Llano Grande; Patio
+      Bonito; Provivienda Occidental; Saucedal
+
+004566  Patio Bonito Iii
+    Vecinos (5): Calandaima; Campo Hermoso; Osorio Iii; Patio Bonito;
+      Tintala
+
+006505  Pio Xii
+    Vecinos (4): Castilla; Ciudad Kennedy Norte; Ciudad Techo Ii; Las
+      Dos Avenidas
+
+004504  Provivienda
+    Vecinos (7): Ciudad Kennedy; Hipotecho Occidental; La Campina; Nueva
+      York; Provivienda Occidental; Provivienda Oriental; Corredor
+      Ferreo Del Sur (L7)
+
+004310  Provivienda Norte
+    Vecinos (4): Hipotecho Sur; Provivienda Oriental; Corredor Ferreo
+      Del Sur (L7); Galan (L16)
+
+004613  Provivienda Occidental
+    Vecinos (7): Chucua De La Vaca Iii; Ciudad De Cali; Dintalito; El
+      Paraiso; El Paraiso Bosa; Llano Grande; Patio Bonito Ii
+
+004505  Provivienda Occidental
+    Vecinos (7): Ciudad Kennedy; Ciudad Kennedy Oriental; Hipotecho
+      Occidental; La Campina; Provivienda; Timiza; Timiza A
+
+004503  Provivienda Oriental
+    Vecinos (6): Hipotecho Occidental; Hipotecho Sur; Provivienda;
+      Provivienda Norte; Corredor Ferreo Del Sur (L7); Galan (L16)
+
+004582  Renania Urapanes
+    Vecinos (5): La Campina; Santa Catalina; Timiza A; Corredor Ferreo
+      Del Sur (L7); Tundama (L7)
+
+004534  Roma
+    Vecinos (7): Casa Blanca Sur; Casablanca; Catalina (L7); Catalina Ii
+      (L7); Class (L7); El Rubi (L7); La Cecilia (L7)
+
+006521  Sabana Grande
+    Vecinos (8): El Tintal Ii; La Magdalena; El Carmen Fontibon (L9);
+      Guadual Fontibon (L9); La Laguna Fontibon (L9); San Pedro (L9);
+      San Pedro De Los Robles (L9); Zona Franca (L9)
+
+004584  Santa Catalina
+    Vecinos (5): Renania Urapanes; Timiza A; Timiza B; Boita (L7);
+      Tundama (L7)
+
+004560  Saucedal
+    Vecinos (5): Corabastos; Llano Grande; Maria Paz; Patio Bonito;
+      Patio Bonito Ii
+
+004564  Tairona
+    Vecinos (4): Ciudad Techo Ii; Maria Paz; Patio Bonito; Tintala
+
+004548  Techo
+    Vecinos (5): Ciudad Kennedy; Ciudad Kennedy Central; Ciudad Kennedy
+      Norte; Ciudad Kennedy Oriental; Mandalay
+
+004408  Tejar
+    Vecinos (5): Alqueria; Alqueria La Fragua Norte; Alcala (L16);
+      Corredor Ferreo Del Sur (L7); San Eusebio (L16)
+
+004512  Timiza
+    Vecinos (6): Ciudad Kennedy Central; Ciudad Kennedy Oriental;
+      Provivienda Occidental; Timiza A; Timiza B; Timiza C
+
+004518  Timiza A
+    Vecinos (6): La Campina; Provivienda Occidental; Renania Urapanes;
+      Santa Catalina; Timiza; Timiza B
+
+004530  Timiza B
+    Vecinos (7): Santa Catalina; Timiza; Timiza A; Timiza C; Tocarema;
+      Boita (L7); Jacqueline (L7)
+
+004581  Timiza C
+    Vecinos (6): Ciudad Kennedy Central; Ciudad Kennedy Sur; Pastrana;
+      Timiza; Timiza B; Tocarema
+
+006516  Tintala
+    Vecinos (10): Ciudad Techo Ii; El Vergel Oriental; La Magdalena;
+      Osorio Ii; Osorio Iii; Patio Bonito; Patio Bonito Iii; Tairona;
+      Valladolid; Vereda El Tintal Urbano
+
+004617  Tintalito
+    Vecinos (6): Chucua De La Vaca I; Chucua De La Vaca Ii; Dindalito;
+      Dintalito; Gran Britalia I; Las Margaritas (L7)
+
+004565  Tocarema
+    Vecinos (5): Pastrana; Timiza B; Timiza C; Catalina (L7); Jacqueline
+      (L7)
+
+006515  Valladolid
+    Vecinos (5): Castilla; Ciudad Techo Ii; El Vergel Oriental; Nuevo
+      Techo; Tintala
+
+002404  Venecia
+    Vecinos (7): Alqueria; Alqueria La Fragua Ii; Las Delicias; Venecia
+      Occidental; Escuela General Santander (L16); Fatima (L6); Ospina
+      Perez Sur (L16)
+
+002403  Venecia Occidental
+    Vecinos (6): Isla Del Sol; Las Delicias; Venecia; Fatima (L6); Muzu
+      (L6); Nuevo Muzu (L6)
+
+205102  Vereda El Tintal
+    Vecinos (5): El Tintal Ii; El Vergel; Vereda El Tintal Rural; Ciudad
+      Hayuelos (L9); El Tintal Central (L9)
+
+105105  Vereda El Tintal Rural
+    Vecinos (6): El Tintal Ii; El Tintal Iv; El Vergel; La Magdalena;
+      Vereda El Tintal; Vereda El Tintal Urbano
+
+205101  Vereda El Tintal Urbano
+    Vecinos (7): El Tintal Iii; El Tintal Iv; El Vergel Oriental; La
+      Magdalena; Tintala; Vereda El Tintal Rural; Vergel Occidental
+
+006514  Vergel Occidental
+    Vecinos (8): El Tintal Iv; El Vergel; El Vergel Oriental;
+      Interindustrial; La Pampa; Nuevo Techo; Vereda El Tintal Urbano;
+      Vision De Oriente
+
+006512  Villa Alsacia
+    Vecinos (8): Cooperativa De Sub-Oficiales; Interindustrial;
+      Lusitania; Marsella; Montevideo; Nuevo Techo; Ciudad Hayuelos
+      (L9); Franco (L9)
+
+006510  Villa Alsacia Ii
+    Vecinos (4): Bavaria; Castilla; Cooperativa De Sub-Oficiales; Nuevo
+      Techo
+
+004578  Villa Nelly Iii Sector
+    Vecinos (7): Chucua De La Vaca I; Chucua De La Vaca Ii; Chucua De La
+      Vaca Iii; Ciudad Kennedy Norte; Ciudad Kennedy Occidental;
+      Corabastos; Pastrana
+
+006503  Vision De Oriente
+    Vecinos (4): Interindustrial; La Pampa; Nuevo Techo; Vergel
+      Occidental
+
+==========================================================================
+LOCALIDAD 9 - FONTIBÓN
+==========================================================================
+
+005624  Aeropuerto El Dorado
+    Vecinos (19): Atahualpa; Brisas Aldea Fontibon; Charco Rural; El
+      Cedro; El Refugio; La Cabana Fontibon; Las Navetas; Los Alamos;
+      Los Angeles; Pueblo Viejo; Sabana Del Dorado; San Jose De
+      Fontibon; Versalles Fontibon; Villa Gladys; El Muelle (L10);
+      Marandu (L10); San Antonio Engativa (L10); San Antonio Urbano
+      (L10); Villa Del Mar (L10)
+
+006416  Atahualpa
+    Vecinos (3): Aeropuerto El Dorado; El Refugio; Versalles Fontibon
+
+006409  Belen Fontibon
+    Vecinos (7): Brisas Aldea Fontibon; Centro Fontibon; El Carmen
+      Fontibon; La Giralda; San Pablo Jerico; Versalles Fontibon; Villa
+      Carmenza
+
+006316  Bosque De Modelia
+    Vecinos (3): Ferrocaja Fontibon; Modelia Occidental; Santa Cecilia
+
+006414  Brisas Aldea Fontibon
+    Vecinos (7): Aeropuerto El Dorado; Belen Fontibon; Charco Rural; El
+      Refugio; Puente Grande; San Pablo Jerico; Versalles Fontibon
+
+006302  Capellania
+    Vecinos (7): Ciudad Hayuelos; Franco; La Esperanza Norte; La
+      Esperanza Sur; Modelia; Modelia Occidental; Santa Cecilia
+
+006410  Centro Fontibon
+    Vecinos (6): Belen Fontibon; El Carmen Fontibon; Ferrocaja Fontibon;
+      Guadual Fontibon; La Giralda; Villemar
+
+105402  Charco Rural
+    Vecinos (4): Aeropuerto El Dorado; Brisas Aldea Fontibon; El Charco;
+      Puente Grande
+
+006411  Charco Urbano
+    Vecinos (2): El Charco; Puente Grande
+
+006320  Ciudad Hayuelos
+    Vecinos (9): Capellania; El Tintal Central; Ferrocaja Fontibon;
+      Franco; Modelia Occidental; El Vergel (L8); Interindustrial (L8);
+      Vereda El Tintal (L8); Villa Alsacia (L8)
+
+006216  Ciudad Salitre Nor-Oriental
+    Vecinos (7): Ciudad Salitre Sur-Oriental; Jardin Botanico; Salitre
+      Occidental; Centro Administrativo Occ. (L13); El Salitre (L13);
+      Ortezal (L16); Quinta Paredes (L13)
+
+006217  Ciudad Salitre Sur-Oriental
+    Vecinos (7): Ciudad Salitre Nor-Oriental; Salitre Occidental; Centro
+      Industrial (L16); Montevideo (L8); Ortezal (L16); Puente Aranda
+      (L16); Quinta Paredes (L13)
+
+006408  El Carmen Fontibon
+    Vecinos (11): Belen Fontibon; Centro Fontibon; El Chanco I; Guadual
+      Fontibon; La Laguna Fontibon; Moravia; San Pablo Jerico; Villa
+      Carmenza; Villemar; Zona Franca; Sabana Grande (L8)
+
+005662  El Cedro
+    Vecinos (5): Aeropuerto El Dorado; El Pantano; Sabana Del Dorado; El
+      Gaco (L10); Engativa Zona Urbana (L10)
+
+006525  El Chanco I
+    Vecinos (7): El Carmen Fontibon; El Chanco Ii; El Chanco Rural Ii;
+      El Chanco Rural Iii; Moravia; Puente Grande; San Pablo Jerico
+
+205401  El Chanco Ii
+    Vecinos (3): El Chanco I; El Chanco Rural Ii; El Chanco Rural Iii
+
+105401  El Chanco Rural Ii
+    Vecinos (4): El Chanco I; El Chanco Ii; Kasandra; Puente Grande
+
+105403  El Chanco Rural Iii
+    Vecinos (2): El Chanco I; El Chanco Ii
+
+205402  El Charco
+    Vecinos (4): Charco Rural; Charco Urbano; Kasandra; Puente Grande
+
+106201  El Pantano
+    Vecinos (1): El Cedro
+
+006419  El Refugio
+    Vecinos (4): Aeropuerto El Dorado; Atahualpa; Brisas Aldea Fontibon;
+      Versalles Fontibon
+
+105104  El Tintal
+    Vecinos (3): Moravia; San Pedro; Zona Franca
+
+006423  El Tintal Central
+    Vecinos (6): Ciudad Hayuelos; Ferrocaja Fontibon; Guadual Fontibon;
+      Villemar; El Tintal Ii (L8); Vereda El Tintal (L8)
+
+006405  Ferrocaja Fontibon
+    Vecinos (10): Bosque De Modelia; Centro Fontibon; Ciudad Hayuelos;
+      El Tintal Central; La Giralda; Modelia Occidental; Puerta De Teja;
+      San Jose De Fontibon; Santa Cecilia; Villemar
+
+006308  Franco
+    Vecinos (8): Capellania; Ciudad Hayuelos; La Esperanza Sur; Salitre
+      Occidental; Terminal De Transportes; Interindustrial (L8);
+      Montevideo (L8); Villa Alsacia (L8)
+
+006407  Guadual Fontibon
+    Vecinos (8): Centro Fontibon; El Carmen Fontibon; El Tintal Central;
+      La Laguna Fontibon; San Pedro De Los Robles; Villemar; El Tintal
+      Ii (L8); Sabana Grande (L8)
+
+005506  Jardin Botanico
+    Vecinos (9): Ciudad Salitre Nor-Oriental; La Esperanza Norte;
+      Salitre Occidental; Bosque Popular (L12); Campo Eucaristico (L12);
+      El Salitre (L13); La Cabana (L10); Normandia (L10); Parque Popular
+      Salitre (L12)
+
+006532  Kasandra
+    Vecinos (3): El Chanco Rural Ii; El Charco; Puente Grande
+
+006402  La Cabana Fontibon
+    Vecinos (4): Aeropuerto El Dorado; La Giralda; San Jose De Fontibon;
+      Versalles Fontibon
+
+006303  La Esperanza Norte
+    Vecinos (8): Capellania; Jardin Botanico; La Esperanza Sur; Modelia;
+      Normandia Occidental; Salitre Occidental; Terminal De Transportes;
+      Normandia (L10)
+
+006315  La Esperanza Sur
+    Vecinos (5): Capellania; Franco; La Esperanza Norte; Modelia;
+      Terminal De Transportes
+
+006420  La Giralda
+    Vecinos (7): Belen Fontibon; Centro Fontibon; Ferrocaja Fontibon; La
+      Cabana Fontibon; San Jose De Fontibon; Versalles Fontibon;
+      Villemar
+
+006415  La Laguna Fontibon
+    Vecinos (3): El Carmen Fontibon; Guadual Fontibon; Sabana Grande
+      (L8)
+
+005672  Las Navetas
+    Vecinos (1): Aeropuerto El Dorado
+
+005626  Los Alamos
+    Vecinos (9): Aeropuerto El Dorado; Los Angeles; Puerta De Teja; San
+      Ignacio; San Jose De Fontibon; Santa Cecilia; Florida Blanca
+      (L10); Santa Cecilia (L10); Villa Luz (L10)
+
+005623  Los Angeles
+    Vecinos (5): Aeropuerto El Dorado; Los Alamos; Florida Blanca (L10);
+      Santa Monica (L10); Villa Del Mar (L10)
+
+006311  Modelia
+    Vecinos (8): Capellania; La Esperanza Norte; La Esperanza Sur;
+      Modelia Occidental; Normandia Occidental; San Ignacio; Santa
+      Cecilia; Normandia (L10)
+
+006312  Modelia Occidental
+    Vecinos (6): Bosque De Modelia; Capellania; Ciudad Hayuelos;
+      Ferrocaja Fontibon; Modelia; Santa Cecilia
+
+006519  Moravia
+    Vecinos (4): El Carmen Fontibon; El Chanco I; El Tintal; Zona Franca
+
+005606  Normandia Occidental
+    Vecinos (7): La Esperanza Norte; Modelia; San Ignacio; El Encanto
+      (L10); La Cabana (L10); Normandia (L10); Santa Cecilia (L10)
+
+005673  Pueblo Viejo
+    Vecinos (1): Aeropuerto El Dorado
+
+006418  Puente Grande
+    Vecinos (8): Brisas Aldea Fontibon; Charco Rural; Charco Urbano; El
+      Chanco I; El Chanco Rural Ii; El Charco; Kasandra; San Pablo
+      Jerico
+
+006404  Puerta De Teja
+    Vecinos (4): Ferrocaja Fontibon; Los Alamos; San Jose De Fontibon;
+      Santa Cecilia
+
+005657  Sabana Del Dorado
+    Vecinos (4): Aeropuerto El Dorado; El Cedro; Villa Gladys; Engativa
+      Zona Urbana (L10)
+
+006313  Salitre Occidental
+    Vecinos (9): Ciudad Salitre Nor-Oriental; Ciudad Salitre Sur-
+      Oriental; Franco; Jardin Botanico; La Esperanza Norte; Terminal De
+      Transportes; Centro Industrial (L16); El Salitre (L13); Montevideo
+      (L8)
+
+005607  San Ignacio
+    Vecinos (6): Los Alamos; Modelia; Normandia Occidental; Santa
+      Cecilia; Santa Cecilia (L10); Villa Luz (L10)
+
+006403  San Jose De Fontibon
+    Vecinos (6): Aeropuerto El Dorado; Ferrocaja Fontibon; La Cabana
+      Fontibon; La Giralda; Los Alamos; Puerta De Teja
+
+006413  San Pablo Jerico
+    Vecinos (6): Belen Fontibon; Brisas Aldea Fontibon; El Carmen
+      Fontibon; El Chanco I; Puente Grande; Versalles Fontibon
+
+105103  San Pedro
+    Vecinos (3): El Tintal; Zona Franca; Sabana Grande (L8)
+
+006523  San Pedro De Los Robles
+    Vecinos (2): Guadual Fontibon; Sabana Grande (L8)
+
+006301  Santa Cecilia
+    Vecinos (8): Bosque De Modelia; Capellania; Ferrocaja Fontibon; Los
+      Alamos; Modelia; Modelia Occidental; Puerta De Teja; San Ignacio
+
+006319  Terminal De Transportes
+    Vecinos (4): Franco; La Esperanza Norte; La Esperanza Sur; Salitre
+      Occidental
+
+006401  Versalles Fontibon
+    Vecinos (8): Aeropuerto El Dorado; Atahualpa; Belen Fontibon; Brisas
+      Aldea Fontibon; El Refugio; La Cabana Fontibon; La Giralda; San
+      Pablo Jerico
+
+006417  Villa Carmenza
+    Vecinos (2): Belen Fontibon; El Carmen Fontibon
+
+005637  Villa Gladys
+    Vecinos (5): Aeropuerto El Dorado; Sabana Del Dorado; Centro
+      Engativa Ii (L10); Engativa Zona Urbana (L10); Marandu (L10)
+
+006406  Villemar
+    Vecinos (6): Centro Fontibon; El Carmen Fontibon; El Tintal Central;
+      Ferrocaja Fontibon; Guadual Fontibon; La Giralda
+
+006520  Zona Franca
+    Vecinos (5): El Carmen Fontibon; El Tintal; Moravia; San Pedro;
+      Sabana Grande (L8)
+
+==========================================================================
+LOCALIDAD 10 - ENGATIVÁ
+==========================================================================
+
+005643  Alamos
+    Vecinos (4): El Cedro; Garces Navas Oriental; Villa Del Mar; Villa
+      Sagrario
+
+005611  Autopista Medellin
+    Vecinos (4): La Granja; Paris Gaitan; Santa Maria; El Minuto De Dios
+      (L11)
+
+005632  Bochica
+    Vecinos (5): Ciudad Bachue I Etapa; El Madrigal; Paris; Quirigua Ii;
+      Bochica Ii (L11)
+
+005622  Bolivia
+    Vecinos (6): Garces Navas; Garces Navas Oriental; Villas De Granada
+      I; Bochica Ii (L11); Bolivia Oriental (L11); Ciudadela Colsubsidio
+      (L11)
+
+005675  Bolivia
+    Vecinos (6): La Riviera; Marandu; San Antonio Engativa; San Antonio
+      Urbano; Villa Amalia; Villa Del Mar
+
+005406  Bonanza
+    Vecinos (7): Boyaca; La Estrada; Las Ferias Occidental; Palo Blanco;
+      Santa Maria; El Minuto De Dios (L11); Santa Rosa (L11)
+
+005603  Boyaca
+    Vecinos (9): Bonanza; El Laurel; El Real; Palo Blanco; San Joaquin;
+      Santa Helenita; Santa Maria; Tabora; Villa Luz
+
+005667  Centro Engativa Ii
+    Vecinos (6): El Gaco; Engativa Zona Urbana; La Faena; La Riviera;
+      Marandu; Villa Gladys (L9)
+
+005630  Ciudad Bachue
+    Vecinos (7): Ciudad Bachue Ii; Primavera; Quirigua I; Bochica Ii
+      (L11); Los Cerezos (L11); Luis Carlos Galan (L11); Santa Teresa De
+      Suba (L11)
+
+005631  Ciudad Bachue I Etapa
+    Vecinos (5): Bochica; Ciudad Bachue Ii; Quirigua I; Quirigua Ii;
+      Bochica Ii (L11)
+
+005682  Ciudad Bachue Ii
+    Vecinos (4): Ciudad Bachue; Ciudad Bachue I Etapa; Quirigua I;
+      Bochica Ii (L11)
+
+005629  El Cedro
+    Vecinos (8): Alamos; El Madrigal; Florencia; Garces Navas Oriental;
+      Los Alamos; Santa Monica; Villa Del Mar; Bochica Ii (L11)
+
+005634  El Cortijo
+    Vecinos (4): El Dorado Industrial; Villas De Granada I; Ciudadela
+      Colsubsidio (L11); El Dorado (L11)
+
+005663  El Dorado Industrial
+    Vecinos (7): El Cortijo; El Gaco; Engativa El Dorado; Gran Granada;
+      Villas De Alcala; Villas De Granada I; El Dorado (L11)
+
+005605  El Encanto
+    Vecinos (6): El Real; La Cabana; San Joaquin; Santa Cecilia; Villa
+      Luz; Normandia Occidental (L9)
+
+005669  El Gaco
+    Vecinos (7): Centro Engativa Ii; El Dorado Industrial; Engativa El
+      Dorado; Engativa Zona Urbana; La Faena; Villas De Alcala; El Cedro
+      (L9)
+
+005510  El Laurel
+    Vecinos (5): Boyaca; El Real; La Estrada; Palo Blanco; San Joaquin
+
+005635  El Madrigal
+    Vecinos (6): Bochica; El Cedro; Florencia; Paris; Quirigua Ii;
+      Bochica Ii (L11)
+
+005652  El Muelle
+    Vecinos (3): San Antonio Engativa; Villa Del Mar; Aeropuerto El
+      Dorado (L9)
+
+005604  El Real
+    Vecinos (5): Boyaca; El Encanto; El Laurel; San Joaquin; Villa Luz
+
+106301  Engativa El Dorado
+    Vecinos (2): El Dorado Industrial; El Gaco
+
+005636  Engativa Zona Urbana
+    Vecinos (5): Centro Engativa Ii; El Gaco; El Cedro (L9); Sabana Del
+      Dorado (L9); Villa Gladys (L9)
+
+005620  Florencia
+    Vecinos (5): El Cedro; El Madrigal; La Soledad Norte; Los Alamos;
+      Paris
+
+005621  Florida Blanca
+    Vecinos (6): Los Alamos; Santa Helenita; Santa Monica; Villa Luz;
+      Los Alamos (L9); Los Angeles (L9)
+
+005627  Garces Navas
+    Vecinos (5): Bolivia; Garces Navas Oriental; Garces Navas Sur; Villa
+      Amalia; Villas De Granada I
+
+005628  Garces Navas Oriental
+    Vecinos (7): Alamos; Bolivia; El Cedro; Garces Navas; Villa Amalia;
+      Villa Sagrario; Bochica Ii (L11)
+
+005655  Garces Navas Sur
+    Vecinos (4): Garces Navas; Villa Amalia; Villas De Granada; Villas
+      De Granada I
+
+005654  Gran Granada
+    Vecinos (4): El Dorado Industrial; Villas De Alcala; Villas De
+      Granada; Villas De Granada I
+
+005508  La Cabana
+    Vecinos (6): El Encanto; Normandia; San Joaquin; Bosque Popular
+      (L12); Jardin Botanico (L9); Normandia Occidental (L9)
+
+005502  La Estrada
+    Vecinos (9): Bonanza; El Laurel; Las Ferias Occidental; Palo Blanco;
+      San Joaquin; Bellavista Occidental (L12); Bosque Popular (L12); La
+      Estradita (L12); Las Ferias (L12)
+
+005666  La Faena
+    Vecinos (4): Centro Engativa Ii; El Gaco; La Riviera; Villas De
+      Alcala
+
+005610  La Granja
+    Vecinos (7): Autopista Medellin; La Soledad Norte; Paris; Paris
+      Gaitan; Santa Maria; Tabora; Los Cerezos (L11)
+
+005670  La Riviera
+    Vecinos (6): Bolivia; Centro Engativa Ii; La Faena; Marandu; Villa
+      Amalia; Villas De Alcala
+
+005615  La Soledad Norte
+    Vecinos (6): Florencia; La Granja; Los Alamos; Paris; Santa
+      Helenita; Tabora
+
+005405  Las Ferias Occidental
+    Vecinos (6): Bonanza; La Estrada; Palo Blanco; Julio Florez (L12);
+      Las Ferias (L12); Santa Rosa (L11)
+
+005625  Los Alamos
+    Vecinos (6): El Cedro; Florencia; Florida Blanca; La Soledad Norte;
+      Santa Helenita; Santa Monica
+
+005665  Marandu
+    Vecinos (6): Bolivia; Centro Engativa Ii; La Riviera; San Antonio
+      Urbano; Aeropuerto El Dorado (L9); Villa Gladys (L9)
+
+005507  Normandia
+    Vecinos (5): La Cabana; Jardin Botanico (L9); La Esperanza Norte
+      (L9); Modelia (L9); Normandia Occidental (L9)
+
+005501  Palo Blanco
+    Vecinos (6): Bonanza; Boyaca; El Laurel; La Estrada; Las Ferias
+      Occidental; Santa Maria
+
+005619  Paris
+    Vecinos (10): Bochica; El Madrigal; Florencia; La Granja; La Soledad
+      Norte; Paris Gaitan; Primavera; Quirigua Ii; Quirigua Oriental;
+      Los Cerezos (L11)
+
+005612  Paris Gaitan
+    Vecinos (6): Autopista Medellin; La Granja; Paris; El Minuto De Dios
+      (L11); La Serena (L11); Los Cerezos (L11)
+
+005617  Primavera
+    Vecinos (6): Ciudad Bachue; Paris; Quirigua I; Quirigua Ii; Quirigua
+      Oriental; Los Cerezos (L11)
+
+005683  Quirigua I
+    Vecinos (6): Ciudad Bachue; Ciudad Bachue I Etapa; Ciudad Bachue Ii;
+      Primavera; Quirigua Ii; Los Cerezos (L11)
+
+005684  Quirigua Ii
+    Vecinos (6): Bochica; Ciudad Bachue I Etapa; El Madrigal; Paris;
+      Primavera; Quirigua I
+
+005639  Quirigua Oriental
+    Vecinos (3): Paris; Primavera; Los Cerezos (L11)
+
+005679  San Antonio Engativa
+    Vecinos (5): Bolivia; El Muelle; San Antonio Urbano; Villa Del Mar;
+      Aeropuerto El Dorado (L9)
+
+005660  San Antonio Urbano
+    Vecinos (4): Bolivia; Marandu; San Antonio Engativa; Aeropuerto El
+      Dorado (L9)
+
+005509  San Joaquin
+    Vecinos (7): Boyaca; El Encanto; El Laurel; El Real; La Cabana; La
+      Estrada; Bosque Popular (L12)
+
+005638  Santa Cecilia
+    Vecinos (5): El Encanto; Villa Luz; Los Alamos (L9); Normandia
+      Occidental (L9); San Ignacio (L9)
+
+005608  Santa Helenita
+    Vecinos (6): Boyaca; Florida Blanca; La Soledad Norte; Los Alamos;
+      Tabora; Villa Luz
+
+005602  Santa Maria
+    Vecinos (7): Autopista Medellin; Bonanza; Boyaca; La Granja; Palo
+      Blanco; Tabora; El Minuto De Dios (L11)
+
+005641  Santa Monica
+    Vecinos (5): El Cedro; Florida Blanca; Los Alamos; Villa Del Mar;
+      Los Angeles (L9)
+
+005609  Tabora
+    Vecinos (5): Boyaca; La Granja; La Soledad Norte; Santa Helenita;
+      Santa Maria
+
+005648  Villa Amalia
+    Vecinos (9): Bolivia; Garces Navas; Garces Navas Oriental; Garces
+      Navas Sur; La Riviera; Villa Del Mar; Villa Sagrario; Villas De
+      Alcala; Villas De Granada
+
+005680  Villa Del Mar
+    Vecinos (10): Alamos; Bolivia; El Cedro; El Muelle; San Antonio
+      Engativa; Santa Monica; Villa Amalia; Villa Sagrario; Aeropuerto
+      El Dorado (L9); Los Angeles (L9)
+
+005614  Villa Luz
+    Vecinos (8): Boyaca; El Encanto; El Real; Florida Blanca; Santa
+      Cecilia; Santa Helenita; Los Alamos (L9); San Ignacio (L9)
+
+005658  Villa Sagrario
+    Vecinos (4): Alamos; Garces Navas Oriental; Villa Amalia; Villa Del
+      Mar
+
+005668  Villas De Alcala
+    Vecinos (7): El Dorado Industrial; El Gaco; Gran Granada; La Faena;
+      La Riviera; Villa Amalia; Villas De Granada
+
+005647  Villas De Granada
+    Vecinos (5): Garces Navas Sur; Gran Granada; Villa Amalia; Villas De
+      Alcala; Villas De Granada I
+
+005649  Villas De Granada I
+    Vecinos (8): Bolivia; El Cortijo; El Dorado Industrial; Garces
+      Navas; Garces Navas Sur; Gran Granada; Villas De Granada;
+      Ciudadela Colsubsidio (L11)
+
+==========================================================================
+LOCALIDAD 11 - SUBA
+==========================================================================
+
+009218  Almirante Colon
+    Vecinos (5): Ciudad Hunza; Club De Los Lagartos; Niza Suba; Rincon
+      Altamar; Vereda Suba Naranjos
+
+009222  Altos De Chozica
+    Vecinos (8): Altos De Suba; El Rincon Norte; Los Naranjos; Niza
+      Suba; Suba Cerros; Suba Urbano; Vereda Suba Naranjos; Villa Elisa
+
+009260  Altos De Suba
+    Vecinos (7): Altos De Chozica; Atenas; Escuela De Carabineros; Niza
+      Suba; Suba Cerros; Suba Urbano; Vereda Suba Naranjos
+
+009119  Atenas
+    Vecinos (6): Altos De Suba; Escuela De Carabineros; Iberia; Niza
+      Suba; San Jose Del Prado; Santa Helena
+
+009205  Aures
+    Vecinos (6): Costa Azul; La Chucua; Lago De Suba; Potrerillo; Ttes
+      De Colombia; Villa Elisa
+
+009206  Aures Ii
+    Vecinos (5): Costa Azul; Lago De Suba; Lech Walesa; Nueva Tibabuyes;
+      Villa Maria
+
+107109  Barajas Norte
+    Vecinos (9): Casablanca Suba I; Delmonte; La Lomita; Las Mercedes
+      Suba Rural; Nuestra Senora Del Rosario; San Jose De Bavaria; Tuna
+      Alta; Tuna Rural; Vereda Suba Cerros Ii
+
+009118  Batan
+    Vecinos (8): Canodromo; Las Villas; Monaco; Niza Norte; Niza Sur;
+      Prado Veraniego Sur; La Calleja (L1); Santa Barbara Occidental
+      (L1)
+
+009259  Berlin
+    Vecinos (6): Bilbao; Sabana De Tibabuyes; San Carlos De Suba; San
+      Pedro; Tibabuyes Universal; Toscana
+
+009252  Bilbao
+    Vecinos (5): Berlin; Sabana De Tibabuyes; San Carlos De Suba;
+      Tibabuyes Ii; Tibabuyes Occidental
+
+005644  Bochica Ii
+    Vecinos (10): Bolivia Oriental; Santa Teresa De Suba; Bochica (L10);
+      Bolivia (L10); Ciudad Bachue (L10); Ciudad Bachue I Etapa (L10);
+      Ciudad Bachue Ii (L10); El Cedro (L10); El Madrigal (L10); Garces
+      Navas Oriental (L10)
+
+005640  Bolivia Oriental
+    Vecinos (4): Bochica Ii; Ciudadela Colsubsidio; Santa Teresa De
+      Suba; Bolivia (L10)
+
+009241  Bosques De San Jorge
+    Vecinos (4): Campanella; El Pino; Las Flores; Suba Urbano
+
+009102  Britalia
+    Vecinos (8): Cantagallo; El Toberin; Gilmar; Granada Norte; Las
+      Orquideas; Portales Del Norte; San Jose V Sector; Villa Del Prado
+
+009219  Campanella
+    Vecinos (6): Bosques De San Jorge; El Pino; Salitre Suba; Suba
+      Urbano; Tuna Alta; Tuna Baja
+
+008544  Canaima
+    Vecinos (7): Casablanca Suba Urbano; El Cerezo; Mirandela; El
+      Vervenal (L1); Tibabita (L1); Tibabita Rural (L1); Verbenal San
+      Antonio (L1)
+
+009130  Canodromo
+    Vecinos (4): Batan; Prado Veraniego; Prado Veraniego Sur; La Calleja
+      (L1)
+
+009103  Cantagallo
+    Vecinos (7): Britalia; El Plan; Gilmar; Las Orquideas; Mazuren;
+      Estrella Del Norte (L1); Las Margaritas (L1)
+
+009258  Casa Blanca Suba I
+    Vecinos (3): El Plan; Escuela De Carabineros; Suba Cerros
+
+107102  Casablanca Suba
+    Vecinos (6): Casablanca Suba I; Casablanca Suba Urbano; Casablanca
+      Suba Urbano I; Casablanca Suba Urbano Ii; Guaymaral; La Lomita
+
+009215  Casablanca Suba
+    Vecinos (5): Gilmar; Portales Del Norte; San Jose V Sector; Suba
+      Cerros; Vereda Suba Cerros Ii
+
+107110  Casablanca Suba I
+    Vecinos (8): Barajas Norte; Casablanca Suba; Casablanca Suba Urbano;
+      Casablanca Suba Urbano I; Casablanca Suba Urbano Ii; La Lomita;
+      Mirandela; San Jose De Bavaria
+
+107111  Casablanca Suba Ii
+    Vecinos (2): Casablanca Suba Urbano; Guaymaral
+
+009136  Casablanca Suba Urbano
+    Vecinos (9): Canaima; Casablanca Suba; Casablanca Suba I; Casablanca
+      Suba Ii; El Cerezo; Guaymaral; Mirandela; Tibabita Rural (L1);
+      Torca I (L1)
+
+009138  Casablanca Suba Urbano I
+    Vecinos (2): Casablanca Suba; Casablanca Suba I
+
+009139  Casablanca Suba Urbano Ii
+    Vecinos (2): Casablanca Suba; Casablanca Suba I
+
+009235  Ciudad Hunza
+    Vecinos (5): Almirante Colon; El Rincon; Rincon Altamar; Vereda Suba
+      Naranjos; Villa Alcazar
+
+009108  Ciudad Jardin Norte
+    Vecinos (6): Iberia; Las Villas; Niza Norte; Niza Suba; Prado
+      Veraniego Norte; Prado Veraniego Sur
+
+005650  Ciudadela Colsubsidio
+    Vecinos (9): Bolivia Oriental; El Dorado; La Carolina De Suba; Lech
+      Walesa; Santa Teresa De Suba; Tibabuyes; Bolivia (L10); El Cortijo
+      (L10); Villas De Granada I (L10)
+
+009121  Club De Los Lagartos
+    Vecinos (10): Almirante Colon; El Minuto De Dios; La Serena; Los
+      Cerezos; Niza Norte; Niza Suba; Niza Sur; Potosi; Rincon Altamar;
+      Santa Teresa De Suba
+
+009142  Conejera
+    Vecinos (2): Guaymaral; La Lomita
+
+009208  Costa Azul
+    Vecinos (8): Aures; Aures Ii; El Poa; La Chucua; Lago De Suba;
+      Potrerillo; Villa Maria; Villa Maria I
+
+009246  Delmonte
+    Vecinos (3): Barajas Norte; Tuna Alta; Vereda Suba Cerros Ii
+
+008527  El Cerezo
+    Vecinos (4): Canaima; Casablanca Suba Urbano; Mirandela; El Vervenal
+      (L1)
+
+005664  El Dorado
+    Vecinos (6): Ciudadela Colsubsidio; Lisboa; Santa Cecilia De Suba I;
+      Tibabuyes; El Cortijo (L10); El Dorado Industrial (L10)
+
+005601  El Minuto De Dios
+    Vecinos (8): Club De Los Lagartos; La Serena; Potosi; Santa Rosa;
+      Autopista Medellin (L10); Bonanza (L10); Paris Gaitan (L10); Santa
+      Maria (L10)
+
+009213  El Pino
+    Vecinos (7): Bosques De San Jorge; Campanella; El Poa; Las Flores;
+      Pinos De Lombardia; Tibabuyes; Tuna Baja
+
+009128  El Plan
+    Vecinos (8): Cantagallo; Casa Blanca Suba I; Escuela De Carabineros;
+      Gilmar; Mazuren; Santa Helena; Suba Cerros; Victoria Norte
+
+009211  El Poa
+    Vecinos (9): Costa Azul; El Pino; La Chucua; Las Flores; Lombardia;
+      Pinos De Lombardia; Puerta Del Sol; Tibabuyes; Villa Maria I
+
+009202  El Rincon
+    Vecinos (7): Ciudad Hunza; El Rincon Norte; Los Naranjos; Rincon
+      Altamar; Rincon De Suba; San Cayetano; Villa Alcazar
+
+009204  El Rincon Norte
+    Vecinos (6): Altos De Chozica; El Rincon; Los Naranjos; San
+      Cayetano; Ttes De Colombia; Villa Elisa
+
+008501  El Toberin
+    Vecinos (6): Britalia; Granada Norte; Las Orquideas; Villa Del
+      Prado; La Pradera Norte (L1); La Uribe (L1)
+
+009132  Escuela De Carabineros
+    Vecinos (6): Altos De Suba; Atenas; Casa Blanca Suba I; El Plan;
+      Santa Helena; Suba Cerros
+
+009114  Gilmar
+    Vecinos (7): Britalia; Cantagallo; Casablanca Suba; El Plan;
+      Mazuren; Portales Del Norte; Suba Cerros
+
+009101  Granada Norte
+    Vecinos (4): Britalia; El Toberin; Villa Del Prado; La Uribe (L1)
+
+107101  Guaymaral
+    Vecinos (6): Casablanca Suba; Casablanca Suba Ii; Casablanca Suba
+      Urbano; Conejera; La Candelaria; La Lomita
+
+009115  Iberia
+    Vecinos (6): Atenas; Ciudad Jardin Norte; Niza Suba; Prado Veraniego
+      Norte; San Jose Del Prado; Santa Helena
+
+009247  Iragua
+    Vecinos (3): San Jose De Bavaria; San Jose V Sector; Vereda Suba
+      Cerros Ii
+
+009141  La Candelaria
+    Vecinos (2): Guaymaral; La Lomita
+
+009236  La Carolina De Suba
+    Vecinos (4): Ciudadela Colsubsidio; Lech Walesa; Nueva Tibabuyes;
+      Tibabuyes
+
+009221  La Chucua
+    Vecinos (6): Aures; Costa Azul; El Poa; Las Flores; Potrerillo;
+      Villa Elisa
+
+009216  La Gaitana
+    Vecinos (6): La Gaitana Oriental; Nueva Tibabuyes; Sabana De
+      Tibabuyes; Tibabuyes; Tibabuyes Universal; Toscana
+
+009262  La Gaitana Oriental
+    Vecinos (6): La Gaitana; Nueva Tibabuyes; Puerta Del Sol; Sabana De
+      Tibabuyes; Tibabuyes; Villa Maria
+
+107112  La Lomita
+    Vecinos (7): Barajas Norte; Casablanca Suba; Casablanca Suba I;
+      Conejera; Guaymaral; La Candelaria; Nuestra Senora Del Rosario
+
+005613  La Serena
+    Vecinos (4): Club De Los Lagartos; El Minuto De Dios; Los Cerezos;
+      Paris Gaitan (L10)
+
+009220  Lago De Suba
+    Vecinos (8): Aures; Aures Ii; Costa Azul; Lech Walesa; Potrerillo;
+      San Cayetano; Ttes De Colombia; Villa Maria
+
+009210  Las Flores
+    Vecinos (6): Bosques De San Jorge; El Pino; El Poa; La Chucua; Suba
+      Urbano; Villa Elisa
+
+009243  Las Mercedes I
+    Vecinos (4): Las Mercedes Suba Rural; Tuna Baja; Tuna Rural; Villa
+      Hermosa
+
+009239  Las Mercedes Suba
+    Vecinos (3): Las Mercedes Suba Rural; Salitre Suba; Villa Hermosa
+
+107107  Las Mercedes Suba Rural
+    Vecinos (7): Barajas Norte; Las Mercedes I; Las Mercedes Suba;
+      Salitre Suba; Tuna Alta; Tuna Rural; Villa Hermosa
+
+008516  Las Orquideas
+    Vecinos (5): Britalia; Cantagallo; El Toberin; Estrella Del Norte
+      (L1); La Pradera Norte (L1)
+
+009122  Las Villas
+    Vecinos (6): Batan; Ciudad Jardin Norte; Niza Norte; Niza Suba; Niza
+      Sur; Prado Veraniego Sur
+
+009227  Lech Walesa
+    Vecinos (7): Aures Ii; Ciudadela Colsubsidio; La Carolina De Suba;
+      Lago De Suba; Nueva Tibabuyes; San Cayetano; Santa Teresa De Suba
+
+009254  Lisboa
+    Vecinos (7): El Dorado; San Pedro; Santa Cecilia; Santa Cecilia De
+      Suba I; Santa Rita De Suba; Tibabuyes; Toscana
+
+009228  Lombardia
+    Vecinos (4): El Poa; Puerta Del Sol; Sabana De Tibabuyes; Tibabuyes
+
+005616  Los Cerezos
+    Vecinos (11): Club De Los Lagartos; La Serena; Luis Carlos Galan;
+      Santa Teresa De Suba; Ciudad Bachue (L10); La Granja (L10); Paris
+      (L10); Paris Gaitan (L10); Primavera (L10); Quirigua I (L10);
+      Quirigua Oriental (L10)
+
+009201  Los Naranjos
+    Vecinos (5): Altos De Chozica; El Rincon; El Rincon Norte; Vereda
+      Suba Naranjos; Villa Alcazar
+
+005661  Luis Carlos Galan
+    Vecinos (3): Los Cerezos; Santa Teresa De Suba; Ciudad Bachue (L10)
+
+009110  Mazuren
+    Vecinos (6): Cantagallo; El Plan; Gilmar; Victoria Norte; Estrella
+      Del Norte (L1); Las Margaritas (L1)
+
+009133  Mirandela
+    Vecinos (7): Canaima; Casablanca Suba I; Casablanca Suba Urbano; El
+      Cerezo; Nueva Zelandia; San Jose De Bavaria; El Vervenal (L1)
+
+009111  Monaco
+    Vecinos (8): Batan; Niza Sur; Potosi; Puente Largo; Estoril (L12);
+      Pasadena (L12); San Patricio (L1); Santa Barbara Occidental (L1)
+
+009123  Niza Norte
+    Vecinos (6): Batan; Ciudad Jardin Norte; Club De Los Lagartos; Las
+      Villas; Niza Suba; Niza Sur
+
+009112  Niza Suba
+    Vecinos (12): Almirante Colon; Altos De Chozica; Altos De Suba;
+      Atenas; Ciudad Jardin Norte; Club De Los Lagartos; Iberia; Las
+      Villas; Niza Norte; Suba Cerros; Suba Urbano; Vereda Suba Naranjos
+
+009109  Niza Sur
+    Vecinos (6): Batan; Club De Los Lagartos; Las Villas; Monaco; Niza
+      Norte; Potosi
+
+009140  Nuestra Senora Del Rosario
+    Vecinos (2): Barajas Norte; La Lomita
+
+009224  Nueva Tibabuyes
+    Vecinos (7): Aures Ii; La Carolina De Suba; La Gaitana; La Gaitana
+      Oriental; Lech Walesa; Tibabuyes; Villa Maria
+
+009120  Nueva Zelandia
+    Vecinos (5): Mirandela; San Jose De Bavaria; Villa Del Prado; El
+      Vervenal (L1); San Antonio Noroccidental (L1)
+
+009245  Pinos De Lombardia
+    Vecinos (4): El Pino; El Poa; Tibabuyes; Tuna Baja
+
+009135  Portales Del Norte
+    Vecinos (4): Britalia; Casablanca Suba; Gilmar; San Jose V Sector
+
+005401  Potosi
+    Vecinos (6): Club De Los Lagartos; El Minuto De Dios; Monaco; Niza
+      Sur; Puente Largo; Santa Rosa
+
+009240  Potrerillo
+    Vecinos (4): Aures; Costa Azul; La Chucua; Lago De Suba
+
+009105  Prado Pinzon
+    Vecinos (4): San Jose Del Prado; Santa Helena; Victoria Norte; Los
+      Cedros (L1)
+
+009107  Prado Veraniego
+    Vecinos (6): Canodromo; Prado Veraniego Norte; Prado Veraniego Sur;
+      San Jose Del Prado; La Calleja (L1); Los Cedros (L1)
+
+009116  Prado Veraniego Norte
+    Vecinos (5): Ciudad Jardin Norte; Iberia; Prado Veraniego; Prado
+      Veraniego Sur; San Jose Del Prado
+
+009117  Prado Veraniego Sur
+    Vecinos (6): Batan; Canodromo; Ciudad Jardin Norte; Las Villas;
+      Prado Veraniego; Prado Veraniego Norte
+
+009124  Puente Largo
+    Vecinos (6): Monaco; Potosi; Santa Rosa; Andes Norte (L12); Julio
+      Florez (L12); Pasadena (L12)
+
+009203  Puerta Del Sol
+    Vecinos (6): El Poa; La Gaitana Oriental; Lombardia; Sabana De
+      Tibabuyes; Villa Maria; Villa Maria I
+
+009266  Rincon Altamar
+    Vecinos (6): Almirante Colon; Ciudad Hunza; Club De Los Lagartos; El
+      Rincon; Rincon De Suba; Santa Teresa De Suba
+
+009217  Rincon De Santa Ines
+    Vecinos (5): Sabana De Tibabuyes Norte; Tibabuyes; Tuna; Tuna Baja;
+      Tuna Rural
+
+009237  Rincon De Suba
+    Vecinos (4): El Rincon; Rincon Altamar; San Cayetano; Santa Teresa
+      De Suba
+
+009232  Sabana De Tibabuyes
+    Vecinos (11): Berlin; Bilbao; La Gaitana; La Gaitana Oriental;
+      Lombardia; Puerta Del Sol; Sabana De Tibabuyes Norte; San Carlos
+      De Suba; Tibabuyes; Tibabuyes Ii; Tibabuyes Universal
+
+009234  Sabana De Tibabuyes Norte
+    Vecinos (6): Rincon De Santa Ines; Sabana De Tibabuyes; Tibabuyes;
+      Tibabuyes Ii; Tuna; Tuna Rural
+
+009226  Salitre Suba
+    Vecinos (6): Campanella; Las Mercedes Suba; Las Mercedes Suba Rural;
+      Tuna Alta; Tuna Baja; Villa Hermosa
+
+009251  San Carlos De Suba
+    Vecinos (3): Berlin; Bilbao; Sabana De Tibabuyes
+
+009230  San Cayetano
+    Vecinos (7): El Rincon; El Rincon Norte; Lago De Suba; Lech Walesa;
+      Rincon De Suba; Santa Teresa De Suba; Ttes De Colombia
+
+009113  San Jose De Bavaria
+    Vecinos (8): Barajas Norte; Casablanca Suba I; Iragua; Mirandela;
+      Nueva Zelandia; San Jose V Sector; Vereda Suba Cerros Ii; Villa
+      Del Prado
+
+009106  San Jose Del Prado
+    Vecinos (7): Atenas; Iberia; Prado Pinzon; Prado Veraniego; Prado
+      Veraniego Norte; Santa Helena; Los Cedros (L1)
+
+009134  San Jose V Sector
+    Vecinos (7): Britalia; Casablanca Suba; Iragua; Portales Del Norte;
+      San Jose De Bavaria; Vereda Suba Cerros Ii; Villa Del Prado
+
+009253  San Pedro
+    Vecinos (4): Berlin; Lisboa; Santa Rita De Suba; Toscana
+
+009256  Santa Cecilia
+    Vecinos (4): Lisboa; Santa Cecilia De Suba I; Santa Cecilia De Suba
+      I; Santa Rita De Suba
+
+207801  Santa Cecilia De Suba I
+    Vecinos (2): Santa Cecilia; Santa Cecilia De Suba I
+
+009268  Santa Cecilia De Suba I
+    Vecinos (4): El Dorado; Lisboa; Santa Cecilia; Santa Cecilia De Suba
+      I
+
+009131  Santa Helena
+    Vecinos (7): Atenas; El Plan; Escuela De Carabineros; Iberia; Prado
+      Pinzon; San Jose Del Prado; Victoria Norte
+
+009255  Santa Rita De Suba
+    Vecinos (3): Lisboa; San Pedro; Santa Cecilia
+
+005402  Santa Rosa
+    Vecinos (7): El Minuto De Dios; Potosi; Puente Largo; Bonanza (L10);
+      Julio Florez (L12); Las Ferias (L12); Las Ferias Occidental (L10)
+
+009238  Santa Teresa De Suba
+    Vecinos (11): Bochica Ii; Bolivia Oriental; Ciudadela Colsubsidio;
+      Club De Los Lagartos; Lech Walesa; Los Cerezos; Luis Carlos Galan;
+      Rincon Altamar; Rincon De Suba; San Cayetano; Ciudad Bachue (L10)
+
+009231  Suba Cerros
+    Vecinos (12): Altos De Chozica; Altos De Suba; Casa Blanca Suba I;
+      Casablanca Suba; El Plan; Escuela De Carabineros; Gilmar; Niza
+      Suba; Suba Urbano; Tuna Alta; Vereda Suba Cerros Ii; Vereda Suba
+      Naranjos
+
+009212  Suba Urbano
+    Vecinos (10): Altos De Chozica; Altos De Suba; Bosques De San Jorge;
+      Campanella; Las Flores; Niza Suba; Suba Cerros; Tuna Alta; Vereda
+      Suba Naranjos; Villa Elisa
+
+009233  Tibabuyes
+    Vecinos (8): El Pino; El Poa; Lombardia; Pinos De Lombardia; Rincon
+      De Santa Ines; Sabana De Tibabuyes; Sabana De Tibabuyes Norte;
+      Tuna Baja
+
+009257  Tibabuyes
+    Vecinos (8): Ciudadela Colsubsidio; El Dorado; La Carolina De Suba;
+      La Gaitana; La Gaitana Oriental; Lisboa; Nueva Tibabuyes; Toscana
+
+009248  Tibabuyes Ii
+    Vecinos (5): Bilbao; Sabana De Tibabuyes; Sabana De Tibabuyes Norte;
+      Tibabuyes Occidental; Tuna Rural
+
+009250  Tibabuyes Occidental
+    Vecinos (2): Bilbao; Tibabuyes Ii
+
+009225  Tibabuyes Universal
+    Vecinos (4): Berlin; La Gaitana; Sabana De Tibabuyes; Toscana
+
+009229  Toscana
+    Vecinos (6): Berlin; La Gaitana; Lisboa; San Pedro; Tibabuyes;
+      Tibabuyes Universal
+
+009223  Ttes De Colombia
+    Vecinos (5): Aures; El Rincon Norte; Lago De Suba; San Cayetano;
+      Villa Elisa
+
+009261  Tuna
+    Vecinos (3): Rincon De Santa Ines; Sabana De Tibabuyes Norte; Tuna
+      Rural
+
+009214  Tuna Alta
+    Vecinos (8): Barajas Norte; Campanella; Delmonte; Las Mercedes Suba
+      Rural; Salitre Suba; Suba Cerros; Suba Urbano; Vereda Suba Cerros
+      Ii
+
+009242  Tuna Baja
+    Vecinos (9): Campanella; El Pino; Las Mercedes I; Pinos De
+      Lombardia; Rincon De Santa Ines; Salitre Suba; Tibabuyes; Tuna
+      Rural; Villa Hermosa
+
+107106  Tuna Rural
+    Vecinos (8): Barajas Norte; Las Mercedes I; Las Mercedes Suba Rural;
+      Rincon De Santa Ines; Sabana De Tibabuyes Norte; Tibabuyes Ii;
+      Tuna; Tuna Baja
+
+009265  Vereda Suba Cerros Ii
+    Vecinos (8): Barajas Norte; Casablanca Suba; Delmonte; Iragua; San
+      Jose De Bavaria; San Jose V Sector; Suba Cerros; Tuna Alta
+
+009249  Vereda Suba Naranjos
+    Vecinos (9): Almirante Colon; Altos De Chozica; Altos De Suba;
+      Ciudad Hunza; Los Naranjos; Niza Suba; Suba Cerros; Suba Urbano;
+      Villa Alcazar
+
+009104  Victoria Norte
+    Vecinos (6): El Plan; Mazuren; Prado Pinzon; Santa Helena; Las
+      Margaritas (L1); Los Cedros (L1)
+
+009263  Villa Alcazar
+    Vecinos (4): Ciudad Hunza; El Rincon; Los Naranjos; Vereda Suba
+      Naranjos
+
+009129  Villa Del Prado
+    Vecinos (8): Britalia; El Toberin; Granada Norte; Nueva Zelandia;
+      San Jose De Bavaria; San Jose V Sector; La Uribe (L1); San Antonio
+      Noroccidental (L1)
+
+009207  Villa Elisa
+    Vecinos (7): Altos De Chozica; Aures; El Rincon Norte; La Chucua;
+      Las Flores; Suba Urbano; Ttes De Colombia
+
+009244  Villa Hermosa
+    Vecinos (5): Las Mercedes I; Las Mercedes Suba; Las Mercedes Suba
+      Rural; Salitre Suba; Tuna Baja
+
+009209  Villa Maria
+    Vecinos (7): Aures Ii; Costa Azul; La Gaitana Oriental; Lago De
+      Suba; Nueva Tibabuyes; Puerta Del Sol; Villa Maria I
+
+009267  Villa Maria I
+    Vecinos (4): Costa Azul; El Poa; Puerta Del Sol; Villa Maria
+
+==========================================================================
+LOCALIDAD 12 - BARRIOS UNIDOS
+==========================================================================
+
+007302  Alcazares
+    Vecinos (7): Alcazares Norte; Colombia; La Merced Norte; La Paz;
+      Once De Noviembre; San Felipe; Siete De Agosto
+
+007404  Alcazares Norte
+    Vecinos (6): Alcazares; Colombia; La Aurora; La Merced Norte; Once
+      De Noviembre; San Felipe
+
+009127  Andes Norte
+    Vecinos (6): Julio Florez; La Castellana; Los Andes; Pasadena;
+      Rionegro; Puente Largo (L11)
+
+007306  Baquero
+    Vecinos (6): La Esperanza; Muequeta; Rafael Uribe; San Luis; Siete
+      De Agosto; Chapinero Occidental (L13)
+
+005503  Bellavista Occidental
+    Vecinos (5): Jose Joaquin Vargas; La Estradita; Las Ferias; San
+      Fernando Occidental; La Estrada (L10)
+
+007309  Benjamin Herrera
+    Vecinos (5): Campin; El Rosario; La Paz; Quinta Mutis; Siete De
+      Agosto
+
+005505  Bosque Popular
+    Vecinos (7): Campo Eucaristico; La Estradita; Parque Popular
+      Salitre; Jardin Botanico (L9); La Cabana (L10); La Estrada (L10);
+      San Joaquin (L10)
+
+007201  Campin
+    Vecinos (9): Benjamin Herrera; Campin Occidental; El Rosario;
+      Muequeta; Nicolas De Federman; Quinta Mutis; San Luis; Belalcazar
+      (L13); Galerias (L13)
+
+005105  Campin Occidental
+    Vecinos (3): Campin; El Rosario; Nicolas De Federman
+
+005114  Campo Eucaristico
+    Vecinos (8): Bosque Popular; Pablo Vi Norte; Parque Distrital
+      Salitre; Parque Popular Salitre; El Salitre (L13); Jardin Botanico
+      (L9); La Esmeralda (L13); Paulo Vi (L13)
+
+008214  Chapinero Norte
+    Vecinos (7): La Esperanza; Quinta Camacho; Chapinero Central (L13);
+      Chapinero Occidental (L13); Granada (L2); La Salle (L2); Maria
+      Cristina (L2)
+
+007303  Colombia
+    Vecinos (7): Alcazares; Alcazares Norte; Concepcion Norte; La
+      Esperanza; Rafael Uribe; San Felipe; Siete De Agosto
+
+007304  Concepcion Norte
+    Vecinos (6): Colombia; La Esperanza; Quinta Camacho; Rafael Uribe;
+      San Felipe; Porciuncula (L2)
+
+005202  Doce De Octubre
+    Vecinos (7): Jorge Eliecer Gaitan; La Libertad; La Merced Norte;
+      Once De Noviembre; San Fernando; San Miguel; Santa Sofia
+
+005104  El Rosario
+    Vecinos (8): Benjamin Herrera; Campin; Campin Occidental; La Paz;
+      Nicolas De Federman; Pablo Vi Norte; Parque Distrital Salitre; San
+      Miguel
+
+005306  Entrerios
+    Vecinos (7): Escuela Militar; Jorge Eliecer Gaitan; Julio Florez;
+      Las Ferias; Los Andes; Metropolis; Simon Bolivar
+
+005310  Escuela Militar
+    Vecinos (5): Entrerios; Jorge Eliecer Gaitan; La Patria; Los Andes;
+      Rionegro
+
+009126  Estoril
+    Vecinos (6): La Castellana; Pasadena; Chico Norte Iii Sector (L1);
+      Monaco (L11); San Patricio (L1); Santa Bibiana (L1)
+
+005201  Jorge Eliecer Gaitan
+    Vecinos (9): Doce De Octubre; Entrerios; Escuela Militar; La
+      Libertad; La Patria; Once De Noviembre; Polo Club; Santa Sofia;
+      Simon Bolivar
+
+005101  Jose Joaquin Vargas
+    Vecinos (6): Bellavista Occidental; La Estradita; Las Ferias; Parque
+      Popular Salitre; Popular Modelo; San Fernando Occidental
+
+007402  Juan Xxiii
+    Vecinos (5): La Aurora; Lago Gaitan; Polo Club; San Felipe; Santa
+      Sofia
+
+005403  Julio Florez
+    Vecinos (8): Andes Norte; Entrerios; Las Ferias; Los Andes;
+      Metropolis; Las Ferias Occidental (L10); Puente Largo (L11); Santa
+      Rosa (L11)
+
+007407  La Aurora
+    Vecinos (5): Alcazares Norte; Juan Xxiii; Once De Noviembre; San
+      Felipe; Santa Sofia
+
+005304  La Castellana
+    Vecinos (9): Andes Norte; Estoril; La Patria; Pasadena; Polo Club;
+      Rionegro; Chico Norte (L2); Chico Norte Iii Sector (L1); El Chico
+      (L2)
+
+007305  La Esperanza
+    Vecinos (9): Baquero; Chapinero Norte; Colombia; Concepcion Norte;
+      Quinta Camacho; Rafael Uribe; San Luis; Chapinero Central (L13);
+      Chapinero Occidental (L13)
+
+005504  La Estradita
+    Vecinos (5): Bellavista Occidental; Bosque Popular; Jose Joaquin
+      Vargas; Parque Popular Salitre; La Estrada (L10)
+
+005206  La Libertad
+    Vecinos (5): Doce De Octubre; Jorge Eliecer Gaitan; San Fernando;
+      San Fernando Occidental; Simon Bolivar
+
+007301  La Merced Norte
+    Vecinos (6): Alcazares; Alcazares Norte; Doce De Octubre; La Paz;
+      Once De Noviembre; San Miguel
+
+005305  La Patria
+    Vecinos (6): Escuela Militar; Jorge Eliecer Gaitan; La Castellana;
+      Polo Club; Rionegro; Santa Sofia
+
+007310  La Paz
+    Vecinos (7): Alcazares; Benjamin Herrera; El Rosario; La Merced
+      Norte; Quinta Mutis; San Miguel; Siete De Agosto
+
+008313  Lago Gaitan
+    Vecinos (7): Juan Xxiii; Polo Club; San Felipe; Antiguo Country
+      (L2); El Retiro (L2); Espartillal (L2); Porciuncula (L2)
+
+005404  Las Ferias
+    Vecinos (9): Bellavista Occidental; Entrerios; Jose Joaquin Vargas;
+      Julio Florez; Metropolis; San Fernando Occidental; La Estrada
+      (L10); Las Ferias Occidental (L10); Santa Rosa (L11)
+
+005307  Los Andes
+    Vecinos (5): Andes Norte; Entrerios; Escuela Militar; Julio Florez;
+      Rionegro
+
+005207  Metropolis
+    Vecinos (5): Entrerios; Julio Florez; Las Ferias; San Fernando
+      Occidental; Simon Bolivar
+
+007307  Muequeta
+    Vecinos (6): Baquero; Campin; Quinta Mutis; Rafael Uribe; San Luis;
+      Siete De Agosto
+
+005106  Nicolas De Federman
+    Vecinos (9): Campin; Campin Occidental; El Rosario; Pablo Vi Norte;
+      Belalcazar (L13); Ciudad Universitaria (L13); La Esmeralda (L13);
+      Paulo Vi (L13); Rafael Nunez (L13)
+
+007405  Once De Noviembre
+    Vecinos (7): Alcazares; Alcazares Norte; Doce De Octubre; Jorge
+      Eliecer Gaitan; La Aurora; La Merced Norte; Santa Sofia
+
+005116  Pablo Vi Norte
+    Vecinos (6): Campo Eucaristico; El Rosario; Nicolas De Federman;
+      Parque Distrital Salitre; Parque Popular Salitre; Paulo Vi (L13)
+
+005112  Parque Distrital Salitre
+    Vecinos (6): Campo Eucaristico; El Rosario; Pablo Vi Norte; Parque
+      Popular Salitre; Popular Modelo; San Miguel
+
+005115  Parque Popular Salitre
+    Vecinos (8): Bosque Popular; Campo Eucaristico; Jose Joaquin Vargas;
+      La Estradita; Pablo Vi Norte; Parque Distrital Salitre; Popular
+      Modelo; Jardin Botanico (L9)
+
+009125  Pasadena
+    Vecinos (5): Andes Norte; Estoril; La Castellana; Monaco (L11);
+      Puente Largo (L11)
+
+007401  Polo Club
+    Vecinos (10): Jorge Eliecer Gaitan; Juan Xxiii; La Castellana; La
+      Patria; Lago Gaitan; Santa Sofia; Antiguo Country (L2); Chico
+      Norte (L2); Chico Norte Iii Sector (L1); El Chico (L2)
+
+005102  Popular Modelo
+    Vecinos (6): Jose Joaquin Vargas; Parque Distrital Salitre; Parque
+      Popular Salitre; San Fernando; San Fernando Occidental; San Miguel
+
+008201  Quinta Camacho
+    Vecinos (7): Chapinero Norte; Concepcion Norte; La Esperanza; San
+      Felipe; Emaus (L2); Granada (L2); Porciuncula (L2)
+
+007308  Quinta Mutis
+    Vecinos (6): Benjamin Herrera; Campin; La Paz; Muequeta; San Luis;
+      Siete De Agosto
+
+007312  Rafael Uribe
+    Vecinos (6): Baquero; Colombia; Concepcion Norte; La Esperanza;
+      Muequeta; Siete De Agosto
+
+005308  Rionegro
+    Vecinos (5): Andes Norte; Escuela Militar; La Castellana; La Patria;
+      Los Andes
+
+007403  San Felipe
+    Vecinos (9): Alcazares; Alcazares Norte; Colombia; Concepcion Norte;
+      Juan Xxiii; La Aurora; Lago Gaitan; Quinta Camacho; Porciuncula
+      (L2)
+
+005203  San Fernando
+    Vecinos (5): Doce De Octubre; La Libertad; Popular Modelo; San
+      Fernando Occidental; San Miguel
+
+005204  San Fernando Occidental
+    Vecinos (8): Bellavista Occidental; Jose Joaquin Vargas; La
+      Libertad; Las Ferias; Metropolis; Popular Modelo; San Fernando;
+      Simon Bolivar
+
+007202  San Luis
+    Vecinos (8): Baquero; Campin; La Esperanza; Muequeta; Quinta Mutis;
+      Banco Central (L13); Chapinero Occidental (L13); Galerias (L13)
+
+005103  San Miguel
+    Vecinos (7): Doce De Octubre; El Rosario; La Merced Norte; La Paz;
+      Parque Distrital Salitre; Popular Modelo; San Fernando
+
+007406  Santa Sofia
+    Vecinos (7): Doce De Octubre; Jorge Eliecer Gaitan; Juan Xxiii; La
+      Aurora; La Patria; Once De Noviembre; Polo Club
+
+007311  Siete De Agosto
+    Vecinos (8): Alcazares; Baquero; Benjamin Herrera; Colombia; La Paz;
+      Muequeta; Quinta Mutis; Rafael Uribe
+
+005205  Simon Bolivar
+    Vecinos (5): Entrerios; Jorge Eliecer Gaitan; La Libertad;
+      Metropolis; San Fernando Occidental
+
+==========================================================================
+LOCALIDAD 13 - TEUSAQUILLO
+==========================================================================
+
+005107  Acevedo Tejada
+    Vecinos (6): Ciudad Universitaria; El Recuerdo; Florida; La Soledad;
+      Las Americas; Gran America (L16)
+
+007209  Alfonso Lopez
+    Vecinos (5): Banco Central; Belalcazar; Galerias; Palermo; Quesada
+
+007208  Banco Central
+    Vecinos (5): Alfonso Lopez; Chapinero Occidental; Galerias; Quesada;
+      San Luis (L12)
+
+007206  Belalcazar
+    Vecinos (8): Alfonso Lopez; Ciudad Universitaria; Galerias; La
+      Soledad; Palermo; Santa Teresita; Campin (L12); Nicolas De
+      Federman (L12)
+
+005109  Centro Administrativo Occ.
+    Vecinos (6): Ciudad Universitaria; El Salitre; La Esmeralda; Quinta
+      Paredes; Rafael Nunez; Ciudad Salitre Nor-Oriental (L9)
+
+008213  Chapinero Central
+    Vecinos (9): Chapinero Occidental; Quesada; Bosque Calderon (L2);
+      Chapinero Norte (L12); La Esperanza (L12); La Salle (L2); Maria
+      Cristina (L2); Marly (L2); Pardo Rubio (L2)
+
+007203  Chapinero Occidental
+    Vecinos (7): Banco Central; Chapinero Central; Quesada; Baquero
+      (L12); Chapinero Norte (L12); La Esperanza (L12); San Luis (L12)
+
+005108  Ciudad Universitaria
+    Vecinos (9): Acevedo Tejada; Belalcazar; Centro Administrativo Occ.;
+      El Recuerdo; La Soledad; Las Americas; Quinta Paredes; Rafael
+      Nunez; Nicolas De Federman (L12)
+
+006201  El Recuerdo
+    Vecinos (5): Acevedo Tejada; Ciudad Universitaria; Quinta Paredes;
+      Centro Narino (L16); Gran America (L16)
+
+005110  El Salitre
+    Vecinos (7): Centro Administrativo Occ.; La Esmeralda; Paulo Vi;
+      Campo Eucaristico (L12); Ciudad Salitre Nor-Oriental (L9); Jardin
+      Botanico (L9); Salitre Occidental (L9)
+
+007106  Estrella
+    Vecinos (6): Florida; La Soledad; Las Americas; Armenia (L3); Santa
+      Fe (L3); Teusaquillo (L3)
+
+006101  Florida
+    Vecinos (8): Acevedo Tejada; Estrella; Las Americas; Usatama; Gran
+      America (L16); La Florida Occidental (L16); Samper Mendoza (L14);
+      Santa Fe (L3)
+
+007207  Galerias
+    Vecinos (5): Alfonso Lopez; Banco Central; Belalcazar; Campin (L12);
+      San Luis (L12)
+
+005111  La Esmeralda
+    Vecinos (6): Centro Administrativo Occ.; El Salitre; Paulo Vi;
+      Rafael Nunez; Campo Eucaristico (L12); Nicolas De Federman (L12)
+
+007101  La Soledad
+    Vecinos (9): Acevedo Tejada; Belalcazar; Ciudad Universitaria;
+      Estrella; Las Americas; Palermo; Santa Teresita; La Magdalena
+      (L3); Teusaquillo (L3)
+
+007107  Las Americas
+    Vecinos (7): Acevedo Tejada; Ciudad Universitaria; Estrella;
+      Florida; La Soledad; Gran America (L16); Teusaquillo (L3)
+
+007205  Palermo
+    Vecinos (7): Alfonso Lopez; Belalcazar; La Soledad; Quesada; Santa
+      Teresita; Marly (L2); Sucre (L3)
+
+005113  Paulo Vi
+    Vecinos (6): El Salitre; La Esmeralda; Rafael Nunez; Campo
+      Eucaristico (L12); Nicolas De Federman (L12); Pablo Vi Norte (L12)
+
+007204  Quesada
+    Vecinos (6): Alfonso Lopez; Banco Central; Chapinero Central;
+      Chapinero Occidental; Palermo; Marly (L2)
+
+006209  Quinta Paredes
+    Vecinos (7): Centro Administrativo Occ.; Ciudad Universitaria; El
+      Recuerdo; Centro Narino (L16); Ciudad Salitre Nor-Oriental (L9);
+      Ciudad Salitre Sur-Oriental (L9); Ortezal (L16)
+
+005117  Rafael Nunez
+    Vecinos (5): Centro Administrativo Occ.; Ciudad Universitaria; La
+      Esmeralda; Paulo Vi; Nicolas De Federman (L12)
+
+007102  Santa Teresita
+    Vecinos (6): Belalcazar; La Soledad; Palermo; La Magdalena (L3);
+      Marly (L2); Sucre (L3)
+
+006110  Usatama
+    Vecinos (6): Florida; Colseguros (L14); Gran America (L16); La
+      Florida Occidental (L16); Paloquemao (L16); Samper Mendoza (L14)
+
+==========================================================================
+LOCALIDAD 14 - LOS MÁRTIRES
+==========================================================================
+
+006109  Colseguros
+    Vecinos (3): La Florida Occidental (L16); Paloquemao (L16); Usatama
+      (L13)
+
+006106  El Liston
+    Vecinos (7): La Sabana; Samper Mendoza; La Favorita (L3); Paloquemao
+      (L16); San Victorino (L3); Santa Fe (L3); Voto Nacional (L3)
+
+004111  El Progreso
+    Vecinos (6): La Pepita; Eduardo Santos (L3); El Vergel (L15); La
+      Estanzuela (L3); Ricaurte (L16); Veraguas (L16)
+
+004110  La Pepita
+    Vecinos (5): El Progreso; La Sabana; La Estanzuela (L3); Ricaurte
+      (L16); Voto Nacional (L3)
+
+004102  La Sabana
+    Vecinos (5): El Liston; La Pepita; Paloquemao (L16); Ricaurte (L16);
+      Voto Nacional (L3)
+
+006108  Samper Mendoza
+    Vecinos (5): El Liston; Florida (L13); Paloquemao (L16); Santa Fe
+      (L3); Usatama (L13)
+
+==========================================================================
+LOCALIDAD 15 - ANTONIO NARIÑO
+==========================================================================
+
+001203  Caracas
+    Vecinos (5): Ciudad Berna; Narino Sur; Ciudad Jardin Sur (L18);
+      Restrepo (L18); San Antonio (L3)
+
+001202  Ciudad Berna
+    Vecinos (6): Caracas; Narino Sur; Policarpa; Sevilla; Modelo Sur
+      (L3); San Antonio (L3)
+
+004106  El Vergel
+    Vecinos (7): La Fraguita; Eduardo Santos (L3); El Progreso (L14);
+      San Antonio (L3); Santa Isabel (L16); Santa Isabel Sur (L16);
+      Veraguas (L16)
+
+002101  La Fraguita
+    Vecinos (6): El Vergel; La Fragua (L16); Restrepo (L18); Restrepo
+      Occidental (L18); San Antonio (L3); Santa Isabel Sur (L16)
+
+001207  Narino Sur
+    Vecinos (10): Caracas; Ciudad Berna; Calvo Sur (L4); Ciudad Jardin
+      Sur (L18); Las Brisas (L4); Modelo Sur (L3); Quinta Ramos (L4);
+      San Javier (L4); Santa Ana Sur (L4); Sociego (L18)
+
+001211  Policarpa
+    Vecinos (4): Ciudad Berna; Sevilla; La Hortua (L3); Modelo Sur (L3)
+
+002105  Santander
+    Vecinos (5): Eduardo Frey (L16); La Fragua (L16); Restrepo
+      Occidental (L18); Santander Sur (L18); Sena (L16)
+
+001201  Sevilla
+    Vecinos (4): Ciudad Berna; Policarpa; La Hortua (L3); San Antonio
+      (L3)
+
+==========================================================================
+LOCALIDAD 16 - PUENTE ARANDA
+==========================================================================
+
+004407  Alcala
+    Vecinos (5): Autopista Sur; Ospina Perez; San Eusebio; Alqueria
+      (L8); Tejar (L8)
+
+004403  Autopista Muzu
+    Vecinos (4): Autopista Muzu Oriental; Autopista Sur; Remanso Sur;
+      Villa Mayor Oriental
+
+004413  Autopista Muzu Oriental
+    Vecinos (5): Autopista Muzu; Eduardo Frey; Remanso Sur; Sena; Villa
+      Mayor Oriental
+
+004404  Autopista Sur
+    Vecinos (7): Alcala; Autopista Muzu; Ospina Perez; Ospina Perez Sur;
+      Remanso Sur; San Eusebio; Villa Mayor Oriental
+
+004303  Barcelona
+    Vecinos (6): Camelia Ii; Colon; Galan; San Francisco; San Rafael;
+      Corredor Ferreo Del Sur (L7)
+
+006207  Batallon Caldas
+    Vecinos (4): El Ejido; Gorgonzola; Ortezal; Puente Aranda
+
+004211  Bochica
+    Vecinos (5): Comuneros; Jorge Gaitan Cortes; La Asuncion; Santa
+      Matilde; Tibana
+
+004317  Camelia Ii
+    Vecinos (4): Barcelona; Galan; San Francisco; Corredor Ferreo Del
+      Sur (L7)
+
+006218  Centro Industrial
+    Vecinos (7): Puente Aranda; Salazar Gomez; Ciudad Salitre Sur-
+      Oriental (L9); Granjas De Techo (L8); Lusitania (L8); Montevideo
+      (L8); Salitre Occidental (L9)
+
+006210  Centro Narino
+    Vecinos (5): Gran America; La Florida Occidental; Ortezal; El
+      Recuerdo (L13); Quinta Paredes (L13)
+
+004308  Colon
+    Vecinos (5): Barcelona; Galan; San Gabriel; San Rafael; San Rafael
+      Industrial
+
+004202  Comuneros
+    Vecinos (8): Bochica; Jorge Gaitan Cortes; La Asuncion; Pensilvania;
+      Ricaurte; Santa Isabel; Tibana; Veraguas
+
+006211  Cundinamarca
+    Vecinos (5): Estacion Central; Industrial Centenario; La Florida
+      Occidental; Los Ejidos; Corredor Ferreo Del Sur (L7)
+
+002301  Eduardo Frey
+    Vecinos (7): Autopista Muzu Oriental; Sena; Villa Mayor Oriental;
+      Libertador (L18); Murillo Toro (L18); Santander (L15); Santander
+      Sur (L18)
+
+006206  El Ejido
+    Vecinos (5): Batallon Caldas; Gorgonzola; Industrial Centenario;
+      Ortezal; Puente Aranda
+
+002405  Escuela General Santander
+    Vecinos (7): Ospina Perez Sur; Villa Mayor Oriental; Claret (L6);
+      Fatima (L6); Samore (L6); Venecia (L8); Villa Mayor (L18)
+
+006204  Estacion Central
+    Vecinos (6): Cundinamarca; La Florida Occidental; Los Ejidos;
+      Paloquemao; Pensilvania; Ricaurte
+
+004304  Galan
+    Vecinos (10): Barcelona; Camelia Ii; Colon; La Pradera; La Trinidad;
+      San Gabriel; Corredor Ferreo Del Sur (L7); Hipotecho Sur (L8);
+      Provivienda Norte (L8); Provivienda Oriental (L8)
+
+004207  Gorgonzola
+    Vecinos (7): Batallon Caldas; El Ejido; Industrial Centenario;
+      Puente Aranda; San Francisco; San Rafael Industrial; Corredor
+      Ferreo Del Sur (L7)
+
+006202  Gran America
+    Vecinos (7): Centro Narino; La Florida Occidental; Acevedo Tejada
+      (L13); El Recuerdo (L13); Florida (L13); Las Americas (L13);
+      Usatama (L13)
+
+006205  Industrial Centenario
+    Vecinos (6): Cundinamarca; El Ejido; Gorgonzola; La Florida
+      Occidental; Ortezal; Corredor Ferreo Del Sur (L7)
+
+004210  Jorge Gaitan Cortes
+    Vecinos (7): Bochica; Comuneros; Montes; Primavera Occidental;
+      Remanso; Santa Matilde; Tibana
+
+004203  La Asuncion
+    Vecinos (6): Bochica; Comuneros; Santa Isabel; Santa Isabel Sur;
+      Santa Matilde; Veraguas
+
+004309  La Camelia
+    Vecinos (5): Montes; Remanso; Remanso Sur; San Eusebio; Corredor
+      Ferreo Del Sur (L7)
+
+006203  La Florida Occidental
+    Vecinos (11): Centro Narino; Cundinamarca; Estacion Central; Gran
+      America; Industrial Centenario; Ortezal; Paloquemao; Colseguros
+      (L14); Corredor Ferreo Del Sur (L7); Florida (L13); Usatama (L13)
+
+002107  La Fragua
+    Vecinos (6): Santa Isabel Sur; Santa Matilde; Sena; La Fraguita
+      (L15); Restrepo Occidental (L18); Santander (L15)
+
+004305  La Pradera
+    Vecinos (5): Galan; La Trinidad; Salazar Gomez; Hipotecho Sur (L8);
+      Lusitania (L8)
+
+004306  La Trinidad
+    Vecinos (5): Galan; La Pradera; Salazar Gomez; San Gabriel; San
+      Rafael Industrial
+
+004208  Los Ejidos
+    Vecinos (6): Cundinamarca; Estacion Central; Pensilvania; Primavera
+      Occidental; Tibana; Corredor Ferreo Del Sur (L7)
+
+004204  Montes
+    Vecinos (5): Jorge Gaitan Cortes; La Camelia; Primavera Occidental;
+      Remanso; Corredor Ferreo Del Sur (L7)
+
+006208  Ortezal
+    Vecinos (9): Batallon Caldas; Centro Narino; El Ejido; Industrial
+      Centenario; La Florida Occidental; Puente Aranda; Ciudad Salitre
+      Nor-Oriental (L9); Ciudad Salitre Sur-Oriental (L9); Quinta
+      Paredes (L13)
+
+004406  Ospina Perez
+    Vecinos (4): Alcala; Autopista Sur; Ospina Perez Sur; Alqueria (L8)
+
+004405  Ospina Perez Sur
+    Vecinos (6): Autopista Sur; Escuela General Santander; Ospina Perez;
+      Villa Mayor Oriental; Alqueria (L8); Venecia (L8)
+
+006107  Paloquemao
+    Vecinos (10): Estacion Central; La Florida Occidental; Pensilvania;
+      Ricaurte; Colseguros (L14); El Liston (L14); La Sabana (L14);
+      Samper Mendoza (L14); Santa Fe (L3); Usatama (L13)
+
+004201  Pensilvania
+    Vecinos (7): Comuneros; Estacion Central; Los Ejidos; Paloquemao;
+      Ricaurte; Tibana; Veraguas
+
+004205  Primavera Occidental
+    Vecinos (5): Jorge Gaitan Cortes; Los Ejidos; Montes; Tibana;
+      Corredor Ferreo Del Sur (L7)
+
+006215  Puente Aranda
+    Vecinos (8): Batallon Caldas; Centro Industrial; El Ejido;
+      Gorgonzola; Ortezal; Salazar Gomez; San Rafael Industrial; Ciudad
+      Salitre Sur-Oriental (L9)
+
+004402  Remanso
+    Vecinos (7): Jorge Gaitan Cortes; La Camelia; Montes; Remanso Sur;
+      San Eusebio; Santa Matilde; Sena
+
+004412  Remanso Sur
+    Vecinos (7): Autopista Muzu; Autopista Muzu Oriental; Autopista Sur;
+      La Camelia; Remanso; San Eusebio; Sena
+
+004101  Ricaurte
+    Vecinos (8): Comuneros; Estacion Central; Paloquemao; Pensilvania;
+      Veraguas; El Progreso (L14); La Pepita (L14); La Sabana (L14)
+
+006212  Salazar Gomez
+    Vecinos (8): Centro Industrial; La Pradera; La Trinidad; Puente
+      Aranda; San Rafael Industrial; Granjas De Techo (L8); Hipotecho
+      Sur (L8); Lusitania (L8)
+
+004401  San Eusebio
+    Vecinos (8): Alcala; Autopista Sur; La Camelia; Remanso; Remanso
+      Sur; Alqueria La Fragua Norte (L8); Corredor Ferreo Del Sur (L7);
+      Tejar (L8)
+
+004206  San Francisco
+    Vecinos (6): Barcelona; Camelia Ii; Gorgonzola; San Rafael; San
+      Rafael Industrial; Corredor Ferreo Del Sur (L7)
+
+004307  San Gabriel
+    Vecinos (4): Colon; Galan; La Trinidad; San Rafael Industrial
+
+004302  San Rafael
+    Vecinos (4): Barcelona; Colon; San Francisco; San Rafael Industrial
+
+004301  San Rafael Industrial
+    Vecinos (8): Colon; Gorgonzola; La Trinidad; Puente Aranda; Salazar
+      Gomez; San Francisco; San Gabriel; San Rafael
+
+004108  Santa Isabel
+    Vecinos (5): Comuneros; La Asuncion; Santa Isabel Sur; Veraguas; El
+      Vergel (L15)
+
+004107  Santa Isabel Sur
+    Vecinos (7): La Asuncion; La Fragua; Santa Isabel; Santa Matilde;
+      Sena; El Vergel (L15); La Fraguita (L15)
+
+004209  Santa Matilde
+    Vecinos (7): Bochica; Jorge Gaitan Cortes; La Asuncion; La Fragua;
+      Remanso; Santa Isabel Sur; Sena
+
+002106  Sena
+    Vecinos (9): Autopista Muzu Oriental; Eduardo Frey; La Fragua;
+      Remanso; Remanso Sur; Santa Isabel Sur; Santa Matilde; Santander
+      (L15); Santander Sur (L18)
+
+004212  Tibana
+    Vecinos (6): Bochica; Comuneros; Jorge Gaitan Cortes; Los Ejidos;
+      Pensilvania; Primavera Occidental
+
+004109  Veraguas
+    Vecinos (7): Comuneros; La Asuncion; Pensilvania; Ricaurte; Santa
+      Isabel; El Progreso (L14); El Vergel (L15)
+
+002309  Villa Mayor Oriental
+    Vecinos (10): Autopista Muzu; Autopista Muzu Oriental; Autopista
+      Sur; Eduardo Frey; Escuela General Santander; Ospina Perez Sur;
+      Bravo Paez (L18); Ingles (L18); Murillo Toro (L18); Villa Mayor
+      (L18)
+
+==========================================================================
+LOCALIDAD 17 - LA CANDELARIA
+==========================================================================
+
+003104  La Concordia
+    Vecinos (3): Egipto (L3); La Catedral (L3); Las Aguas (L3)
+
+008114  Parque Nacional Urbano
+    Vecinos (2): Las Aguas (L3); Parque Nacional Oriental (L3)
+
+==========================================================================
+LOCALIDAD 18 - RAFAEL URIBE URIBE
+==========================================================================
+
+001424  Barcelona Sur
+    Vecinos (4): Cerros De Oriente; Las Lomas; San Isidro; San Luis
+
+002306  Bravo Paez
+    Vecinos (6): Ingles; Murillo Toro; Quiroga Central; Quiroga Sur;
+      Villa Mayor; Villa Mayor Oriental (L16)
+
+001419  Callejon Santa Barbara
+    Vecinos (6): Carmen Del Sol; Los Molinos; Marruecos; Puerto Rico;
+      Arboleda Sur (L6); Molinos Del Sur (L6)
+
+001434  Carmen Del Sol
+    Vecinos (6): Callejon Santa Barbara; La Resurreccion; Puerto Rico;
+      San Jorge Sur; Arboleda Sur (L6); Marco Fidel Suarez I (L6)
+
+002303  Centenario
+    Vecinos (4): Olaya; Restrepo; Restrepo Occidental; Santiago Perez
+
+001428  Cerros De Oriente
+    Vecinos (9): Barcelona Sur; Las Guacamayas Iii; Las Lomas; Los
+      Molinos; Puerto Rico; San Agustin; San Luis; San Martin Sur; Diana
+      Turbay Arrayanes (L5)
+
+001204  Ciudad Jardin Sur
+    Vecinos (9): Olaya; Restrepo; San Jose Sur; Sociego; Sosiego Sur;
+      Veinte De Julio; Caracas (L15); Narino Sur (L15); San Antonio (L3)
+
+001421  Diana Turbay
+    Vecinos (2): San Agustin; Diana Turbay Arrayanes (L5)
+
+001432  Diana Turbay Cultivos
+    Vecinos (5): Los Arrayanes Ii; Arrayanes I (L5); Arrayanes V (L5);
+      Arrayanes Vi (L5); Diana Turbay Arrayanes (L5)
+
+001425  Granjas De Santa Sofia
+    Vecinos (3): Granjas San Pablo; Hospital San Carlos; La Resurreccion
+
+001412  Granjas San Pablo
+    Vecinos (7): Granjas De Santa Sofia; Gustavo Restrepo; Hospital San
+      Carlos; La Resurreccion; Quiroga Central; Quiroga Sur; San Jorge
+      Sur
+
+001429  Guiparma
+    Vecinos (3): Arboleda Sur (L6); El Playon (L6); Molinos Del Sur (L6)
+
+001402  Gustavo Restrepo
+    Vecinos (8): Granjas San Pablo; Hospital San Carlos; Olaya; Quiroga;
+      Quiroga Central; Quiroga I; San Jose Sur; Sosiego Sur
+
+001403  Hospital San Carlos
+    Vecinos (7): Granjas De Santa Sofia; Granjas San Pablo; Gustavo
+      Restrepo; La Resurreccion; La Resurreccion I; San Luis; Sosiego
+      Sur
+
+002307  Ingles
+    Vecinos (6): Bravo Paez; Quiroga Sur; Villa Mayor; Claret (L6);
+      Santa Lucia (L6); Villa Mayor Oriental (L16)
+
+002510  La Picota Oriental
+    Vecinos (6): Los Arrayanes Ii; San Agustin; Diana Turbay Arrayanes
+      (L5); La Paz (L5); La Picota (L5); Palermo Sur (L5)
+
+001413  La Resurreccion
+    Vecinos (7): Carmen Del Sol; Granjas De Santa Sofia; Granjas San
+      Pablo; Hospital San Carlos; La Resurreccion I; Puerto Rico; San
+      Jorge Sur
+
+001431  La Resurreccion I
+    Vecinos (4): Hospital San Carlos; La Resurreccion; Puerto Rico; San
+      Luis
+
+001354  Las Guacamayas Iii
+    Vecinos (8): Cerros De Oriente; Las Lomas; San Martin Sur; Las
+      Guacamayas I (L4); Las Guacamayas Ii (L4); Las Guacamayas Iv (L4);
+      Villa De Los Alpes (L4); Villa De Los Alpes I (L4)
+
+001409  Las Lomas
+    Vecinos (5): Barcelona Sur; Cerros De Oriente; Las Guacamayas Iii;
+      San Isidro; Villa De Los Alpes I (L4)
+
+002305  Libertador
+    Vecinos (8): Murillo Toro; Olaya; Quiroga; Quiroga Central; Quiroga
+      I; Santander Sur; Santiago Perez; Eduardo Frey (L16)
+
+001435  Los Arrayanes Ii
+    Vecinos (5): Diana Turbay Cultivos; La Picota Oriental; Arrayanes V
+      (L5); Diana Turbay Arrayanes (L5); Palermo Sur (L5)
+
+001417  Los Molinos
+    Vecinos (5): Callejon Santa Barbara; Cerros De Oriente; Marruecos;
+      Puerto Rico; San Agustin
+
+001418  Marruecos
+    Vecinos (5): Callejon Santa Barbara; Los Molinos; San Agustin; La
+      Picota (L5); Molinos Del Sur (L6)
+
+002310  Murillo Toro
+    Vecinos (5): Bravo Paez; Libertador; Quiroga Central; Eduardo Frey
+      (L16); Villa Mayor Oriental (L16)
+
+002201  Olaya
+    Vecinos (9): Centenario; Ciudad Jardin Sur; Gustavo Restrepo;
+      Libertador; Quiroga I; Restrepo; Restrepo Occidental; San Jose
+      Sur; Santiago Perez
+
+001427  Puerto Rico
+    Vecinos (7): Callejon Santa Barbara; Carmen Del Sol; Cerros De
+      Oriente; La Resurreccion; La Resurreccion I; Los Molinos; San Luis
+
+002202  Quiroga
+    Vecinos (4): Gustavo Restrepo; Libertador; Quiroga Central; Quiroga
+      I
+
+002203  Quiroga Central
+    Vecinos (7): Bravo Paez; Granjas San Pablo; Gustavo Restrepo;
+      Libertador; Murillo Toro; Quiroga; Quiroga Sur
+
+002209  Quiroga I
+    Vecinos (5): Gustavo Restrepo; Libertador; Olaya; Quiroga; Santiago
+      Perez
+
+002204  Quiroga Sur
+    Vecinos (6): Bravo Paez; Granjas San Pablo; Ingles; Quiroga Central;
+      San Jorge Sur; Santa Lucia (L6)
+
+002103  Restrepo
+    Vecinos (8): Centenario; Ciudad Jardin Sur; Olaya; Restrepo
+      Occidental; San Jose Sur; Caracas (L15); La Fraguita (L15); San
+      Antonio (L3)
+
+002104  Restrepo Occidental
+    Vecinos (8): Centenario; Olaya; Restrepo; Santander Sur; Santiago
+      Perez; La Fragua (L16); La Fraguita (L15); Santander (L15)
+
+001416  San Agustin
+    Vecinos (7): Cerros De Oriente; Diana Turbay; La Picota Oriental;
+      Los Molinos; Marruecos; Diana Turbay Arrayanes (L5); La Picota
+      (L5)
+
+001406  San Isidro
+    Vecinos (7): Barcelona Sur; Las Lomas; San Luis; Sosiego Sur; Veinte
+      De Julio; Suramerica (L4); Villa De Los Alpes I (L4)
+
+001411  San Jorge Sur
+    Vecinos (7): Carmen Del Sol; Granjas San Pablo; La Resurreccion;
+      Quiroga Sur; Marco Fidel Suarez (L6); Marco Fidel Suarez I (L6);
+      Santa Lucia (L6)
+
+001401  San Jose Sur
+    Vecinos (5): Ciudad Jardin Sur; Gustavo Restrepo; Olaya; Restrepo;
+      Sosiego Sur
+
+001426  San Luis
+    Vecinos (7): Barcelona Sur; Cerros De Oriente; Hospital San Carlos;
+      La Resurreccion I; Puerto Rico; San Isidro; Sosiego Sur
+
+001321  San Martin Sur
+    Vecinos (9): Cerros De Oriente; Las Guacamayas Iii; Canada O Guira
+      (L5); Diana Turbay Arrayanes (L5); La Gloria Occidental (L4); La
+      Victoria (L4); Las Guacamayas I (L4); Las Guacamayas Ii (L4); Las
+      Guacamayas Iv (L4)
+
+002302  Santander Sur
+    Vecinos (6): Libertador; Restrepo Occidental; Santiago Perez;
+      Eduardo Frey (L16); Santander (L15); Sena (L16)
+
+002304  Santiago Perez
+    Vecinos (6): Centenario; Libertador; Olaya; Quiroga I; Restrepo
+      Occidental; Santander Sur
+
+001205  Sociego
+    Vecinos (9): Ciudad Jardin Sur; Sosiego Sur; Veinte De Julio;
+      Granada Sur (L4); Narino Sur (L15); Primero De Mayo (L4); Quinta
+      Ramos (L4); Santa Ana Sur (L4); Velodromo (L4)
+
+001404  Sosiego Sur
+    Vecinos (8): Ciudad Jardin Sur; Gustavo Restrepo; Hospital San
+      Carlos; San Isidro; San Jose Sur; San Luis; Sociego; Veinte De
+      Julio
+
+001405  Veinte De Julio
+    Vecinos (7): Ciudad Jardin Sur; San Isidro; Sociego; Sosiego Sur;
+      Granada Sur (L4); Primero De Mayo (L4); Suramerica (L4)
+
+002311  Villa Mayor
+    Vecinos (5): Bravo Paez; Ingles; Claret (L6); Escuela General
+      Santander (L16); Villa Mayor Oriental (L16)
+
+==========================================================================
+LOCALIDAD 19 - CIUDAD BOLÍVAR
+==========================================================================
+
+002578  Arabia
+    Vecinos (6): El Minuto De Maria; El Mochuelo Ii Norte; El Mochuelo
+      Iii; El Tesoro; Quiba; Quiba Urbano
+
+002573  Arborizadora Alta
+    Vecinos (7): Arborizadora Alta; Arborizadora Alta I; Cerro Colorado;
+      Jerusalen; Juan Jose Rondon; La Pradera; Las Manas
+
+002569  Arborizadora Alta
+    Vecinos (6): Arborizadora Alta; Cerro Colorado; Ciudad Bolivar;
+      Ciudad Bolivar Rural Iii; Las Manas; Potosi
+
+002568  Arborizadora Alta
+    Vecinos (4): Arborizadora Alta; Arborizadora Alta; Cerro Colorado;
+      Las Manas
+
+002460  Arborizadora Alta I
+    Vecinos (5): Arborizadora Alta; Arborizadora Alta Ii; Jerusalen;
+      Juan Jose Rondon; Villa Candelaria
+
+002461  Arborizadora Alta Ii
+    Vecinos (4): Arborizadora Alta I; Jerusalen; Los Laureles Ii; Villa
+      Candelaria
+
+002580  Bella Flor
+    Vecinos (5): Bella Flor Sur; El Mirador; El Mirador Ii; Nueva
+      Esperanza; Quiba Bajo
+
+002582  Bella Flor Sur
+    Vecinos (9): Bella Flor; Bella Flor Sur Rural; Brisas Del Volador;
+      Cordillera Del Sur; El Mirador; La Torre; Los Alpes Sur; Quiba
+      Bajo; Villas El Diamante
+
+104107  Bella Flor Sur Rural
+    Vecinos (3): Bella Flor Sur; La Torre; Quiba Bajo
+
+002436  Bellavista
+    Vecinos (4): Jerusalen; La Pradera; Sierra Morena; Verona
+
+002560  Bellavista Lucero Alto
+    Vecinos (4): Estrella Del Sur; Lucero Del Sur; Naciones Unidas; San
+      Rafael
+
+002587  Brisas Del Volador
+    Vecinos (4): Bella Flor Sur; Los Alpes Sur; Villa Gloria; Villas El
+      Diamante
+
+002531  Candelaria La Nueva
+    Vecinos (5): El Satelite; Juan Jose Rondon; Los Laureles Ii; San
+      Francisco; Villa Candelaria
+
+002445  Caracoli
+    Vecinos (6): Ciudad Bolivar; Las Brisas; Potosi; Santa Viviana;
+      Sierra Morena; Sierra Morena Ii
+
+002534  Casa De Teja
+    Vecinos (5): Central De Mezclas; El Mochuelo; Quiba I; Sotavento; El
+      Mochuelo Oriental (L5)
+
+002574  Cedritos Del Sur
+    Vecinos (4): Estrella Del Sur; Naciones Unidas; Quiba; Quiba I
+
+002562  Central De Mezclas
+    Vecinos (7): Casa De Teja; La Alameda; Mexico; Quintas Del Sur;
+      Sotavento; Area Artilleria (L5); El Mochuelo Oriental (L5)
+
+002575  Cerro Colorado
+    Vecinos (7): Arborizadora Alta; Arborizadora Alta; Arborizadora
+      Alta; Ciudad Bolivar Rural Iii; El Mirador; Juan Jose Rondon; San
+      Francisco
+
+002453  Ciudad Bolivar
+    Vecinos (7): Arborizadora Alta; Caracoli; Ciudad Bolivar Rural I;
+      Ciudad Bolivar Rural Iii; Paraiso Quiba; Potosi; Quiba Bajo
+
+104119  Ciudad Bolivar Rural I
+    Vecinos (2): Ciudad Bolivar; Quiba Bajo
+
+104118  Ciudad Bolivar Rural Iii
+    Vecinos (5): Arborizadora Alta; Cerro Colorado; Ciudad Bolivar; El
+      Mirador; Paraiso Quiba
+
+002504  Compartir
+    Vecinos (6): Gibraltar Sur; Juan Pablo Ii; Las Acacias; Millan; San
+      Francisco; Sumapaz
+
+002561  Cordillera Del Sur
+    Vecinos (6): Bella Flor Sur; El Mochuelo Iv; El Tesoro; Los Alpes
+      Sur; Naciones Unidas; Quiba Bajo
+
+002416  El Ensueno
+    Vecinos (7): El Penon Del Cortijo; Perdomo Alto; Sierra Morena;
+      Verona; Atlanta (L6); La Coruna (L6); Madelena (L6)
+
+002564  El Minuto De Maria
+    Vecinos (6): Arabia; El Mochuelo; El Mochuelo Ii; Quiba; Quiba
+      Rural; Quiba Urbano
+
+002570  El Mirador
+    Vecinos (11): Bella Flor; Bella Flor Sur; Cerro Colorado; Ciudad
+      Bolivar Rural Iii; El Mirador Ii; Juan Pablo Ii; Nueva Esperanza;
+      Paraiso Quiba; San Francisco; Villa Gloria; Villas El Diamante
+
+002447  El Mirador De La Estancia
+    Vecinos (3): Espino I; Los Tres Reyes I; Perdomo Alto
+
+204107  El Mirador Ii
+    Vecinos (3): Bella Flor; El Mirador; Nueva Esperanza
+
+002584  El Mochuelo
+    Vecinos (7): Casa De Teja; El Minuto De Maria; El Mochuelo Ii;
+      Quiba; Quiba I; El Mochuelo Ii Urbano (L5); El Mochuelo Oriental
+      (L5)
+
+104129  El Mochuelo Ii
+    Vecinos (10): El Minuto De Maria; El Mochuelo; El Mochuelo Iii; El
+      Mochuelo Iii Urbano; Lagunitas; Lagunitas Urbano; Quiba Rural; El
+      Mochuelo Alto (L5); El Mochuelo Ii Urbano (L5); Mochuelo Alto
+      Rural (L5)
+
+204129  El Mochuelo Ii Norte
+    Vecinos (2): Arabia; El Mochuelo Iii
+
+104128  El Mochuelo Iii
+    Vecinos (12): Arabia; El Mochuelo Ii; El Mochuelo Ii Norte; El
+      Mochuelo Urbano; El Tesoro; Lagunitas; Lagunitas Urbano; Quiba
+      Alto; Quiba Bajo; Quiba Rural; Quiba Urbano; Mochuelo Alto Rural
+      (L5)
+
+002588  El Mochuelo Iii Urbano
+    Vecinos (2): El Mochuelo Ii; El Mochuelo Alto (L5)
+
+104127  El Mochuelo Iv
+    Vecinos (4): Cordillera Del Sur; El Mochuelo Urbano; El Tesoro;
+      Quiba Bajo
+
+002585  El Mochuelo Urbano
+    Vecinos (4): El Mochuelo Iii; El Mochuelo Iv; El Tesoro; Quiba Bajo
+
+002433  El Penon Del Cortijo
+    Vecinos (5): El Ensueno; Ismael Perdomo; Perdomo Alto; Sierra
+      Morena; Sierra Morena
+
+002545  El Satelite
+    Vecinos (7): Candelaria La Nueva; Las Acacias; Los Laureles Ii; San
+      Francisco; Arborizadora Baja (L6); El Chircal Sur (L6); Ronda (L6)
+
+002547  El Tesoro
+    Vecinos (7): Arabia; Cordillera Del Sur; El Mochuelo Iii; El
+      Mochuelo Iv; El Mochuelo Urbano; Naciones Unidas; Quiba
+
+002423  Espino
+    Vecinos (5): Espino I; Ismael Perdomo; Perdomo Alto; Perdomo Alto;
+      San Antonio Del Mirador
+
+002449  Espino I
+    Vecinos (5): El Mirador De La Estancia; Espino; Perdomo Alto; San
+      Antonio Del Mirador; Santo Domingo
+
+002540  Estrella Del Sur
+    Vecinos (7): Bellavista Lucero Alto; Cedritos Del Sur; Lucero Del
+      Sur; Naciones Unidas; Quiba I; Quintas Del Sur; Sotavento
+
+002427  Galicia
+    Vecinos (8): La Primavera I; Maria Cano; Perdomo Alto; Perdomo Alto;
+      Rincon De Galicia; Barlovento (L7); Corredor Ferreo Del Sur (L7);
+      La Estancia (L7)
+
+002554  Gibraltar Sur
+    Vecinos (5): Compartir; Las Acacias; Lucero Alto; Lucero Del Sur;
+      Sumapaz
+
+002414  Ismael Perdomo
+    Vecinos (6): El Penon Del Cortijo; Espino; Perdomo Alto; San Antonio
+      Del Mirador; Sierra Morena; Sierra Morena
+
+002434  Jerusalen
+    Vecinos (7): Arborizadora Alta; Arborizadora Alta I; Arborizadora
+      Alta Ii; Bellavista; La Pradera; Los Laureles Ii; Verona
+
+002557  Juan Jose Rondon
+    Vecinos (6): Arborizadora Alta; Arborizadora Alta I; Candelaria La
+      Nueva; Cerro Colorado; San Francisco; Villa Candelaria
+
+002552  Juan Pablo Ii
+    Vecinos (6): Compartir; El Mirador; San Francisco; San Rafael;
+      Sumapaz; Villa Gloria
+
+002523  La Alameda
+    Vecinos (4): Central De Mezclas; Lucero Del Sur; Mexico; Quintas Del
+      Sur
+
+002437  La Pradera
+    Vecinos (6): Arborizadora Alta; Bellavista; Jerusalen; Las Brisas;
+      Las Manas; Sierra Morena
+
+002443  La Primavera I
+    Vecinos (3): Galicia; Maria Cano; La Estancia (L7)
+
+002581  La Torre
+    Vecinos (3): Bella Flor Sur; Bella Flor Sur Rural; Quiba Bajo
+
+002455  La Valvanera
+    Vecinos (3): Perdomo Alto; Rincon De La Valvanera; Barlovento (L7)
+
+204304  Lagunitas
+    Vecinos (3): El Mochuelo Ii; El Mochuelo Iii; Lagunitas Urbano
+
+002595  Lagunitas Urbano
+    Vecinos (3): El Mochuelo Ii; El Mochuelo Iii; Lagunitas
+
+002513  Las Acacias
+    Vecinos (7): Compartir; El Satelite; Gibraltar Sur; Lucero Alto;
+      Millan; San Francisco; Ronda (L6)
+
+002430  Las Brisas
+    Vecinos (6): Caracoli; La Pradera; Las Manas; Potosi; Sierra Morena;
+      Sierra Morena Ii
+
+002520  Las Manas
+    Vecinos (6): Arborizadora Alta; Arborizadora Alta; Arborizadora
+      Alta; La Pradera; Las Brisas; Potosi
+
+104108  Las Mercedes
+    Vecinos (5): Pasquilla; Pasquillita; Santa Rosa; El Hato (L5); Las
+      Margaritas (L5)
+
+002559  Los Alpes Sur
+    Vecinos (6): Bella Flor Sur; Brisas Del Volador; Cordillera Del Sur;
+      Naciones Unidas; San Rafael; Villa Gloria
+
+002544  Los Laureles Ii
+    Vecinos (7): Arborizadora Alta Ii; Candelaria La Nueva; El Satelite;
+      Jerusalen; Verona; Villa Candelaria; Arborizadora Baja (L6)
+
+002446  Los Tres Reyes
+    Vecinos (3): Los Tres Reyes I; Maria Cano; Primavera Ii (L7)
+
+002441  Los Tres Reyes I
+    Vecinos (5): El Mirador De La Estancia; Los Tres Reyes; Maria Cano;
+      Perdomo Alto; Rincon De Galicia
+
+002521  Lucero Alto
+    Vecinos (6): Gibraltar Sur; Las Acacias; Lucero Del Sur; Mexico;
+      Meissen (L6); Ronda (L6)
+
+002517  Lucero Del Sur
+    Vecinos (9): Bellavista Lucero Alto; Estrella Del Sur; Gibraltar
+      Sur; La Alameda; Lucero Alto; Mexico; Quintas Del Sur; San Rafael;
+      Sumapaz
+
+002429  Maria Cano
+    Vecinos (7): Galicia; La Primavera I; Los Tres Reyes; Los Tres Reyes
+      I; Rincon De Galicia; La Estancia (L7); Primavera Ii (L7)
+
+002516  Mexico
+    Vecinos (6): Central De Mezclas; La Alameda; Lucero Alto; Lucero Del
+      Sur; Area Artilleria (L5); Meissen (L6)
+
+002502  Millan
+    Vecinos (3): Compartir; Las Acacias; San Francisco
+
+204131  Mochuelo Alto Urbano
+    Vecinos (1): Mochuelo Alto Rural (L5)
+
+002546  Naciones Unidas
+    Vecinos (8): Bellavista Lucero Alto; Cedritos Del Sur; Cordillera
+      Del Sur; El Tesoro; Estrella Del Sur; Los Alpes Sur; Quiba; San
+      Rafael
+
+204106  Nueva Esperanza
+    Vecinos (5): Bella Flor; El Mirador; El Mirador Ii; Paraiso Quiba;
+      Quiba Bajo
+
+002565  Paraiso Quiba
+    Vecinos (5): Ciudad Bolivar; Ciudad Bolivar Rural Iii; El Mirador;
+      Nueva Esperanza; Quiba Bajo
+
+104104  Pasquilla
+    Vecinos (6): Las Mercedes; Pasquilla Urbana; Pasquillita; Quiba
+      Alto; Mochuelo Alto Rural (L5); Olarte (L5)
+
+204104  Pasquilla Urbana
+    Vecinos (1): Pasquilla
+
+104102  Pasquillita
+    Vecinos (6): Las Mercedes; Pasquilla; Santa Barbara; Santa Rosa; La
+      Regadera (L5); Olarte (L5)
+
+002450  Perdomo Alto
+    Vecinos (10): El Ensueno; El Penon Del Cortijo; Espino; Galicia;
+      Ismael Perdomo; La Valvanera; Perdomo Alto; Rincon De La
+      Valvanera; Barlovento (L7); Madelena (L6)
+
+002448  Perdomo Alto
+    Vecinos (7): El Mirador De La Estancia; Espino; Espino I; Galicia;
+      Los Tres Reyes I; Perdomo Alto; Rincon De Galicia
+
+002431  Potosi
+    Vecinos (5): Arborizadora Alta; Caracoli; Ciudad Bolivar; Las
+      Brisas; Las Manas
+
+002530  Quiba
+    Vecinos (7): Arabia; Cedritos Del Sur; El Minuto De Maria; El
+      Mochuelo; El Tesoro; Naciones Unidas; Quiba I
+
+104114  Quiba Alto
+    Vecinos (4): El Mochuelo Iii; Pasquilla; Quiba Bajo; Mochuelo Alto
+      Rural (L5)
+
+104110  Quiba Bajo
+    Vecinos (13): Bella Flor; Bella Flor Sur; Bella Flor Sur Rural;
+      Ciudad Bolivar; Ciudad Bolivar Rural I; Cordillera Del Sur; El
+      Mochuelo Iii; El Mochuelo Iv; El Mochuelo Urbano; La Torre; Nueva
+      Esperanza; Paraiso Quiba; Quiba Alto
+
+002456  Quiba I
+    Vecinos (6): Casa De Teja; Cedritos Del Sur; El Mochuelo; Estrella
+      Del Sur; Quiba; Sotavento
+
+204128  Quiba Rural
+    Vecinos (4): El Minuto De Maria; El Mochuelo Ii; El Mochuelo Iii;
+      Quiba Urbano
+
+002583  Quiba Urbano
+    Vecinos (4): Arabia; El Minuto De Maria; El Mochuelo Iii; Quiba
+      Rural
+
+002532  Quintas Del Sur
+    Vecinos (5): Central De Mezclas; Estrella Del Sur; La Alameda;
+      Lucero Del Sur; Sotavento
+
+002421  Rafael Escamilla
+    Vecinos (4): Rincon De La Valvanera; Corredor Ferreo Del Sur (L7);
+      Guadalupe (L8); Madelena (L6)
+
+002424  Rincon De Galicia
+    Vecinos (4): Galicia; Los Tres Reyes I; Maria Cano; Perdomo Alto
+
+002419  Rincon De La Valvanera
+    Vecinos (6): La Valvanera; Perdomo Alto; Rafael Escamilla;
+      Barlovento (L7); Corredor Ferreo Del Sur (L7); Madelena (L6)
+
+002451  San Antonio Del Mirador
+    Vecinos (6): Espino; Espino I; Ismael Perdomo; Santa Viviana; Santo
+      Domingo; Sierra Morena
+
+002515  San Francisco
+    Vecinos (9): Candelaria La Nueva; Cerro Colorado; Compartir; El
+      Mirador; El Satelite; Juan Jose Rondon; Juan Pablo Ii; Las
+      Acacias; Millan
+
+002539  San Rafael
+    Vecinos (7): Bellavista Lucero Alto; Juan Pablo Ii; Los Alpes Sur;
+      Lucero Del Sur; Naciones Unidas; Sumapaz; Villa Gloria
+
+104113  Santa Barbara
+    Vecinos (4): Pasquillita; Santa Rosa; La Regadera (L5); Los
+      Arrayanes (L5)
+
+104112  Santa Rosa
+    Vecinos (5): Las Mercedes; Pasquillita; Santa Barbara; El Hato (L5);
+      Los Arrayanes (L5)
+
+002442  Santa Viviana
+    Vecinos (4): Caracoli; San Antonio Del Mirador; Santo Domingo;
+      Sierra Morena
+
+002426  Santo Domingo
+    Vecinos (3): Espino I; San Antonio Del Mirador; Santa Viviana
+
+002438  Sierra Morena
+    Vecinos (8): Bellavista; El Ensueno; El Penon Del Cortijo; La
+      Pradera; Las Brisas; Sierra Morena; Sierra Morena Ii; Verona
+
+002440  Sierra Morena
+    Vecinos (6): Caracoli; Ismael Perdomo; San Antonio Del Mirador;
+      Santa Viviana; Sierra Morena; Sierra Morena Ii
+
+002439  Sierra Morena
+    Vecinos (5): El Penon Del Cortijo; Ismael Perdomo; Sierra Morena;
+      Sierra Morena; Sierra Morena Ii
+
+002444  Sierra Morena Ii
+    Vecinos (5): Caracoli; Las Brisas; Sierra Morena; Sierra Morena;
+      Sierra Morena
+
+002533  Sotavento
+    Vecinos (5): Casa De Teja; Central De Mezclas; Estrella Del Sur;
+      Quiba I; Quintas Del Sur
+
+002553  Sumapaz
+    Vecinos (5): Compartir; Gibraltar Sur; Juan Pablo Ii; Lucero Del
+      Sur; San Rafael
+
+002412  Verona
+    Vecinos (7): Bellavista; El Ensueno; Jerusalen; Los Laureles Ii;
+      Sierra Morena; Arborizadora Baja (L6); La Coruna (L6)
+
+002579  Villa Candelaria
+    Vecinos (5): Arborizadora Alta I; Arborizadora Alta Ii; Candelaria
+      La Nueva; Juan Jose Rondon; Los Laureles Ii
+
+002549  Villa Gloria
+    Vecinos (6): Brisas Del Volador; El Mirador; Juan Pablo Ii; Los
+      Alpes Sur; San Rafael; Villas El Diamante
+
+002558  Villas El Diamante
+    Vecinos (4): Bella Flor Sur; Brisas Del Volador; El Mirador; Villa
+      Gloria
+
+==========================================================================
+LOCALIDAD 20 - SUMAPAZ
+==========================================================================
+
+103201  Betania
+    Vecinos (4): El Istmo; El Tabaco; Laguna Verde; Raizal
+
+109112  Capitolio
+    Vecinos (4): El Toldo; La Union; San Juan; Santo Domingo
+
+109107  Chorreras
+    Vecinos (4): Lagunitas; Las Vegas; San Juan; Santo Domingo
+
+109110  Concepcion
+    Vecinos (2): Nueva Granada; Tunal Alto
+
+103202  El Istmo
+    Vecinos (7): Betania; El Tabaco; Laguna Verde; Las Auras; Santa Rosa
+      Alta; Santa Rosa Baja; Taquecitos
+
+103203  El Tabaco
+    Vecinos (7): Betania; El Istmo; Santa Rosa Alta; Arrayan (L5);
+      Chisaca (L5); La Union (L5); Los Arrayanes (L5)
+
+109101  El Toldo
+    Vecinos (5): Capitolio; Las Sopas; Las Vegas; San Antonio; San Juan
+
+109106  La Union
+    Vecinos (5): Capitolio; La Union Urbano; Lagunitas; Santo Domingo;
+      Tunal Bajo
+
+209106  La Union Urbano
+    Vecinos (1): La Union
+
+103204  Laguna Verde
+    Vecinos (4): Betania; El Istmo; Las Auras; Raizal
+
+109113  Lagunitas
+    Vecinos (5): Chorreras; La Union; Santo Domingo; Tunal Alto; Tunal
+      Bajo
+
+103104  Las Animas
+    Vecinos (5): Las Auras; Las Palmas; Las Sopas; Nazareth; Taquecitos
+
+103105  Las Auras
+    Vecinos (6): El Istmo; Laguna Verde; Las Animas; Nazareth; Raizal;
+      Taquecitos
+
+103107  Las Palmas
+    Vecinos (4): Las Animas; Las Sopas; Los Rios; Nazareth
+
+103109  Las Sopas
+    Vecinos (7): El Toldo; Las Animas; Las Palmas; Las Vegas; Los Rios;
+      San Antonio; Taquecitos
+
+109103  Las Vegas
+    Vecinos (4): Chorreras; El Toldo; Las Sopas; San Juan
+
+103108  Los Rios
+    Vecinos (5): Las Palmas; Las Sopas; Nazareth; Penalisa; Raizal
+
+103106  Nazareth
+    Vecinos (6): Las Animas; Las Auras; Las Palmas; Los Rios; Nazareth
+      Urbano; Raizal
+
+203106  Nazareth Urbano
+    Vecinos (1): Nazareth
+
+109116  Nueva Granada
+    Vecinos (3): Concepcion; San Jose; Tunal Alto
+
+103206  Penalisa
+    Vecinos (2): Los Rios; Raizal
+
+103205  Raizal
+    Vecinos (6): Betania; Laguna Verde; Las Auras; Los Rios; Nazareth;
+      Penalisa
+
+109102  San Antonio
+    Vecinos (2): El Toldo; Las Sopas
+
+109111  San Jose
+    Vecinos (2): Nueva Granada; Tunal Alto
+
+109104  San Juan
+    Vecinos (6): Capitolio; Chorreras; El Toldo; Las Vegas; San Juan
+      Urbano; Santo Domingo
+
+209104  San Juan Urbano
+    Vecinos (1): San Juan
+
+103101  Santa Rosa Alta
+    Vecinos (5): El Istmo; El Tabaco; Santa Rosa Baja; Taquecitos;
+      Chisaca (L5)
+
+103103  Santa Rosa Baja
+    Vecinos (3): El Istmo; Santa Rosa Alta; Taquecitos
+
+109105  Santo Domingo
+    Vecinos (5): Capitolio; Chorreras; La Union; Lagunitas; San Juan
+
+103102  Taquecitos
+    Vecinos (6): El Istmo; Las Animas; Las Auras; Las Sopas; Santa Rosa
+      Alta; Santa Rosa Baja
+
+109109  Tunal Alto
+    Vecinos (5): Concepcion; Lagunitas; Nueva Granada; San Jose; Tunal
+      Bajo
+
+109114  Tunal Bajo
+    Vecinos (3): La Union; Lagunitas; Tunal Alto
