@@ -20,3 +20,7 @@
 ## Acuerdos
 - Estimar el resto de historias durante la semana.
 - Cada integrante actualiza el estado de sus tareas antes del siguiente daily.
+
+# Evidencia
+<img width="1109" height="584" alt="15SEPT" src="https://github.com/user-attachments/assets/2121001e-d9c9-4f36-aefd-5d138acffae2" />
+
