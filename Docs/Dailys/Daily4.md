@@ -20,3 +20,8 @@
 ## Acuerdos
 - Las gráficas usan las métricas del lean canvas como referencia.
 - Mañana se integra todo en el repo y se hace el cierre de la semana.
+
+# Evidencia
+
+<img width="704" height="1524" alt="17SEPT" src="https://github.com/user-attachments/assets/c460e56e-5fce-4bc3-8948-5d06e181844a" />
+
