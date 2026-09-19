@@ -20,3 +20,8 @@
 ## Acuerdos
 - Trabajar con datos sintéticos y dejar claro en la documentación que son de prueba.
 - Definir el umbral de "listo para asesor" en el próximo daily.
+
+# Evidencia
+
+<img width="739" height="1600" alt="16SEPT" src="https://github.com/user-attachments/assets/b47db590-e8d1-4424-9906-1bcd04d2cf0f" />
+
