@@ -17,8 +17,6 @@ Leadify convierte visitantes anónimos de una constructora en citas agendadas co
 
 El asesor recibe al lead con la cita ya puesta, no solo con un dato de contacto. El modelo de negocio completo está en el [lean canvas](Docs/lean-canvas.pdf).
 
-**Sobre el demo.** El motor de recomendación es una adaptación de Machea, un recomendador de vivienda en Bogotá D.C. El demo funcional está en la carpeta [`Demo/`](Demo/) de esta misma rama y usa datos sintéticos (clientes e historial simulados), no leads reales. La rama `develop` conserva una copia anterior.
-
 ## Equipo del proyecto
 
 | Nombre | Rol | Usuario de GitHub |
