@@ -45,74 +45,10 @@ El asesor recibe al lead con la cita ya puesta, no solo con un dato de contacto.
 - Leaflet: el mapa de la pregunta de ubicación
 - Photon (OpenStreetMap): búsqueda de lugares
 
-## Instalación y ejecución
-
-El código del demo está en la carpeta `Demo/`.
-
-```bash
-git clone https://github.com/SaraCuervo/Leadify.git
-cd Leadify/Demo
-```
-
-### Opción rápida: solo el quiz interactivo
-
-El quiz es estático y no necesita el backend.
-
-```bash
-cd Demo/frontend/public/experiencia
-python -m http.server 8000
-```
-
-Abrir <http://localhost:8000>. Son siete preguntas y toma unos dos minutos. Con `?marca=<slug>` se cambia la marca: `leadify` (la neutra, que puntúa sobre las cuatro constructoras), `amarilo`, `colsubsidio` y `cusezar`. Sin el parámetro entra Constructora Bolívar.
-
-Hace falta el servidor local: abrir `index.html` con doble clic no funciona, porque el navegador bloquea la carga de los catálogos por `file://`.
-
-### Motor completo: API y formulario
-
-En una terminal, la API:
-
-```bash
-cd Demo/backend
-pip install -r requirements.txt
-uvicorn api.app:app --port 8000
-```
-
-En otra terminal, el formulario:
-
-```bash
-cd Demo/frontend
-npm install
-npm run dev
-```
-
-Queda en <http://localhost:5173> y consulta la API en vivo.
-
-### Usar el motor desde Python
-
-Desde la carpeta `Demo/backend/`:
-
-```python
-from Model import recomendar, respuesta_json
-
-resultado = recomendar({
-    "tipo_vivienda": 1, "salario": 2, "personas_a_cargo": 3, "edad": 34,
-    "Localidad": 7, "numero_habitaciones": 3,
-})
-print(respuesta_json(resultado)["apartamentos"][0])
-```
-
-### Llamada con Dapta (opcional)
-
-El endpoint `POST /api/llamar` dispara la llamada automática. Sin configuración responde en modo simulado (`mock_enqueued`) y no llama a nadie. Para conectarlo a un flow real, definir la variable de entorno antes de levantar la API:
-
-```bash
-export DAPTA_FLOW_WEBHOOK_URL="https://..."
-```
-
 ## Requisitos
 
 - Python 3.11 o superior
-- Node.js 20.19 o superior, con npm (solo para la landing)
+- Node.js 20.19 o superior, con npm (solo para el formulario)
 - Git
 - Un navegador actualizado
 - Opcional: una cuenta y un flow de Dapta para las llamadas reales
@@ -147,12 +83,3 @@ Leadify/
 
 La rama `develop` conserva una copia anterior del demo, con la landing de React
 que esta versión ya no tiene.
-
-## Contacto
-
-Para dudas sobre el proyecto, escribir a cualquier integrante del equipo a través de su perfil de GitHub:
-
-- [diego131t-max](https://github.com/diego131t-max)
-- [FigueroaCarlos](https://github.com/FigueroaCarlos)
-- [BGsanti](https://github.com/BGsanti)
-- [SaraCuervo](https://github.com/SaraCuervo)
