@@ -1,24 +1,14 @@
-# Imágenes scrapeadas: cientos de MB que se regeneran con
-#   python backend/scraping/scraper_projects.py
-# No tiene sentido versionarlas.
-#
-# Viven en los recursos del FRONT, que es quien las sirve, con el
-# `id_proyecto` como nombre de carpeta (ver `Model/rutas.py`).
-/frontend/public/recursos/imagenes_proyectos/
+# Lo del proyecto lo ignora Demo/.gitignore, que es donde vive el código: sus
+# reglas van ancladas a esa carpeta (/frontend/..., /backend/...) y aquí no
+# significarían nada. Este archivo solo lista lo que puede aparecer en
+# cualquier parte del repositorio.
 
-# Lo que sirve la experiencia embebida SÍ viaja: son las fotos que pinta el
-# quiz publicado, y no se regeneran con el scraper.
-!/frontend/public/experiencia/imagenes_proyectos/
-
-# `proyectos_model.json`, `historial_simulado.json` y `clientes_simulados.json`
-# SÍ se versionan: son lo que hace que `recomendar()` funcione recién clonado,
-# sin tener que scrapear y entrenar primero. Pesan ~4,5 MB entre los tres, y
-# viven en backend/Model/data_projects/.
-
-# Salidas de una consulta concreta: cambian en cada llamada.
-/backend/salidas/
-
+# Python
 __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# Basura del sistema operativo
+.DS_Store
+Thumbs.db
