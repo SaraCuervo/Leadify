@@ -81,3 +81,12 @@ Leadify/
 
 La rama `develop` conserva una copia anterior del demo, con la landing de React
 que esta versión ya no tiene.
+
+## Contacto
+
+Para dudas sobre el proyecto, escribir a cualquier integrante del equipo a través de su perfil de GitHub:
+
+- [diego131t-max](https://github.com/diego131t-max) — Juan Diego Ortiz Guerrero
+- [FigueroaCarlos](https://github.com/FigueroaCarlos) — Carlos Andrés Figueroa Vega
+- [BGsanti](https://github.com/BGsanti) — Santiago Díaz Sabogal
+- [SaraCuervo](https://github.com/SaraCuervo) — Sara Cuervo Avendaño
