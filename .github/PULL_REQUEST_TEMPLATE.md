@@ -1,6 +1,6 @@
 <!--
   Este PR va contra `develop`, salvo que sea una entrega de develop a main.
-  El flujo completo está en CONTRIBUTING.md.
+  El flujo completo está en .github/CONTRIBUTING.md.
 -->
 
 ## Qué cambia
