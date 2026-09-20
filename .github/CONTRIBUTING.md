@@ -79,7 +79,7 @@ push...
 
 La verificación automática corre sola en cada push y en cada PR
 (`.github/workflows/verificacion.yml`), pero enterarse antes ahorra una vuelta.
-Las mismas tres comprobaciones, en local:
+Las mismas tres comprobaciones, en local, **desde la raíz del repositorio**:
 
 ```bash
 # 1. el motor responde y cumple el contrato (13 comprobaciones)
@@ -112,4 +112,4 @@ Dos reglas que no son de estilo y conviene no romper:
   va en `Model/`, o queda invisible para la consola y para la evaluación.
 
 El resto de invariantes está en la §9 de
-[`Docs/GUIA_TECNICA.md`](Docs/GUIA_TECNICA.md).
+[`Docs/GUIA_TECNICA.md`](../Docs/GUIA_TECNICA.md).
