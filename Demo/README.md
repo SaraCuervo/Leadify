@@ -10,12 +10,13 @@ compatibilidad listo para mostrar en pantalla.
 El catálogo se construye scrapeando cuatro constructoras que publican en
 Bogotá: **Amarilo, Cusezar, Constructora Bolívar y Colsubsidio**.
 
-> **¿Vas a conectar el front?** Empieza por
-> **[CONTRATO_FRONT.md](../Docs/CONTRATO_FRONT.md)**: qué formulario mínimo hay que
-> llenar, qué JSON se manda y qué JSON vuelve.
+> **¿Vas a conectar el front?** El formulario mínimo son seis campos y están
+> más abajo, en *El JSON, en corto*; el contrato completo lo valida
+> `backend/api/app.py`, y `GET /api/catalogos` sirve los ids buenos de
+> localidades y zonas comunes.
 >
-> Detalle técnico del contrato de datos, de los grafos de localidades y de
-> barrios, y del modelo: **[GUIA_TECNICA.md](../Docs/GUIA_TECNICA.md)**.
+> Cómo está armado el motor por dentro, en la wiki:
+> **[Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o)**.
 
 > **El front ya está conectado.** En esta copia el front es **solo el
 > formulario**: la experiencia de 7 preguntas que vive en
@@ -100,7 +101,7 @@ supuestos de su segmento** —VIS y No VIS no se financian igual: 10 % vs. 30 %
 de cuota inicial, 30 vs. 20 años, 40 % vs. 30 % de cuota/ingreso— y le etiqueta
 el **perfil de comprador** al que apunta. Escribe
 `Model/data_projects/proyectos_model.json`. Detalle en
-[GUIA_TECNICA.md §4.1](../Docs/GUIA_TECNICA.md).
+[Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o), en la wiki.
 
 ### 3. Entrenar el componente colaborativo
 
@@ -126,7 +127,7 @@ precio de forma truncada —solo penaliza si el proyecto no alcanza al ingreso�
 así que le da igual mostrar el de 182 millones o el de 262. Desde la v0.3 el
 modelo **no** da eso igual, y por eso hay un segundo instrumento:
 `calibrar_cota.py` mide el recall **y** lo que este cambio persigue —precio,
-años de pago y alcanzabilidad del top—. Ver [GUIA_TECNICA.md §4.5](../Docs/GUIA_TECNICA.md).
+años de pago y alcanzabilidad del top—. Ver [Métricas de Calidad](https://github.com/SaraCuervo/Leadify/wiki/M%C3%A9tricas-de-Calidad).
 
 Detalle en [simulacion/README.md](backend/Model/simulacion/README.md).
 
@@ -158,7 +159,7 @@ return respuesta_json(resultado, ruta_salida=None)   # el JSON que consume la vi
 
 `recomendar()` acepta un dict, un string JSON o una ruta a archivo.
 `respuesta_json()` deja solo lo que la vista necesita. Formato completo en
-[GUIA_TECNICA.md §5](../Docs/GUIA_TECNICA.md).
+[Componentes y Tecnologías](https://github.com/SaraCuervo/Leadify/wiki/Componentes-y-Tecnolog%C3%ADas), en la wiki.
 
 Si el formulario viene mal, `recomendar()` levanta `ValueError` con **todos**
 los errores juntos, no el primero, para que el front pueda marcarlos de una vez.
@@ -217,7 +218,7 @@ scraper_projects   perfil del      filtro duro       el precio y los        orqu
    **375.943.386 a 299.538.061** de precio medio (−20,3 %) y de 10,1 a 9,5
    años de pago. El costo son 2,4 puntos de `recall@18`, y hay que saber
    contra qué se mide: ver la nota de la sección anterior y
-   [GUIA_TECNICA.md §4.5](../Docs/GUIA_TECNICA.md).
+   [Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o), en la wiki.
 
    La cota es un parámetro (`COTA_MINIMA_COP`). El rango útil va de 20 a 50
    millones —más ahorro contra más respeto al orden del modelo— y bajarla a
@@ -285,7 +286,7 @@ Leadify/
 ```
 
 Las tres reglas de dónde va cada cosa, y por qué, en
-[GUIA_TECNICA.md §1.2](../Docs/GUIA_TECNICA.md).
+[Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o), en la wiki.
 
 ## El JSON, en corto
 
@@ -312,7 +313,8 @@ En el JSON del **usuario** están llenos los campos de persona; en el del
 `salario`, `personas_a_cargo` y `edad` sí los tiene el proyecto —son el perfil
 de comprador al que apunta— pero los deriva `prep.py`, no el scraper.
 
-Dominios completos en [GUIA_TECNICA.md §2](../Docs/GUIA_TECNICA.md).
+Dominios completos en `backend/Model/catalogos.py`, que es la única fuente
+de los ids, y servidos por `GET /api/catalogos`.
 
 ## Localidad a partir de la dirección
 
@@ -332,7 +334,7 @@ asignar_localidades(proyectos)   # devuelve el mismo JSON con `Localidad`
 
 Las coordenadas de los proyectos que las publican se usan solo como respaldo:
 en varias fichas el pin del mapa apunta a la sala de ventas y no al proyecto.
-Ver [GUIA_TECNICA.md §6.3](../Docs/GUIA_TECNICA.md).
+Ver [Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o), en la wiki.
 
 ## Barrio a partir de la coordenada
 
@@ -351,4 +353,4 @@ distancia_barrios("Prado Veraniego", "El Plan")   # km por el grafo -> 2.8
 
 Hoy 83 de los 96 proyectos tienen barrio. Los 13 restantes no publican
 coordenada o la publican en otra localidad, y para ellos el modelo usa la
-distancia típica de su salto de localidad. Ver [GUIA_TECNICA.md §3](../Docs/GUIA_TECNICA.md).
+distancia típica de su salto de localidad. Ver [Diagramas del Sistema](https://github.com/SaraCuervo/Leadify/wiki/Diagramas-del-Sistema).

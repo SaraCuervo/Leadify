@@ -115,7 +115,7 @@ python Model/simulacion/generar_historial.py --demografico --n 4000  # el muestr
 > millones y uno de 262 que el comprador puede pagar le da igual cuál se le
 > muestre. El modelo ya no da eso igual, así que hay un segundo instrumento,
 > `calibrar_cota.py`, que mide recall **y** precio, años de pago y
-> alcanzabilidad del top. Ver [GUIA_TECNICA.md §4.5](../../../../Docs/GUIA_TECNICA.md).
+> alcanzabilidad del top. Ver [Métricas de Calidad](https://github.com/SaraCuervo/Leadify/wiki/M%C3%A9tricas-de-Calidad), en la wiki.
 >
 > Si algún día esta utilidad se actualiza para preferir lo barato entre lo
 > pagable, todas las cifras de recall de la documentación hay que rehacerlas.
@@ -125,7 +125,7 @@ python Model/simulacion/generar_historial.py --demografico --n 4000  # el muestr
 > sector urbano de su localidad y se mide a cuántos kilómetros —por el grafo
 > de barrios— queda lo que se le recomienda, con y sin ese dato, junto al
 > recall y al precio. Es lo que fijó `RADIO_CERCANIA_KM` y
-> `PESO_LOCALIDAD_CON_BARRIO` en `modelo.py`. Ver [GUIA_TECNICA.md §3.5](../../../../Docs/GUIA_TECNICA.md).
+> `PESO_LOCALIDAD_CON_BARRIO` en `modelo.py`. Ver [Métricas de Calidad](https://github.com/SaraCuervo/Leadify/wiki/M%C3%A9tricas-de-Calidad).
 >
 > ```bash
 > python Model/simulacion/calibrar_barrios.py --clientes 300
@@ -158,7 +158,7 @@ posición media del acierto   :   2.68
 
 Esta evaluación fue también la que detectó que `K_VECINOS` estaba mal
 calibrado: con el tope anterior de 200 el colaborativo rendía 68.8 %, por
-debajo del contenido solo. Ver [GUIA_TECNICA.md §4.3](../../../../Docs/GUIA_TECNICA.md).
+debajo del contenido solo. Ver [Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o), en la wiki.
 
 ## Advertencia
 

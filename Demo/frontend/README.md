@@ -34,4 +34,4 @@ El backend que consume está en `../backend` (`uvicorn api.app:app --port
 `js/config.js`, así que por defecto recomienda con el motor de reglas de
 `matching.js` y no llama al modelo.
 
-La documentación completa: [GUIA_TECNICA.md §8](../../Docs/GUIA_TECNICA.md).
+La documentación completa: [Componentes y Tecnologías](https://github.com/SaraCuervo/Leadify/wiki/Componentes-y-Tecnolog%C3%ADas), en la wiki.
