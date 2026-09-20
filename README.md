@@ -86,5 +86,5 @@ Para dudas sobre el proyecto, escribir a cualquier integrante del equipo a trav�
 
 - [diego131t-max](https://github.com/diego131t-max) — Juan Diego Ortiz Guerrero
 - [FigueroaCarlos](https://github.com/FigueroaCarlos) — Carlos Andrés Figueroa Vega
-- [BGsanti](https://github.com/BGsanti) — Santiago Díaz Sabogal
+- [santiagodiazsabogal](https://github.com/santiagodiazsabogal) — Santiago Díaz Sabogal
 - [SaraCuervo](https://github.com/SaraCuervo) — Sara Cuervo Avendaño
