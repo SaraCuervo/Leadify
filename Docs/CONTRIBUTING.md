@@ -43,7 +43,7 @@ git push -u origin feature/calificacion-de-leads
 # 5. abrir el Pull Request contra develop en GitHub
 ```
 
-Cuando el PR se aprueba y la verificación automática pasa, se hace **merge sin
+Cuando el PR se aprueba y las comprobaciones pasan, se hace **merge sin
 fast-forward** (`--no-ff`), para que la rama quede visible en la historia y se
 pueda leer qué se hizo junto:
 
@@ -77,20 +77,25 @@ push...
 
 ## Antes de subir
 
-La verificación automática corre sola en cada push y en cada PR
-(`.github/workflows/verificacion.yml`), pero enterarse antes ahorra una vuelta.
-Las mismas tres comprobaciones, en local, **desde la raíz del repositorio**:
+**No hay verificación automática: estas tres comprobaciones se corren a mano**,
+y quien sube el cambio es quien las corre. Desde la raíz del repositorio:
 
 ```bash
 # 1. el motor responde y cumple el contrato (13 comprobaciones)
 cd Demo/backend && python pruebas/prueba_humo.py
 
 # 2. el catálogo versionado corresponde al código que lo genera
-cd ../.. && python .github/scripts/verificar_catalogo.py
+cd ../.. && python Script/verificar_catalogo.py
 
 # 3. ningún enlace de la documentación está roto
-python .github/scripts/verificar_enlaces.py
+python Script/verificar_enlaces.py
 ```
+
+Las tres tardan menos de un minuto entre todas, y cubren los tres fallos que
+**no avisan solos**: que la respuesta del motor deje de cumplir el contrato
+—el front pinta una tarjeta vacía, sin error—, que el catálogo versionado deje
+de corresponder al código que lo genera —el motor recomienda con reglas
+viejas— y que un enlace de la documentación muera sin que nadie lo siga.
 
 ## Dónde va cada cosa
 
@@ -112,4 +117,4 @@ Dos reglas que no son de estilo y conviene no romper:
   va en `Model/`, o queda invisible para la consola y para la evaluación.
 
 El resto de invariantes está en la §9 de
-[`Docs/GUIA_TECNICA.md`](../Docs/GUIA_TECNICA.md).
+[`GUIA_TECNICA.md`](GUIA_TECNICA.md).

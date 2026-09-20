@@ -10,8 +10,8 @@ Se corre desde `Demo/backend/`:
 
     python pruebas/prueba_humo.py
 
-Devuelve 0 si todo pasa y 1 si algo falla, para que sirva en la verificación
-automática (.github/workflows/verificacion.yml).
+Devuelve 0 si todo pasa y 1 si algo falla, para poder encadenarlo con otras
+comprobaciones. Las otras dos están en Script/.
 """
 from __future__ import annotations
 
