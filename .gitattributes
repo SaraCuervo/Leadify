@@ -1,0 +1,20 @@
+# Sin este archivo, cada quien versiona los finales de línea con la
+# convención de su sistema operativo (Windows: CRLF, Mac/Linux: LF), y git
+# avisa en cada commit — "LF will be replaced by CRLF" — sin que eso sea un
+# error, solo ruido. Con cuatro personas en Windows, Mac y Linux tocando el
+# mismo repositorio, esto es lo que evita que un archivo cambie de finales de
+# línea completo solo porque alguien lo abrió en otro sistema.
+
+# Por defecto: git normaliza a LF al guardar en el repositorio y lo entrega
+# con el final de línea del sistema de quien lo descarga.
+* text=auto eol=lf
+
+# Los binarios NUNCA se tocan. Marcarlos explícitamente evita que git intente
+# "arreglar" finales de línea dentro de una imagen o un PDF, que los
+# corrompería.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary
+*.ico binary
