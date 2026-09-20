@@ -1,7 +1,7 @@
 """
 Model
 =====
-El recomendador de Machea. Todo lo que decide qué proyecto se le muestra a
+El recomendador de Leadify. Todo lo que decide qué proyecto se le muestra a
 quién vive aquí dentro; `api/` solo lo expone por HTTP y `scraping/` solo lo
 alimenta (invariante 8 del CLAUDE.md).
 

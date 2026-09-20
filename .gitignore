@@ -1,0 +1,14 @@
+# Lo del proyecto lo ignora Demo/.gitignore, que es donde vive el código: sus
+# reglas van ancladas a esa carpeta (/frontend/..., /backend/...) y aquí no
+# significarían nada. Este archivo solo lista lo que puede aparecer en
+# cualquier parte del repositorio.
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Basura del sistema operativo
+.DS_Store
+Thumbs.db

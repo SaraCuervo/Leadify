@@ -1,7 +1,7 @@
 """
 scraper_projects.py
 ===================
-Catálogo de proyectos de vivienda de Bogotá D.C. para el recomendador Machea.
+Catálogo de proyectos de vivienda de Bogotá D.C. para el recomendador Leadify.
 
 Hace tres cosas, en este orden:
 

@@ -88,11 +88,47 @@
   --marca-texto: #ffa25c;
 
   /* Verde de "esto te sirve" (el badge de subsidio). Este es el valor de la
-     consola negra; sobre la superficie clara de Machea lo oscurece tema.js.
+     consola negra; sobre la superficie clara de Leadify lo oscurece tema.js.
      Ver .gdf-project-subsidio. */
   --exito: #4fd6bf;
 
   --texto-cta: #1b1c1f;
+
+  /* EL FONDO DEL CTA PRINCIPAL. Era `--acento` escrito en la regla, y eso
+     ataba el boton mas importante de la app al SEGUNDO color de la marca. Para
+     Colsubsidio y las otras tres esta bien —su acento es su color de accion—,
+     pero en Leadify el acento es el verde de "esto encaja" y el boton de
+     avanzar es coral, como en su landing. Es un token para poder decirlo. */
+  --cta-fondo: var(--acento);
+
+  /* ---- TIPOGRAFIA ----
+     Los titulares salen de un token porque cada marca trae la suya: Poppins
+     para las cuatro constructoras, Sora para Leadify (ver tema.js). Estaba
+     escrita a mano en 21 reglas, que es la version tipografica del problema
+     que los tokens de color vinieron a resolver. */
+  --fuente-titulos: 'Poppins', sans-serif;
+  --fuente-cuerpo: 'Manrope', sans-serif;
+
+  /* ---- GEOMETRIA ----
+     CUATRO RADIOS Y TRES SOMBRAS, POR ROL. No es cosmetica: es lo que separa
+     una consola —esquinas cortas, sombras duras, todo pegado— de la landing de
+     Leadify, que es redonda y flota. Los valores de aqui son los de la consola,
+     o sea los de siempre; tema.js los sube para Leadify.
+
+     LO QUE NO PASA POR AQUI: `.pt-*` y `.gdf-hero-*`. El primero es el clon de
+     colsubsidio.com y el segundo sigue design/landing-hero-handoff/ al pixel;
+     los dos tienen que quedarse exactamente como estan (ver las tres notas del
+     encabezado de este archivo). Tampoco las pastillas (999px) ni los circulos
+     (50%), que no son una decision de marca sino una forma. */
+  --radio-campo: 12px;     /* inputs, desplegables, celdas, botones chicos */
+  --radio-boton: 14px;     /* los botones de opcion del quiz */
+  --radio-cta: 13px;       /* el boton primario */
+  --radio-tarjeta: 16px;   /* tarjetas de proyecto y bloques de resultado */
+  --radio-panel: 22px;     /* el bloque mas grande del cierre */
+
+  --sombra-tarjeta: 0 4px 16px rgba(0, 0, 0, 0.07);
+  --sombra-flotante: 0 10px 28px rgba(30, 34, 40, 0.14);
+  --sombra-cta: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -109,7 +145,7 @@ body {
 body {
   background: var(--fondo);
   color: var(--tinta);
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--fuente-cuerpo);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -127,7 +163,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
 }
 
 button {
@@ -179,7 +215,7 @@ textarea::placeholder { color: var(--tinta-tenue); }
    verse al enseñarle su version a un cliente. Toma --sobre-marca para leerse
    sobre una cabecera de cualquier color. */
 .gdf-logo-texto {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 700;
   font-size: 17px;
   letter-spacing: -0.01em;
@@ -350,7 +386,7 @@ textarea::placeholder { color: var(--tinta-tenue); }
 
 .gdf-hero-main h1 {
   margin: 0;
-  font: 800 56px/1.08 'Poppins', sans-serif;
+  font: 800 56px/1.08 var(--fuente-titulos);
   color: var(--marca);
   letter-spacing: -0.01em;
   animation: heroFadeIn 0.7s 0.25s ease-out both;
@@ -379,7 +415,7 @@ textarea::placeholder { color: var(--tinta-tenue); }
   cursor: pointer;
   background: var(--acento);
   color: var(--texto-cta);
-  font: 700 21px/1 'Poppins', sans-serif;
+  font: 700 21px/1 var(--fuente-titulos);
   padding: 22px 44px;
   border-radius: 16px;
   transition: transform 0.15s ease;
@@ -440,7 +476,7 @@ textarea::placeholder { color: var(--tinta-tenue); }
      height:100vh de escritorio y .gdf-shell lo recorta con overflow:hidden en
      vez de dejar scrollear .gdf-portada-scroll. */
   min-height: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   color: #333;
 }
 /* El scroll es INTERNO. En escritorio styles.css pone body{overflow:hidden} y
@@ -1535,7 +1571,7 @@ a.pt-flink:hover {
   flex: 0 0 auto;
   background: var(--papel);
   border: 1px solid var(--borde);
-  border-radius: 16px;
+  border-radius: var(--radio-tarjeta);
   overflow: hidden;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
   animation: swingCard 5s ease-in-out infinite;
@@ -1580,7 +1616,7 @@ a.pt-flink:hover {
   font-size: 28px;
 }
 .gdf-carnet .name {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 800;
   font-size: 15px;
   color: var(--tinta);
@@ -1621,14 +1657,14 @@ a.pt-flink:hover {
      pasar a negro quedaban cinco rectangulos blancos en mitad del formulario. */
   background: var(--papel-2);
   border: 1.5px solid var(--borde);
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   padding: 13px 14px;
   font-size: 15px;
   color: var(--tinta);
   outline: none;
   margin-bottom: 14px;
   width: 100%;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--fuente-cuerpo);
   transition: border-color 0.15s;
 }
 .gdf-input:focus {
@@ -1643,11 +1679,11 @@ a.pt-flink:hover {
 .gdf-affiliate-btn {
   flex: 1;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 700;
   font-size: 14px;
   padding: 13px;
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   transition: all 0.12s;
   border: 1.5px solid var(--borde);
   background: var(--papel);
@@ -1669,7 +1705,7 @@ a.pt-flink:hover {
   cursor: pointer;
   padding: 12px;
   background: var(--papel-2);
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   border: 1px solid var(--borde);
   margin-bottom: 20px;
 }
@@ -1703,20 +1739,20 @@ a.pt-flink:hover {
   cursor: not-allowed;
   background: var(--papel-2);
   color: var(--tinta-tenue);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 800;
   font-size: 16px;
   padding: 15px;
-  border-radius: 13px;
+  border-radius: var(--radio-cta);
   transition: all 0.15s;
 }
 .gdf-btn-primary.enabled {
   cursor: pointer;
-  background: var(--acento);
+  background: var(--cta-fondo);
   /* SOBRE EL ACENTO EL TEXTO VA OSCURO. `--tinta` es claro desde que la app es
      negra, y encima del amarillo daba 1,22 de contraste: ilegible. */
   color: var(--sobre-acento);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--sombra-cta);
 }
 .gdf-btn-primary.enabled:active {
   transform: scale(0.97);
@@ -2229,7 +2265,7 @@ a.pt-flink:hover {
   cursor: pointer;
   background: var(--papel-2);
   border: 1.5px solid var(--borde);
-  border-radius: 14px;
+  border-radius: var(--radio-boton);
   /* Compactos a propósito: en móvil el alto es el recurso escaso (ver
      .gdf-scene). 44px es el mínimo táctil recomendado, así que no bajamos de
      ahí. El ancho se deja completo — angostarlos empeoraría el área táctil, y
@@ -2253,7 +2289,7 @@ a.pt-flink:hover {
   transform: scale(0.97);
 }
 .gdf-opt-btn .label {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 800;
   font-size: 15px;
   color: var(--tinta);
@@ -2308,8 +2344,8 @@ a.pt-flink:hover {
   padding: 6px;
   background: var(--papel);
   border: 1.5px solid var(--borde);
-  border-radius: 12px;
-  box-shadow: 0 10px 28px rgba(30, 34, 40, 0.14);
+  border-radius: var(--radio-campo);
+  box-shadow: var(--sombra-flotante);
 }
 .gdf-multi-opt-list.abierto {
   display: flex;
@@ -2353,15 +2389,15 @@ a.pt-flink:hover {
    radio— y adentro va el <input>, que pierde su propio borde y fondo para que
    los dos lean como una sola pieza.
 
-   LOS CHIPS YA NO VIVEN AHÍ DENTRO. Hasta que la pregunta tuvo un solo
-   buscador, las etiquetas iban dentro del propio campo (el patrón "para:" de
-   un cliente de correo) y `#zonaChips` usaba `display: contents` para que sus
-   `.gdf-entorno-chip` fueran hijos flex directos del envoltorio. Con dos
-   buscadores —barrio y lugar— eso obligaba a elegir en cuál de los dos
-   aparecen, y cambiar de pestaña se leía como perder lo ya elegido. Ahora
-   son una fila propia ARRIBA de los dos paneles (`.gdf-zona-chips`), que es
-   lo que dice la verdad: son la respuesta completa, venga del buscador que
-   venga.
+   UN SOLO BUSCADOR PARA BARRIOS Y LUGARES. Hubo dos pestañas y se quitaron
+   (ver `renderZonaSugerencias` en main.js): las dos clases de resultado bajan
+   ahora de la misma lista, separadas por `.gdf-opt-grupo`.
+
+   LOS CHIPS NO VIVEN DENTRO DEL CAMPO. Al principio las etiquetas iban dentro
+   del propio buscador (el patrón "para:" de un cliente de correo) y
+   `#zonaChips` usaba `display: contents` para que sus `.gdf-entorno-chip`
+   fueran hijos flex directos del envoltorio. En una fila propia ARRIBA dicen
+   mejor lo que son: la respuesta completa, venga de donde venga.
 
    OJO con el contexto de apilamiento: la animación de entrada va sobre
    '.gdf-quiz-freeform' y NUNCA sobre sus hijos. Un `animation-fill:both` en
@@ -2619,9 +2655,9 @@ a.pt-flink:hover {
   background: var(--marca-tinte);
   color: var(--marca);
   border: 1px solid var(--marca-borde-suave);
-  /* Los chips viven dentro de un <input> visual (.gdf-zona-input-wrap): sin
-     esto, el `white-space` que hereda de ahi los partiria en dos lineas por
-     cada espacio del nombre ("Cedritos" quedaria "Cedri- tos" al envolver). */
+  /* Un nombre de barrio se parte por sus espacios si se le deja: "Suba
+     Rincon" en dos lineas dentro de la misma pastilla se lee como dos chips
+     pegados. La fila de arriba envuelve por chips enteros, no por palabras. */
   white-space: nowrap;
 }
 .gdf-entorno-chip-x {
@@ -2645,7 +2681,7 @@ a.pt-flink:hover {
   gap: 6px;
   background: var(--papel-2);
   border: 1.5px solid var(--borde);
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   padding: 8px 10px;
   margin-bottom: 14px;
   transition: border-color 0.15s;
@@ -2653,58 +2689,33 @@ a.pt-flink:hover {
 .gdf-zona-input-wrap:focus-within {
   border-color: var(--marca);
 }
-/* LAS DOS PESTAÑAS de la pregunta de ubicación: buscar por barrio (para quien
-   conoce Bogotá) o por un lugar cercano (para quien no). Se leen como un solo
-   control segmentado, no como dos botones sueltos: por eso comparten el borde
-   exterior y solo el activo se llena de color. */
-.gdf-zona-modos {
-  display: flex;
-  gap: 4px;
-  padding: 4px;
-  margin-bottom: 12px;
-  background: var(--papel-2);
-  border: 1.5px solid var(--borde);
-  border-radius: 12px;
+/* EL ENCABEZADO DE CADA GRUPO del desplegable: "Barrios y localidades" y
+   "Lugares". Es lo que permitió quitar las dos pestañas que había aquí
+   —elegir el modo ANTES de escribir— y dejar un solo campo: las dos clases de
+   resultado bajan juntas y cada una dice lo que es.
+
+   Va como <p> y no como un <button> deshabilitado a propósito: no se pulsa, no
+   recibe foco al tabular y los lectores de pantalla no lo anuncian como una
+   opción más de la lista. */
+.gdf-opt-grupo {
+  margin: 6px 4px 3px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-tenue);
 }
-.gdf-zona-modo-btn {
-  flex: 1 1 0;
-  padding: 8px 10px;
-  border: none;
-  border-radius: 8px;
-  background: none;
-  color: var(--tinta-media);
-  font: inherit;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+/* El primer encabezado no necesita separarse de nada: el borde del panel ya
+   está justo encima. */
+.gdf-opt-grupo:first-child {
+  margin-top: 0;
 }
-.gdf-zona-modo-btn:hover {
-  color: var(--tinta);
-}
-.gdf-zona-modo-btn.activo {
-  background: var(--marca);
-  color: var(--sobre-marca);
-}
-/* Cada panel de búsqueda. El oculto lleva el atributo nativo `hidden`; esta
-   regla existe porque `.gdf-entorno-combo` trae su propio `display`, que
-   ganaría al `display:none` que el navegador le da a `[hidden]`. */
-.gdf-zona-modo-panel[hidden] {
-  display: none;
-}
-/* Los chips, ahora fuera de los dos buscadores y compartidos por ambos (ver
-   `zonaPanel` en templates.js). `.gdf-entorno-chips` ya los pinta como fila
-   flex por sí sola — igual que en 'entorno_deseado', donde también viven
-   sueltos—, así que aquí solo hace falta separarlos del panel de abajo. */
+/* Los chips, fuera del buscador (ver `zonaPanel` en templates.js).
+   `.gdf-entorno-chips` ya los pinta como fila flex por sí sola — igual que en
+   'entorno_deseado', donde también viven sueltos—, así que aquí solo hace
+   falta separarlos del buscador de abajo. */
 .gdf-zona-chips:not(:empty) {
   margin-bottom: 12px;
-}
-/* La línea que explica qué va a pasar al elegir un lugar. Va debajo del
-   buscador y no arriba: se lee al terminar de mirar el campo, no antes. */
-.gdf-zona-pista {
-  margin: 8px 2px 0;
-  font-size: 12px;
-  color: var(--tinta-tenue);
 }
 /* El <input> de adentro pierde el aspecto de `.gdf-input` —fondo, borde,
    radio, el margen inferior de 14px que dejaba un hueco vacío bajo el
@@ -2761,7 +2772,7 @@ a.pt-flink:hover {
 
 .gdf-lead-badge {
   margin: 16px 0;
-  border-radius: 16px;
+  border-radius: var(--radio-tarjeta);
   padding: 16px 18px;
   text-align: center;
   animation: popIn 0.5s ease-out;
@@ -2786,7 +2797,7 @@ a.pt-flink:hover {
   margin-bottom: 6px;
 }
 .gdf-lead-badge .title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 800;
   font-size: 17px;
   color: var(--marca-fuerte);
@@ -2891,9 +2902,9 @@ a.pt-flink:hover {
 .gdf-project-card {
   background: var(--papel);
   border: 1.5px solid var(--borde);
-  border-radius: 16px;
+  border-radius: var(--radio-tarjeta);
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--sombra-tarjeta);
   animation: floatUp 0.5s ease-out both;
   /* La tarjeta no se elige: sus botones de llamar y WhatsApp son lo que se
      toca. Sin `cursor: pointer` en el contenedor, para no prometer un clic
@@ -2967,7 +2978,7 @@ a.pt-flink:hover {
   padding: 14px 16px 16px;
 }
 .gdf-project-name {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 800;
   font-size: 17px;
   color: var(--tinta);
@@ -2984,11 +2995,12 @@ a.pt-flink:hover {
 }
 .gdf-project-precio strong {
   display: block;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   /* 26px y no 27: el precio dejó de abreviarse a "$240,8M" y ahora se pinta
      entero ("$240.800.000", ver `pesos()` en js/simulador.js). Son cinco
-     glifos más en una tarjeta cuya columna mide 260px, y los dígitos de
-     Poppins ExtraBold son anchos. Con esto el precio más largo del catálogo
+     glifos más en una tarjeta cuya columna mide 260px, y los dígitos de un
+     ExtraBold geométrico —Poppins, o Sora en Leadify— son anchos. Con esto el
+     precio más largo del catálogo
      cabe con aire de sobra y sigue siendo, de lejos, lo más grande del
      cuerpo — el nombre del proyecto va en 17px. */
   font-size: 26px;
@@ -3017,12 +3029,12 @@ a.pt-flink:hover {
      de bien con una línea o con dos. */
   flex-wrap: wrap;
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   background: rgba(79, 214, 191, 0.14);
   border: 1px solid rgba(79, 214, 191, 0.4);
   /* EL VERDE DEPENDE DE LA SUPERFICIE, por eso es un token y no un hex. Sobre
      la consola negra de las cuatro constructoras tiene que ACLARARSE, y
-     #4fd6bf es ese valor; sobre la superficie clara de Machea el mismo verde
+     #4fd6bf es ese valor; sobre la superficie clara de Leadify el mismo verde
      da 2,5 de contraste y hay que oscurecerlo. Lo elige js/tema.js con el
      resto de la superficie (`--exito`). */
   color: var(--exito);
@@ -3263,8 +3275,8 @@ a.pt-flink:hover {
   width: 100%;
   min-height: 42px;
   padding: 10px 12px;
-  border-radius: 12px;
-  font-family: 'Poppins', sans-serif;
+  border-radius: var(--radio-campo);
+  font-family: var(--fuente-titulos);
   font-size: 13.5px;
   font-weight: 700;
   line-height: 1;
@@ -3302,7 +3314,7 @@ a.pt-flink:hover {
   margin-top: 10px;
   padding: 10px 14px;
   border: 1.5px solid #bcd9ee;
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   background: var(--marca-tinte-2);
   cursor: pointer;
   text-align: left;
@@ -3320,7 +3332,7 @@ a.pt-flink:hover {
 }
 .gdf-tour360-texto {
   flex: 1;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-size: 12px;
   font-weight: 800;
   color: var(--marca);
@@ -3358,7 +3370,7 @@ a.pt-flink:hover {
 .gdf-skeleton-card {
   background: var(--papel);
   border: 1.5px solid var(--borde);
-  border-radius: 16px;
+  border-radius: var(--radio-tarjeta);
   overflow: hidden;
 }
 .gdf-skeleton-header {
@@ -3407,7 +3419,7 @@ a.pt-flink:hover {
   text-align: center;
   background: var(--papel);
   border: 1.5px solid var(--borde);
-  border-radius: 16px;
+  border-radius: var(--radio-tarjeta);
   padding: 26px 20px;
   margin-bottom: 16px;
   animation: floatUp 0.4s ease-out;
@@ -3417,7 +3429,7 @@ a.pt-flink:hover {
   line-height: 1;
 }
 .gdf-reco-aviso h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-size: 17px;
   font-weight: 800;
   color: var(--tinta);
@@ -3450,9 +3462,9 @@ a.pt-flink:hover {
   border: 1.5px solid var(--borde);
   background: var(--papel);
   color: var(--tinta-media);
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   padding: 12px 18px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-size: 13.5px;
   font-weight: 700;
   cursor: pointer;
@@ -3469,7 +3481,7 @@ a.pt-flink:hover {
   background: var(--acento-tinte);
   border: 1px solid var(--acento);
   color: var(--sobre-acento);
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   padding: 10px 13px;
   font-size: 12px;
   line-height: 1.45;
@@ -3572,7 +3584,7 @@ a.pt-flink:hover {
   color: var(--tinta-media);
   border-radius: 999px;
   padding: 6px 13px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-size: 11.5px;
   font-weight: 700;
   cursor: pointer;
@@ -3602,7 +3614,7 @@ a.pt-flink:hover {
    desliza con el dedo y en escritorio con la barra/trackpad. */
 .gdf-planos {
   border: 1px solid var(--borde);
-  border-radius: 14px;
+  border-radius: var(--radio-boton);
   overflow: hidden;
   background: var(--papel);
 }
@@ -3802,7 +3814,7 @@ a.pt-flink:hover {
   border: 1.5px solid var(--borde);
   border-radius: 999px;
   padding: 10px 18px;
-  font: 700 13px/1 'Manrope', sans-serif;
+  font: 700 13px/1 var(--fuente-cuerpo);
   color: var(--tinta);
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
@@ -3860,7 +3872,7 @@ a.pt-flink:hover {
 .gdf-confirm-hero {
   text-align: center;
   padding: 30px 22px 26px;
-  border-radius: 22px;
+  border-radius: var(--radio-panel);
   animation: floatUp 0.5s ease-out;
 }
 /* Azul Colsubsidio (var(--marca)), no verde: mismo tono que .gdf-lead-badge.ready
@@ -3929,7 +3941,7 @@ a.pt-flink:hover {
   animation: jibSpin 0.8s linear infinite;
 }
 .gdf-confirm-hero h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-size: 24px;
   font-weight: 800;
   color: var(--marca-fuerte);
@@ -3972,7 +3984,7 @@ a.pt-flink:hover {
   gap: 14px;
   background: var(--papel);
   border: 1px solid var(--borde);
-  border-radius: 16px;
+  border-radius: var(--radio-tarjeta);
   padding: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
@@ -3980,12 +3992,12 @@ a.pt-flink:hover {
   width: 64px;
   height: 64px;
   flex: 0 0 auto;
-  border-radius: 12px;
+  border-radius: var(--radio-campo);
   background-size: cover;
   background-position: center;
 }
 .gdf-confirm-proyecto-nombre {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 800;
   font-size: 15px;
   color: var(--tinta);
@@ -4011,7 +4023,7 @@ a.pt-flink:hover {
   gap: 13px;
   background: var(--papel);
   border: 1px solid var(--marca-borde-suave);
-  border-radius: 16px;
+  border-radius: var(--radio-tarjeta);
   padding: 13px 15px;
 }
 .gdf-confirm-contacto-avatar {
@@ -4044,7 +4056,7 @@ a.pt-flink:hover {
    la carga de recomendaciones, aplicados a que a Manuela le llegó el lead. */
 .gdf-confirm-llamada {
   margin-top: 14px;
-  border-radius: 14px;
+  border-radius: var(--radio-boton);
   padding: 13px 16px;
   font-size: 13.5px;
   font-weight: 700;
@@ -4096,7 +4108,7 @@ a.pt-flink:hover {
    (calculado en vivo por qualification.js sobre el quiz, antes de llamar). */
 .gdf-confirm-resumen {
   margin-top: 14px;
-  border-radius: 14px;
+  border-radius: var(--radio-boton);
   padding: 14px 16px;
   font-size: 13px;
   line-height: 1.55;
@@ -4129,7 +4141,7 @@ a.pt-flink:hover {
   margin-bottom: 8px;
 }
 .gdf-confirm-resumen-cabecera h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-titulos);
   font-size: 14px;
   font-weight: 800;
   color: var(--tinta);
@@ -4866,9 +4878,9 @@ a.pt-flink:hover {
 
 
 /* ============================================================
-   MACHEA MOTION SYSTEM
-   .claude/skills/machea-motion-system
-   Solo se activa con la marca Machea: la clase `gdf-con-senal` la pone
+   Leadify MOTION SYSTEM
+   .claude/skills/leadify-motion-system
+   Solo se activa con la marca Leadify: la clase `gdf-con-senal` la pone
    senal.js al montar, y no monta para las cuatro constructoras revendidas,
    que conservan su identidad en negro y naranja.
    ============================================================ */
@@ -5009,4 +5021,49 @@ a.pt-flink:hover {
   .gdf-con-senal .gdf-progress-fill::before {
     display: none;
   }
+}
+
+
+/* ============ Leadify: LO QUE NO CABE EN UN TOKEN ============ */
+/* Casi todo el sistema de la landing viaja en variables —fuente, radios,
+   sombras, colores— y lo fija js/tema.js (ver SISTEMA_Leadify). Aquí quedan las
+   decisiones que no son un valor sino una forma de componer, y que por eso no
+   se pueden guardar en un token.
+
+   EL GANCHO ES `data-marca`, QUE PONE tema.js EN EL <html>, y no la clase
+   `.gdf-con-senal` que usa la sección de arriba. Esa clase la pone senal.js al
+   montar el fondo animado: significa "hay señal detrás", no "esta es Leadify".
+   Son lo mismo hoy porque el fondo solo se monta para Leadify, pero apagarlo
+   —o que falle su canvas— se llevaría por delante la tipografía, que no tiene
+   nada que ver. tema.js corre antes que nada y es quien sabe de qué marca se
+   trata; este es su atributo. */
+
+/* EL ANTETÍTULO. Cada sección de la landing abre con una versalita coral
+   interletrada: "Leadify · Demo en vivo", "Pruébalo tú mismo". Aquí el
+   equivalente exacto es el contador de preguntas — lo primero que se lee del
+   panel, y hasta ahora un gris de 11px que no lo parecía. Mismos valores que
+   el `tracking-[0.15em]` de la landing. */
+[data-marca='leadify'] .gdf-step-count {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--marca);
+}
+
+/* SORA ES MÁS ANCHA QUE POPPINS al mismo cuerpo, y en ExtraBold la diferencia
+   se nota. Sin apretar el interletrado, un enunciado que cabía en dos líneas
+   pasa a tres y empuja las opciones fuera de la primera pantalla, que es el
+   recurso escaso del panel (ver .gdf-opt-btn). -0.02em es lo que usa la
+   landing en sus titulares. */
+[data-marca='leadify'] .gdf-question h2,
+[data-marca='leadify'] .gdf-carnet h2 {
+  letter-spacing: -0.02em;
+}
+
+/* EL CTA EN PASTILLA PIDE MÁS ALTO. Con --radio-cta en 999px, los 15px de
+   padding dejaban un botón que se leía como una cápsula apretada; 17px es el
+   `py-4` con el que la landing compone el suyo. */
+[data-marca='leadify'] .gdf-btn-primary {
+  padding: 17px 28px;
 }

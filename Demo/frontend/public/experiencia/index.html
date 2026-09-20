@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encuentra tu próximo hogar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- SORA ES LA DE Leadify y Poppins la de las cuatro constructoras: los
+         titulares salen de `--fuente-titulos`, que js/tema.js cambia segun el
+         tenant (ver SUPERFICIE_Leadify). Se piden las dos en la MISMA peticion
+         porque el <link> se resuelve antes de saber que marca se cargo — el
+         tenant entra por `document.write` mas abajo— y una segunda hoja de
+         estilos descubierta a mitad del arranque es un parpadeo de fuente
+         garantizado. Sora pesa ~15 KB en woff2 y llega en paralelo. -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <!-- Leaflet, para el mapa real de la primera pregunta (ver js/mapa.js).
@@ -53,7 +60,7 @@
         var slug = (m && m[1]) || 'constructora-bolivar';
         window.GDF_TENANT = slug;
         // MODO EMBEBIDO (`?embed=1`). Hoy lo usa el modal de "¡Empezar mi
-        // match!" de la landing de Machea, que monta esta app en un iframe.
+        // match!" de la landing de Leadify, que monta esta app en un iframe.
         // Se lee aqui y no en config.js porque viene de la URL, igual que la
         // marca, y las dos tienen que estar antes de que arranque main.js.
         //
@@ -115,15 +122,15 @@
     <script src="js/recommender.js?v=105"></script>
     <script src="js/qualification.js?v=105"></script>
     <script src="js/simulador.js?v=105"></script>
-    <!-- El fondo "AI Signal" del Machea Motion System: red de nodos y pulso
+    <!-- El fondo "AI Signal" del Leadify Motion System: red de nodos y pulso
          coral. Cuelga del <body> y no de #root, que se reconstruye entero en
          cada pantalla — ver la cabecera de senal.js. -->
     <script src="js/senal.js?v=105"></script>
     <!-- Paso 2 del contrato: dispara la llamada de Manuela vía api.py -->
     <script src="js/llamada.js?v=105"></script>
-    <!-- el contrato del modelo de recomendacion (Machea) -->
+    <!-- el contrato del modelo de recomendacion (Leadify) -->
     <script src="js/iconos.js?v=105"></script>
-    <script src="js/machea.js?v=105"></script>
+    <script src="js/leadify.js?v=105"></script>
     <script src="js/templates.js?v=106"></script>
     <script src="js/state.js?v=105"></script>
     <script src="js/main.js?v=106"></script>

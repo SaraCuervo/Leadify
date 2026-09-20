@@ -31,11 +31,11 @@
   // ERAN OCHO. La que se fue es `piso_preferido`, y es la que menos duele: era
   // la unica que NO puntuaba en nada (0 % de movimiento del plano, y ni los
   // proyectos ni las tipologias guardan en que piso esta nada). El contrato
-  // del modelo tambien la da por opcional. Ver js/machea.js.
+  // del modelo tambien la da por opcional. Ver js/leadify.js.
   var QUESTIONS = [
     {
       // LAS OPCIONES SON LAS 20 LOCALIDADES DE BOGOTA, Y SALEN DEL CONTRATO
-      // DEL MODELO (js/machea.js), no del catálogo del tenant. Esto ES un
+      // DEL MODELO (js/leadify.js), no del catálogo del tenant. Esto ES un
       // cambio: antes se derivaban del catálogo, con la lógica de "no ofrecer
       // un sitio donde no hay nada".
       //
@@ -58,7 +58,7 @@
       // buscador de barrios y un mapa clicable — y las dos terminan
       // guardando el NOMBRE de la localidad, que es lo que ya esperaban
       // matching.js, planta.js, recommender.js y el localidadId() de
-      // machea.js. El contrato de la respuesta no cambia.
+      // leadify.js. El contrato de la respuesta no cambia.
       //
       // `options` se queda vacío a propósito: las localidades salen de
       // GDF_MAPA (las 20, dibujadas sobre el mapa) y de GDF_BARRIOS (las
@@ -256,14 +256,14 @@
     : PROJECTS_RESPALDO;
 
   // Las 20 localidades del contrato del modelo (ver LOCALIDADES en
-  // js/machea.js, que es la única copia de esa tabla). Se ordenan por cuántos
+  // js/leadify.js, que es la única copia de esa tabla). Se ordenan por cuántos
   // proyectos del catálogo caen en cada una, para que las que sí tienen oferta
   // salgan primero — pero se ofrecen TODAS, porque el modelo sabe expandir a
   // las vecinas y el catálogo del tenant no es el suyo.
   //
-  // Ojo con el orden de carga: machea.js va DESPUÉS de data.js en index.html,
-  // así que aquí no se puede leer `GDF.machea`. La lista va en este archivo y
-  // machea.js la traduce a ids.
+  // Ojo con el orden de carga: leadify.js va DESPUÉS de data.js en index.html,
+  // así que aquí no se puede leer `GDF.leadify`. La lista va en este archivo y
+  // leadify.js la traduce a ids.
   var LOCALIDADES_BOGOTA = [
     'Usaquén', 'Chapinero', 'Santa Fe', 'San Cristóbal', 'Usme',
     'Tunjuelito', 'Bosa', 'Kennedy', 'Fontibón', 'Engativá',

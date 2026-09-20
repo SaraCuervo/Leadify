@@ -1,4 +1,4 @@
-// EL FONDO "AI SIGNAL" del Machea Motion System (§6). Tres capas:
+// EL FONDO "AI SIGNAL" del Leadify Motion System (§6). Tres capas:
 //
 //   1. Atmosphere — dos gradientes radiales muy suaves. Van en CSS
 //      (.gdf-senal-atmosfera), no aquí: son estáticos y pintarlos en canvas
@@ -14,9 +14,9 @@
 // y esa continuidad es precisamente lo que dice §3 — el formulario es el
 // primer nodo de UN sistema, no una pantalla suelta.
 //
-// SOLO PARA MACHEA. Las cuatro constructoras revendidas tienen su identidad
+// SOLO PARA Leadify. Las cuatro constructoras revendidas tienen su identidad
 // en negro y naranja y no se les impone la del stand; misma línea que sigue
-// `SUPERFICIE_MACHEA` en tema.js.
+// `SUPERFICIE_Leadify` en tema.js.
 (function () {
   'use strict';
 
@@ -97,7 +97,7 @@
     var al = lienzo.clientHeight;
     ctx.clearRect(0, 0, an, al);
 
-    var tintaRgb = '143, 154, 170'; // --machea-muted, en rgb para el alpha
+    var tintaRgb = '143, 154, 170'; // --leadify-muted, en rgb para el alpha
     var coral = color('--marca', '#FF6259');
 
     var pares = vecinos();
@@ -206,7 +206,7 @@
   function montar() {
     // Solo la marca del stand. Ver la nota de arriba.
     var marca = window.GDF_MARCA || {};
-    if (marca.slug !== 'machea') return;
+    if (marca.slug !== 'leadify') return;
 
     lienzo = document.createElement('canvas');
     lienzo.className = 'gdf-senal';
@@ -218,7 +218,7 @@
     document.body.appendChild(lienzo);
     // La marca en el <html> es lo que deja al CSS volver translúcidos el
     // panel y la escarapela SOLO donde hay señal detrás. Sin ella habría que
-    // repetir el `slug === 'machea'` en cada regla, y las otras cuatro marcas
+    // repetir el `slug === 'leadify'` en cada regla, y las otras cuatro marcas
     // —que no montan esto— se quedarían con paneles transparentes sobre nada.
     document.documentElement.classList.add('gdf-con-senal');
 

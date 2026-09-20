@@ -1,12 +1,17 @@
 services:
   - type: web
-    name: machea-api
+    name: leadify-api
     runtime: python
     plan: free
-    branch: version_0.2
-    # El backend vive en backend/. `rootDir` hace que el build y el arranque
-    # ocurran ahí dentro, que es donde `Model` es importable.
-    rootDir: backend
+    branch: main
+    # El backend vive en Demo/backend/. `rootDir` hace que el build y el
+    # arranque ocurran ahí dentro, que es donde `Model` es importable, y se
+    # cuenta desde la RAÍZ del repositorio, no desde este archivo.
+    #
+    # OJO: Render solo lee un render.yaml que esté en la raíz del repositorio.
+    # Este vive con el proyecto, así que para desplegar hay que copiarlo (o
+    # moverlo) a la raíz; aquí las rutas ya quedan escritas para eso.
+    rootDir: Demo/backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn api.app:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health

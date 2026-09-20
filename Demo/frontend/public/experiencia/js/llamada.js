@@ -7,7 +7,7 @@
 // una vez por partida, con el mismo patrón que cargarRecomendaciones() en
 // main.js (cargando -> resuelto).
 //
-// POR QUÉ NO VA CONTRA MACHEA_BASE. Ese servicio (servicio_machea.py) solo
+// POR QUÉ NO VA CONTRA Leadify_BASE. Ese servicio (servicio_leadify.py) solo
 // sabe de recomendaciones y no conoce a Dapta ni tiene su API key. api.py sí
 // la tiene, guardada en el servidor — nunca puede bajar al navegador — así
 // que esta llamada va siempre contra DAPTA_LLAMADA_BASE (config.js),

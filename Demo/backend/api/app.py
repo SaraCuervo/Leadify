@@ -1,7 +1,7 @@
 """
 api/app.py
 ==========
-Capa HTTP sobre recomendar(). Expone el modelo a la landing de Machea para
+Capa HTTP sobre recomendar(). Expone el modelo a la landing de Leadify para
 el formulario en vivo del stand de GO FEST.
 
     uvicorn api.app:app --reload --port 8000     # desde backend/
@@ -36,7 +36,7 @@ from Model.catalogos import LOCALIDADES_BOGOTA, ZONAS_COMUNES, indice_localidad
 from Model.grafo_barrios import barrios_de_localidad, hay_grafo_barrios
 from Model.pipeline import recomendar, respuesta_json
 
-app = FastAPI(title="Machea Recomendador API", version="0.1")
+app = FastAPI(title="Leadify Recomendador API", version="0.1")
 
 # URL del webhook del flow de Dapta (Flow Studio) que dispara la llamada de
 # Manuela. Vacío -> modo mock: arma el payload y lo devuelve sin llamar a
@@ -244,7 +244,7 @@ def _texto(valor: Any) -> Optional[str]:
 
 @app.post("/webhooks/dapta/resultado")
 async def webhook_resultado_llamada(request: Request):
-    """Receptor del webhook post-call de Dapta (agente Manuela — Machea).
+    """Receptor del webhook post-call de Dapta (agente Manuela — Leadify).
 
     Escrito a la defensiva: el payload exacto no está documentado en público
     y no se puede probar sin disparar una llamada real, así que se guarda el

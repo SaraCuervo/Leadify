@@ -21,10 +21,10 @@
  *
  * EL VOCABULARIO ES EL DEL CONTRATO, y esa es la clave de todo: las 26 llaves
  * de aquí son EXACTAMENTE los `label` de la pregunta `entorno_deseado` de
- * data.js — las 25 del contrato de Machea más "Cancha múltiple", que el
+ * data.js — las 25 del contrato de Leadify más "Cancha múltiple", que el
  * contrato no conoce. Si alguna se escribe distinto, esa zona se pinta con el
  * punto de siempre y no se entera nadie; por eso `icono()` busca sin tildes y
- * sin mayúsculas, que es la misma vuelta que da `machea.js`.
+ * sin mayúsculas, que es la misma vuelta que da `leadify.js`.
  *
  * Son de LÍNEA, no macizos: se pintan a 18-20 px dentro de una caja pequeña y
  * un pictograma relleno a ese tamaño se convierte en una mancha.
@@ -119,7 +119,7 @@
                        '<path d="M3 9h2.6v6H3M21 9h-2.6v6H21"/>',
   };
 
-  // Sin tildes y en minúsculas, igual que hace machea.js para cruzar el
+  // Sin tildes y en minúsculas, igual que hace leadify.js para cruzar el
   // vocabulario. Una tilde de menos no puede costar el icono.
   function normalizar(t) {
     return String(t || '')

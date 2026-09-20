@@ -2,7 +2,7 @@
 // del modelo o el motor de reglas local— a UN solo shape que templates.js sabe
 // pintar. Así la pantalla de selección no tiene ifs por origen de datos.
 //
-//   machea -> POST /recomendar (js/machea.js). Es la fuente real.
+//   leadify -> POST /recomendar (js/leadify.js). Es la fuente real.
 //   local  -> js/matching.js. Se usa como respaldo cuando el modelo falla, y
 //             siempre marcado como aproximado para no engañar a nadie.
 //
@@ -10,7 +10,7 @@
 // ------------------------------
 // El contrato del modelo deja las imágenes FUERA de la respuesta: dice que
 // viven en `imagenes_proyectos/<id_proyecto>/`, numeradas 01, 02… y sin decir
-// la extensión. Quien las resuelve es integracion/servicio_machea.py, que lista
+// la extensión. Quien las resuelve es integracion/servicio_leadify.py, que lista
 // la carpeta del id y devuelve un `imagenes: [url, …]` por proyecto.
 //
 // Eso no es un adorno: el cruce por nombre contra el catálogo del tenant
@@ -65,20 +65,20 @@
   // desplegable de planos.
   // Las fotos llegan como rutas RELATIVAS ("/imagenes_proyectos/12/01.jpg"),
   // porque el servicio no sabe con qué URL pública lo están llamando. Aquí se
-  // resuelven contra MACHEA_BASE: sin esto el navegador las pide al servidor
+  // resuelven contra Leadify_BASE: sin esto el navegador las pide al servidor
   // del front, que no las tiene, y las seis tarjetas salen sin foto — sin
   // ningún error, solo un degradado donde debería haber un edificio.
   function urlDeFoto(ruta) {
     var r = String(ruta || '');
     if (!r || /^https?:/i.test(r) || r.indexOf('data:') === 0) return r;
-    var base = (window.GDF_CONFIG || {}).MACHEA_BASE || '';
+    var base = (window.GDF_CONFIG || {}).Leadify_BASE || '';
     return base.replace(/\/$/, '') + (r.charAt(0) === '/' ? r : '/' + r);
   }
 
   /**
    * El icono que el catálogo del tenant tiene para esa zona común, o ''.
    *
-   * Se busca por ETIQUETA sin tildes ni mayúsculas, igual que hace machea.js
+   * Se busca por ETIQUETA sin tildes ni mayúsculas, igual que hace leadify.js
    * para cruzar el vocabulario: el modelo devuelve "Zona kids" y el catálogo
    * puede tener "Zona Kids", y una mayúscula no puede costar el icono.
    */
@@ -91,7 +91,7 @@
     return '';
   }
 
-  function desdeMachea(item, porNombre) {
+  function desdeLeadify(item, porNombre) {
     var local = porNombre[normalizar(item.nombre_proyecto)] || null;
     var enComun = item.zonas_en_comun || [];
     return {
@@ -138,11 +138,11 @@
         return {
           label: label,
           icon: iconoLocal(local, label),
-          clave: pedida ? window.GDF.machea.claveDe(label) : null,
+          clave: pedida ? window.GDF.leadify.claveDe(label) : null,
         };
       }),
       score: typeof item.compatibilidad === 'number' ? item.compatibilidad : null,
-      origen: 'machea',
+      origen: 'leadify',
       local: local,
       factores: null, // el modelo no desglosa su score; el motor local sí
 
@@ -209,7 +209,7 @@
       // tarjeta compara las dos con un `indexOf`, así que sin esta vuelta no
       // coincidía NUNCA ninguna: "Tiene lo que buscas ✓" no se pintaba jamás
       // en la demo sin red, y las razones perdían la línea de zonas en común.
-      // `desdeMachea` ya hacía esta misma conversión con `claveDe`; aquí
+      // `desdeLeadify` ya hacía esta misma conversión con `claveDe`; aquí
       // faltaba, y por eso el fallo solo se veía con SIN_BACKEND.
       amenidades: (p.amenidades || []).map(function (a) {
         return {
@@ -217,7 +217,7 @@
           icon: a.icon,
           // Si la zona no cruza con el vocabulario, `claveDe` devuelve null y
           // la amenidad se sigue listando: simplemente no se resalta.
-          clave: window.GDF.machea.claveDe(a.clave || a.label),
+          clave: window.GDF.leadify.claveDe(a.clave || a.label),
         };
       }),
       score: p.score != null ? p.score : null,
@@ -528,7 +528,7 @@
    * filtro de arriba no funcionó y hay que mirarlo.
    */
   function soloDelTenant(vms, yaFiltrado) {
-    var mia = window.GDF.machea.constructoraDelTenant();
+    var mia = window.GDF.leadify.constructoraDelTenant();
     if (!mia) return vms;
     var fuera = [];
     var dentro = vms.filter(function (vm) {
@@ -557,9 +557,9 @@
   // `leadId` se queda en null: el modelo no registra leads. El campo sigue en
   // el objeto porque la pantalla de cierre lo lee, y ahí distingue el cierre
   // "quedó registrado" del "no había dónde registrarlo".
-  function recomendarMachea(state, cb) {
+  function recomendarLeadify(state, cb) {
     var porNombre = catalogoLocal();
-    window.GDF.machea.pedirRecomendaciones(state, function (r) {
+    window.GDF.leadify.pedirRecomendaciones(state, function (r) {
       if (r.estado === 'error') {
         cb({
           estado: 'error', aproximado: false, leadId: null, items: [],
@@ -574,7 +574,7 @@
         items: presentar(
           soloDelTenant(
             (r.items || []).map(function (item) {
-              return desdeMachea(item, porNombre);
+              return desdeLeadify(item, porNombre);
             }),
             !!r.constructoraFiltrada
           ),
@@ -589,24 +589,24 @@
   }
 
   // Punto de entrada único. Se elige con RECOMMENDER en js/config.js:
-  //   'machea' (default) -> el modelo, con sus fotos por id_proyecto
+  //   'leadify' (default) -> el modelo, con sus fotos por id_proyecto
   //   'local'            -> solo el motor de reglas, sin red
   function recomendar(state, cb) {
     var cfg = window.GDF_CONFIG || {};
     // Demo sin red (ver SIN_BACKEND en js/config.js): las recomendaciones salen
     // del motor local y se marcan como aproximadas, porque lo son — no es el
     // ranking del modelo.
-    if (cfg.SIN_BACKEND || (cfg.RECOMMENDER || 'machea') === 'local') {
+    if (cfg.SIN_BACKEND || (cfg.RECOMMENDER || 'leadify') === 'local') {
       recomendarLocal(state.answers, cb, { aproximado: true });
       return;
     }
-    recomendarMachea(state, cb);
+    recomendarLeadify(state, cb);
   }
 
   window.GDF = window.GDF || {};
   window.GDF.recommender = {
     recomendar: recomendar,
-    recomendarMachea: recomendarMachea,
+    recomendarLeadify: recomendarLeadify,
     recomendarLocal: recomendarLocal,
     desdeLocal: desdeLocal,
     TOTAL_RECOMENDADOS: TOTAL_RECOMENDADOS,

@@ -5,20 +5,23 @@
 
   function createInitial() {
     return {
-      // splash | escarapela | quiz | result | confirmacion
+      // escarapela | quiz | result | confirmacion
       // 'result' es la pantalla de SELECCIÓN de proyectos (ya sin la casa) y
       // 'confirmacion' es el cierre. Se conserva el nombre 'result' para no
       // renombrar acciones/CSS que ya funcionan.
       //
-      // Ya no hay 'landing': esa era la portada clonada de Colsubsidio y se
-      // borró con el resto. La app entra directa al splash.
+      // YA NO HAY 'splash'. Era la casita ilustrada con "Encuentra tu próximo
+      // hogar" y un botón para empezar, y se fue con la landing que envolvía a
+      // este quiz: ahí ya era una segunda puerta —por eso `?embed=1` la
+      // saltaba— y ahora que la experiencia ES la página entera, es la única
+      // puerta y sobra igual. Se entra directo a la escarapela.
       //
-      // EMBEBIDA (`?embed=1`, ver index.html) entra una pantalla más adentro,
-      // en la escarapela: quien llega ya pulsó "¡Empezar mi match!" y el
-      // splash sería una segunda puerta. No se salta también la escarapela
-      // porque es donde se piden nombre y teléfono; sin ella la confirmación
-      // cierra con un lead sin contacto y nada lo delata.
-      screen: window.GDF_EMBED ? 'escarapela' : 'splash',
+      // LA ESCARAPELA NO SE SALTA, aunque también sea una puerta: es donde se
+      // piden nombre y teléfono, y sin ella la confirmación cierra con un lead
+      // sin contacto y nada lo delata.
+      //
+      // Tampoco hay 'landing': esa era la portada clonada de Colsubsidio.
+      screen: 'escarapela',
       // Sin pantalla de elegir personaje: 'x' (avatar neutro) por defecto.
       gender: 'x', // 'f' | 'm' | 'x'
       nombre: '',
@@ -231,15 +234,11 @@
 
   function applyAction(state, action, ds) {
     switch (action) {
-      case 'goSplash':
-        // El splash NO EXISTE en la version embebida: el modal entra directo a
-        // la escarapela. Se bloquea aqui ademas de esconder el boton que lleva
-        // a el (ver escarapela en templates.js), porque esta accion la puede
-        // despachar cualquier otro camino y el fallo no se veria roto — se
-        // veria como una pantalla de bienvenida que aparece a destiempo.
-        if (window.GDF_EMBED) return false;
-        state.screen = 'splash';
-        break;
+      // AQUI VIVIA 'goSplash'. Se borro con la pantalla a la que llevaba (ver
+      // createInitial): una accion que apunta a una pantalla que ya no existe
+      // no se ve rota, se ve como una bienvenida que aparece a destiempo.
+      // Cualquier accion desconocida cae en el `default` de mas abajo, que
+      // devuelve false y no toca el estado.
 
       case 'goEscarapela':
         state.screen = 'escarapela';
@@ -401,7 +400,7 @@
         // barrio de la respuesta que se acaba de deshacer.
         //
         // `zonas` SI vive dentro de `answers` —es lo que leen matching.js y
-        // machea.js— pero el delete de arriba solo quita la llave de la
+        // leadify.js— pero el delete de arriba solo quita la llave de la
         // pregunta (`zona`), así que hay que quitarla a mano o la respuesta
         // quedaría medio deshecha: sin `zona` pero con las localidades.
         //
@@ -463,10 +462,10 @@
         Object.keys(fresh).forEach(function (k) {
           state[k] = fresh[k];
         });
-        // "Empezar de nuevo" vuelve a la entrada. Cual es la entrada ya lo
-        // decide `createInitial()` —splash suelta, escarapela embebida— asi
-        // que aqui NO se fija a mano: escribir 'splash' devolvia al modal la
-        // pantalla de bienvenida que precisamente se salta al abrirlo.
+        // "Empezar de nuevo" vuelve a la entrada, y cual es la entrada lo
+        // decide `createInitial()` — hoy la escarapela. Aqui NO se fija a
+        // mano: el nombre de la pantalla escrito en dos sitios es lo que deja
+        // un 'splash' colgado cuando la entrada cambia.
         state.screen = fresh.screen;
         break;
       }

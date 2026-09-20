@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# frontend — el formulario
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Esta mitad del repo sirve **una sola cosa**: la experiencia de 7 preguntas de
+`public/experiencia/`, a pantalla completa.
 
-Currently, two official plugins are available:
+Aquí hubo una landing (React 19 + Tailwind v4 + Framer Motion, con Navbar,
+Hero, FAQ, Offer y el resto) y se borró: en esta copia el formulario es todo.
+Quedaron dos piezas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| | |
+|---|---|
+| `index.html` | Un cascarón de ~20 líneas: un `<iframe>` a `/experiencia/index.html?marca=leadify`, a viewport completo. |
+| `public/experiencia/` | **El formulario.** JS vanilla, sin build; Vite lo sirve tal cual desde `public/`. No se tocó. |
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev        # :5173, falla si el puerto está ocupado (strictPort)
+npm run build      # copia public/ a dist/ y minifica el cascarón
+npm run preview
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Tres cosas que no hay que deshacer sin querer:
+
+- **`?marca=leadify`** es el tenant neutro: sin ese parámetro el bundle cae en
+  `constructora-bolivar` y filtra el catálogo a una sola constructora.
+- **Se nombra `index.html`**, no el directorio: en `npm run dev` una ruta sin
+  extensión devuelve el cascarón, y el iframe se cargaría a sí mismo.
+- **Sigue siendo un iframe** porque el quiz inyecta el tenant con
+  `document.write` en el punto del parser: pasarlo por el build de Vite o
+  ponerle `defer` borra el documento entero.
+
+El backend que consume está en `../backend` (`uvicorn api.app:app --port
+8000`). Ojo: la copia publicada del bundle lleva `SIN_BACKEND: true` en
+`js/config.js`, así que por defecto recomienda con el motor de reglas de
+`matching.js` y no llama al modelo.
+
+La documentación completa: [GUIA_TECNICA.md §8](../../Docs/GUIA_TECNICA.md).
