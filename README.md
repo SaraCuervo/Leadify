@@ -66,7 +66,6 @@ Leadify/
 │   │   ├── index.html          Cascarón que sirve el formulario a pantalla completa
 │   │   └── public/experiencia/ El formulario: las siete preguntas y el plano que se arma
 │   ├── render.yaml             Despliegue de la API
-│   └── README.md               Instrucciones del demo
 ├── Database/                   Qué datos usa el motor y dónde viven
 ├── Docs/
 │   ├── Dailys/                 Actas de los dailys (Daily1 a Daily5)
