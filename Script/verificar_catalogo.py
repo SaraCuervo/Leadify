@@ -13,7 +13,7 @@ corrida y cambia siempre.
 
 Se corre desde la raíz del repositorio:
 
-    python .github/scripts/verificar_catalogo.py
+    python Script/verificar_catalogo.py
 """
 from __future__ import annotations
 

@@ -7,7 +7,7 @@ error que solo una máquina encuentra a tiempo.
 
 Se corre desde la raíz del repositorio:
 
-    python .github/scripts/verificar_enlaces.py
+    python Script/verificar_enlaces.py
 
 Devuelve 0 si todos resuelven y 1 si alguno no.
 """
