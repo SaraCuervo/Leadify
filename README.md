@@ -72,8 +72,6 @@ Leadify/
 ├── Database/                   Qué datos usa el motor y dónde viven
 ├── Docs/
 │   ├── Dailys/                 Actas de los dailys (Daily1 a Daily5)
-│   ├── GUIA_TECNICA.md         Guía técnica completa del motor
-│   ├── CONTRATO_FRONT.md       Contrato del formulario y de la respuesta JSON
 │   └── lean-canvas.pdf         Lean canvas del proyecto
 ├── Graficas/                   Gráficas de las métricas del lean canvas
 ├── Script/                     Qué scripts hay y cómo se corren

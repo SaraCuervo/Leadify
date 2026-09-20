@@ -17,8 +17,8 @@ sueltos: son módulos del motor y viven en
 | Calibración de la cota de precio y de los barrios | `Demo/backend/Model/simulacion/calibrar_*.py` | `python Model/simulacion/calibrar_cota.py` |
 
 Todos se corren desde `Demo/backend/`, que es donde el paquete `Model` es
-importable. Qué hace cada uno y por qué está en
-[`Docs/GUIA_TECNICA.md`](../Docs/GUIA_TECNICA.md).
+importable. Cada archivo explica en su cabecera qué hace y por qué; la vista de
+conjunto está en [Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o), en la wiki.
 
 ## Los que sí viven aquí
 
@@ -36,5 +36,5 @@ python Script/verificar_enlaces.py
 ```
 
 La tercera comprobación, la del motor, vive con el motor:
-`Demo/backend/pruebas/prueba_humo.py`. Las tres, y cuándo correrlas, están en
-[`Docs/CONTRIBUTING.md`](../Docs/CONTRIBUTING.md).
+`Demo/backend/pruebas/prueba_humo.py`. Conviene correr las tres antes de subir
+un cambio: tardan menos de un minuto entre todas.

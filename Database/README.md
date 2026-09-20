@@ -30,6 +30,8 @@ repositorio puede llamar a `recomendar()` sin scrapear ni entrenar nada. Además
 `Demo/backend/Model/rutas.py` es la única fuente de las rutas del proyecto, y
 moverlos de sitio obliga a tocarla.
 
-El detalle de cómo se construye cada uno está en
-[`Docs/GUIA_TECNICA.md`](../Docs/GUIA_TECNICA.md), §1.2 (dónde vive cada cosa),
-§3.5 (el grafo de barrios) y §4.6 (los clientes y el historial simulados).
+Cómo se construye cada uno: el catálogo lo arma
+`Demo/backend/scraping/scraper_projects.py` y lo etiqueta `Model/prep.py`; el
+grafo de barrios lo compila `Model/grafo_barrios.py`; y los clientes e
+historial simulados salen de `Model/simulacion/`. La vista de conjunto está en
+[Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify/wiki/Arquitectura-y-Dise%C3%B1o), en la wiki.
