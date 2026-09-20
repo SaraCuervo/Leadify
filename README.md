@@ -80,6 +80,36 @@ Leadify/
 La rama `develop` conserva una copia anterior del demo, con la landing de React
 que esta versión ya no tiene.
 
+## Cómo se trabaja en este repositorio
+
+Tres ramas, tres papeles:
+
+| Rama | Qué es |
+|---|---|
+| `main` | Lo estable: lo que se entrega. |
+| `develop` | Donde se integran las funcionalidades antes de llegar a `main`. |
+| `feature/<funcionalidad>` | Una por funcionalidad, sale de `develop` y vuelve a `develop`. El nombre describe QUÉ se construye, no quién lo hace: `feature/calificacion-de-leads`, no `feature/carlos`. |
+
+```bash
+git checkout develop
+git checkout -b feature/lo-que-sea
+# ...trabajar, commitear...
+git push -u origin feature/lo-que-sea
+# luego, al integrar:
+git checkout develop
+git merge --no-ff feature/lo-que-sea
+```
+
+El `--no-ff` es a propósito: deja ver en la historia que hubo una rama aparte,
+en vez de que parezca que todo se hizo directo sobre `develop`.
+
+**Mensajes de commit:** la primera línea dice qué cambia, en presente. Si el
+cambio toca una historia de usuario, se nombra (`HU-3`).
+
+**Antes de subir un cambio al backend**, correr lo que hay en `Script/` y en
+`Demo/backend/pruebas/` — tardan menos de un minuto entre todas y son las
+comprobaciones que no avisan solas si algo se rompe.
+
 ## Contacto
 
 Para dudas sobre el proyecto, escribir a cualquier integrante del equipo a través de su perfil de GitHub:
