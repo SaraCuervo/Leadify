@@ -23,7 +23,7 @@ El asesor recibe al lead con la cita ya puesta, no solo con un dato de contacto.
 |---|---|---|
 | Diego Ortiz | Documentación | [diego131t-max](https://github.com/diego131t-max) |
 | Carlos Figueroa | Base de datos, scripts y gráficas | [FigueroaCarlos](https://github.com/FigueroaCarlos) |
-| Santiago Díaz | Historias de usuario y cuestionario | [BGsanti](https://github.com/BGsanti) |
+| Santiago Díaz | Historias de usuario y cuestionario | [santiagodiazsabogal](https://github.com/santiagodiazsabogal) |
 | Sara Cuervo | Repositorio y estimaciones | [SaraCuervo](https://github.com/SaraCuervo) |
 
 ## Tecnologías
