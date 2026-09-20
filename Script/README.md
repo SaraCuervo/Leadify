@@ -22,23 +22,24 @@ conjunto está en [Arquitectura y Diseño](https://github.com/SaraCuervo/Leadify
 
 ## Los que sí viven aquí
 
-Dos comprobaciones que se corren **desde la raíz del repositorio**:
+Tres comprobaciones que se corren **desde la raíz del repositorio**:
 
 | Script | Qué revisa | ¿Necesita `pip install`? |
 |---|---|---|
+| `verificar_sintaxis.py` | Que todos los `.py` del repositorio compilen, sin correr nada. Es la comprobación más barata: un archivo que nadie tocó en semanas puede romperse por un cambio en otro lado, y esto lo detecta al instante. | No. Solo usa `py_compile`, de la librería estándar. |
 | `verificar_catalogo.py` | Que `proyectos_model.json` —que se versiona— corresponda al código que lo genera. Lo regenera en otro archivo y compara, ignorando la marca de tiempo, así que no toca lo versionado. | **Sí.** Su propio código no usa numpy ni scikit-learn, pero llama a `Model/prep.py`, y entrar al paquete `Model/` ejecuta su `__init__.py`, que sí las importa. |
 | `verificar_enlaces.py` | Que ningún enlace relativo de los `.md` apunte al vacío. | No. Solo usa la librería estándar de Python. |
 
 ```bash
-# antes de la primera vez, desde Demo/backend/:
-pip install -r requirements.txt
-
-# y luego, desde la raíz:
-python Script/verificar_catalogo.py
+python Script/verificar_sintaxis.py
 python Script/verificar_enlaces.py
+
+# esta necesita el backend instalado antes, desde Demo/backend/:
+pip install -r requirements.txt
+cd .. && python Script/verificar_catalogo.py
 ```
 
-La tercera comprobación, la del motor, vive con el motor:
+La cuarta comprobación, la del motor entero, vive con el motor:
 `Demo/backend/pruebas/prueba_humo.py`, y también necesita las dependencias
-instaladas. Conviene correr las tres antes de subir un cambio: tardan menos de
-un minuto entre todas.
+instaladas. Conviene correr las cuatro antes de subir un cambio: tardan menos
+de un minuto entre todas.
