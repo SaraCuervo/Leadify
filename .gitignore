@@ -12,3 +12,7 @@ venv/
 # Basura del sistema operativo
 .DS_Store
 Thumbs.db
+
+# Carpetas de configuración de herramientas de IA: son ajustes de la máquina
+# de cada quien, no del proyecto, y vuelven a aparecer solas si no se ignoran.
+.claude/
