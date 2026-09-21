@@ -19,10 +19,6 @@ Bogotá que más te encajan, con su porcentaje de compatibilidad.
 https://leadify-kappa.vercel.app/
 ```
 
-Si ves el logo y los colores de Leadify, estás en el lugar correcto. El mismo
-formulario puede vestirse de otra constructora (Amarilo, Colsubsidio,
-Cusezar), y en ese caso el catálogo que te recomienda es el de esa marca, no
-el general.
 
 ## Paso 1 — Preséntate
 
