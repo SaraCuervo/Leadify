@@ -21,10 +21,10 @@ El asesor recibe al lead con la cita ya puesta, no solo con un dato de contacto.
 
 | Nombre | Rol | Usuario de GitHub |
 |---|---|---|
-| Diego Ortiz | Documentación | [diego131t-max](https://github.com/diego131t-max) |
-| Carlos Figueroa | Base de datos, scripts y gráficas | [FigueroaCarlos](https://github.com/FigueroaCarlos) |
-| Santiago Díaz | Historias de usuario y cuestionario | [santiagodiazsabogal](https://github.com/santiagodiazsabogal) |
-| Sara Cuervo | Repositorio y estimaciones | [SaraCuervo](https://github.com/SaraCuervo) |
+| Juan Diego Ortiz Guerrero | DevOps Engineer y Configuration Manager | [diego131t-max](https://github.com/diego131t-max) |
+| Carlos Andrés Figueroa Vega | Scrum Master | [FigueroaCarlos](https://github.com/FigueroaCarlos) |
+| Santiago Díaz Sabogal | Quality Assurance Lead | [santiagodiazsabogal](https://github.com/santiagodiazsabogal) |
+| Sara Cuervo Avendaño | Product Owner y Sprint Planner | [SaraCuervo](https://github.com/SaraCuervo) |
 
 ## Tecnologías
 
