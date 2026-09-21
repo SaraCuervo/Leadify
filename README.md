@@ -126,6 +126,7 @@ Leadify/
 │   │       ├── tenants/              Una carpeta por marca (leadify, amarilo, colsubsidio, ...)
 │   │       └── tools/                Utilidades para enriquecer los catálogos de las marcas
 │   └── render.yaml                   Despliegue de la API
+├── .github/workflows/                Verificación automática (GitHub Actions)
 ├── Database/                         Qué datos usa el motor y dónde viven
 ├── Docs/
 │   ├── Dailys/                       Actas de los dailys (Daily1 a Daily5)

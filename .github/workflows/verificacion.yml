@@ -1,0 +1,38 @@
+name: Verificación
+
+# Corre las cuatro comprobaciones del proyecto (ver Script/README.md) en cada
+# push y en cada pull request hacia main o develop.
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: Demo/backend/requirements.txt
+
+      # No necesitan dependencias: van primero porque son las más baratas.
+      - name: Sintaxis de los .py
+        run: python Script/verificar_sintaxis.py
+
+      - name: Enlaces relativos de los .md
+        run: python Script/verificar_enlaces.py
+
+      - name: Instalar dependencias del backend
+        run: pip install -r Demo/backend/requirements.txt
+
+      - name: Catálogo versionado al día con el código
+        run: python Script/verificar_catalogo.py
+
+      - name: Prueba de humo del motor
+        working-directory: Demo/backend
+        run: python pruebas/prueba_humo.py
