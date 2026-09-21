@@ -1821,6 +1821,18 @@ a.pt-flink:hover {
   color: #a6aeb6;
   text-transform: uppercase;
 }
+/* El 3D (js/plano3d/) pone esta clase SOLO cuando arrancó de verdad —hay
+   WebGL y el equipo no es de gama baja, ver "soportado" en plano3d/index.js.
+   El plano 2D de recortes no se borra, se oculta: su canvas queda detrás con
+   fondo alpha:true, así que si se hiciera display:none en vez de esto se
+   verían huecos transparentes con la silueta 2D asomando de fondo. `.gdf-halo`
+   y `.gdf-mapa-real` se quedan fuera a propósito —llevan z-index propio (6 y 3)
+   y van SIEMPRE encima del canvas, que no fija el suyo—, así que la pregunta
+   de ubicación sigue viéndose con el 3D montado detrás y quieto. */
+.gdf-scene.con-plano3d .gdf-lote,
+.gdf-scene.con-plano3d .gdf-losa {
+  visibility: hidden;
+}
 /* La losa YA NO se estira a la caja: toma la forma real del apartamento vía
    --ratio (lo calcula js/planta.js según el número de alcobas) y se centra.
    Estirándola, la misma planta salía apaisada en móvil y casi cuadrada en

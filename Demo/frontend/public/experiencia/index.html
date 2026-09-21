@@ -133,6 +133,22 @@
     <script src="js/leadify.js?v=105"></script>
     <script src="js/templates.js?v=106"></script>
     <script src="js/state.js?v=105"></script>
+    <!-- 3D opcional del panel del plano: mejora progresiva sobre el 2D de
+         recortes de arriba (js/planta.js), no un reemplazo. Se apaga solo si
+         el equipo no tiene WebGL o es de gama baja (ver "soportado" en
+         plano3d/index.js) y ahi el 2D sigue siendo el camino, sin cambiar
+         nada. El orden importa: cada archivo cuelga funciones de
+         window.GDF3D que el siguiente ya da por puestas. -->
+    <script src="js/plano3d/vendor/gdf-three.bundle.js?v=1"></script>
+    <script src="js/plano3d/perfil.js?v=1"></script>
+    <script src="js/plano3d/zonificacion.js?v=1"></script>
+    <script src="js/plano3d/muros.js?v=1"></script>
+    <script src="js/plano3d/floorplan.js?v=1"></script>
+    <script src="js/plano3d/materiales.js?v=1"></script>
+    <script src="js/plano3d/geometria.js?v=1"></script>
+    <script src="js/plano3d/muebles.js?v=1"></script>
+    <script src="js/plano3d/escena.js?v=1"></script>
+    <script src="js/plano3d/index.js?v=1"></script>
     <script src="js/main.js?v=106"></script>
   </body>
 </html>

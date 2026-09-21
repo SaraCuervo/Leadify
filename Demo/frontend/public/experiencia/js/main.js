@@ -86,6 +86,17 @@
     attachInputListeners();
     // sceneBlock ya dejo el hueco del mapa en el HTML nuevo; esto lo llena.
     updateMapaDOM(derived);
+    // root.innerHTML desprendio el canvas del 3D (si existia) sin destruir su
+    // contexto WebGL; esto lo vuelve a enganchar. Ver updatePlano3D.
+    updatePlano3D(derived);
+  }
+
+  // Puente hacia plano3d/ (mejora progresiva sobre el plano 2D de recortes).
+  // GDF3D puede no existir (el bundle no cargo) o quedar apagado por hardware
+  // sin WebGL: en los dos casos `actualizar` no esta o devuelve false, y el 2D
+  // de siempre sigue siendo lo que se ve, sin que haga falta comprobarlo aqui.
+  function updatePlano3D(derived) {
+    if (window.GDF3D && window.GDF3D.actualizar) window.GDF3D.actualizar(state, derived);
   }
 
   // Los inputs de nombre/apellido/correo/teléfono son "no controlados":
@@ -1108,6 +1119,12 @@
    *   - la que sobra      -> se la lleva la grúa (.saliendo) y queda el hueco
    */
   function updatePlantaDOM(derived) {
+    // Primero y sin condiciones: el 3D no depende de la losa 2D de abajo ni
+    // de en cual de sus ramas entra esta funcion (cambio de plano, armado en
+    // curso, pieza nueva...). Si se dejara solo al final, un cambio de plano
+    // -que corta por `cambiarDePlano` y retorna antes- se perderia.
+    updatePlano3D(derived);
+
     var losa = root.querySelector('.gdf-losa');
     if (!losa) return;
 
