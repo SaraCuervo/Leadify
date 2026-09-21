@@ -13,10 +13,10 @@ Bogotá que más te encajan, con su porcentaje de compatibilidad.
 
 ## Cómo entrar
 
-Abre el enlace que te compartieron. Trae la marca en la URL, así:
+
 
 ```
-https://.../experiencia/index.html?marca=leadify
+https://leadify-kappa.vercel.app/
 ```
 
 Si ves el logo y los colores de Leadify, estás en el lugar correcto. El mismo
