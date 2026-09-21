@@ -71,7 +71,6 @@ Leadify/
 ├── Docs/
 │   ├── Dailys/                 Actas de los dailys (Daily1 a Daily5)
 │   └── lean-canvas.pdf         Lean canvas del proyecto
-├── Graficas/                   Gráficas de las métricas del lean canvas
 ├── Script/                     Qué scripts hay y cómo se corren
 ├── estimación/                 Capturas del planning poker de HU-1 a HU-5
 └── README.md
