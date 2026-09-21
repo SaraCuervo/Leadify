@@ -202,11 +202,20 @@
       // el contrato en §1, y es de los errores que no dan mensaje claro: llega
       // como dato inválido, no como campo ausente.
       //
-      // Va como LISTA porque se pueden pedir varias zonas. El contrato admite
-      // las dos formas —un entero suelto sigue valiendo— pero mandar siempre
-      // la lista evita tener dos caminos que probar; con una sola zona es una
-      // lista de un elemento.
-      Localidad: localidadIds(a),
+      // VA COMO ENTERO, no como lista. Aquí decía que "el contrato admite las
+      // dos formas" y no es cierto: el contrato pide un entero 1..20, e
+      // `indice_localidad()` (Model/catalogos.py) acepta int, float o texto,
+      // nunca una lista — con `[7]` devuelve None y el modelo responde 400:
+      // "Localidad debe estar entre 1 y 20 (recibido: [7])".
+      //
+      // El fallo estuvo oculto porque SIN_BACKEND:true hace que las
+      // recomendaciones salgan del motor local sin llegar a tocar el modelo.
+      // Se descubrió al conectar el servicio de verdad.
+      //
+      // Si se eligen varias zonas se manda LA PRIMERA: el contrato admite una
+      // sola. Que el quiz permita elegir varias y el modelo solo entienda una
+      // es una diferencia de alcance a resolver en producto, no a callar aquí.
+      Localidad: localidadIds(a)[0] || null,
       numero_habitaciones: a.habitaciones === '3+' ? 3 : parseInt(a.habitaciones || '1', 10),
       piso: 4,
       zonas_comunes: zonasComunesDe(a),
