@@ -129,6 +129,7 @@ Leadify/
 ├── Database/                         Qué datos usa el motor y dónde viven
 ├── Docs/
 │   ├── Dailys/                       Actas de los dailys (Daily1 a Daily5)
+│   ├── Mockups/                      Capturas de las pantallas del formulario
 │   └── lean-canvas.pdf               Lean canvas del proyecto
 ├── Script/                           Qué scripts hay y cómo se corren, más tres verificaciones
 ├── estimación/                       Capturas del planning poker de HU-1 a HU-5
