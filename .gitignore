@@ -1,0 +1,20 @@
+# Dependencias y compilados
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secretos y configuración local
+.env
+.env.*
+
+# Salida de una consulta del motor
+Demo/backend/salidas/
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -43,6 +43,59 @@ El asesor recibe al lead con la cita ya puesta, no solo con un dato de contacto.
 - Leaflet: el mapa de la pregunta de ubicación
 - Photon (OpenStreetMap): búsqueda de lugares
 
+## Instalación y ejecución
+
+```bash
+git clone https://github.com/SaraCuervo/Leadify.git
+cd Leadify/Demo
+```
+
+### El formulario interactivo
+
+Es lo que ve el comprador: siete preguntas y un plano que se arma a medida que responde. No necesita el backend.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Abrir <http://localhost:5173>. Si el puerto está ocupado, falla en vez de moverse a otro, para que la URL sea siempre la misma.
+
+Por defecto el formulario corre con `SIN_BACKEND: true` (en `public/experiencia/js/config.js`): recomienda con el motor de reglas del navegador y no llama a la API.
+
+### El motor de recomendación (opcional)
+
+Es el modelo de Python: filtro duro, Nearest Neighbors y capa económica. Se puede usar sin levantar nada:
+
+```bash
+cd backend
+pip install -r requirements.txt
+python main.py --usuario Model/data_projects/usuario_ejemplo.json
+```
+
+Para exponerlo por HTTP con FastAPI:
+
+```bash
+uvicorn api.app:app --port 8000
+```
+
+Para comprobar que el motor funciona (carga los datos, recomienda y cumple el contrato del formulario):
+
+```bash
+python pruebas/prueba_humo.py
+```
+
+Debe terminar con "Todo en orden". Todos los comandos del backend se corren desde `Demo/backend/`.
+
+### Llamada con Dapta (opcional)
+
+El endpoint `POST /api/llamar` dispara la llamada automática. Sin configurar responde en modo simulado (`mock_enqueued`) y no llama a nadie. Para conectarlo a un flow real, definir la variable de entorno antes de levantar la API:
+
+```bash
+export DAPTA_FLOW_WEBHOOK_URL="https://..."
+```
+
 ## Requisitos
 
 - Python 3.11 o superior
@@ -55,26 +108,32 @@ El asesor recibe al lead con la cita ya puesta, no solo con un dato de contacto.
 
 ```
 Leadify/
-├── Demo/                       EL PROYECTO
+├── Demo/                             EL PROYECTO
 │   ├── backend/
-│   │   ├── Model/              Motor: filtro duro, Nearest Neighbors, capa económica y grafos
-│   │   │   └── data_projects/  Catálogo de 96 proyectos y datos simulados de entrenamiento
-│   │   ├── api/                API FastAPI: valida, traduce y delega en el motor
-│   │   ├── scraping/           Scraper del catálogo de proyectos
-│   │   └── dapta/              Catálogo compacto para el prompt del agente de voz
+│   │   ├── Model/                    Motor: filtro duro, Nearest Neighbors, capa económica y grafos
+│   │   │   ├── data_projects/        Catálogo de 96 proyectos y datos simulados de entrenamiento
+│   │   │   └── simulacion/           Generación de clientes e historial, evaluación y calibración
+│   │   ├── api/                      API FastAPI: valida, traduce y delega en el motor
+│   │   ├── scraping/                 Scraper del catálogo de proyectos
+│   │   ├── dapta/                    Catálogo compacto para el prompt del agente de voz
+│   │   ├── pruebas/                  Prueba de humo del motor
+│   │   ├── main.py                   Lanzador de consola del motor
+│   │   └── requirements.txt          Dependencias de Python
 │   ├── frontend/
-│   │   ├── index.html          Cascarón que sirve el formulario a pantalla completa
-│   │   └── public/experiencia/ El formulario: las siete preguntas y el plano que se arma
-│   ├── render.yaml             Despliegue de la API
-├── Database/                   Qué datos usa el motor y dónde viven
+│   │   ├── index.html                Cascarón que sirve el formulario a pantalla completa
+│   │   └── public/experiencia/       El formulario: siete preguntas y el plano que se arma
+│   │       ├── js/ · css/            Lógica y estilos propios, sin framework
+│   │       ├── tenants/              Una carpeta por marca (leadify, amarilo, colsubsidio, ...)
+│   │       └── tools/                Utilidades para enriquecer los catálogos de las marcas
+│   └── render.yaml                   Despliegue de la API
+├── Database/                         Qué datos usa el motor y dónde viven
 ├── Docs/
-│   ├── Dailys/                 Actas de los dailys (Daily1 a Daily5)
-│   └── lean-canvas.pdf         Lean canvas del proyecto
-├── Script/                     Qué scripts hay y cómo se corren
-├── estimación/                 Capturas del planning poker de HU-1 a HU-5
+│   ├── Dailys/                       Actas de los dailys (Daily1 a Daily5)
+│   └── lean-canvas.pdf               Lean canvas del proyecto
+├── Script/                           Qué scripts hay y cómo se corren, más tres verificaciones
+├── estimación/                       Capturas del planning poker de HU-1 a HU-5
 └── README.md
 ```
-
 
 ## Contacto
 
