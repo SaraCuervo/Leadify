@@ -1,7 +1,7 @@
 # Base de datos
 
 Hay dos cosas distintas bajo "datos" en Leadify, y conviene no confundirlas:
-**los leads** —quién llenó el formulario y qué se le recomendó— sí viven en un
+**los leads** quién llenó el formulario y qué se le recomendó sí viven en un
 motor de base de datos de verdad; **el catálogo con el que el modelo
 recomienda** no, y esa parte del documento sigue vigente tal cual estaba.
 
