@@ -258,7 +258,11 @@
    */
   function urlDeRecomendar() {
     var c = constructoraDelTenant();
-    return base() + '/recomendar' + (c ? '?constructora=' + encodeURIComponent(c) : '');
+    // Todas las rutas del backend van bajo /api (ver api/app.py): sin el
+    // prefijo, el modelo desplegado responde 404 y la app cae al motor local
+    // en silencio, con el aviso de "orden aproximado" — nunca se ve como un
+    // error, solo como recomendaciones peores. Ya pasó una vez con Machea.
+    return base() + '/api/recomendar' + (c ? '?constructora=' + encodeURIComponent(c) : '');
   }
 
   /**

@@ -13,7 +13,16 @@ window.GDF_CONFIG = {
   // Bogotá) con sus fotos. No es el modelo —son reglas— y lo dice en el campo
   // `motor` de cada respuesta, que sale por consola:
   //   python integracion/fake_leadify.py     -> escucha en el mismo puerto
-  Leadify_BASE: 'http://localhost:8100',
+  //
+  // En localhost apunta al modelo corriendo en tu máquina (`uvicorn
+  // api.app:app --port 8100` desde Demo/backend); en cualquier otro host
+  // (Vercel) apunta al servicio desplegado en Render. Mismo patrón que
+  // DAPTA_LLAMADA_BASE de más abajo: así nadie tiene que acordarse de cambiar
+  // esto a mano entre local y producción.
+  Leadify_BASE:
+    location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+      ? 'http://localhost:8100'
+      : 'https://leadify-gmqj.onrender.com',
 
   // De dónde salen los proyectos recomendados (ver js/recommender.js):
   //   'leadify' -> las 7 respuestas viajan al modelo, que devuelve el Top 6 con
@@ -27,7 +36,15 @@ window.GDF_CONFIG = {
   // las recomendaciones salen del motor local. Existe para la versión de UN
   // SOLO ARCHIVO (tools/empaquetar_demo.py), pensada para compartir por link:
   // ahí la política de seguridad del visor bloquea cualquier petición externa.
-  SIN_BACKEND: true,
+  //
+  // El modelo YA está desplegado (leadify-gmqj.onrender.com), así que la
+  // publicada conecta con él de verdad. Si el servicio gratuito de Render
+  // está dormido, la primera visita del día puede tardar 30-60 segundos en
+  // responder mientras despierta — no es un error, es la condición del plan
+  // gratuito. El motor local de respaldo (RECOMMENDER 'local', ver
+  // js/recommender.js) sigue existiendo como red de seguridad si el servicio
+  // no responde en absoluto, no como modo por defecto.
+  SIN_BACKEND: false,
 
   // El backend de Leadify (api.py, ver el repo de la landing), NO el mismo
   // servicio que Leadify_BASE. Este SÍ corre siempre, incluso con
