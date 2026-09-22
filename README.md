@@ -36,9 +36,16 @@ El asesor recibe al lead con la cita ya puesta, no solo con un dato de contacto.
 - Requests, BeautifulSoup y lxml: scraper del catálogo de proyectos
 - Dapta: agente de voz que hace la llamada de calificación y agendamiento
 
+**Base de datos (leads)**
+
+- PostgreSQL, gestionado en Supabase
+- PL/pgSQL: las cuatro funciones que exponen la única API que ve el
+  navegador (ver [`Database/esquema/`](Database/esquema/))
+
 **Frontend (formulario interactivo)**
 
 - JavaScript sin framework: el quiz son ~7.400 líneas de JS y ~5.000 de CSS propios
+- three.js: el plano del apartamento en 3D (`Demo/frontend/public/experiencia/js/plano3d/`)
 - Vite: servidor de desarrollo y empaquetado
 - Leaflet: el mapa de la pregunta de ubicación
 - Photon (OpenStreetMap): búsqueda de lugares
