@@ -40,4 +40,21 @@ window.GDF_CONFIG = {
   // formato internacional y sin "+" (57 + celular de 10 dígitos). Vacío, el
   // enlace abre WhatsApp con el mensaje listo y la persona elige el contacto.
   WHATSAPP_NUMERO: '',
+
+  // La base de datos (Postgres en Supabase). Ver js/datos.js.
+  //
+  // ESTA CLAVE VA AQUI A PROPOSITO Y NO ES UN DESCUIDO: es la clave
+  // *publicable*, pensada para viajar al navegador, y por si sola no abre
+  // nada. Las tablas estan cerradas y solo se exponen cuatro funciones del
+  // lado del servidor; la de lectura exige cedula Y telefono. Quien tenga esta
+  // clave puede llamar a esas cuatro funciones, nada mas -- no puede listar
+  // leads ni leer una fila sin conocer los dos datos de esa persona.
+  //
+  // La que NO puede aparecer nunca aqui es la `service_role`, que si salta
+  // todas las restricciones. Esa vive solo en el panel de Supabase.
+  //
+  // Vacias, la app funciona igual pero sin guardar nada (ver `activo()` en
+  // js/datos.js): la falta de un servicio opcional no es un fallo.
+  SUPABASE_URL: 'https://jovuwfqmxcxectjwmeqq.supabase.co',
+  SUPABASE_KEY: 'sb_publishable_LTtDM90Kub2pNI7pjr6iuA_U_dQQMAi',
 };

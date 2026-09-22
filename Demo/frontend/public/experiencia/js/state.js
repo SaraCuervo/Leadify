@@ -28,6 +28,10 @@
       apellido: '',
       correo: '',
       telefono: '',
+      // La cedula es la llave con la que se reconoce a alguien que vuelve. No
+      // hay login: se pide junto con el telefono, y solo si los DOS coinciden
+      // se devuelven sus resultados anteriores (ver js/datos.js).
+      cedula: '',
       afiliado: null,
       consent: false,
       qi: 0,
@@ -260,6 +264,7 @@
           state.correo.trim() &&
           isValidEmail &&
           state.telefono.trim() &&
+          state.cedula.trim() &&
           state.consent
         );
         if (!canStart) return false;
@@ -271,6 +276,31 @@
         // siempre el mismo plano y dos personas seguidas en un stand ven
         // planos distintos.
         state.planta = window.GDF.planta.elegirApartamento(state);
+        break;
+      }
+
+      /* Alguien que YA paso por aqui y vuelve: se le devuelven sus resultados
+         sin volver a preguntarle nada (ver js/datos.js y el intercepto de
+         'startQuiz' en main.js). `ds.respuestas` son las respuestas que dio
+         aquella vez.
+
+         Aqui NO se pinta la lista: eso lo hace 'recoResuelta' justo despues,
+         con los resultados guardados tal cual se guardaron. Reusarla es lo que
+         garantiza que la pantalla restaurada sea identica a la original — si
+         se armara aparte, serian dos caminos que pueden divergir. */
+      case 'restaurarConsulta': {
+        state.answers = ds.respuestas || {};
+        state.qi = 0;
+        state.screen = 'result';
+        state.chosen = null;
+        // La calificacion del lead se recalcula, no se guarda: depende de las
+        // respuestas, que si estan guardadas, y asi un cambio en las reglas de
+        // negocio aplica tambien a quien vuelve.
+        var mejorGuardado = window.GDF.matching.computeMatches(state.answers, 1);
+        state.lead = window.GDF.qualification.computeLeadQualification(
+          state.answers,
+          mejorGuardado[0] ? mejorGuardado[0].score : 0
+        );
         break;
       }
 

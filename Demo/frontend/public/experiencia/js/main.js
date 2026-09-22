@@ -147,6 +147,13 @@
         updateStartButton();
       });
     }
+    var cedulaInput = document.getElementById('cedulaInput');
+    if (cedulaInput) {
+      cedulaInput.addEventListener('input', function (e) {
+        state.cedula = e.target.value;
+        updateStartButton();
+      });
+    }
 
     var quizNumberInput = document.getElementById('quizNumberInput');
     if (quizNumberInput) {
@@ -808,6 +815,7 @@
       state.correo.trim() &&
       isValidEmail &&
       state.telefono.trim() &&
+      state.cedula.trim() &&
       state.consent
     );
     btn.classList.toggle('enabled', canStart);
@@ -874,6 +882,10 @@
     // va (ver confirmacion() en templates.js, y js/llamada.js para el POST).
     if (prevScreen !== 'confirmacion' && state.screen === 'confirmacion') {
       dispararLlamada();
+      // Elegir un proyecto y pedir que lo llamen por el ES el interes. Se
+      // anota aqui, no al final: si la llamada no entra o la persona cierra la
+      // pagina, el interes ya quedo registrado igual.
+      marcarInteres();
     }
     // Botón "Reintentar" tras un error de envío: 'reintentarLlamada' ya dejó
     // state.llamada en 'cargando' (ver state.js) y render() de arriba lo
@@ -937,6 +949,7 @@
           pollingHandle = null;
           window.GDF.state.applyAction(state, 'resumenListo', r);
           render();
+          marcarIntencion(r);
           return;
         }
         if (intentos >= POLL_MAX_INTENTOS) {
@@ -951,6 +964,122 @@
     pollingHandle = setInterval(intentar, POLL_INTERVALO_MS);
   }
 
+  // -------------------------------------------------------------------------
+  // La base de datos (js/datos.js). Nada de esto puede impedir que el
+  // formulario avance: si la base no responde, se sigue igual y solo se pierde
+  // el guardado. Por eso ningun callback bloquea la interfaz.
+  // -------------------------------------------------------------------------
+
+  // Id de la consulta que se acaba de guardar, para colgarle el interes.
+  var consultaId = null;
+
+  /**
+   * "Empezar a construir". Antes de lanzar el cuestionario pregunta a la base
+   * si esta cedula + telefono ya tienen resultados guardados:
+   *
+   *   los tiene  -> se le devuelven y entra directo a la lista de proyectos
+   *   no         -> cuestionario normal, como siempre
+   *
+   * El boton se bloquea mientras tanto. La consulta tarda ~200 ms, pero si la
+   * red esta mal podria tardar mas y sin el aviso parece que el clic no hizo
+   * nada. Si la base falla NO se corta el paso: se arranca el cuestionario,
+   * que es lo que la persona vino a hacer.
+   */
+  function arrancar(boton) {
+    if (boton && !boton.classList.contains('enabled')) return;
+
+    function alCuestionario() {
+      if (window.GDF.state.applyAction(state, 'startQuiz', {})) {
+        render();
+        precargarPlano();
+      }
+    }
+
+    if (!window.GDF.datos || !window.GDF.datos.activo()) {
+      alCuestionario();
+      return;
+    }
+
+    var textoOriginal = boton ? boton.textContent : '';
+    if (boton) {
+      boton.classList.remove('enabled');
+      boton.textContent = 'Buscando tus datos…';
+    }
+
+    window.GDF.datos.buscar(state.cedula, state.telefono, function (registro, err) {
+      if (boton) {
+        boton.textContent = textoOriginal;
+        boton.classList.add('enabled');
+      }
+      // Sin registro (o con la base caida) el camino es el de siempre. Un
+      // error aqui no se le cuenta a la persona: no hay nada que pueda hacer
+      // al respecto y el formulario funciona igual.
+      if (err || !registro) {
+        alCuestionario();
+        return;
+      }
+      consultaId = registro.consulta_id || null;
+      window.GDF.state.applyAction(state, 'restaurarConsulta', registro);
+      window.GDF.state.applyAction(state, 'recoResuelta', registro.resultados || {});
+      render();
+    });
+  }
+
+  /**
+   * Guarda respuestas + recomendaciones recien calculadas.
+   *
+   * UNA LISTA VACIA NO SE GUARDA. Si el motor fallo —backend caido, red mala—
+   * el resultado es `{estado:'error', items:[]}`, y guardarlo condenaria a esa
+   * persona a ver una pantalla vacia CADA vez que vuelva, porque al reconocerla
+   * se le devuelve lo guardado sin recalcular nada. Mejor no guardar: la
+   * proxima vez repite el cuestionario, que es molesto pero funciona.
+   */
+  function guardarConsulta(resultado) {
+    if (!window.GDF.datos || !window.GDF.datos.activo()) return;
+    if (!resultado || !resultado.items || !resultado.items.length) return;
+    window.GDF.datos.guardar(state, resultado, function (id) {
+      if (id) consultaId = id;
+    });
+  }
+
+  /** El nombre del proyecto que la persona eligio, o null. */
+  function proyectoElegido() {
+    if (!state.chosen || !state.reco || !state.reco.items) return null;
+    for (var i = 0; i < state.reco.items.length; i++) {
+      if (state.reco.items[i].id === state.chosen) return state.reco.items[i].nombre || null;
+    }
+    return null;
+  }
+
+  /** Anota en la base que este proyecto le intereso. */
+  function marcarInteres() {
+    var proyecto = proyectoElegido();
+    if (!proyecto || !window.GDF.datos || !window.GDF.datos.activo()) return;
+    window.GDF.datos.marcarInteres(state, proyecto, consultaId, function () {});
+  }
+
+  /**
+   * Cierra el ciclo con lo que Dapta devuelve al colgar. `fecha_de_seguimiento`
+   * es la senal de que en la llamada se agendo cita con un asesor, que es lo
+   * que aqui cuenta como intencion de compra. Quien decide es la funcion del
+   * servidor: aqui solo se le pasa el dato crudo.
+   *
+   * OJO: esto depende de que la pagina siga abierta cuando Manuela cuelga,
+   * porque es el navegador quien consulta el resumen. Si la persona la cierra
+   * antes, el interes queda anotado pero la intencion no.
+   */
+  function marcarIntencion(resumen) {
+    var proyecto = proyectoElegido();
+    if (!proyecto || !window.GDF.datos || !window.GDF.datos.activo()) return;
+    window.GDF.datos.marcarIntencion(
+      state,
+      proyecto,
+      resumen && resumen.fecha_de_seguimiento,
+      resumen && resumen.temperatura_lead,
+      function () {}
+    );
+  }
+
   // POST /recomendaciones. Se usa igual en la primera carga y al reintentar.
   function cargarRecomendaciones() {
     window.GDF.state.applyAction(state, 'recoCargando', {});
@@ -958,6 +1087,9 @@
     window.GDF.recommender.recomendar(state, function (resultado) {
       window.GDF.state.applyAction(state, 'recoResuelta', resultado);
       render();
+      // Se guarda el resultado TAL CUAL, que es lo que permite restaurarlo
+      // despues con la misma accion que lo pinto (ver arrancar()).
+      guardarConsulta(resultado);
     });
   }
 
@@ -1579,6 +1711,13 @@
     }
     if (el.dataset.action === 'usarLocalAproximado') {
       usarLocalAproximado();
+      return;
+    }
+    // Empezar TAMBIEN es I/O ahora: antes de lanzar el cuestionario se mira si
+    // esta persona ya paso por aqui, para devolverle sus resultados en vez de
+    // hacerle repetir las siete preguntas. Ver arrancar().
+    if (el.dataset.action === 'startQuiz') {
+      arrancar(el);
       return;
     }
 

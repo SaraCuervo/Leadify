@@ -1651,6 +1651,15 @@ a.pt-flink:hover {
   margin-bottom: 5px;
   display: block;
 }
+/* Ayuda bajo un campo. Hoy solo la usa la cédula, para explicar que con ella y
+   el teléfono se recuperan los resultados de una vez anterior — sin ese aviso,
+   pedir la cédula parece un trámite y no una comodidad. */
+.gdf-field-hint {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--tinta-tenue);
+  margin: -6px 0 14px;
+}
 .gdf-input {
   /* SIN ESTO EL CAMPO SALE BLANCO. Un <input> no hereda el fondo: se lo pone
      el navegador. Con la app en claro no se notaba —blanco sobre blanco— y al

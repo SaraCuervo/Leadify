@@ -205,6 +205,7 @@
       state.correo.trim() &&
       isValidEmail(state.correo.trim()) &&
       state.telefono.trim() &&
+      state.cedula.trim() &&
       state.consent
     );
 
@@ -267,6 +268,12 @@
       '<input class="gdf-input" id="correoInput" type="email" placeholder="Ej: ana.ruiz@correo.com" value="' + esc(state.correo) + '" />' +
       '<label class="gdf-field-label">Teléfono (WhatsApp)</label>' +
       '<input class="gdf-input" id="telefonoInput" inputmode="tel" placeholder="Ej: 300 123 4567" value="' + esc(state.telefono) + '" />' +
+      // La cedula va DESPUES del telefono porque los dos juntos son lo que
+      // reconoce a quien vuelve (ver js/datos.js): pedirlos seguidos deja claro
+      // que son una pareja, y la ayuda de abajo explica para que sirven.
+      '<label class="gdf-field-label">Cédula</label>' +
+      '<input class="gdf-input" id="cedulaInput" inputmode="numeric" placeholder="Ej: 1020304050" value="' + esc(state.cedula) + '" />' +
+      '<p class="gdf-field-hint">Si ya llenaste el formulario antes, con tu cédula y tu teléfono te devolvemos tus resultados sin repetir las preguntas.</p>' +
       afiliacionCampo +
       '<label class="gdf-consent" data-action="toggleConsent">' +
       '<span class="box' + (state.consent ? ' checked' : '') + '">' + (state.consent ? '✓' : '') + '</span>' +
