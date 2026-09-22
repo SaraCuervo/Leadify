@@ -1097,27 +1097,36 @@
     );
   }
 
+  // EL BOTON DE WHATSAPP QUEDA PAUSADO A PROPOSITO: sin un WHATSAPP_NUMERO
+  // real en js/config.js, wa.me abre un chat sin destinatario fijo, que no es
+  // lo que promete el botón. Se vuelve a mostrar agregando de nuevo el <a>
+  // de abajo (ya armado, con su mensaje) en cuanto haya un número real.
+  function accionesContacto(vm, state) {
+    return (
+      '<div class="gdf-project-acciones">' +
+      '<button class="gdf-btn-primary enabled gdf-project-llamar" data-action="llamarProyecto" data-value="' + esc(vm.id) + '">' +
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>' +
+      'Llamar</button>' +
+      /* '<a class="gdf-project-whatsapp" data-action="whatsapp" href="' + esc(urlWhatsapp(vm, state)) + '" target="_blank" rel="noopener">' +
+      '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>' +
+      'WhatsApp</a>' + */
+      '</div>'
+    );
+  }
+
   // El número de WhatsApp sale de la configuración (`WHATSAPP_NUMERO` en
   // js/config.js, en formato internacional sin "+"). Sin número, wa.me abre
   // WhatsApp con el mensaje listo para que la persona elija a quién mandarlo.
-  function accionesContacto(vm, state) {
+  // Solo la usa el `<a>` comentado de accionesContacto: al reactivarlo, esta
+  // función ya está lista y no hay que tocarla.
+  function urlWhatsapp(vm, state) {
     var numero = String((window.GDF_CONFIG && window.GDF_CONFIG.WHATSAPP_NUMERO) || '').replace(/\D/g, '');
     var quien = (state.nombre || '').trim();
     var mensaje =
       'Hola, me interesa el proyecto ' + vm.nombre +
       (vm.ubicacion ? ' (' + vm.ubicacion + ')' : '') +
       '. Vengo de Leadify' + (quien ? ', mi nombre es ' + quien : '') + '.';
-    var url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensaje);
-    return (
-      '<div class="gdf-project-acciones">' +
-      '<button class="gdf-btn-primary enabled gdf-project-llamar" data-action="llamarProyecto" data-value="' + esc(vm.id) + '">' +
-      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>' +
-      'Llamar</button>' +
-      '<a class="gdf-project-whatsapp" data-action="whatsapp" href="' + esc(url) + '" target="_blank" rel="noopener">' +
-      '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>' +
-      'WhatsApp</a>' +
-      '</div>'
-    );
+    return 'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensaje);
   }
 
   // ---------------------------------------------------------------------

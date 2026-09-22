@@ -3283,7 +3283,11 @@ a.pt-flink:hover {
    el verde propio de WhatsApp, que es como la gente lo reconoce. */
 .gdf-project-acciones {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* Una sola columna mientras el botón de WhatsApp está pausado (ver
+     accionesContacto en templates.js): con dos, "Llamar" se quedaba en la
+     mitad izquierda y la derecha quedaba en blanco. Al reactivar WhatsApp,
+     esto vuelve a "1fr 1fr". */
+  grid-template-columns: 1fr;
   gap: 8px;
   margin-top: 12px;
 }
