@@ -17,8 +17,9 @@ window.GDF_CONFIG = {
   // En localhost apunta al modelo corriendo en tu máquina (`uvicorn
   // api.app:app --port 8100` desde Demo/backend); en cualquier otro host
   // (Vercel) apunta al servicio desplegado en Render. Mismo patrón que
-  // DAPTA_LLAMADA_BASE de más abajo: así nadie tiene que acordarse de cambiar
-  // esto a mano entre local y producción.
+  // DAPTA_LLAMADA_BASE de más abajo: son el MISMO backend (Demo/backend/api),
+  // así que las dos constantes resuelven igual — se dejan separadas porque
+  // cada una documenta un propósito distinto, no dos servicios distintos.
   Leadify_BASE:
     location.hostname === 'localhost' || location.hostname === '127.0.0.1'
       ? 'http://localhost:8100'
@@ -46,12 +47,18 @@ window.GDF_CONFIG = {
   // no responde en absoluto, no como modo por defecto.
   SIN_BACKEND: false,
 
-  // El backend de Leadify (api.py, ver el repo de la landing), NO el mismo
-  // servicio que Leadify_BASE. Este SÍ corre siempre, incluso con
-  // SIN_BACKEND:true — ese flag solo apaga el cálculo de recomendaciones, no
-  // la llamada de Manuela, que no puede hacerse desde el navegador porque
-  // necesita la API key de Dapta, y esa nunca puede viajar al cliente.
-  DAPTA_LLAMADA_BASE: 'https://machea.onrender.com',
+  // El mismo backend de Leadify (Demo/backend/api/app.py) — apunta al mismo
+  // sitio que Leadify_BASE, en apariencia redundante, pero el flag
+  // SIN_BACKEND lo trata distinto: con SIN_BACKEND:true el cálculo de
+  // recomendaciones se apaga y cae al motor local, pero la llamada de Manuela
+  // SIGUE yendo al backend igual, porque necesita la API key de Dapta y esa
+  // nunca puede viajar al cliente. Antes de este flujo, este apuntaba a
+  // machea.onrender.com (otro proyecto, otra cuenta de Dapta); se consolidó
+  // aquí porque el flujo de Dapta ya se creó específicamente para Leadify.
+  DAPTA_LLAMADA_BASE:
+    location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+      ? 'http://localhost:8100'
+      : 'https://leadify-gmqj.onrender.com',
 
   // El número al que escribe el botón "WhatsApp" de la tarjeta elegida, en
   // formato internacional y sin "+" (57 + celular de 10 dígitos). Vacío, el
